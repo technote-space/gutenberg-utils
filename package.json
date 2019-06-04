@@ -1,0 +1,51 @@
+{
+  "name": "@technote-space/gutenberg-utils",
+  "version": "0.0.1",
+  "description": "gutenberg's utils",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "npm run lint && npm run cover",
+    "lint": "eslint src/**/**/*.js && eslint test/**/**/*.js",
+    "cover": "NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --recursive",
+    "develop": "webpack --mode development --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/technote-space/gutenberg-utils.git"
+  },
+  "keywords": [
+    "gutenberg"
+  ],
+  "author": "Technote <technote.space@gmail.com> (https://technote.space)",
+  "bugs": {
+    "url": "https://github.com/technote-space/gutenberg-utils/issues"
+  },
+  "homepage": "https://github.com/technote-space/gutenberg-utils#readme",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@wordpress/components": "^7.4.0",
+    "@wordpress/rich-text": "^3.3.0",
+    "@wordpress/url": "^2.6.0",
+    "babel-loader": "^8.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
+    "jsdom": "15.1.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^6.1.4",
+    "mousetrap": "^1.6.3",
+    "nyc": "^14.1.1",
+    "should": "^13.2.3",
+    "webpack": "^4.32.2",
+    "webpack-cli": "~3.3.2"
+  }
+}
