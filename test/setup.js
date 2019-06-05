@@ -6,11 +6,15 @@ global.window.matchMedia = () => ( {
 } );
 
 const components = require( '@wordpress/components' );
+const data = require( '@wordpress/data' );
+const editor = require( '@wordpress/editor' );
 const richText = require( '@wordpress/rich-text' );
 const url = require( '@wordpress/url' );
 
 global.wp = {
 	components,
+	data,
+	editor,
 	richText,
 	url,
 };
