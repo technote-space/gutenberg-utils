@@ -1,3 +1,5 @@
+import classnames from 'classnames';
+
 const { SVG, Dashicon } = wp.components;
 const { isURL } = wp.url;
 const { isString } = window.lodash;
@@ -37,17 +39,17 @@ const createDashicon = ( icon, className ) => <Dashicon
  * @returns {null|*|null|*} icon
  * @constructor
  */
-export const Icon = ( {
+const Icon = ( {
 	icon,
 	className,
 	defaultIcon = false,
 } ) => {
 	if ( isSVG( icon ) ) {
-		return createSVG( icon, className );
+		return createSVG( icon, classnames( 'components-icon components-icon__svg', className ) );
 	}
 
 	if ( isDashicon( icon ) ) {
-		return createDashicon( icon, className );
+		return createDashicon( icon, classnames( 'components-icon components-icon__dashicon', className ) );
 	}
 
 	if ( ! icon && defaultIcon ) {
@@ -63,3 +65,5 @@ export const Icon = ( {
 
 	return icon;
 };
+
+export default Icon;

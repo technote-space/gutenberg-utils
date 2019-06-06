@@ -1,3 +1,4 @@
-import { Icon } from './icon';
+import Icon from './icon';
+import DropdownButton from './dropdown-button';
 
-export { Icon };
+export { Icon, DropdownButton };

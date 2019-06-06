@@ -1,0 +1,49 @@
+@import "../../common/style";
+
+.components-dropdown-button {
+  padding: 3px;
+  display: flex;
+
+  &__popover {
+    .components-popover__content {
+      width: 200px;
+    }
+  }
+
+  &__toggle {
+    width: auto;
+    margin: 0;
+    padding: 4px;
+    border: $border-width solid transparent;
+    display: flex;
+    flex-direction: row;
+
+    &.is-active,
+    &.is-active:hover {
+      box-shadow: none;
+      background-color: $dark-gray-500;
+      color: $white;
+    }
+
+    &:focus::before {
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not([aria-disabled="true"]):not(.is-default):hover {
+      @include formatting-button-style__hover();
+    }
+  }
+
+  &__indicator::after {
+    @include dropdown-arrow();
+  }
+}
+
+#editor.block-editor__container .components-popover.components-color-palette__picker {
+  z-index: 1000001;
+}

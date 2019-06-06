@@ -7,6 +7,7 @@ const externals = {
 	'@wordpress/components': { this: [ 'wp', 'components' ] },
 	'@wordpress/rich-text': { this: [ 'wp', 'richText' ] },
 	'@wordpress/url': { this: [ 'wp', 'url' ] },
+	lodash: 'lodash',
 };
 
 const webpackConfig = {
@@ -23,6 +24,11 @@ const webpackConfig = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
+			},
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				use: [ 'style-loader', 'css-loader', 'sass-loader' ],
 			},
 		],
 	},
