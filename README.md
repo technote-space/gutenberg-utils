@@ -17,9 +17,9 @@ npm install --save @technote-space/gutenberg-utils
 ```
 require( '@technote-space/gutenberg-utils' );
 
-const { Icon } = wp.components.extension;
-const { getActiveStyle } = wp.richText.extension;
-
+const { Icon, DropdownButton } = wp.components.extension;
+const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = wp.richText.extension;
+const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = wp.editor.extension;
 ```
 
 Compile and enqueue script.
@@ -32,13 +32,23 @@ Compile and enqueue script.
 
 `gutenberg.js`
 ```
-( function( Icon, getActiveStyle ) {
-
+( function(
+	Icon, DropdownButton,
+	getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle,
+	isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes,
+) {
 }(
 	wp.components.extension.Icon,
-	wp.components.richText.getActiveStyle,
+	wp.components.extension.DropdownButton,
+	wp.richText.extension.getActiveStyle,
+	wp.richText.extension.addActiveAttributes,
+	wp.richText.extension.setActiveStyle,
+	wp.richText.extension.onChangeStyle,
+	wp.editor.extension.isValidCustomColors,
+	wp.editor.extension.isValidCustomFontSizes,
+	wp.editor.extension.getColors,
+	wp.editor.extension.getFontSizes,
 ) );
-
 ```
 
 Download [Release version](https://raw.githubusercontent.com/technote-space/gutenberg-utils/master/build/index.js) and enqueue scripts.
