@@ -17,7 +17,7 @@ export const getActiveStyle = ( args, formatType, styleName, options = { suffix:
 		return options.defaultStyle;
 	}
 
-	const style = activeFormat.attributes.style;
+	const style = activeFormat.attributes.style || ( activeFormat.unregisteredAttributes && activeFormat.unregisteredAttributes.style );
 	if ( ! style ) {
 		return options.defaultStyle;
 	}

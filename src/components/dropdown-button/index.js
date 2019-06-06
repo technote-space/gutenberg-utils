@@ -13,6 +13,7 @@ import Dropdown from './dropdown';
  * @param {string} position position
  * @param {string} contentClassName content class name
  * @param {function} renderContent render content
+ * @param {boolean} isActive is active?
  * @param {boolean} isDisabled is disabled?
  * @param {boolean} isDropdownDisabled is dropdown disabled?
  * @returns {*} dropdown button
@@ -26,6 +27,7 @@ const DropdownButton = ( {
 	position = 'top right',
 	contentClassName,
 	renderContent,
+	isActive = false,
 	isDisabled = false,
 	isDropdownDisabled = false,
 } ) => {
@@ -38,11 +40,14 @@ const DropdownButton = ( {
 				onToggle();
 			}
 			return <IconButton
-				className="components-dropdown-button__toggle"
+				className={ classnames( 'components-dropdown-button__toggle', {
+					'is-active': isActive,
+				} ) }
 				icon={ icon }
 				onClick={ onToggle }
 				aria-haspopup="true"
 				aria-expanded={ isOpen }
+				aria-pressed={ isActive }
 				label={ label }
 				tooltip={ tooltip }
 				disabled={ isDisabled }

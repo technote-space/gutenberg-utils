@@ -20,6 +20,10 @@ class Dropdown extends OriginalDropdown {
 			if ( colorPicker && colorPicker.contains( event.target ) ) {
 				return;
 			}
+			const fontSizePicker = document.querySelector( '.components-font-size-picker__dropdown-content' );
+			if ( fontSizePicker && fontSizePicker.contains( event.target ) ) {
+				return;
+			}
 			this.close();
 		}
 	}

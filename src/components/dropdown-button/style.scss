@@ -6,7 +6,8 @@
 
   &__popover {
     .components-popover__content {
-      width: 200px;
+      min-width: 200px;
+      padding: 10px;
     }
   }
 
