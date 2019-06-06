@@ -92,6 +92,35 @@ describe( 'getActiveStyle test', () => {
 				},
 			}, 'test2/test6', 'font-size', { suffix: 'px' } ).should.equal( '16' );
 		}
+
+		{
+			registerFormatType( 'test2/test7', {
+				title: 'test7',
+				tagName: 'span',
+				className: 'test7',
+				edit: () => null,
+			} );
+			const format = {
+				attributes: { style: 'font-size: 16px' },
+				type: 'test2/test7',
+				unregisteredAttributes: {},
+			};
+			getActiveStyle( {
+				isActive: true,
+				value: {
+					start: 0,
+					end: 1,
+					text: 'test7',
+					formats: [
+						[ format ],
+						[ format ],
+						[ format ],
+						[ format ],
+						[ format ],
+					],
+				},
+			}, 'test2/test7', 'font-size', { suffix: 'px', filter: Number } ).should.equal( 16 );
+		}
 	} );
 } );
 
@@ -125,38 +154,80 @@ describe( 'onChangeStyle test', () => {
 	} );
 
 	it( 'should on change', () => {
-		const format = {
-			attributes: { style: 'color: red' },
-			type: 'test2/test5',
-			unregisteredAttributes: {},
-		};
-		const onChange = onChange => onChangeStyle( {
-			isActive: true,
-			value: {
-				start: 0,
-				end: 1,
-				text: 'test5',
-				formats: [
-					[ format ],
-					[ format ],
-					[ format ],
-					[ format ],
-					[ format ],
-				],
-			},
-			onChange: onChange,
-		}, 'test2/test5', 'color' );
-		onChange( value => {
-			value.should.ownProperty( 'activeFormats' );
-			value.activeFormats.should.have.length( 0 );
-		} )( undefined );
-		onChange( value => {
-			value.should.ownProperty( 'activeFormats' );
-			value.activeFormats.should.have.length( 1 );
-			value.activeFormats[ 0 ].should.ownProperty( 'type' );
-			value.activeFormats[ 0 ].should.ownProperty( 'attributes' );
-			value.activeFormats[ 0 ].type.should.equal( 'test2/test5' );
-		} )( 'blue' );
-		should( onChange()( '' ) ).null();
+		{
+			const format = {
+				attributes: { style: 'color: red' },
+				type: 'test2/test5',
+				unregisteredAttributes: {},
+			};
+			const onChange = onChange => onChangeStyle( {
+				isActive: true,
+				value: {
+					start: 0,
+					end: 1,
+					text: 'test5',
+					formats: [
+						[ format ],
+						[ format ],
+						[ format ],
+						[ format ],
+						[ format ],
+					],
+				},
+				onChange: onChange,
+			}, 'test2/test5', 'color' );
+			onChange( value => {
+				value.should.ownProperty( 'activeFormats' );
+				value.activeFormats.should.have.length( 0 );
+			} )( undefined );
+			onChange( value => {
+				value.should.ownProperty( 'activeFormats' );
+				value.activeFormats.should.have.length( 1 );
+				value.activeFormats[ 0 ].should.ownProperty( 'type' );
+				value.activeFormats[ 0 ].should.ownProperty( 'attributes' );
+				value.activeFormats[ 0 ].type.should.equal( 'test2/test5' );
+				value.activeFormats[ 0 ].attributes.should.ownProperty( 'style' );
+				value.activeFormats[ 0 ].attributes.style.should.equal( 'color: blue' );
+			} )( 'blue' );
+			should( onChange()( '' ) ).null();
+		}
+
+		{
+			const format = {
+				attributes: { style: 'font-size: 16px' },
+				type: 'test2/test7',
+				unregisteredAttributes: {},
+			};
+			const onChange = onChange => onChangeStyle( {
+				isActive: true,
+				value: {
+					start: 0,
+					end: 1,
+					text: 'test7',
+					formats: [
+						[ format ],
+						[ format ],
+						[ format ],
+						[ format ],
+						[ format ],
+					],
+				},
+				onChange: onChange,
+			}, 'test2/test7', 'font-size', 'px' );
+			onChange( value => {
+				value.should.ownProperty( 'activeFormats' );
+				value.activeFormats.should.have.length( 0 );
+			} )( undefined );
+			onChange( value => {
+				value.should.ownProperty( 'activeFormats' );
+				value.activeFormats.should.have.length( 1 );
+				value.activeFormats[ 0 ].should.ownProperty( 'type' );
+				value.activeFormats[ 0 ].should.ownProperty( 'attributes' );
+				value.activeFormats[ 0 ].type.should.equal( 'test2/test7' );
+				value.activeFormats[ 0 ].attributes.should.ownProperty( 'style' );
+				value.activeFormats[ 0 ].attributes.style.should.equal( 'font-size: 32px' );
+			} )( '32' );
+			should( onChange()( '' ) ).null();
+		}
 	} );
 } );

@@ -7,7 +7,7 @@ const { getActiveFormat, applyFormat, removeFormat } = wp.richText;
  * @param {{suffix, defaultStyle}} options options
  * @returns {string|boolean} active style
  */
-export const getActiveStyle = ( args, formatType, styleName, options = { suffix: undefined, defaultStyle: false } ) => {
+export const getActiveStyle = ( args, formatType, styleName, options = { suffix: undefined, defaultStyle: false, filter: undefined } ) => {
 	if ( ! args.isActive ) {
 		return options.defaultStyle;
 	}
@@ -23,11 +23,12 @@ export const getActiveStyle = ( args, formatType, styleName, options = { suffix:
 	}
 
 	const extracted = style.replace( new RegExp( `^${ styleName }:\\s*` ), '' );
+	const filtered = value => options.filter ? options.filter( value ) : value;
 	if ( options.suffix ) {
-		return extracted.replace( new RegExp( `${ options.suffix }$` ), '' );
+		return filtered( extracted.replace( new RegExp( `${ options.suffix }$` ), '' ) );
 	}
 
-	return extracted;
+	return filtered( extracted );
 };
 
 /**
@@ -54,13 +55,14 @@ export const setActiveStyle = ( args, styleName, value ) => addActiveAttributes(
  * @param {{}} args args
  * @param {string} formatName format name
  * @param {string} styleName style name
+ * @param {string} suffix suffix
  * @returns {function(*=): null} on change function
  */
-export const onChangeStyle = ( args, formatName, styleName ) => value => undefined === value ?
+export const onChangeStyle = ( args, formatName, styleName, suffix = '' ) => value => undefined === value ?
 	args.onChange( removeFormat( args.value, formatName ) ) :
 	(
 		value ? args.onChange( applyFormat( args.value, {
 			type: formatName,
-			attributes: setActiveStyle( args, styleName, value ),
+			attributes: setActiveStyle( args, styleName, value + suffix ),
 		} ) ) : null
 	);
