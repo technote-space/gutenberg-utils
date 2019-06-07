@@ -15,11 +15,11 @@ npm install --save @technote-space/gutenberg-utils
 
 `gutenberg.js`
 ```
-require( '@technote-space/gutenberg-utils' );
+import { Components, Helpers } from '@technote-space/gutenberg-utils';
 
-const { Icon, DropdownButton } = wp.components.extension;
-const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = wp.richText.extension;
-const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = wp.editor.extension;
+const { Icon, DropdownButton } = Components;
+const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
+const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
 ```
 
 Compile and enqueue script.
@@ -37,17 +37,18 @@ Compile and enqueue script.
 	getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle,
 	isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes,
 ) {
+
 }(
-	wp.components.extension.Icon,
-	wp.components.extension.DropdownButton,
-	wp.richText.extension.getActiveStyle,
-	wp.richText.extension.addActiveAttributes,
-	wp.richText.extension.setActiveStyle,
-	wp.richText.extension.onChangeStyle,
-	wp.editor.extension.isValidCustomColors,
-	wp.editor.extension.isValidCustomFontSizes,
-	wp.editor.extension.getColors,
-	wp.editor.extension.getFontSizes,
+	Technote.Gutenberg.Common.Components.Icon,
+	Technote.Gutenberg.Common.Components.DropdownButton,
+	Technote.Gutenberg.Common.Helpers.getActiveStyle,
+	Technote.Gutenberg.Common.Helpers.addActiveAttributes,
+	Technote.Gutenberg.Common.Helpers.setActiveStyle,
+	Technote.Gutenberg.Common.Helpers.onChangeStyle,
+	Technote.Gutenberg.Common.Helpers.isValidCustomColors,
+	Technote.Gutenberg.Common.Helpers.isValidCustomFontSizes,
+	Technote.Gutenberg.Common.Helpers.getColors,
+	Technote.Gutenberg.Common.Helpers.getFontSizes,
 ) );
 ```
 
