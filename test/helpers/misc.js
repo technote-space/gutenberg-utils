@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 const should = require( 'should' );
 
-import { getProperty, setProperty } from '../../src/utils';
+import { getProperty, setProperty } from '../../src/helpers';
 
 describe( 'getProperty test', () => {
 	it( 'should return default', () => {
