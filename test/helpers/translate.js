@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 require( 'should' );
 
-import { getTranslator } from '../../src/utils';
+import { getTranslator } from '../../src/helpers';
 
 describe( 'translate test', () => {
 	it( 'should translate', () => {

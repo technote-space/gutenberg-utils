@@ -1,4 +1,4 @@
-export { Icon, DropdownButton } from './components';
-export { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from './utils';
-export { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } from './utils';
-export { getProperty, setProperty, parameterManager, getTranslator } from './utils';
+import * as Components from './components';
+import * as Helpers from './helpers';
+
+export { Components, Helpers };
