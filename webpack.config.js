@@ -5,6 +5,7 @@ const path = require( 'path' );
 const banner = `${ pkg.name } ${ pkg.version }\nCopyright (c) ${ new Date().getFullYear() } ${ pkg.author }\nLicense: ${ pkg.license }`;
 const externals = {
 	'@wordpress/components': { this: [ 'wp', 'components' ] },
+	'@wordpress/data': { this: [ 'wp', 'data' ] },
 	'@wordpress/rich-text': { this: [ 'wp', 'richText' ] },
 	'@wordpress/url': { this: [ 'wp', 'url' ] },
 	lodash: 'lodash',
