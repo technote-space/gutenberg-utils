@@ -3,7 +3,7 @@ const should = require( 'should' );
 
 const { registerFormatType } = wp.richText;
 
-import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/utils';
+import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
 
 describe( 'getActiveStyle test', () => {
 	it( 'should false', () => {

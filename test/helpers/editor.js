@@ -3,7 +3,7 @@ require( 'should' );
 
 const { dispatch } = wp.data;
 
-import { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } from '../../src/utils';
+import { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } from '../../src/helpers';
 
 describe( 'isValidCustomColors test', () => {
 	it( 'should false', () => {

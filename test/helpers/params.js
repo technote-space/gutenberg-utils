@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 const should = require( 'should' );
 
-import { parameterManager } from '../../src/utils';
+import { parameterManager } from '../../src/helpers';
 
 describe( 'parameterManager test', () => {
 	it( 'should return default', () => {
