@@ -1,5 +1,5 @@
 /*!
- * @technote-space/gutenberg-utils 1.0.2
+ * @technote-space/gutenberg-utils 1.0.3
  * Copyright (c) 2019 Technote <technote.space@gmail.com> (https://technote.space)
  * License: GPL-3.0
  */
