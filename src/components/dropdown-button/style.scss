@@ -45,6 +45,9 @@
   }
 }
 
-#editor.block-editor__container .components-popover.components-color-palette__picker {
-  z-index: 1000001;
+#editor.block-editor__container {
+  .components-popover.components-color-palette__picker,
+  .components-font-size-picker__dropdown-content {
+    z-index: 1000001;
+  }
 }
