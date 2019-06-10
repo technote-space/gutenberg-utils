@@ -6,6 +6,7 @@ const banner = `${ pkg.name } ${ pkg.version }\nCopyright (c) ${ new Date().getF
 const externals = {
 	'@wordpress/components': { this: [ 'wp', 'components' ] },
 	'@wordpress/data': { this: [ 'wp', 'data' ] },
+	'@wordpress/element': { this: [ 'wp', 'element' ] },
 	'@wordpress/rich-text': { this: [ 'wp', 'richText' ] },
 	'@wordpress/url': { this: [ 'wp', 'url' ] },
 	lodash: 'lodash',
