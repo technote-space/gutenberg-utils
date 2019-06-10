@@ -16,12 +16,8 @@ class Dropdown extends OriginalDropdown {
 	 */
 	closeIfClickOutside( event ) {
 		if ( ! this.containerRef.current.contains( event.target ) ) {
-			const colorPicker = document.querySelector( '.components-color-picker' );
-			if ( colorPicker && colorPicker.contains( event.target ) ) {
-				return;
-			}
-			const fontSizePicker = document.querySelector( '.components-font-size-picker__dropdown-content' );
-			if ( fontSizePicker && fontSizePicker.contains( event.target ) ) {
+			const target = document.querySelector( '.components-color-picker, .components-font-size-picker__dropdown-content' );
+			if ( target && target.contains( event.target ) ) {
 				return;
 			}
 			this.close();
