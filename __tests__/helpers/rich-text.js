@@ -250,8 +250,9 @@ describe( 'getToolbarButtonProps test', () => {
 		const props = getToolbarButtonProps( 'test1-group', 'test1-name', 'test1-icon', {
 			'test1-option1': 1,
 			'test1-option2': 'test2',
-			'title': 'test1-title',
-			'className': 'test1-class',
+			title: 'test1-title',
+			className: 'test1-class',
+			tooltipClass: 'tooltip-class',
 		} );
 		expect( props ).toHaveProperty( 'name' );
 		expect( props ).toHaveProperty( 'group' );
@@ -285,6 +286,7 @@ describe( 'getToolbarButtonProps test', () => {
 		expect( button.props.isActive ).toBe( true );
 		expect( button.props.extraProps ).toHaveProperty( 'label' );
 		expect( button.props.extraProps ).toHaveProperty( 'tooltip' );
+		expect( button.props.extraProps.tooltip.props.className ).toBe( 'components-popover__content__dropdown-tooltip tooltip-class' );
 		expect( button.props.extraProps.label ).toBe( 'test1-name' );
 		button.props.onClick();
 
