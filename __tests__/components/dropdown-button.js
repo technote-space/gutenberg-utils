@@ -31,7 +31,7 @@ describe( 'DropdownButton test', () => {
 
 				wrapper.find( '.test1-class button' ).hostNodes().simulate( 'click' );
 
-				expect( toJson( wrapper ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
+				expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
 
 				expect( wrapper.find( '.popover1' ).hostNodes() ).toHaveLength( 1 );
 
@@ -66,7 +66,7 @@ describe( 'DropdownButton test', () => {
 
 				{
 					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
-					expect( toJson( wrapper ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
+					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
 					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
 
 					const outerNode = document.createElement( 'div' );
@@ -83,7 +83,7 @@ describe( 'DropdownButton test', () => {
 					expect( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes() ).toHaveLength( 0 );
 
 					wrapper.find( '.components-font-size-picker__buttons .components-font-size-picker__selector' ).hostNodes().simulate( 'click' );
-					expect( toJson( wrapper ) ).toMatchSnapshot( getSnapshotName( 'open-font-size-picker', index ) );
+					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open-font-size-picker', index ) );
 					expect( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes() ).toHaveLength( 1 );
 					expect( wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes() ).toHaveLength( 3 );
 
@@ -136,7 +136,7 @@ describe( 'DropdownButton test', () => {
 				<DropdownButton { ...props }/>,
 			);
 
-			expect( toJson( wrapper ) ).toMatchSnapshot( getSnapshotName( 'test', index ) );
+			expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'test', index ) );
 
 			callback( wrapper, index );
 		} );
