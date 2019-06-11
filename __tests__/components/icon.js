@@ -39,7 +39,7 @@ describe( 'Icon test', () => {
 			</div>,
 		);
 
-		expect( toJson( wrapper ) ).toMatchSnapshot();
+		expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot();
 
 		expect( wrapper.find( 'svg' ) ).toHaveLength( 5 );
 		expect( wrapper.find( '.test1' ) ).toHaveLength( 1 );
