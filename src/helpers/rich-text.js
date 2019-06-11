@@ -79,7 +79,7 @@ export const onChangeStyle = ( args, formatName, styleName, suffix = '' ) => val
  * @param {object} optional optional
  * @returns {object} props
  */
-export const getToolbarButtonProps = ( group, name, icon, optional = {} ) => {
+export const getToolbarButtonProps = ( group, name, icon, optional = { tooltipClass: undefined } ) => {
 	const title = 'title' in optional ? optional.title : name;
 	const className = 'className' in optional ? optional.className : name;
 	return {
@@ -111,20 +111,26 @@ export const getToolbarButtonProps = ( group, name, icon, optional = {} ) => {
  * @returns {object} props
  */
 export const getDropdownButtonProps = ( group, name, title, icon, optional, createControl ) => {
-	return {
+	const props = {
 		name,
 		inspectorGroup: group,
-		create: ( { args, formatName } ) => <DropdownButton
-			icon={ icon }
-			label={ title }
-			renderContent={ () => createControl( args, formatName, false ) }
-		/>,
-		createInspector: ( { args, formatName } ) => createControl( args, formatName, true ),
 		attributes: {
 			style: '',
 		},
-		...optional,
 	};
+	if ( ! optional.createDisabled ) {
+		props.create = ( { args, formatName } ) => <DropdownButton
+			icon={ icon }
+			label={ title }
+			renderContent={ () => createControl( args, formatName, false ) }
+		/>;
+	}
+	if ( ! optional.createInspectorDisabled ) {
+		props.createInspector = ( { args, formatName } ) => createControl( args, formatName, true );
+	}
+	delete optional.createDisabled;
+	delete optional.createInspectorDisabled;
+	return Object.assign( {}, props, optional );
 };
 
 /**
@@ -136,7 +142,7 @@ export const getDropdownButtonProps = ( group, name, title, icon, optional, crea
  * @param {object} optional optional
  * @returns {object} props
  */
-export const getColorButtonProps = ( group, name, title, icon, property, optional = {} ) => {
+export const getColorButtonProps = ( group, name, title, icon, property, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
 	const createColorPalette = ( args, formatName ) => <ColorPalette
 		colors={ getColors() }
 		disableCustomColors={ ! isValidCustomColors() }
@@ -156,7 +162,7 @@ export const getColorButtonProps = ( group, name, title, icon, property, optiona
  * @param {object} optional optional
  * @returns {object} props
  */
-export const getFontSizesButtonProps = ( group, name, title, icon, optional = {} ) => {
+export const getFontSizesButtonProps = ( group, name, title, icon, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
 	return getDropdownButtonProps( group, name, title, icon, optional, ( args, formatName ) => {
 		const value = getActiveStyle( args, formatName, 'font-size', { suffix: 'px', filter: Number } );
 		return <FontSizePicker
