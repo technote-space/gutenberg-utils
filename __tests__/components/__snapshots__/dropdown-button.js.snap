@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownButton test should render DropdownButton: open--0 1`] = `
+exports[`DropdownButton test should render DropdownButton 0: open--0 1`] = `
 <DropdownButton
   className="test1-class"
   contentClassName="test1-content-class"
@@ -172,7 +172,88 @@ exports[`DropdownButton test should render DropdownButton: open--0 1`] = `
 </DropdownButton>
 `;
 
-exports[`DropdownButton test should render DropdownButton: open--1 1`] = `
+exports[`DropdownButton test should render DropdownButton 0: test--0 1`] = `
+<DropdownButton
+  className="test1-class"
+  contentClassName="test1-content-class"
+  icon="dashicons-admin-site"
+  isActive={true}
+  isDisabled={false}
+  label="test1-label"
+  position="bottom left"
+  renderContent={[Function]}
+  tooltip="test1-tooltip"
+>
+  <Dropdown
+    className="components-dropdown-button test1-class"
+    contentClassName="components-dropdown-button__popover test1-content-class"
+    position="bottom left"
+    renderContent={[Function]}
+    renderToggle={[Function]}
+  >
+    <div
+      className="components-dropdown-button test1-class"
+    >
+      <ForwardRef(IconButton)
+        aria-expanded={false}
+        aria-haspopup="true"
+        aria-pressed={true}
+        className="components-dropdown-button__toggle is-active"
+        disabled={false}
+        icon="dashicons-admin-site"
+        label="test1-label"
+        onClick={[Function]}
+        tooltip="test1-tooltip"
+      >
+        <Tooltip
+          text="test1-tooltip"
+        >
+          <ForwardRef(Button)
+            aria-expanded={false}
+            aria-haspopup="true"
+            aria-label="test1-label"
+            aria-pressed={true}
+            className="components-icon-button components-dropdown-button__toggle is-active has-text"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              aria-expanded={false}
+              aria-haspopup="true"
+              aria-label="test1-label"
+              aria-pressed={true}
+              className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              type="button"
+            >
+              <Dashicon
+                ariaPressed={true}
+                icon="dashicons-admin-site"
+                key="0,0"
+              />
+              <span
+                className="components-dropdown-button__indicator"
+                key="0,1"
+              />
+            </button>
+          </ForwardRef(Button)>
+        </Tooltip>
+      </ForwardRef(IconButton)>
+    </div>
+  </Dropdown>
+</DropdownButton>
+`;
+
+exports[`DropdownButton test should render DropdownButton 1: open--1 1`] = `
 <DropdownButton
   className="test2-class"
   contentClassName="test2-content-class"
@@ -463,7 +544,7 @@ exports[`DropdownButton test should render DropdownButton: open--1 1`] = `
 </DropdownButton>
 `;
 
-exports[`DropdownButton test should render DropdownButton: open-font-size-picker--1 1`] = `
+exports[`DropdownButton test should render DropdownButton 1: open-font-size-picker--1 1`] = `
 <DropdownButton
   className="test2-class"
   contentClassName="test2-content-class"
@@ -943,88 +1024,7 @@ exports[`DropdownButton test should render DropdownButton: open-font-size-picker
 </DropdownButton>
 `;
 
-exports[`DropdownButton test should render DropdownButton: test--0 1`] = `
-<DropdownButton
-  className="test1-class"
-  contentClassName="test1-content-class"
-  icon="dashicons-admin-site"
-  isActive={true}
-  isDisabled={false}
-  label="test1-label"
-  position="bottom left"
-  renderContent={[Function]}
-  tooltip="test1-tooltip"
->
-  <Dropdown
-    className="components-dropdown-button test1-class"
-    contentClassName="components-dropdown-button__popover test1-content-class"
-    position="bottom left"
-    renderContent={[Function]}
-    renderToggle={[Function]}
-  >
-    <div
-      className="components-dropdown-button test1-class"
-    >
-      <ForwardRef(IconButton)
-        aria-expanded={false}
-        aria-haspopup="true"
-        aria-pressed={true}
-        className="components-dropdown-button__toggle is-active"
-        disabled={false}
-        icon="dashicons-admin-site"
-        label="test1-label"
-        onClick={[Function]}
-        tooltip="test1-tooltip"
-      >
-        <Tooltip
-          text="test1-tooltip"
-        >
-          <ForwardRef(Button)
-            aria-expanded={false}
-            aria-haspopup="true"
-            aria-label="test1-label"
-            aria-pressed={true}
-            className="components-icon-button components-dropdown-button__toggle is-active has-text"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              aria-expanded={false}
-              aria-haspopup="true"
-              aria-label="test1-label"
-              aria-pressed={true}
-              className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
-            >
-              <Dashicon
-                ariaPressed={true}
-                icon="dashicons-admin-site"
-                key="0,0"
-              />
-              <span
-                className="components-dropdown-button__indicator"
-                key="0,1"
-              />
-            </button>
-          </ForwardRef(Button)>
-        </Tooltip>
-      </ForwardRef(IconButton)>
-    </div>
-  </Dropdown>
-</DropdownButton>
-`;
-
-exports[`DropdownButton test should render DropdownButton: test--1 1`] = `
+exports[`DropdownButton test should render DropdownButton 1: test--1 1`] = `
 <DropdownButton
   className="test2-class"
   contentClassName="test2-content-class"
@@ -1130,7 +1130,7 @@ exports[`DropdownButton test should render DropdownButton: test--1 1`] = `
 </DropdownButton>
 `;
 
-exports[`DropdownButton test should render DropdownButton: test--2 1`] = `
+exports[`DropdownButton test should render DropdownButton 2: test--2 1`] = `
 <DropdownButton
   className="test3-class"
   contentClassName="test3-content-class"
