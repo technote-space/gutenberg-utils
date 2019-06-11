@@ -250,8 +250,9 @@ describe( 'getToolbarButtonProps test', () => {
 		const props = getToolbarButtonProps( 'test1-group', 'test1-name', 'test1-icon', {
 			'test1-option1': 1,
 			'test1-option2': 'test2',
-			'title': 'test1-title',
-			'className': 'test1-class',
+			title: 'test1-title',
+			className: 'test1-class',
+			tooltipClass: 'tooltip-class',
 		} );
 		expect( props ).toHaveProperty( 'name' );
 		expect( props ).toHaveProperty( 'group' );
@@ -285,6 +286,7 @@ describe( 'getToolbarButtonProps test', () => {
 		expect( button.props.isActive ).toBe( true );
 		expect( button.props.extraProps ).toHaveProperty( 'label' );
 		expect( button.props.extraProps ).toHaveProperty( 'tooltip' );
+		expect( button.props.extraProps.tooltip.props.className ).toBe( 'components-popover__content__dropdown-tooltip tooltip-class' );
 		expect( button.props.extraProps.label ).toBe( 'test1-name' );
 		button.props.onClick();
 
@@ -293,7 +295,7 @@ describe( 'getToolbarButtonProps test', () => {
 } );
 
 describe( 'getColorButtonProps test', () => {
-	it( 'should', () => {
+	it( 'should get props', () => {
 		const props = getColorButtonProps( 'test1-group', 'test1-name', 'test1-title', 'test1-icon', 'test1-property', { 'test1-option1': 1, 'test1-option2': 'test2' } );
 		expect( props ).toHaveProperty( 'name' );
 		expect( props ).toHaveProperty( 'inspectorGroup' );
@@ -330,11 +332,13 @@ describe( 'getColorButtonProps test', () => {
 		expect( inspector.props ).toHaveProperty( 'children' );
 
 		expect( typeof getColorButtonProps( 'test2-group', 'test2-name', 'test2-title', 'test2-icon', 'test1-property' ) ).not.toHaveProperty( 'test1-option1' );
+		expect( getColorButtonProps( 'test3-group', 'test3-name', 'test3-title', 'test3-icon', 'test3-property', { createDisabled: true } ) ).not.toHaveProperty( 'create' );
+		expect( getColorButtonProps( 'test4-group', 'test4-name', 'test4-title', 'test4-icon', 'test4-property', { createInspectorDisabled: true } ) ).not.toHaveProperty( 'createInspector' );
 	} );
 } );
 
 describe( 'getFontSizesButtonProps test', () => {
-	it( 'should', () => {
+	it( 'should get props', () => {
 		const props = getFontSizesButtonProps( 'test1-group', 'test1-name', 'test1-title', 'test1-icon', { 'test1-option1': 1, 'test1-option2': 'test2' } );
 		expect( props ).toHaveProperty( 'name' );
 		expect( props ).toHaveProperty( 'inspectorGroup' );
@@ -373,5 +377,7 @@ describe( 'getFontSizesButtonProps test', () => {
 		expect( control.props ).toHaveProperty( 'onChange' );
 
 		expect( getFontSizesButtonProps( 'test2-group', 'test2-name', 'test2-title', 'test2-icon' ) ).not.toHaveProperty( 'test1-option1' );
+		expect( getFontSizesButtonProps( 'test3-group', 'test3-name', 'test3-title', 'test3-icon', { createDisabled: true } ) ).not.toHaveProperty( 'create' );
+		expect( getFontSizesButtonProps( 'test4-group', 'test4-name', 'test4-title', 'test4-icon', { createInspectorDisabled: true } ) ).not.toHaveProperty( 'createInspector' );
 	} );
 } );
