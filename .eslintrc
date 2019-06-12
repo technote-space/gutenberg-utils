@@ -145,6 +145,7 @@
     "ecmaVersion": 2018
   },
   "globals": {
-    "wp": true
+    "wp": true,
+    "wpMock": true
   }
 }

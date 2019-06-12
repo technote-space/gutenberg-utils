@@ -39,6 +39,7 @@
     "@wordpress/data": "^4.5.0",
     "@wordpress/editor": "^9.2.6",
     "@wordpress/element": "^2.4.0",
+    "@wordpress/i18n": "^3.4.0",
     "@wordpress/rich-text": "^3.3.0",
     "@wordpress/url": "^2.6.0",
     "babel-jest": "^24.8.0",
