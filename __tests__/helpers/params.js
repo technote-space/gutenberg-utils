@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 import { parameterManager } from '../../src/helpers';
 
-describe( 'parameterManager test', () => {
+describe( 'parameterManager', () => {
 	it( 'should return default', () => {
 		const manager = parameterManager();
 		expect( manager.get( 'test1', null ) ).toBeNull();

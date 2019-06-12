@@ -67,6 +67,7 @@ Download [Release version](https://raw.githubusercontent.com/technote-space/gute
 - wp-data
 - wp-editor
 - wp-element
+- wp-i18n
 - wp-rich-text
 - wp-url
 - lodash

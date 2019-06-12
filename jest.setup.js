@@ -16,11 +16,22 @@ global.window.matchMedia = () => ( {
 } );
 global.window.console.error = () => {
 };
+global.wpMock = {
+	editor: {
+		getColorObjectByColorValue: () => false,
+	},
+};
+
+jest.mock( '@wordpress/editor', () => ( {
+	...jest.requireActual( '@wordpress/editor' ),
+	getColorObjectByColorValue: ( colors, value ) => global.wpMock.editor.getColorObjectByColorValue( colors, value ),
+} ) );
 
 const components = require( '@wordpress/components' );
 const data = require( '@wordpress/data' );
 const editor = require( '@wordpress/editor' );
 const element = require( '@wordpress/element' );
+const i18n = require( '@wordpress/i18n' );
 const richText = require( '@wordpress/rich-text' );
 const url = require( '@wordpress/url' );
 
@@ -29,6 +40,7 @@ global.wp = {
 	data,
 	editor,
 	element,
+	i18n,
 	richText,
 	url,
 };

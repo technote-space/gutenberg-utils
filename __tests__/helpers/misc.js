@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 import { getProperty, setProperty } from '../../src/helpers';
 
-describe( 'getProperty test', () => {
+describe( 'getProperty', () => {
 	it( 'should return default', () => {
 		expect( getProperty( {}, 'test1' ) ).toBeUndefined();
 		expect( getProperty( {}, 'test2', 'test2-default' ) ).toBe( 'test2-default' );
@@ -18,7 +18,7 @@ describe( 'getProperty test', () => {
 	} );
 } );
 
-describe( 'setProperty test', () => {
+describe( 'setProperty', () => {
 	it( 'should set property', () => {
 		expect( setProperty( {}, 'test1', 1 ) ).toHaveProperty( 'test1' );
 		expect( setProperty( {}, 'test1', 1 ).test1 ).toBe( 1 );

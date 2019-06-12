@@ -1,1225 +1,727 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownButton test should render DropdownButton: open--0 1`] = `
-<DropdownButton
-  className="test1-class"
-  contentClassName="test1-content-class"
-  icon="dashicons-admin-site"
-  isActive={true}
-  isDisabled={false}
-  label="test1-label"
-  position="bottom left"
-  renderContent={[Function]}
-  tooltip="test1-tooltip"
+exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
+<div
+  className="components-dropdown-button test1-class"
 >
-  <Dropdown
-    className="components-dropdown-button test1-class"
-    contentClassName="components-dropdown-button__popover test1-content-class"
-    position="bottom left"
-    renderContent={[Function]}
-    renderToggle={[Function]}
+  <ForwardRef(IconButton)
+    aria-expanded={true}
+    aria-haspopup="true"
+    aria-pressed={true}
+    className="components-dropdown-button__toggle is-active"
+    disabled={false}
+    icon="dashicons-admin-site"
+    label="test1-label"
+    onClick={[Function]}
+    tooltip="test1-tooltip"
   >
-    <div
-      className="components-dropdown-button test1-class"
+    <ForwardRef(Button)
+      aria-expanded={true}
+      aria-haspopup="true"
+      aria-label="test1-label"
+      aria-pressed={true}
+      className="components-icon-button components-dropdown-button__toggle is-active has-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
-      <ForwardRef(IconButton)
+      <button
         aria-expanded={true}
         aria-haspopup="true"
+        aria-label="test1-label"
         aria-pressed={true}
-        className="components-dropdown-button__toggle is-active"
+        className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
         disabled={false}
-        icon="dashicons-admin-site"
-        label="test1-label"
+        onBlur={[Function]}
         onClick={[Function]}
-        tooltip="test1-tooltip"
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
       >
-        <Tooltip
-          text="test1-tooltip"
+        <span
+          className="components-dropdown-button__indicator"
+          key="0,1"
+        />
+      </button>
+    </ForwardRef(Button)>
+  </ForwardRef(IconButton)>
+  <span>
+    <div
+      onKeyDown={[Function]}
+      tabIndex="-1"
+    >
+      <div
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="components-popover components-dropdown-button__popover test1-content-class is-bottom is-left components-animate__appear is-from-right is-from-top"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "left": undefined,
+              "top": undefined,
+              "visibility": undefined,
+            }
+          }
         >
-          <ForwardRef(Button)
-            aria-expanded={true}
-            aria-haspopup="true"
-            aria-label="test1-label"
-            aria-pressed={true}
-            className="components-icon-button components-dropdown-button__toggle is-active has-text"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
+          <div
+            className="components-popover__content"
+            style={
+              Object {
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+              }
+            }
+            tabIndex="-1"
           >
-            <button
-              aria-expanded={true}
-              aria-haspopup="true"
-              aria-label="test1-label"
-              aria-pressed={true}
-              className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
-            >
-              <Dashicon
-                ariaPressed={true}
-                icon="dashicons-admin-site"
-                key="0,0"
-              />
-              <span
-                className="components-dropdown-button__indicator"
-                key="0,1"
-              />
-            </button>
-          </ForwardRef(Button)>
-        </Tooltip>
-      </ForwardRef(IconButton)>
-      <Popover
-        className="components-dropdown-button__popover test1-content-class"
-        focusOnMount="firstElement"
-        noArrow={false}
-        onClickOutside={[Function]}
-        onClose={[Function]}
-        position="bottom left"
-      >
-        <span>
-          <WithConstrainedTabbing(WithFocusReturn(Component))>
             <div
-              onKeyDown={[Function]}
-              tabIndex="-1"
+              className="popover1"
             >
-              <WithFocusReturn(Component)>
-                <FocusReturn
-                  focusHistory={Array []}
+              test1
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
+<div
+  className="components-dropdown-button test1-class"
+>
+  <ForwardRef(IconButton)
+    aria-expanded={false}
+    aria-haspopup="true"
+    aria-pressed={true}
+    className="components-dropdown-button__toggle is-active"
+    disabled={false}
+    icon="dashicons-admin-site"
+    label="test1-label"
+    onClick={[Function]}
+    tooltip="test1-tooltip"
+  >
+    <ForwardRef(Button)
+      aria-expanded={false}
+      aria-haspopup="true"
+      aria-label="test1-label"
+      aria-pressed={true}
+      className="components-icon-button components-dropdown-button__toggle is-active has-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup="true"
+        aria-label="test1-label"
+        aria-pressed={true}
+        className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <span
+          className="components-dropdown-button__indicator"
+          key="0,1"
+        />
+      </button>
+    </ForwardRef(Button)>
+  </ForwardRef(IconButton)>
+</div>
+`;
+
+exports[`DropdownButton should render DropdownButton 1: open--1 1`] = `
+<div
+  className="components-dropdown-button test2-class"
+>
+  <ForwardRef(IconButton)
+    aria-expanded={true}
+    aria-haspopup="true"
+    aria-pressed={false}
+    className="components-dropdown-button__toggle"
+    disabled={false}
+    icon="menu"
+    label="test2-label"
+    onClick={[Function]}
+    tooltip="test2-label"
+  >
+    <ForwardRef(Button)
+      aria-expanded={true}
+      aria-haspopup="true"
+      aria-label="test2-label"
+      aria-pressed={false}
+      className="components-icon-button components-dropdown-button__toggle has-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <button
+        aria-expanded={true}
+        aria-haspopup="true"
+        aria-label="test2-label"
+        aria-pressed={false}
+        className="components-button components-icon-button components-dropdown-button__toggle has-text"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="dashicon dashicons-menu"
+          focusable="false"
+          height={20}
+          role="img"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
+          />
+        </svg>
+        <span
+          className="components-dropdown-button__indicator"
+          key="0,1"
+        />
+      </button>
+    </ForwardRef(Button)>
+  </ForwardRef(IconButton)>
+  <span>
+    <div
+      onKeyDown={[Function]}
+      tabIndex="-1"
+    >
+      <div
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "left": undefined,
+              "top": undefined,
+              "visibility": undefined,
+            }
+          }
+        >
+          <div
+            className="components-popover__content"
+            style={
+              Object {
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div
+              className="components-base-control"
+            >
+              <div
+                className="components-base-control__field"
+              >
+                <span
+                  className="components-base-control__label"
+                >
+                  Font Size
+                </span>
+                <div
+                  className="components-font-size-picker__buttons"
                 >
                   <div
-                    onBlur={[Function]}
-                    onFocus={[Function]}
+                    className="components-font-size-picker__dropdown"
                   >
-                    <Component
-                      focusHistory={Array []}
+                    <ForwardRef(Button)
+                      aria-expanded={false}
+                      aria-label="Font size: Custom"
+                      className="components-font-size-picker__selector"
+                      isLarge={true}
+                      onClick={[Function]}
                     >
-                      <clickOutside(PopoverDetectOutside)
-                        onClickOutside={[Function]}
+                      <button
+                        aria-expanded={false}
+                        aria-label="Font size: Custom"
+                        className="components-button components-font-size-picker__selector is-button is-default is-large"
+                        onClick={[Function]}
+                        type="button"
                       >
-                        <PopoverDetectOutside
-                          onClickOutside={[Function]}
+                        Custom
+                      </button>
+                    </ForwardRef(Button)>
+                  </div>
+                  <input
+                    aria-label="Custom font size"
+                    className="components-range-control__number"
+                    onChange={[Function]}
+                    type="number"
+                    value={20}
+                  />
+                  <ForwardRef(Button)
+                    className="components-color-palette__clear"
+                    disabled={false}
+                    isDefault={true}
+                    isSmall={true}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <button
+                      className="components-button components-color-palette__clear is-button is-default is-small"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Reset
+                    </button>
+                  </ForwardRef(Button)>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`DropdownButton should render DropdownButton 1: open-font-size-picker--1 1`] = `
+<div
+  className="components-dropdown-button test2-class"
+>
+  <ForwardRef(IconButton)
+    aria-expanded={true}
+    aria-haspopup="true"
+    aria-pressed={false}
+    className="components-dropdown-button__toggle"
+    disabled={false}
+    icon="menu"
+    label="test2-label"
+    onClick={[Function]}
+    tooltip="test2-label"
+  >
+    <ForwardRef(Button)
+      aria-expanded={true}
+      aria-haspopup="true"
+      aria-label="test2-label"
+      aria-pressed={false}
+      className="components-icon-button components-dropdown-button__toggle has-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <button
+        aria-expanded={true}
+        aria-haspopup="true"
+        aria-label="test2-label"
+        aria-pressed={false}
+        className="components-button components-icon-button components-dropdown-button__toggle has-text"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="dashicon dashicons-menu"
+          focusable="false"
+          height={20}
+          role="img"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
+          />
+        </svg>
+        <span
+          className="components-dropdown-button__indicator"
+          key="0,1"
+        />
+      </button>
+    </ForwardRef(Button)>
+  </ForwardRef(IconButton)>
+  <span>
+    <div
+      onKeyDown={[Function]}
+      tabIndex="-1"
+    >
+      <div
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "left": undefined,
+              "top": undefined,
+              "visibility": undefined,
+            }
+          }
+        >
+          <div
+            className="components-popover__content"
+            style={
+              Object {
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div
+              className="components-base-control"
+            >
+              <div
+                className="components-base-control__field"
+              >
+                <span
+                  className="components-base-control__label"
+                >
+                  Font Size
+                </span>
+                <div
+                  className="components-font-size-picker__buttons"
+                >
+                  <div
+                    className="components-font-size-picker__dropdown"
+                  >
+                    <ForwardRef(Button)
+                      aria-expanded={true}
+                      aria-label="Font size: Custom"
+                      className="components-font-size-picker__selector"
+                      isLarge={true}
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={true}
+                        aria-label="Font size: Custom"
+                        className="components-button components-font-size-picker__selector is-button is-default is-large"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Custom
+                      </button>
+                    </ForwardRef(Button)>
+                    <span>
+                      <div
+                        onKeyDown={[Function]}
+                        tabIndex="-1"
+                      >
+                        <div
+                          onBlur={[Function]}
+                          onFocus={[Function]}
                         >
-                          <Animate
-                            options={
+                          <div
+                            className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                            onKeyDown={[Function]}
+                            onMouseDown={[Function]}
+                            style={
                               Object {
-                                "origin": "top right",
+                                "left": undefined,
+                                "top": undefined,
+                                "visibility": undefined,
                               }
                             }
-                            type="appear"
                           >
-                            <IsolatedEventContainer
-                              className="components-popover components-dropdown-button__popover test1-content-class is-bottom is-left components-animate__appear is-from-right is-from-top"
-                              onKeyDown={[Function]}
+                            <div
+                              className="components-popover__content"
                               style={
                                 Object {
-                                  "left": undefined,
-                                  "top": undefined,
-                                  "visibility": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
                                 }
                               }
+                              tabIndex="-1"
                             >
-                              <div
-                                className="components-popover components-dropdown-button__popover test1-content-class is-bottom is-left components-animate__appear is-from-right is-from-top"
-                                onKeyDown={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": undefined,
-                                    "top": undefined,
-                                    "visibility": undefined,
-                                  }
-                                }
-                              >
-                                <div
-                                  className="components-popover__content"
-                                  style={
-                                    Object {
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                    }
-                                  }
-                                  tabIndex="-1"
+                              <ForwardRef(NavigableMenu)>
+                                <ForwardRef(NavigableContainer)
+                                  aria-orientation="vertical"
+                                  eventToOffset={[Function]}
+                                  onlyBrowserTabstops={false}
+                                  role="menu"
+                                  stopNavigationEvents={true}
                                 >
                                   <div
-                                    className="popover1"
+                                    aria-orientation="vertical"
+                                    onKeyDown={[Function]}
+                                    role="menu"
                                   >
-                                    test1
+                                    <ForwardRef(Button)
+                                      aria-checked={false}
+                                      className="is-font-test1"
+                                      key="test1"
+                                      onClick={[Function]}
+                                      role="menuitemradio"
+                                    >
+                                      <button
+                                        aria-checked={false}
+                                        className="components-button is-font-test1"
+                                        onClick={[Function]}
+                                        role="menuitemradio"
+                                        type="button"
+                                      >
+                                        <span
+                                          className="components-font-size-picker__dropdown-text-size"
+                                          style={
+                                            Object {
+                                              "fontSize": "10px",
+                                            }
+                                          }
+                                        >
+                                          test1
+                                        </span>
+                                      </button>
+                                    </ForwardRef(Button)>
+                                    <ForwardRef(Button)
+                                      aria-checked={false}
+                                      className="is-font-test2"
+                                      key="test2"
+                                      onClick={[Function]}
+                                      role="menuitemradio"
+                                    >
+                                      <button
+                                        aria-checked={false}
+                                        className="components-button is-font-test2"
+                                        onClick={[Function]}
+                                        role="menuitemradio"
+                                        type="button"
+                                      >
+                                        <span
+                                          className="components-font-size-picker__dropdown-text-size"
+                                          style={
+                                            Object {
+                                              "fontSize": "20px",
+                                            }
+                                          }
+                                        >
+                                          test2
+                                        </span>
+                                      </button>
+                                    </ForwardRef(Button)>
+                                    <ForwardRef(Button)
+                                      aria-checked={false}
+                                      className="is-font-test3"
+                                      key="test3"
+                                      onClick={[Function]}
+                                      role="menuitemradio"
+                                    >
+                                      <button
+                                        aria-checked={false}
+                                        className="components-button is-font-test3"
+                                        onClick={[Function]}
+                                        role="menuitemradio"
+                                        type="button"
+                                      >
+                                        <span
+                                          className="components-font-size-picker__dropdown-text-size"
+                                          style={
+                                            Object {
+                                              "fontSize": "30px",
+                                            }
+                                          }
+                                        >
+                                          test3
+                                        </span>
+                                      </button>
+                                    </ForwardRef(Button)>
                                   </div>
-                                </div>
-                              </div>
-                            </IsolatedEventContainer>
-                          </Animate>
-                        </PopoverDetectOutside>
-                      </clickOutside(PopoverDetectOutside)>
-                    </Component>
+                                </ForwardRef(NavigableContainer)>
+                              </ForwardRef(NavigableMenu)>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
                   </div>
-                </FocusReturn>
-              </WithFocusReturn(Component)>
+                  <input
+                    aria-label="Custom font size"
+                    className="components-range-control__number"
+                    onChange={[Function]}
+                    type="number"
+                    value={20}
+                  />
+                  <ForwardRef(Button)
+                    className="components-color-palette__clear"
+                    disabled={false}
+                    isDefault={true}
+                    isSmall={true}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <button
+                      className="components-button components-color-palette__clear is-button is-default is-small"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Reset
+                    </button>
+                  </ForwardRef(Button)>
+                </div>
+              </div>
             </div>
-          </WithConstrainedTabbing(WithFocusReturn(Component))>
-        </span>
-      </Popover>
+          </div>
+        </div>
+      </div>
     </div>
-  </Dropdown>
-</DropdownButton>
+  </span>
+</div>
 `;
 
-exports[`DropdownButton test should render DropdownButton: open--1 1`] = `
-<DropdownButton
-  className="test2-class"
-  contentClassName="test2-content-class"
-  label="test2-label"
-  renderContent={[Function]}
+exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
+<div
+  className="components-dropdown-button test2-class"
 >
-  <Dropdown
-    className="components-dropdown-button test2-class"
-    contentClassName="components-dropdown-button__popover test2-content-class"
-    position="top right"
-    renderContent={[Function]}
-    renderToggle={[Function]}
+  <ForwardRef(IconButton)
+    aria-expanded={false}
+    aria-haspopup="true"
+    aria-pressed={false}
+    className="components-dropdown-button__toggle"
+    disabled={false}
+    icon="menu"
+    label="test2-label"
+    onClick={[Function]}
+    tooltip="test2-label"
   >
-    <div
-      className="components-dropdown-button test2-class"
+    <ForwardRef(Button)
+      aria-expanded={false}
+      aria-haspopup="true"
+      aria-label="test2-label"
+      aria-pressed={false}
+      className="components-icon-button components-dropdown-button__toggle has-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
-      <ForwardRef(IconButton)
-        aria-expanded={true}
-        aria-haspopup="true"
-        aria-pressed={false}
-        className="components-dropdown-button__toggle"
-        disabled={false}
-        icon="menu"
-        label="test2-label"
-        onClick={[Function]}
-        tooltip="test2-label"
-      >
-        <Tooltip
-          text="test2-label"
-        >
-          <ForwardRef(Button)
-            aria-expanded={true}
-            aria-haspopup="true"
-            aria-label="test2-label"
-            aria-pressed={false}
-            className="components-icon-button components-dropdown-button__toggle has-text"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              aria-expanded={true}
-              aria-haspopup="true"
-              aria-label="test2-label"
-              aria-pressed={false}
-              className="components-button components-icon-button components-dropdown-button__toggle has-text"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
-            >
-              <Dashicon
-                ariaPressed={false}
-                icon="menu"
-                key="0,0"
-              >
-                <SVG
-                  aria-hidden={true}
-                  className="dashicon dashicons-menu"
-                  focusable="false"
-                  height={20}
-                  role="img"
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="dashicon dashicons-menu"
-                    focusable="false"
-                    height={20}
-                    role="img"
-                    viewBox="0 0 20 20"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <Path
-                      d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                    >
-                      <path
-                        d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                      />
-                    </Path>
-                  </svg>
-                </SVG>
-              </Dashicon>
-              <span
-                className="components-dropdown-button__indicator"
-                key="0,1"
-              />
-            </button>
-          </ForwardRef(Button)>
-        </Tooltip>
-      </ForwardRef(IconButton)>
-      <Popover
-        className="components-dropdown-button__popover test2-content-class"
-        focusOnMount="firstElement"
-        noArrow={false}
-        onClickOutside={[Function]}
-        onClose={[Function]}
-        position="top right"
-      >
-        <span>
-          <WithConstrainedTabbing(WithFocusReturn(Component))>
-            <div
-              onKeyDown={[Function]}
-              tabIndex="-1"
-            >
-              <WithFocusReturn(Component)>
-                <FocusReturn
-                  focusHistory={Array []}
-                >
-                  <div
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <Component
-                      focusHistory={Array []}
-                    >
-                      <clickOutside(PopoverDetectOutside)
-                        onClickOutside={[Function]}
-                      >
-                        <PopoverDetectOutside
-                          onClickOutside={[Function]}
-                        >
-                          <Animate
-                            options={
-                              Object {
-                                "origin": "top left",
-                              }
-                            }
-                            type="appear"
-                          >
-                            <IsolatedEventContainer
-                              className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
-                              onKeyDown={[Function]}
-                              style={
-                                Object {
-                                  "left": undefined,
-                                  "top": undefined,
-                                  "visibility": undefined,
-                                }
-                              }
-                            >
-                              <div
-                                className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
-                                onKeyDown={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": undefined,
-                                    "top": undefined,
-                                    "visibility": undefined,
-                                  }
-                                }
-                              >
-                                <div
-                                  className="components-popover__content"
-                                  style={
-                                    Object {
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                    }
-                                  }
-                                  tabIndex="-1"
-                                >
-                                  <FontSizePicker
-                                    fallbackFontSize={20}
-                                    fontSizes={
-                                      Array [
-                                        Object {
-                                          "name": "test1",
-                                          "size": "10px",
-                                          "slug": "test1",
-                                        },
-                                        Object {
-                                          "name": "test2",
-                                          "size": "20px",
-                                          "slug": "test2",
-                                        },
-                                        Object {
-                                          "name": "test3",
-                                          "size": "30px",
-                                          "slug": "test3",
-                                        },
-                                      ]
-                                    }
-                                    onChange={[Function]}
-                                    value={20}
-                                  >
-                                    <BaseControl>
-                                      <div
-                                        className="components-base-control"
-                                      >
-                                        <div
-                                          className="components-base-control__field"
-                                        >
-                                          <Component>
-                                            <span
-                                              className="components-base-control__label"
-                                            >
-                                              Font Size
-                                            </span>
-                                          </Component>
-                                          <div
-                                            className="components-font-size-picker__buttons"
-                                          >
-                                            <Dropdown
-                                              className="components-font-size-picker__dropdown"
-                                              contentClassName="components-font-size-picker__dropdown-content"
-                                              position="bottom"
-                                              renderContent={[Function]}
-                                              renderToggle={[Function]}
-                                            >
-                                              <div
-                                                className="components-font-size-picker__dropdown"
-                                              >
-                                                <ForwardRef(Button)
-                                                  aria-expanded={false}
-                                                  aria-label="Font size: Custom"
-                                                  className="components-font-size-picker__selector"
-                                                  isLarge={true}
-                                                  onClick={[Function]}
-                                                >
-                                                  <button
-                                                    aria-expanded={false}
-                                                    aria-label="Font size: Custom"
-                                                    className="components-button components-font-size-picker__selector is-button is-default is-large"
-                                                    onClick={[Function]}
-                                                    type="button"
-                                                  >
-                                                    Custom
-                                                  </button>
-                                                </ForwardRef(Button)>
-                                              </div>
-                                            </Dropdown>
-                                            <input
-                                              aria-label="Custom font size"
-                                              className="components-range-control__number"
-                                              onChange={[Function]}
-                                              type="number"
-                                              value={20}
-                                            />
-                                            <ForwardRef(Button)
-                                              className="components-color-palette__clear"
-                                              disabled={false}
-                                              isDefault={true}
-                                              isSmall={true}
-                                              onClick={[Function]}
-                                              type="button"
-                                            >
-                                              <button
-                                                className="components-button components-color-palette__clear is-button is-default is-small"
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                type="button"
-                                              >
-                                                Reset
-                                              </button>
-                                            </ForwardRef(Button)>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </BaseControl>
-                                  </FontSizePicker>
-                                </div>
-                              </div>
-                            </IsolatedEventContainer>
-                          </Animate>
-                        </PopoverDetectOutside>
-                      </clickOutside(PopoverDetectOutside)>
-                    </Component>
-                  </div>
-                </FocusReturn>
-              </WithFocusReturn(Component)>
-            </div>
-          </WithConstrainedTabbing(WithFocusReturn(Component))>
-        </span>
-      </Popover>
-    </div>
-  </Dropdown>
-</DropdownButton>
-`;
-
-exports[`DropdownButton test should render DropdownButton: open-font-size-picker--1 1`] = `
-<DropdownButton
-  className="test2-class"
-  contentClassName="test2-content-class"
-  label="test2-label"
-  renderContent={[Function]}
->
-  <Dropdown
-    className="components-dropdown-button test2-class"
-    contentClassName="components-dropdown-button__popover test2-content-class"
-    position="top right"
-    renderContent={[Function]}
-    renderToggle={[Function]}
-  >
-    <div
-      className="components-dropdown-button test2-class"
-    >
-      <ForwardRef(IconButton)
-        aria-expanded={true}
-        aria-haspopup="true"
-        aria-pressed={false}
-        className="components-dropdown-button__toggle"
-        disabled={false}
-        icon="menu"
-        label="test2-label"
-        onClick={[Function]}
-        tooltip="test2-label"
-      >
-        <Tooltip
-          text="test2-label"
-        >
-          <ForwardRef(Button)
-            aria-expanded={true}
-            aria-haspopup="true"
-            aria-label="test2-label"
-            aria-pressed={false}
-            className="components-icon-button components-dropdown-button__toggle has-text"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              aria-expanded={true}
-              aria-haspopup="true"
-              aria-label="test2-label"
-              aria-pressed={false}
-              className="components-button components-icon-button components-dropdown-button__toggle has-text"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
-            >
-              <Dashicon
-                ariaPressed={false}
-                icon="menu"
-                key="0,0"
-              >
-                <SVG
-                  aria-hidden={true}
-                  className="dashicon dashicons-menu"
-                  focusable="false"
-                  height={20}
-                  role="img"
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="dashicon dashicons-menu"
-                    focusable="false"
-                    height={20}
-                    role="img"
-                    viewBox="0 0 20 20"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <Path
-                      d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                    >
-                      <path
-                        d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                      />
-                    </Path>
-                  </svg>
-                </SVG>
-              </Dashicon>
-              <span
-                className="components-dropdown-button__indicator"
-                key="0,1"
-              />
-            </button>
-          </ForwardRef(Button)>
-        </Tooltip>
-      </ForwardRef(IconButton)>
-      <Popover
-        className="components-dropdown-button__popover test2-content-class"
-        focusOnMount="firstElement"
-        noArrow={false}
-        onClickOutside={[Function]}
-        onClose={[Function]}
-        position="top right"
-      >
-        <span>
-          <WithConstrainedTabbing(WithFocusReturn(Component))>
-            <div
-              onKeyDown={[Function]}
-              tabIndex="-1"
-            >
-              <WithFocusReturn(Component)>
-                <FocusReturn
-                  focusHistory={Array []}
-                >
-                  <div
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <Component
-                      focusHistory={Array []}
-                    >
-                      <clickOutside(PopoverDetectOutside)
-                        onClickOutside={[Function]}
-                      >
-                        <PopoverDetectOutside
-                          onClickOutside={[Function]}
-                        >
-                          <Animate
-                            options={
-                              Object {
-                                "origin": "top left",
-                              }
-                            }
-                            type="appear"
-                          >
-                            <IsolatedEventContainer
-                              className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
-                              onKeyDown={[Function]}
-                              style={
-                                Object {
-                                  "left": undefined,
-                                  "top": undefined,
-                                  "visibility": undefined,
-                                }
-                              }
-                            >
-                              <div
-                                className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
-                                onKeyDown={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": undefined,
-                                    "top": undefined,
-                                    "visibility": undefined,
-                                  }
-                                }
-                              >
-                                <div
-                                  className="components-popover__content"
-                                  style={
-                                    Object {
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                    }
-                                  }
-                                  tabIndex="-1"
-                                >
-                                  <FontSizePicker
-                                    fallbackFontSize={20}
-                                    fontSizes={
-                                      Array [
-                                        Object {
-                                          "name": "test1",
-                                          "size": "10px",
-                                          "slug": "test1",
-                                        },
-                                        Object {
-                                          "name": "test2",
-                                          "size": "20px",
-                                          "slug": "test2",
-                                        },
-                                        Object {
-                                          "name": "test3",
-                                          "size": "30px",
-                                          "slug": "test3",
-                                        },
-                                      ]
-                                    }
-                                    onChange={[Function]}
-                                    value={20}
-                                  >
-                                    <BaseControl>
-                                      <div
-                                        className="components-base-control"
-                                      >
-                                        <div
-                                          className="components-base-control__field"
-                                        >
-                                          <Component>
-                                            <span
-                                              className="components-base-control__label"
-                                            >
-                                              Font Size
-                                            </span>
-                                          </Component>
-                                          <div
-                                            className="components-font-size-picker__buttons"
-                                          >
-                                            <Dropdown
-                                              className="components-font-size-picker__dropdown"
-                                              contentClassName="components-font-size-picker__dropdown-content"
-                                              position="bottom"
-                                              renderContent={[Function]}
-                                              renderToggle={[Function]}
-                                            >
-                                              <div
-                                                className="components-font-size-picker__dropdown"
-                                              >
-                                                <ForwardRef(Button)
-                                                  aria-expanded={true}
-                                                  aria-label="Font size: Custom"
-                                                  className="components-font-size-picker__selector"
-                                                  isLarge={true}
-                                                  onClick={[Function]}
-                                                >
-                                                  <button
-                                                    aria-expanded={true}
-                                                    aria-label="Font size: Custom"
-                                                    className="components-button components-font-size-picker__selector is-button is-default is-large"
-                                                    onClick={[Function]}
-                                                    type="button"
-                                                  >
-                                                    Custom
-                                                  </button>
-                                                </ForwardRef(Button)>
-                                                <Popover
-                                                  className="components-font-size-picker__dropdown-content"
-                                                  focusOnMount="firstElement"
-                                                  noArrow={false}
-                                                  onClickOutside={[Function]}
-                                                  onClose={[Function]}
-                                                  position="bottom"
-                                                >
-                                                  <span>
-                                                    <WithConstrainedTabbing(WithFocusReturn(Component))>
-                                                      <div
-                                                        onKeyDown={[Function]}
-                                                        tabIndex="-1"
-                                                      >
-                                                        <WithFocusReturn(Component)>
-                                                          <FocusReturn
-                                                            focusHistory={Array []}
-                                                          >
-                                                            <div
-                                                              onBlur={[Function]}
-                                                              onFocus={[Function]}
-                                                            >
-                                                              <Component
-                                                                focusHistory={Array []}
-                                                              >
-                                                                <clickOutside(PopoverDetectOutside)
-                                                                  onClickOutside={[Function]}
-                                                                >
-                                                                  <PopoverDetectOutside
-                                                                    onClickOutside={[Function]}
-                                                                  >
-                                                                    <Animate
-                                                                      options={
-                                                                        Object {
-                                                                          "origin": "top center",
-                                                                        }
-                                                                      }
-                                                                      type="appear"
-                                                                    >
-                                                                      <IsolatedEventContainer
-                                                                        className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
-                                                                        onKeyDown={[Function]}
-                                                                        style={
-                                                                          Object {
-                                                                            "left": undefined,
-                                                                            "top": undefined,
-                                                                            "visibility": undefined,
-                                                                          }
-                                                                        }
-                                                                      >
-                                                                        <div
-                                                                          className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
-                                                                          onKeyDown={[Function]}
-                                                                          onMouseDown={[Function]}
-                                                                          style={
-                                                                            Object {
-                                                                              "left": undefined,
-                                                                              "top": undefined,
-                                                                              "visibility": undefined,
-                                                                            }
-                                                                          }
-                                                                        >
-                                                                          <div
-                                                                            className="components-popover__content"
-                                                                            style={
-                                                                              Object {
-                                                                                "maxHeight": undefined,
-                                                                                "maxWidth": undefined,
-                                                                              }
-                                                                            }
-                                                                            tabIndex="-1"
-                                                                          >
-                                                                            <ForwardRef(NavigableMenu)>
-                                                                              <ForwardRef(NavigableContainer)
-                                                                                aria-orientation="vertical"
-                                                                                eventToOffset={[Function]}
-                                                                                onlyBrowserTabstops={false}
-                                                                                role="menu"
-                                                                                stopNavigationEvents={true}
-                                                                              >
-                                                                                <NavigableContainer
-                                                                                  aria-orientation="vertical"
-                                                                                  eventToOffset={[Function]}
-                                                                                  forwardedRef={null}
-                                                                                  onlyBrowserTabstops={false}
-                                                                                  role="menu"
-                                                                                  stopNavigationEvents={true}
-                                                                                >
-                                                                                  <div
-                                                                                    aria-orientation="vertical"
-                                                                                    onKeyDown={[Function]}
-                                                                                    role="menu"
-                                                                                  >
-                                                                                    <ForwardRef(Button)
-                                                                                      aria-checked={false}
-                                                                                      className="is-font-test1"
-                                                                                      key="test1"
-                                                                                      onClick={[Function]}
-                                                                                      role="menuitemradio"
-                                                                                    >
-                                                                                      <button
-                                                                                        aria-checked={false}
-                                                                                        className="components-button is-font-test1"
-                                                                                        onClick={[Function]}
-                                                                                        role="menuitemradio"
-                                                                                        type="button"
-                                                                                      >
-                                                                                        <span
-                                                                                          className="components-font-size-picker__dropdown-text-size"
-                                                                                          style={
-                                                                                            Object {
-                                                                                              "fontSize": "10px",
-                                                                                            }
-                                                                                          }
-                                                                                        >
-                                                                                          test1
-                                                                                        </span>
-                                                                                      </button>
-                                                                                    </ForwardRef(Button)>
-                                                                                    <ForwardRef(Button)
-                                                                                      aria-checked={false}
-                                                                                      className="is-font-test2"
-                                                                                      key="test2"
-                                                                                      onClick={[Function]}
-                                                                                      role="menuitemradio"
-                                                                                    >
-                                                                                      <button
-                                                                                        aria-checked={false}
-                                                                                        className="components-button is-font-test2"
-                                                                                        onClick={[Function]}
-                                                                                        role="menuitemradio"
-                                                                                        type="button"
-                                                                                      >
-                                                                                        <span
-                                                                                          className="components-font-size-picker__dropdown-text-size"
-                                                                                          style={
-                                                                                            Object {
-                                                                                              "fontSize": "20px",
-                                                                                            }
-                                                                                          }
-                                                                                        >
-                                                                                          test2
-                                                                                        </span>
-                                                                                      </button>
-                                                                                    </ForwardRef(Button)>
-                                                                                    <ForwardRef(Button)
-                                                                                      aria-checked={false}
-                                                                                      className="is-font-test3"
-                                                                                      key="test3"
-                                                                                      onClick={[Function]}
-                                                                                      role="menuitemradio"
-                                                                                    >
-                                                                                      <button
-                                                                                        aria-checked={false}
-                                                                                        className="components-button is-font-test3"
-                                                                                        onClick={[Function]}
-                                                                                        role="menuitemradio"
-                                                                                        type="button"
-                                                                                      >
-                                                                                        <span
-                                                                                          className="components-font-size-picker__dropdown-text-size"
-                                                                                          style={
-                                                                                            Object {
-                                                                                              "fontSize": "30px",
-                                                                                            }
-                                                                                          }
-                                                                                        >
-                                                                                          test3
-                                                                                        </span>
-                                                                                      </button>
-                                                                                    </ForwardRef(Button)>
-                                                                                  </div>
-                                                                                </NavigableContainer>
-                                                                              </ForwardRef(NavigableContainer)>
-                                                                            </ForwardRef(NavigableMenu)>
-                                                                          </div>
-                                                                        </div>
-                                                                      </IsolatedEventContainer>
-                                                                    </Animate>
-                                                                  </PopoverDetectOutside>
-                                                                </clickOutside(PopoverDetectOutside)>
-                                                              </Component>
-                                                            </div>
-                                                          </FocusReturn>
-                                                        </WithFocusReturn(Component)>
-                                                      </div>
-                                                    </WithConstrainedTabbing(WithFocusReturn(Component))>
-                                                  </span>
-                                                </Popover>
-                                              </div>
-                                            </Dropdown>
-                                            <input
-                                              aria-label="Custom font size"
-                                              className="components-range-control__number"
-                                              onChange={[Function]}
-                                              type="number"
-                                              value={20}
-                                            />
-                                            <ForwardRef(Button)
-                                              className="components-color-palette__clear"
-                                              disabled={false}
-                                              isDefault={true}
-                                              isSmall={true}
-                                              onClick={[Function]}
-                                              type="button"
-                                            >
-                                              <button
-                                                className="components-button components-color-palette__clear is-button is-default is-small"
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                type="button"
-                                              >
-                                                Reset
-                                              </button>
-                                            </ForwardRef(Button)>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </BaseControl>
-                                  </FontSizePicker>
-                                </div>
-                              </div>
-                            </IsolatedEventContainer>
-                          </Animate>
-                        </PopoverDetectOutside>
-                      </clickOutside(PopoverDetectOutside)>
-                    </Component>
-                  </div>
-                </FocusReturn>
-              </WithFocusReturn(Component)>
-            </div>
-          </WithConstrainedTabbing(WithFocusReturn(Component))>
-        </span>
-      </Popover>
-    </div>
-  </Dropdown>
-</DropdownButton>
-`;
-
-exports[`DropdownButton test should render DropdownButton: test--0 1`] = `
-<DropdownButton
-  className="test1-class"
-  contentClassName="test1-content-class"
-  icon="dashicons-admin-site"
-  isActive={true}
-  isDisabled={false}
-  label="test1-label"
-  position="bottom left"
-  renderContent={[Function]}
-  tooltip="test1-tooltip"
->
-  <Dropdown
-    className="components-dropdown-button test1-class"
-    contentClassName="components-dropdown-button__popover test1-content-class"
-    position="bottom left"
-    renderContent={[Function]}
-    renderToggle={[Function]}
-  >
-    <div
-      className="components-dropdown-button test1-class"
-    >
-      <ForwardRef(IconButton)
+      <button
         aria-expanded={false}
         aria-haspopup="true"
-        aria-pressed={true}
-        className="components-dropdown-button__toggle is-active"
+        aria-label="test2-label"
+        aria-pressed={false}
+        className="components-button components-icon-button components-dropdown-button__toggle has-text"
         disabled={false}
-        icon="dashicons-admin-site"
-        label="test1-label"
+        onBlur={[Function]}
         onClick={[Function]}
-        tooltip="test1-tooltip"
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
       >
-        <Tooltip
-          text="test1-tooltip"
+        <svg
+          aria-hidden="true"
+          className="dashicon dashicons-menu"
+          focusable="false"
+          height={20}
+          role="img"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <ForwardRef(Button)
-            aria-expanded={false}
-            aria-haspopup="true"
-            aria-label="test1-label"
-            aria-pressed={true}
-            className="components-icon-button components-dropdown-button__toggle is-active has-text"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              aria-expanded={false}
-              aria-haspopup="true"
-              aria-label="test1-label"
-              aria-pressed={true}
-              className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
-            >
-              <Dashicon
-                ariaPressed={true}
-                icon="dashicons-admin-site"
-                key="0,0"
-              />
-              <span
-                className="components-dropdown-button__indicator"
-                key="0,1"
-              />
-            </button>
-          </ForwardRef(Button)>
-        </Tooltip>
-      </ForwardRef(IconButton)>
-    </div>
-  </Dropdown>
-</DropdownButton>
+          <path
+            d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
+          />
+        </svg>
+        <span
+          className="components-dropdown-button__indicator"
+          key="0,1"
+        />
+      </button>
+    </ForwardRef(Button)>
+  </ForwardRef(IconButton)>
+</div>
 `;
 
-exports[`DropdownButton test should render DropdownButton: test--1 1`] = `
-<DropdownButton
-  className="test2-class"
-  contentClassName="test2-content-class"
-  label="test2-label"
-  renderContent={[Function]}
+exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
+<div
+  className="components-dropdown-button test3-class"
 >
-  <Dropdown
-    className="components-dropdown-button test2-class"
-    contentClassName="components-dropdown-button__popover test2-content-class"
-    position="top right"
-    renderContent={[Function]}
-    renderToggle={[Function]}
+  <ForwardRef(IconButton)
+    aria-expanded={false}
+    aria-haspopup="true"
+    aria-pressed={false}
+    className="components-dropdown-button__toggle"
+    disabled={true}
+    icon="menu"
+    label="test3-label"
+    onClick={[Function]}
+    tooltip="test3-label"
   >
-    <div
-      className="components-dropdown-button test2-class"
+    <ForwardRef(Button)
+      aria-expanded={false}
+      aria-haspopup="true"
+      aria-label="test3-label"
+      aria-pressed={false}
+      className="components-icon-button components-dropdown-button__toggle has-text"
+      disabled={true}
+      onClick={[Function]}
     >
-      <ForwardRef(IconButton)
+      <button
         aria-expanded={false}
         aria-haspopup="true"
+        aria-label="test3-label"
         aria-pressed={false}
-        className="components-dropdown-button__toggle"
-        disabled={false}
-        icon="menu"
-        label="test2-label"
-        onClick={[Function]}
-        tooltip="test2-label"
-      >
-        <Tooltip
-          text="test2-label"
-        >
-          <ForwardRef(Button)
-            aria-expanded={false}
-            aria-haspopup="true"
-            aria-label="test2-label"
-            aria-pressed={false}
-            className="components-icon-button components-dropdown-button__toggle has-text"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              aria-expanded={false}
-              aria-haspopup="true"
-              aria-label="test2-label"
-              aria-pressed={false}
-              className="components-button components-icon-button components-dropdown-button__toggle has-text"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
-            >
-              <Dashicon
-                ariaPressed={false}
-                icon="menu"
-                key="0,0"
-              >
-                <SVG
-                  aria-hidden={true}
-                  className="dashicon dashicons-menu"
-                  focusable="false"
-                  height={20}
-                  role="img"
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="dashicon dashicons-menu"
-                    focusable="false"
-                    height={20}
-                    role="img"
-                    viewBox="0 0 20 20"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <Path
-                      d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                    >
-                      <path
-                        d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                      />
-                    </Path>
-                  </svg>
-                </SVG>
-              </Dashicon>
-              <span
-                className="components-dropdown-button__indicator"
-                key="0,1"
-              />
-            </button>
-          </ForwardRef(Button)>
-        </Tooltip>
-      </ForwardRef(IconButton)>
-    </div>
-  </Dropdown>
-</DropdownButton>
-`;
-
-exports[`DropdownButton test should render DropdownButton: test--2 1`] = `
-<DropdownButton
-  className="test3-class"
-  contentClassName="test3-content-class"
-  isActive={false}
-  isDisabled={true}
-  label="test3-label"
-  renderContent={[Function]}
->
-  <Dropdown
-    className="components-dropdown-button test3-class"
-    contentClassName="components-dropdown-button__popover test3-content-class"
-    position="top right"
-    renderContent={[Function]}
-    renderToggle={[Function]}
-  >
-    <div
-      className="components-dropdown-button test3-class"
-    >
-      <ForwardRef(IconButton)
-        aria-expanded={false}
-        aria-haspopup="true"
-        aria-pressed={false}
-        className="components-dropdown-button__toggle"
+        className="components-button components-icon-button components-dropdown-button__toggle has-text"
         disabled={true}
-        icon="menu"
-        label="test3-label"
         onClick={[Function]}
-        tooltip="test3-label"
+        type="button"
       >
-        <ForwardRef(Button)
-          aria-expanded={false}
-          aria-haspopup="true"
-          aria-label="test3-label"
-          aria-pressed={false}
-          className="components-icon-button components-dropdown-button__toggle has-text"
-          disabled={true}
-          onClick={[Function]}
+        <svg
+          aria-hidden="true"
+          className="dashicon dashicons-menu"
+          focusable="false"
+          height={20}
+          role="img"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <button
-            aria-expanded={false}
-            aria-haspopup="true"
-            aria-label="test3-label"
-            aria-pressed={false}
-            className="components-button components-icon-button components-dropdown-button__toggle has-text"
-            disabled={true}
-            onClick={[Function]}
-            type="button"
-          >
-            <Dashicon
-              ariaPressed={false}
-              icon="menu"
-            >
-              <SVG
-                aria-hidden={true}
-                className="dashicon dashicons-menu"
-                focusable="false"
-                height={20}
-                role="img"
-                viewBox="0 0 20 20"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="dashicon dashicons-menu"
-                  focusable="false"
-                  height={20}
-                  role="img"
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <Path
-                    d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                  >
-                    <path
-                      d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-                    />
-                  </Path>
-                </svg>
-              </SVG>
-            </Dashicon>
-            <span
-              className="components-dropdown-button__indicator"
-            />
-          </button>
-        </ForwardRef(Button)>
-      </ForwardRef(IconButton)>
-    </div>
-  </Dropdown>
-</DropdownButton>
+          <path
+            d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
+          />
+        </svg>
+        <span
+          className="components-dropdown-button__indicator"
+        />
+      </button>
+    </ForwardRef(Button)>
+  </ForwardRef(IconButton)>
+</div>
 `;

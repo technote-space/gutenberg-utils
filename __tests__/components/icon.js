@@ -5,7 +5,7 @@ import { Icon } from '../../src/components';
 
 const OriginalIcon = wp.components.Icon;
 
-describe( 'Icon test', () => {
+describe( 'Icon', () => {
 	it( 'should render Icon', () => {
 		const wrapper = render(
 			<div>
@@ -39,7 +39,7 @@ describe( 'Icon test', () => {
 			</div>,
 		);
 
-		expect( toJson( wrapper ) ).toMatchSnapshot();
+		expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot();
 
 		expect( wrapper.find( 'svg' ) ).toHaveLength( 5 );
 		expect( wrapper.find( '.test1' ) ).toHaveLength( 1 );
