@@ -35,7 +35,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
-    "@wordpress/components": "^7.4.0",
+    "@wordpress/components": "^8.0.0",
     "@wordpress/data": "^4.5.0",
     "@wordpress/editor": "^9.2.6",
     "@wordpress/element": "^2.4.0",
