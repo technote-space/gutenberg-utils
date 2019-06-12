@@ -110,7 +110,7 @@ export const getToolbarButtonProps = ( group, name, icon, optional = { tooltipCl
  * @param {string} title title
  * @param {*} icon icon
  * @param {string} property property
- * @param {{createDisabled, createInspectorDisabled}} optional optional
+ * @param {{createDisabled, createInspectorDisabled, dropdownClassName}} optional optional
  * @param {function} createControl create control function
  * @returns {object} props
  */
@@ -127,6 +127,7 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
 		props.create = ( { args, formatName } ) => <DropdownButton
 			icon={ icon }
 			label={ title }
+			className={ classnames( `components-dropdown-button__has-property-${ property }`, optional.dropdownClassName ) }
 			renderContent={ () => createControl( args, formatName, false ) }
 		/>;
 	}

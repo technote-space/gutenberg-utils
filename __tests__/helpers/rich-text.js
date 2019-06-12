@@ -314,9 +314,11 @@ describe( 'getColorButtonProps', () => {
 		expect( button ).toHaveProperty( 'props' );
 		expect( button.props ).toHaveProperty( 'icon' );
 		expect( button.props ).toHaveProperty( 'label' );
+		expect( button.props ).toHaveProperty( 'className' );
 		expect( button.props ).toHaveProperty( 'renderContent' );
 		expect( button.props.icon ).toBe( 'test1-icon' );
 		expect( button.props.label ).toBe( 'test1-title' );
+		expect( button.props.className ).toBe( 'components-dropdown-button__has-property-test1-property' );
 		expect( typeof button.props.renderContent ).toBe( 'function' );
 
 		const control = button.props.renderContent();
@@ -395,9 +397,11 @@ describe( 'getFontSizesButtonProps', () => {
 		expect( button ).toHaveProperty( 'props' );
 		expect( button.props ).toHaveProperty( 'icon' );
 		expect( button.props ).toHaveProperty( 'label' );
+		expect( button.props ).toHaveProperty( 'className' );
 		expect( button.props ).toHaveProperty( 'renderContent' );
 		expect( button.props.icon ).toBe( 'test1-icon' );
 		expect( button.props.label ).toBe( 'test1-title' );
+		expect( button.props.className ).toBe( 'components-dropdown-button__has-property-font-size' );
 		expect( typeof button.props.renderContent ).toBe( 'function' );
 
 		const control = button.props.renderContent();
