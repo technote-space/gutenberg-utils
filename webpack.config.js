@@ -1,3 +1,5 @@
+const SpeedMeasurePlugin = require( 'speed-measure-webpack-plugin' );
+const smp = new SpeedMeasurePlugin();
 const webpack = require( 'webpack' );
 const pkg = require( './package' );
 const path = require( 'path' );
@@ -6,6 +8,7 @@ const banner = `${ pkg.name } ${ pkg.version }\nCopyright (c) ${ new Date().getF
 const externals = {
 	'@wordpress/components': { this: [ 'wp', 'components' ] },
 	'@wordpress/data': { this: [ 'wp', 'data' ] },
+	'@wordpress/editor': { this: [ 'wp', 'editor' ] },
 	'@wordpress/element': { this: [ 'wp', 'element' ] },
 	'@wordpress/i18n': { this: [ 'wp', 'i18n' ] },
 	'@wordpress/rich-text': { this: [ 'wp', 'richText' ] },
@@ -42,4 +45,4 @@ const webpackConfig = {
 	],
 };
 
-module.exports = webpackConfig;
+module.exports = smp.wrap( webpackConfig );
