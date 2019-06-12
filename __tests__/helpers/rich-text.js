@@ -296,7 +296,7 @@ describe( 'getToolbarButtonProps', () => {
 
 describe( 'getColorButtonProps', () => {
 	it( 'should get props', () => {
-		const props = getColorButtonProps( 'test1-group', 'test1-name', 'test1-title', 'test1-icon', 'test1-property', { 'test1-option1': 1, 'test1-option2': 'test2' } );
+		const props = getColorButtonProps( 'test1-name', 'test1-title', 'test1-icon', 'test1-property', { group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2' } );
 		expect( props ).toHaveProperty( 'name' );
 		expect( props ).toHaveProperty( 'inspectorGroup' );
 		expect( props ).toHaveProperty( 'create' );
@@ -371,15 +371,15 @@ describe( 'getColorButtonProps', () => {
 		expect( inspector4.props.label.props.children[ 1 ].props ).toHaveProperty( 'aria-label' );
 		expect( inspector4.props.label.props.children[ 1 ].props[ 'aria-label' ] ).toBe( '(test1-title: test-name)' );
 
-		expect( typeof getColorButtonProps( 'test2-group', 'test2-name', 'test2-title', 'test2-icon', 'test1-property' ) ).not.toHaveProperty( 'test1-option1' );
-		expect( getColorButtonProps( 'test3-group', 'test3-name', 'test3-title', 'test3-icon', 'test3-property', { createDisabled: true } ) ).not.toHaveProperty( 'create' );
-		expect( getColorButtonProps( 'test4-group', 'test4-name', 'test4-title', 'test4-icon', 'test4-property', { createInspectorDisabled: true } ) ).not.toHaveProperty( 'createInspector' );
+		expect( typeof getColorButtonProps( 'test2-name', 'test2-title', 'test2-icon', 'test1-property' ) ).not.toHaveProperty( 'test1-option1' );
+		expect( getColorButtonProps( 'test3-name', 'test3-title', 'test3-icon', 'test3-property', { createDisabled: true } ) ).not.toHaveProperty( 'create' );
+		expect( getColorButtonProps( 'test4-name', 'test4-title', 'test4-icon', 'test4-property', { createInspectorDisabled: true } ) ).not.toHaveProperty( 'createInspector' );
 	} );
 } );
 
 describe( 'getFontSizesButtonProps', () => {
 	it( 'should get props', () => {
-		const props = getFontSizesButtonProps( 'test1-group', 'test1-name', 'test1-title', 'test1-icon', { 'test1-option1': 1, 'test1-option2': 'test2' } );
+		const props = getFontSizesButtonProps( 'test1-name', 'test1-title', 'test1-icon', { group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2' } );
 		expect( props ).toHaveProperty( 'name' );
 		expect( props ).toHaveProperty( 'inspectorGroup' );
 		expect( props ).toHaveProperty( 'create' );
@@ -418,9 +418,9 @@ describe( 'getFontSizesButtonProps', () => {
 		expect( control.props ).toHaveProperty( 'fallbackFontSize' );
 		expect( control.props ).toHaveProperty( 'onChange' );
 
-		expect( getFontSizesButtonProps( 'test2-group', 'test2-name', 'test2-title', 'test2-icon' ) ).not.toHaveProperty( 'test1-option1' );
-		expect( getFontSizesButtonProps( 'test3-group', 'test3-name', 'test3-title', 'test3-icon', { createDisabled: true } ) ).not.toHaveProperty( 'create' );
-		expect( getFontSizesButtonProps( 'test4-group', 'test4-name', 'test4-title', 'test4-icon', { createInspectorDisabled: true } ) ).not.toHaveProperty( 'createInspector' );
+		expect( getFontSizesButtonProps( 'test2-name', 'test2-title', 'test2-icon' ) ).not.toHaveProperty( 'test1-option1' );
+		expect( getFontSizesButtonProps( 'test3-name', 'test3-title', 'test3-icon', { createDisabled: true } ) ).not.toHaveProperty( 'create' );
+		expect( getFontSizesButtonProps( 'test4-name', 'test4-title', 'test4-icon', { createInspectorDisabled: true } ) ).not.toHaveProperty( 'createInspector' );
 	} );
 } );
 
