@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon test should render Icon 1`] = `
+exports[`Icon should render Icon 1`] = `
 <div>
   <svg
     aria-hidden="true"

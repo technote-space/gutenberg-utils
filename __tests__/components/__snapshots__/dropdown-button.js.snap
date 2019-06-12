@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownButton test should render DropdownButton 0: open--0 1`] = `
+exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
 <div
   className="components-dropdown-button test1-class"
 >
@@ -93,7 +93,7 @@ exports[`DropdownButton test should render DropdownButton 0: open--0 1`] = `
 </div>
 `;
 
-exports[`DropdownButton test should render DropdownButton 0: test--0 1`] = `
+exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
 <div
   className="components-dropdown-button test1-class"
 >
@@ -145,7 +145,7 @@ exports[`DropdownButton test should render DropdownButton 0: test--0 1`] = `
 </div>
 `;
 
-exports[`DropdownButton test should render DropdownButton 1: open--1 1`] = `
+exports[`DropdownButton should render DropdownButton 1: open--1 1`] = `
 <div
   className="components-dropdown-button test2-class"
 >
@@ -309,7 +309,7 @@ exports[`DropdownButton test should render DropdownButton 1: open--1 1`] = `
 </div>
 `;
 
-exports[`DropdownButton test should render DropdownButton 1: open-font-size-picker--1 1`] = `
+exports[`DropdownButton should render DropdownButton 1: open-font-size-picker--1 1`] = `
 <div
   className="components-dropdown-button test2-class"
 >
@@ -603,7 +603,7 @@ exports[`DropdownButton test should render DropdownButton 1: open-font-size-pick
 </div>
 `;
 
-exports[`DropdownButton test should render DropdownButton 1: test--1 1`] = `
+exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
 <div
   className="components-dropdown-button test2-class"
 >
@@ -669,7 +669,7 @@ exports[`DropdownButton test should render DropdownButton 1: test--1 1`] = `
 </div>
 `;
 
-exports[`DropdownButton test should render DropdownButton 2: test--2 1`] = `
+exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
 <div
   className="components-dropdown-button test3-class"
 >

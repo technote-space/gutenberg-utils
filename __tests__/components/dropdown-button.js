@@ -6,7 +6,7 @@ import Dropdown from '../../src/components/dropdown-button/dropdown';
 
 const { FontSizePicker } = wp.components;
 
-describe( 'DropdownButton test', () => {
+describe( 'DropdownButton', () => {
 	const getSnapshotName = ( name, index ) => `${ name }--${ index }`;
 
 	[

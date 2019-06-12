@@ -4,7 +4,7 @@ const { registerFormatType } = wp.richText;
 import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
 import { getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps } from '../../src/helpers';
 
-describe( 'getActiveStyle test', () => {
+describe( 'getActiveStyle', () => {
 	it( 'should false', () => {
 		const value = {
 			start: 0,
@@ -123,7 +123,7 @@ describe( 'getActiveStyle test', () => {
 	} );
 } );
 
-describe( 'addActiveAttributes test', () => {
+describe( 'addActiveAttributes', () => {
 	it( 'should add attributes', () => {
 		const attributes = addActiveAttributes( { activeAttributes: { test1: 'test1', test2: 'test2' } }, 'test-add-key', 'test-add-value' );
 		expect( attributes ).toHaveProperty( 'test1' );
@@ -135,7 +135,7 @@ describe( 'addActiveAttributes test', () => {
 	} );
 } );
 
-describe( 'setActiveStyle test', () => {
+describe( 'setActiveStyle', () => {
 	it( 'should add style', () => {
 		const attributes = setActiveStyle( { activeAttributes: { test1: 'test1', test2: 'test2' } }, 'color', 'red' );
 		expect( attributes ).toHaveProperty( 'test1' );
@@ -147,7 +147,7 @@ describe( 'setActiveStyle test', () => {
 	} );
 } );
 
-describe( 'onChangeStyle test', () => {
+describe( 'onChangeStyle', () => {
 	it( 'should get onChange function', () => {
 		expect( typeof onChangeStyle( {}, 'test/test1', 'color' ) ).toBe( 'function' );
 	} );
@@ -245,7 +245,7 @@ const getArgs = ( onChange, formatName ) => ( {
 	formatName: formatName,
 } );
 
-describe( 'getToolbarButtonProps test', () => {
+describe( 'getToolbarButtonProps', () => {
 	it( 'should get props', () => {
 		const props = getToolbarButtonProps( 'test1-group', 'test1-name', 'test1-icon', {
 			'test1-option1': 1,
@@ -294,7 +294,7 @@ describe( 'getToolbarButtonProps test', () => {
 	} );
 } );
 
-describe( 'getColorButtonProps test', () => {
+describe( 'getColorButtonProps', () => {
 	it( 'should get props', () => {
 		const props = getColorButtonProps( 'test1-group', 'test1-name', 'test1-title', 'test1-icon', 'test1-property', { 'test1-option1': 1, 'test1-option2': 'test2' } );
 		expect( props ).toHaveProperty( 'name' );
@@ -337,7 +337,7 @@ describe( 'getColorButtonProps test', () => {
 	} );
 } );
 
-describe( 'getFontSizesButtonProps test', () => {
+describe( 'getFontSizesButtonProps', () => {
 	it( 'should get props', () => {
 		const props = getFontSizesButtonProps( 'test1-group', 'test1-name', 'test1-title', 'test1-icon', { 'test1-option1': 1, 'test1-option2': 'test2' } );
 		expect( props ).toHaveProperty( 'name' );

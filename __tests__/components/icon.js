@@ -5,7 +5,7 @@ import { Icon } from '../../src/components';
 
 const OriginalIcon = wp.components.Icon;
 
-describe( 'Icon test', () => {
+describe( 'Icon', () => {
 	it( 'should render Icon', () => {
 		const wrapper = render(
 			<div>

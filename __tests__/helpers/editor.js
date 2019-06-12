@@ -3,7 +3,7 @@ const { dispatch } = wp.data;
 
 import { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } from '../../src/helpers';
 
-describe( 'isValidCustomColors test', () => {
+describe( 'isValidCustomColors', () => {
 	it( 'should false', () => {
 		dispatch( 'core/editor' ).updateEditorSettings( { disableCustomColors: true, disableCustomFontSizes: true } );
 
