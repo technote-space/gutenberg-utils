@@ -7,6 +7,7 @@ const externals = {
 	'@wordpress/components': { this: [ 'wp', 'components' ] },
 	'@wordpress/data': { this: [ 'wp', 'data' ] },
 	'@wordpress/element': { this: [ 'wp', 'element' ] },
+	'@wordpress/i18n': { this: [ 'wp', 'i18n' ] },
 	'@wordpress/rich-text': { this: [ 'wp', 'richText' ] },
 	'@wordpress/url': { this: [ 'wp', 'url' ] },
 	lodash: 'lodash',

@@ -3,7 +3,10 @@ import { DropdownButton } from '../components';
 import { getColors, getFontSizes, isValidCustomColors } from './index';
 
 const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
-const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker } = wp.components;
+const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker, ColorIndicator } = wp.components;
+const { getColorObjectByColorValue, ContrastChecker } = wp.editor;
+const { Fragment } = wp.element;
+const { sprintf, __ } = wp.i18n;
 
 /**
  * @param {object} args args
@@ -106,17 +109,19 @@ export const getToolbarButtonProps = ( group, name, icon, optional = { tooltipCl
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
+ * @param {string} property property
  * @param {{createDisabled, createInspectorDisabled}} optional optional
  * @param {function} createControl create control function
  * @returns {object} props
  */
-export const getDropdownButtonProps = ( group, name, title, icon, optional, createControl ) => {
+export const getDropdownButtonProps = ( group, name, title, icon, property, optional, createControl ) => {
 	const props = {
 		name,
 		inspectorGroup: group,
 		attributes: {
 			style: '',
 		},
+		propertyName: property,
 	};
 	if ( ! optional.createDisabled ) {
 		props.create = ( { args, formatName } ) => <DropdownButton
@@ -143,15 +148,36 @@ export const getDropdownButtonProps = ( group, name, title, icon, optional, crea
  * @returns {object} props
  */
 export const getColorButtonProps = ( group, name, title, icon, property, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
-	const createColorPalette = ( args, formatName ) => <ColorPalette
-		colors={ getColors() }
-		disableCustomColors={ ! isValidCustomColors() }
-		value={ getActiveStyle( args, formatName, property ) }
-		onChange={ onChangeStyle( args, formatName, property ) }
-	/>;
-	return getDropdownButtonProps( group, name, title, icon, optional, ( args, formatName, isInspector ) => isInspector ? <BaseControl label={ title }>
-		{ createColorPalette( args, formatName ) }
-	</BaseControl> : createColorPalette( args, formatName ) );
+	return getDropdownButtonProps( group, name, title, icon, property, optional, ( args, formatName, isInspector ) => {
+		const value = getActiveStyle( args, formatName, property );
+		const colors = getColors();
+		const createColorPalette = ( args, formatName ) => <ColorPalette
+			colors={ colors }
+			disableCustomColors={ ! isValidCustomColors() }
+			value={ value }
+			onChange={ onChangeStyle( args, formatName, property ) }
+		/>;
+		return isInspector ? <BaseControl label={ getInspectorLabel( value, title, colors ) }>
+			{ createColorPalette( args, formatName ) }
+		</BaseControl> : createColorPalette( args, formatName );
+	} );
+};
+
+const getInspectorLabel = ( value, label, colors ) => {
+	if ( ! value ) {
+		return label;
+	}
+
+	const colorObject = getColorObjectByColorValue( colors, value );
+	const colorName = colorObject && colorObject.name;
+
+	return <Fragment>
+		{ label }
+		<ColorIndicator
+			colorValue={ value }
+			aria-label={ sprintf( __( '(%s: %s)' ), label.toLowerCase(), colorName || value ) }
+		/>
+	</Fragment>;
 };
 
 /**
@@ -163,13 +189,43 @@ export const getColorButtonProps = ( group, name, title, icon, property, optiona
  * @returns {object} props
  */
 export const getFontSizesButtonProps = ( group, name, title, icon, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
-	return getDropdownButtonProps( group, name, title, icon, optional, ( args, formatName ) => {
-		const value = getActiveStyle( args, formatName, 'font-size', { suffix: 'px', filter: Number } );
+	const property = 'font-size';
+	return getDropdownButtonProps( group, name, title, icon, property, optional, ( args, formatName ) => {
+		const value = getActiveStyle( args, formatName, property, { suffix: 'px', filter: Number } );
 		return <FontSizePicker
 			fontSizes={ getFontSizes() }
 			value={ value }
 			fallbackFontSize={ value }
-			onChange={ onChangeStyle( args, formatName, 'font-size', 'px' ) }
+			onChange={ onChangeStyle( args, formatName, property, 'px' ) }
 		/>;
 	} );
+};
+
+/**
+ * @param {array} fills fills
+ * @param {object} args args
+ * @returns {null|*} contrast checker
+ */
+export const getContrastChecker = ( fills, args ) => {
+	if ( ! fills || ! fills.length ) {
+		return null;
+	}
+
+	const mapped = Object.assign( ...fills.filter( ( [ { props } ] ) => 'propertyName' in props ).map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
+	if ( ! ( 'color' in mapped && 'background-color' in mapped && 'font-size' in mapped ) ) {
+		return null;
+	}
+
+	const textColor = getActiveStyle( args, mapped[ 'color' ].formatName, 'color' );
+	const backgroundColor = getActiveStyle( args, mapped[ 'background-color' ].formatName, 'background-color' );
+	const fontSize = getActiveStyle( args, mapped[ 'font-size' ].formatName, 'font-size', { suffix: 'px', filter: Number, defaultStyle: 16 } );
+	if ( ! textColor || ! backgroundColor ) {
+		return null;
+	}
+
+	return <ContrastChecker
+		backgroundColor={ backgroundColor }
+		textColor={ textColor }
+		fontSize={ fontSize }
+	/>;
 };
