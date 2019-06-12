@@ -214,7 +214,7 @@ export const getContrastChecker = ( fills, args ) => {
 		return null;
 	}
 
-	const mapped = Object.assign( ...fills.filter( ( [ { props } ] ) => 'propertyName' in props ).map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
+	const mapped = Object.assign( ...fills.filter( ( [ { props } ] ) => 'propertyName' in props && 'formatName' in props ).map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
 	if ( ! ( 'color' in mapped && 'background-color' in mapped && 'font-size' in mapped ) ) {
 		return null;
 	}
