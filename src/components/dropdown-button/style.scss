@@ -43,6 +43,16 @@
   &__indicator::after {
     @include dropdown-arrow();
   }
+
+  &__has-property- {
+    &color .dashicon {
+      color: $toolbar-color;
+    }
+
+    &background-color .dashicon {
+      background-color: $toolbar-background-color;
+    }
+  }
 }
 
 #editor.block-editor__container {
