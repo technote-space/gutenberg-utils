@@ -140,15 +140,16 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
 };
 
 /**
- * @param {string} group group
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
  * @param {string} property property
- * @param {{createDisabled, createInspectorDisabled}} optional optional
+ * @param {{group: boolean, createDisabled: function, createInspectorDisabled: function, dropdownClassName: string}} optional optional
  * @returns {object} props
  */
-export const getColorButtonProps = ( group, name, title, icon, property, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
+export const getColorButtonProps = ( name, title, icon, property, optional = {} ) => {
+	const group = optional.group || 'inspector';
+	delete optional.group;
 	return getDropdownButtonProps( group, name, title, icon, property, optional, ( args, formatName, isInspector ) => {
 		const value = getActiveStyle( args, formatName, property );
 		const colors = getColors();
@@ -182,15 +183,16 @@ const getInspectorLabel = ( value, label, colors ) => {
 };
 
 /**
- * @param {string} group group
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
- * @param {{createDisabled, createInspectorDisabled}} optional optional
+ * @param {{group: boolean, createDisabled: function, createInspectorDisabled: function, dropdownClassName: string}} optional optional
  * @returns {object} props
  */
-export const getFontSizesButtonProps = ( group, name, title, icon, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
+export const getFontSizesButtonProps = ( name, title, icon, optional = {} ) => {
 	const property = 'font-size';
+	const group = optional.group || 'inspector';
+	delete optional.group;
 	return getDropdownButtonProps( group, name, title, icon, property, optional, ( args, formatName ) => {
 		const value = getActiveStyle( args, formatName, property, { suffix: 'px', filter: Number } );
 		return <FontSizePicker
