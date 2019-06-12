@@ -122,6 +122,7 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
 			style: '',
 		},
 		propertyName: property,
+		useInspectorSetting: true,
 	};
 	if ( ! optional.createDisabled ) {
 		props.create = ( { args, formatName } ) => <DropdownButton
