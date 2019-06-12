@@ -1,7 +1,7 @@
 # Gutenberg Utils
 
 [![npm version](https://badge.fury.io/js/%40technote-space%2Fgutenberg-utils.svg)](https://badge.fury.io/js/%40technote-space%2Fgutenberg-utils)
-[![Build Status](https://travis-ci.org/technote-space/gutenberg-utils.svg?branch=master)](https://travis-ci.org/technote-space/gutenberg-utils)
+[![Build Status](https://travis-ci.com/technote-space/gutenberg-utils.svg?branch=master)](https://travis-ci.com/technote-space/gutenberg-utils)
 [![Coverage Status](https://coveralls.io/repos/github/technote-space/gutenberg-utils/badge.svg?branch=master)](https://coveralls.io/github/technote-space/gutenberg-utils?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/43d4fd84117c4e4ca9ba0b7a39fef42b)](https://www.codacy.com/app/technote-space/gutenberg-utils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=technote-space/gutenberg-utils&amp;utm_campaign=Badge_Grade)
 [![License: GPL v2+](https://img.shields.io/badge/License-GPL%20v2%2B-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
