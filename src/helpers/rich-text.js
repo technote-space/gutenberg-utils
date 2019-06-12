@@ -9,7 +9,7 @@ const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker } = wp.componen
  * @param {object} args args
  * @param {string} formatType format type
  * @param {string} styleName style name
- * @param {{suffix, defaultStyle}} options options
+ * @param {{suffix, defaultStyle, filter}} options options
  * @returns {string|boolean} active style
  */
 export const getActiveStyle = ( args, formatType, styleName, options = { suffix: undefined, defaultStyle: false, filter: undefined } ) => {
@@ -28,7 +28,7 @@ export const getActiveStyle = ( args, formatType, styleName, options = { suffix:
 	}
 
 	const extracted = style.replace( new RegExp( `^${ styleName }:\\s*` ), '' );
-	const filtered = value => options.filter ? options.filter( value ) : value;
+	const filtered = value => typeof options.filter === 'function' ? options.filter( value ) : value;
 	if ( options.suffix ) {
 		return filtered( extracted.replace( new RegExp( `${ options.suffix }$` ), '' ) );
 	}
@@ -76,7 +76,7 @@ export const onChangeStyle = ( args, formatName, styleName, suffix = '' ) => val
  * @param {string} group group
  * @param {string} name name
  * @param {*} icon icon
- * @param {object} optional optional
+ * @param {{title, className, tooltipClass}} optional optional
  * @returns {object} props
  */
 export const getToolbarButtonProps = ( group, name, icon, optional = { tooltipClass: undefined } ) => {
@@ -106,7 +106,7 @@ export const getToolbarButtonProps = ( group, name, icon, optional = { tooltipCl
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
- * @param {object} optional optional
+ * @param {{createDisabled, createInspectorDisabled}} optional optional
  * @param {function} createControl create control function
  * @returns {object} props
  */
@@ -139,7 +139,7 @@ export const getDropdownButtonProps = ( group, name, title, icon, optional, crea
  * @param {string} title title
  * @param {*} icon icon
  * @param {string} property property
- * @param {object} optional optional
+ * @param {{createDisabled, createInspectorDisabled}} optional optional
  * @returns {object} props
  */
 export const getColorButtonProps = ( group, name, title, icon, property, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
@@ -159,7 +159,7 @@ export const getColorButtonProps = ( group, name, title, icon, property, optiona
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
- * @param {object} optional optional
+ * @param {{createDisabled, createInspectorDisabled}} optional optional
  * @returns {object} props
  */
 export const getFontSizesButtonProps = ( group, name, title, icon, optional = { createDisabled: false, createInspectorDisabled: false } ) => {
