@@ -3,6 +3,7 @@ const { registerFormatType } = wp.richText;
 
 import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
 import { getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, getContrastChecker } from '../../src/helpers';
+import { getRemoveFormatFunction } from '../../src/helpers';
 
 describe( 'getActiveStyle', () => {
 	it( 'should false', () => {
@@ -551,5 +552,55 @@ describe( 'getContrastChecker', () => {
 		expect( checker.props.textColor ).toBe( 'red' );
 		expect( checker.props.backgroundColor ).toBe( 'blue' );
 		expect( checker.props.fontSize ).toBe( 16 );
+	} );
+} );
+
+describe( 'getRemoveFormatFunction', () => {
+	it( 'should get remove format function', () => {
+		const onChange = jest.fn( ( value ) => {
+			expect( typeof value ).toBe( 'object' );
+			expect( value ).toHaveProperty( 'text' );
+			expect( value ).toHaveProperty( 'start' );
+			expect( value ).toHaveProperty( 'end' );
+			expect( value ).toHaveProperty( 'formats' );
+			expect( value.text ).toBe( args.value.text );
+			expect( value.start ).toBe( args.value.start );
+			expect( value.end ).toBe( args.value.end );
+			expect( value.formats ).toHaveLength( args.value.formats.length );
+		} );
+		const formats = [
+			{
+				attributes: { style: 'color: red' },
+				type: 'test/font-color',
+				unregisteredAttributes: {},
+			},
+			{
+				attributes: { style: 'background-color: blue' },
+				type: 'test/background-color',
+				unregisteredAttributes: {},
+			},
+		];
+		const args = {
+			isActive: true,
+			value: {
+				start: 0,
+				end: 1,
+				text: 'test',
+				formats: [
+					formats,
+					formats,
+					formats,
+					formats,
+				],
+			},
+			onChange: onChange,
+		};
+
+		const removeFormat = getRemoveFormatFunction( args );
+		expect( typeof removeFormat ).toBe( 'function' );
+
+		removeFormat();
+
+		expect( onChange ).toBeCalled();
 	} );
 } );

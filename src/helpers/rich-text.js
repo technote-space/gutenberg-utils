@@ -122,6 +122,7 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
 			style: '',
 		},
 		propertyName: property,
+		useInspectorSetting: true,
 	};
 	if ( ! optional.createDisabled ) {
 		props.create = ( { args, formatName } ) => <DropdownButton
@@ -214,7 +215,7 @@ export const getContrastChecker = ( fills, args ) => {
 		return null;
 	}
 
-	const mapped = Object.assign( ...fills.filter( ( [ { props } ] ) => 'propertyName' in props ).map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
+	const mapped = Object.assign( ...fills.filter( ( [ { props } ] ) => 'propertyName' in props && 'formatName' in props ).map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
 	if ( ! ( 'color' in mapped && 'background-color' in mapped && 'font-size' in mapped ) ) {
 		return null;
 	}
@@ -232,3 +233,14 @@ export const getContrastChecker = ( fills, args ) => {
 		fontSize={ fontSize }
 	/>;
 };
+
+/**
+ * @param {object} args args
+ * @returns {function} remove format function
+ */
+export const getRemoveFormatFunction = ( args ) => () => args.onChange( {
+	text: args.value.text,
+	start: args.value.start,
+	end: args.value.end,
+	formats: new Array( args.value.formats.length ),
+} );
