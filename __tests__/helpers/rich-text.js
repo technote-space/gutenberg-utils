@@ -6,7 +6,7 @@ import { getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, ge
 import { getRemoveFormatFunction } from '../../src/helpers';
 
 describe( 'getActiveStyle', () => {
-	it( 'should false', () => {
+	it( 'should undefined', () => {
 		const value = {
 			start: 0,
 			end: 1,
@@ -21,9 +21,9 @@ describe( 'getActiveStyle', () => {
 				],
 			],
 		};
-		expect( getActiveStyle( { value }, '', '' ) ).toBe( false );
-		expect( getActiveStyle( { isActive: false, value }, '', '' ) ).toBe( false );
-		expect( getActiveStyle( { isActive: true, value }, 'test1/test3', '' ) ).toBe( false );
+		expect( getActiveStyle( { value }, '', '' ) ).toBeUndefined();
+		expect( getActiveStyle( { isActive: false, value }, '', '' ) ).toBeUndefined();
+		expect( getActiveStyle( { isActive: true, value }, 'test1/test3', '' ) ).toBeUndefined();
 
 		registerFormatType( 'test1/test4', {
 			title: 'test4',
@@ -31,7 +31,7 @@ describe( 'getActiveStyle', () => {
 			className: 'test4',
 			edit: () => null,
 		} );
-		expect( getActiveStyle( { isActive: true, value }, 'test1/test4', '' ) ).toBe( false );
+		expect( getActiveStyle( { isActive: true, value }, 'test1/test4', '' ) ).toBeUndefined();
 	} );
 
 	it( 'should return style', () => {
@@ -77,7 +77,7 @@ describe( 'getActiveStyle', () => {
 				unregisteredAttributes: {},
 			};
 			expect( getActiveStyle( {
-				isActive: true,
+				isActive: false,
 				value: {
 					start: 0,
 					end: 1,
@@ -90,7 +90,7 @@ describe( 'getActiveStyle', () => {
 						[ format ],
 					],
 				},
-			}, 'test2/test6', 'font-size', { suffix: 'px' } ) ).toBe( '16' );
+			}, 'test2/test6', 'font-size', { suffix: 'px', ignoreActive: true } ) ).toBe( '16' );
 		}
 
 		{
@@ -510,12 +510,14 @@ describe( 'getContrastChecker', () => {
 			},
 		} );
 		expect( checker ).toHaveProperty( 'props' );
-		expect( checker.props ).toHaveProperty( 'textColor' );
-		expect( checker.props ).toHaveProperty( 'backgroundColor' );
-		expect( checker.props ).toHaveProperty( 'fontSize' );
-		expect( checker.props.textColor ).toBe( 'red' );
-		expect( checker.props.backgroundColor ).toBe( 'blue' );
-		expect( checker.props.fontSize ).toBe( 20 );
+		expect( checker.props ).toHaveProperty( 'children' );
+		expect( checker.props.children ).toHaveProperty( 'props' );
+		expect( checker.props.children.props ).toHaveProperty( 'textColor' );
+		expect( checker.props.children.props ).toHaveProperty( 'backgroundColor' );
+		expect( checker.props.children.props ).toHaveProperty( 'fontSize' );
+		expect( checker.props.children.props.textColor ).toBe( 'red' );
+		expect( checker.props.children.props.backgroundColor ).toBe( 'blue' );
+		expect( checker.props.children.props.fontSize ).toBe( 20 );
 	} );
 
 	it( 'should return ContrastChecker', () => {
@@ -549,12 +551,14 @@ describe( 'getContrastChecker', () => {
 			},
 		} );
 		expect( checker ).toHaveProperty( 'props' );
-		expect( checker.props ).toHaveProperty( 'textColor' );
-		expect( checker.props ).toHaveProperty( 'backgroundColor' );
-		expect( checker.props ).toHaveProperty( 'fontSize' );
-		expect( checker.props.textColor ).toBe( 'red' );
-		expect( checker.props.backgroundColor ).toBe( 'blue' );
-		expect( checker.props.fontSize ).toBe( 16 );
+		expect( checker.props ).toHaveProperty( 'children' );
+		expect( checker.props.children ).toHaveProperty( 'props' );
+		expect( checker.props.children.props ).toHaveProperty( 'textColor' );
+		expect( checker.props.children.props ).toHaveProperty( 'backgroundColor' );
+		expect( checker.props.children.props ).toHaveProperty( 'fontSize' );
+		expect( checker.props.children.props.textColor ).toBe( 'red' );
+		expect( checker.props.children.props.backgroundColor ).toBe( 'blue' );
+		expect( checker.props.children.props.fontSize ).toBe( 16 );
 	} );
 } );
 
