@@ -335,7 +335,7 @@ describe( 'getColorButtonProps', () => {
 		expect( inspector1.props ).toHaveProperty( 'children' );
 		expect( inspector1.props.label ).toBe( 'test1-title' );
 
-		wpMock.editor.getColorObjectByColorValue = () => false;
+		wpMock.blockEditor.getColorObjectByColorValue = () => false;
 		const inspector2 = props.createInspector( getArgs( () => () => null, 'test2/test5', [
 			{
 				attributes: { style: 'color: red' },
@@ -350,7 +350,7 @@ describe( 'getColorButtonProps', () => {
 		expect( inspector2.props.label.props.children[ 1 ].props ).toHaveProperty( 'aria-label' );
 		expect( inspector2.props.label.props.children[ 1 ].props[ 'aria-label' ] ).toBe( '(test1-title: color: red)' );
 
-		wpMock.editor.getColorObjectByColorValue = () => ( { name: false } );
+		wpMock.blockEditor.getColorObjectByColorValue = () => ( { name: false } );
 		const inspector3 = props.createInspector( getArgs( () => () => null, 'test2/test5', [
 			{
 				attributes: { style: 'color: blue' },
@@ -361,7 +361,7 @@ describe( 'getColorButtonProps', () => {
 		expect( inspector3.props.label.props.children[ 1 ].props ).toHaveProperty( 'aria-label' );
 		expect( inspector3.props.label.props.children[ 1 ].props[ 'aria-label' ] ).toBe( '(test1-title: color: blue)' );
 
-		wpMock.editor.getColorObjectByColorValue = () => ( { name: 'test-name' } );
+		wpMock.blockEditor.getColorObjectByColorValue = () => ( { name: 'test-name' } );
 		const inspector4 = props.createInspector( getArgs( () => () => null, 'test2/test5', [
 			{
 				attributes: { style: 'color: red' },

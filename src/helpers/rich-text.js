@@ -1,11 +1,12 @@
 import classnames from 'classnames';
 import { DropdownButton } from '../components';
-import { getColors, getFontSizes, isValidCustomColors } from './index';
+import { getColors, getFontSizes, isValidCustomColors } from './editor';
+import { getEditor } from './compatibility';
 import { DEFAULT_FONT_SIZE } from '../constant';
 
 const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
 const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker, ColorIndicator } = wp.components;
-const { getColorObjectByColorValue, ContrastChecker } = wp.editor;
+const { getColorObjectByColorValue, ContrastChecker } = getEditor();
 const { Fragment } = wp.element;
 const { sprintf, __ } = wp.i18n;
 
@@ -249,9 +250,4 @@ export const getContrastChecker = ( fills, args ) => {
  * @param {object} args args
  * @returns {function} remove format function
  */
-export const getRemoveFormatFunction = ( args ) => () => args.onChange( {
-	text: args.value.text,
-	start: args.value.start,
-	end: args.value.end,
-	formats: new Array( args.value.formats.length ),
-} );
+export const getRemoveFormatFunction = ( args ) => () => args.onChange( { ...args.value, formats: Array( args.value.formats.length ) } );

@@ -1,4 +1,4 @@
-import { parameterManager } from './index';
+import { parameterManager } from './params';
 
 /**
  * @param {object} params params
