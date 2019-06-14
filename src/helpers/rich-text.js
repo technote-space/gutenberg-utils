@@ -14,10 +14,13 @@ const { sprintf, __ } = wp.i18n;
  * @param {object} args args
  * @param {string} formatType format type
  * @param {string} styleName style name
- * @param {{suffix, defaultStyle, filter}} options options
+ * @param {object} options options
+ * @param {string|undefined} options.suffix suffix
+ * @param {*|undefined} options.defaultStyle default style
+ * @param {function|undefined} options.filter filter
  * @returns {string|boolean} active style
  */
-export const getActiveStyle = ( args, formatType, styleName, options = { suffix: undefined, defaultStyle: false, filter: undefined } ) => {
+export const getActiveStyle = ( args, formatType, styleName, options = {} ) => {
 	if ( ! args.isActive ) {
 		return options.defaultStyle;
 	}
@@ -239,11 +242,13 @@ export const getContrastChecker = ( fills, args ) => {
 		defaultStyle: DEFAULT_FONT_SIZE,
 	} ) : DEFAULT_FONT_SIZE;
 
-	return <ContrastChecker
-		backgroundColor={ backgroundColor }
-		textColor={ textColor }
-		fontSize={ fontSize }
-	/>;
+	return <BaseControl>
+		<ContrastChecker
+			backgroundColor={ backgroundColor }
+			textColor={ textColor }
+			fontSize={ fontSize }
+		/>
+	</BaseControl>;
 };
 
 /**
