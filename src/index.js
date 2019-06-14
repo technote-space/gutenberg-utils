@@ -1,5 +1,8 @@
 // consider compatibility
-wp.blockEditor = wp.blockEditor || wp.editor;
+if ( ! wp.blockEditor ) {
+	wp.blockEditor = wp.editor;
+	wp.blockEditor['isOldEditor'] = true;
+}
 
 import * as Components from './components';
 import * as Helpers from './helpers';
