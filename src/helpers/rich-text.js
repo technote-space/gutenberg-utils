@@ -14,11 +14,15 @@ const { sprintf, __ } = wp.i18n;
  * @param {object} args args
  * @param {string} formatType format type
  * @param {string} styleName style name
- * @param {{suffix, defaultStyle, filter}} options options
+ * @param {object} options options
+ * @param {string?} options.suffix suffix
+ * @param {*?} options.defaultStyle default style
+ * @param {function?} options.filter filter
+ * @param {boolean?} options.ignoreActive ignore active?
  * @returns {string|boolean} active style
  */
-export const getActiveStyle = ( args, formatType, styleName, options = { suffix: undefined, defaultStyle: false, filter: undefined } ) => {
-	if ( ! args.isActive ) {
+export const getActiveStyle = ( args, formatType, styleName, options = {} ) => {
+	if ( ! options.ignoreActive && ! args.isActive ) {
 		return options.defaultStyle;
 	}
 
@@ -147,7 +151,11 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
  * @param {string} title title
  * @param {*} icon icon
  * @param {string} property property
- * @param {{group: boolean, createDisabled: function, createInspectorDisabled: function, dropdownClassName: string}} optional optional
+ * @param {object} optional optional
+ * @param {string?} optional.group group
+ * @param {boolean?} optional.createDisabled create disabled?
+ * @param {boolean?} optional.createInspectorDisabled create inspector disabled?
+ * @param {string?} optional.dropdownClassName dropdown class name
  * @returns {object} props
  */
 export const getColorButtonProps = ( name, title, icon, property, optional = {} ) => {
@@ -189,7 +197,11 @@ const getInspectorLabel = ( value, label, colors ) => {
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
- * @param {{group: boolean, createDisabled: function, createInspectorDisabled: function, dropdownClassName: string}} optional optional
+ * @param {object} optional optional
+ * @param {string?} optional.group group
+ * @param {boolean?} optional.createDisabled create disabled?
+ * @param {boolean?} optional.createInspectorDisabled create inspector disabled?
+ * @param {string?} optional.dropdownClassName dropdown class name
  * @returns {object} props
  */
 export const getFontSizesButtonProps = ( name, title, icon, optional = {} ) => {
@@ -227,8 +239,8 @@ export const getContrastChecker = ( fills, args ) => {
 		return null;
 	}
 
-	const textColor = getActiveStyle( args, mapped[ 'color' ].formatName, 'color' );
-	const backgroundColor = getActiveStyle( args, mapped[ 'background-color' ].formatName, 'background-color' );
+	const textColor = getActiveStyle( args, mapped[ 'color' ].formatName, 'color', { ignoreActive: true } );
+	const backgroundColor = getActiveStyle( args, mapped[ 'background-color' ].formatName, 'background-color', { ignoreActive: true } );
 	if ( ! textColor || ! backgroundColor ) {
 		return null;
 	}
@@ -237,13 +249,16 @@ export const getContrastChecker = ( fills, args ) => {
 		suffix: 'px',
 		filter: Number,
 		defaultStyle: DEFAULT_FONT_SIZE,
+		ignoreActive: true,
 	} ) : DEFAULT_FONT_SIZE;
 
-	return <ContrastChecker
-		backgroundColor={ backgroundColor }
-		textColor={ textColor }
-		fontSize={ fontSize }
-	/>;
+	return <BaseControl>
+		<ContrastChecker
+			backgroundColor={ backgroundColor }
+			textColor={ textColor }
+			fontSize={ fontSize }
+		/>
+	</BaseControl>;
 };
 
 /**
