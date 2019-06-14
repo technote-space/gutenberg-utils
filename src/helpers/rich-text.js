@@ -15,10 +15,10 @@ const { sprintf, __ } = wp.i18n;
  * @param {string} formatType format type
  * @param {string} styleName style name
  * @param {object} options options
- * @param {string|undefined} options.suffix suffix
- * @param {*|undefined} options.defaultStyle default style
- * @param {function|undefined} options.filter filter
- * @param {boolean|undefined} options.ignoreActive ignore active?
+ * @param {string?} options.suffix suffix
+ * @param {*?} options.defaultStyle default style
+ * @param {function?} options.filter filter
+ * @param {boolean?} options.ignoreActive ignore active?
  * @returns {string|boolean} active style
  */
 export const getActiveStyle = ( args, formatType, styleName, options = {} ) => {
@@ -151,7 +151,11 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
  * @param {string} title title
  * @param {*} icon icon
  * @param {string} property property
- * @param {{group: boolean, createDisabled: function, createInspectorDisabled: function, dropdownClassName: string}} optional optional
+ * @param {object} optional optional
+ * @param {string?} optional.group group
+ * @param {boolean?} optional.createDisabled create disabled?
+ * @param {boolean?} optional.createInspectorDisabled create inspector disabled?
+ * @param {string?} optional.dropdownClassName dropdown class name
  * @returns {object} props
  */
 export const getColorButtonProps = ( name, title, icon, property, optional = {} ) => {
@@ -193,7 +197,11 @@ const getInspectorLabel = ( value, label, colors ) => {
  * @param {string} name name
  * @param {string} title title
  * @param {*} icon icon
- * @param {{group: boolean, createDisabled: function, createInspectorDisabled: function, dropdownClassName: string}} optional optional
+ * @param {object} optional optional
+ * @param {string?} optional.group group
+ * @param {boolean?} optional.createDisabled create disabled?
+ * @param {boolean?} optional.createInspectorDisabled create inspector disabled?
+ * @param {string?} optional.dropdownClassName dropdown class name
  * @returns {object} props
  */
 export const getFontSizesButtonProps = ( name, title, icon, optional = {} ) => {
