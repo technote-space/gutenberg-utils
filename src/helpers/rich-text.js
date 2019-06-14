@@ -250,9 +250,4 @@ export const getContrastChecker = ( fills, args ) => {
  * @param {object} args args
  * @returns {function} remove format function
  */
-export const getRemoveFormatFunction = ( args ) => () => args.onChange( {
-	text: args.value.text,
-	start: args.value.start,
-	end: args.value.end,
-	formats: new Array( args.value.formats.length ),
-} );
+export const getRemoveFormatFunction = ( args ) => () => args.onChange( { ...args.value, formats: Array( args.value.formats.length ) } );
