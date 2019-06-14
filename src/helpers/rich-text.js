@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { DropdownButton } from '../components';
-import { getColors, getFontSizes, isValidCustomColors } from './index';
+import { getColors, getFontSizes, isValidCustomColors } from './editor';
 import { getEditor } from './compatibility';
 import { DEFAULT_FONT_SIZE } from '../constant';
 
