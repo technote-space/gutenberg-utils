@@ -18,10 +18,11 @@ const { sprintf, __ } = wp.i18n;
  * @param {string|undefined} options.suffix suffix
  * @param {*|undefined} options.defaultStyle default style
  * @param {function|undefined} options.filter filter
+ * @param {boolean|undefined} options.ignoreActive ignore active?
  * @returns {string|boolean} active style
  */
 export const getActiveStyle = ( args, formatType, styleName, options = {} ) => {
-	if ( ! args.isActive ) {
+	if ( ! options.ignoreActive && ! args.isActive ) {
 		return options.defaultStyle;
 	}
 
@@ -230,8 +231,8 @@ export const getContrastChecker = ( fills, args ) => {
 		return null;
 	}
 
-	const textColor = getActiveStyle( args, mapped[ 'color' ].formatName, 'color' );
-	const backgroundColor = getActiveStyle( args, mapped[ 'background-color' ].formatName, 'background-color' );
+	const textColor = getActiveStyle( args, mapped[ 'color' ].formatName, 'color', { ignoreActive: true } );
+	const backgroundColor = getActiveStyle( args, mapped[ 'background-color' ].formatName, 'background-color', { ignoreActive: true } );
 	if ( ! textColor || ! backgroundColor ) {
 		return null;
 	}
@@ -240,6 +241,7 @@ export const getContrastChecker = ( fills, args ) => {
 		suffix: 'px',
 		filter: Number,
 		defaultStyle: DEFAULT_FONT_SIZE,
+		ignoreActive: true,
 	} ) : DEFAULT_FONT_SIZE;
 
 	return <BaseControl>
