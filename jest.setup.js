@@ -17,17 +17,19 @@ global.window.matchMedia = () => ( {
 global.window.console.error = () => {
 };
 global.wpMock = {
-	editor: {
+	blockEditor: {
 		getColorObjectByColorValue: () => false,
 	},
 };
 
-jest.mock( '@wordpress/editor', () => ( {
-	...jest.requireActual( '@wordpress/editor' ),
-	getColorObjectByColorValue: ( colors, value ) => global.wpMock.editor.getColorObjectByColorValue( colors, value ),
+jest.mock( '@wordpress/block-editor', () => ( {
+	...jest.requireActual( '@wordpress/block-editor' ),
+	getColorObjectByColorValue: ( colors, value ) => global.wpMock.blockEditor.getColorObjectByColorValue( colors, value ),
 } ) );
 
+const blockEditor = require( '@wordpress/block-editor' );
 const components = require( '@wordpress/components' );
+const coreData = require( '@wordpress/core-data' );
 const data = require( '@wordpress/data' );
 const editor = require( '@wordpress/editor' );
 const element = require( '@wordpress/element' );
@@ -36,7 +38,9 @@ const richText = require( '@wordpress/rich-text' );
 const url = require( '@wordpress/url' );
 
 global.wp = {
+	blockEditor,
 	components,
+	coreData,
 	data,
 	editor,
 	element,
