@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import { DropdownButton } from '../components';
 import { getColors, getFontSizes, isValidCustomColors } from './index';
+import { DEFAULT_FONT_SIZE } from '../constant';
 
 const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
 const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker, ColorIndicator } = wp.components;
@@ -215,17 +216,27 @@ export const getContrastChecker = ( fills, args ) => {
 		return null;
 	}
 
-	const mapped = Object.assign( ...fills.filter( ( [ { props } ] ) => 'propertyName' in props && 'formatName' in props ).map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
-	if ( ! ( 'color' in mapped && 'background-color' in mapped && 'font-size' in mapped ) ) {
+	const filtered = fills.filter( ( [ { props } ] ) => 'propertyName' in props && 'formatName' in props );
+	if ( ! filtered.length ) {
+		return null;
+	}
+
+	const mapped = Object.assign( ...filtered.map( ( [ { props } ] ) => ( { [ props.propertyName ]: props } ) ) );
+	if ( ! ( 'color' in mapped && 'background-color' in mapped ) ) {
 		return null;
 	}
 
 	const textColor = getActiveStyle( args, mapped[ 'color' ].formatName, 'color' );
 	const backgroundColor = getActiveStyle( args, mapped[ 'background-color' ].formatName, 'background-color' );
-	const fontSize = getActiveStyle( args, mapped[ 'font-size' ].formatName, 'font-size', { suffix: 'px', filter: Number, defaultStyle: 16 } );
 	if ( ! textColor || ! backgroundColor ) {
 		return null;
 	}
+
+	const fontSize = 'font-size' in mapped ? getActiveStyle( args, mapped[ 'font-size' ].formatName, 'font-size', {
+		suffix: 'px',
+		filter: Number,
+		defaultStyle: DEFAULT_FONT_SIZE,
+	} ) : DEFAULT_FONT_SIZE;
 
 	return <ContrastChecker
 		backgroundColor={ backgroundColor }
