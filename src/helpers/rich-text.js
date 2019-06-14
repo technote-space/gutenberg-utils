@@ -5,7 +5,7 @@ import { DEFAULT_FONT_SIZE } from '../constant';
 
 const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
 const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker, ColorIndicator } = wp.components;
-const { getColorObjectByColorValue, ContrastChecker } = wp.editor;
+const { getColorObjectByColorValue, ContrastChecker } = wp.blockEditor;
 const { Fragment } = wp.element;
 const { sprintf, __ } = wp.i18n;
 

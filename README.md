@@ -63,7 +63,9 @@ Download [Release version](https://raw.githubusercontent.com/technote-space/gute
 ```
 
 ## dependencies
+- wp-block-editor
 - wp-components
+- wp-core-data
 - wp-data
 - wp-editor
 - wp-element
