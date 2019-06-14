@@ -431,6 +431,10 @@ describe( 'getContrastChecker', () => {
 	it( 'should return null', () => {
 		expect( getContrastChecker( [], {} ) ).toBeNull();
 		expect( getContrastChecker( [
+			[ { props: { propertyName: 'color' } } ],
+			[ { props: { formatName: 'test/font-size' } } ],
+		], {} ) ).toBeNull();
+		expect( getContrastChecker( [
 			createFill( 'color', 'test/font-color' ),
 			createFill( 'font-size', 'test/font-size' ),
 		], {} ) ).toBeNull();
@@ -530,7 +534,6 @@ describe( 'getContrastChecker', () => {
 		const checker = getContrastChecker( [
 			createFill( 'color', 'test/font-color' ),
 			createFill( 'background-color', 'test/background-color' ),
-			createFill( 'font-size', 'test/font-size' ),
 		], {
 			isActive: true,
 			value: {
