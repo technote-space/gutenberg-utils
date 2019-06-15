@@ -1,5 +1,6 @@
 /* eslint-disable no-magic-numbers */
 import { isOldEditor, getEditorStoreKey, getEditor } from '../../src/helpers';
+import { setupCompatibility } from '../../src/helpers/compatibility';
 
 describe( 'isOldEditor', () => {
 	it( 'should return true', () => {
@@ -37,5 +38,17 @@ describe( 'getEditor', () => {
 	it( 'should return block editor', () => {
 		delete wp.blockEditor[ 'isOldEditor' ];
 		expect( getEditor() ).toBe( wp.blockEditor );
+	} );
+} );
+
+describe( 'setupCompatibility', () => {
+	it( 'should set editor', () => {
+		const blockEditor = wp.blockEditor;
+		delete wp.blockEditor;
+		setupCompatibility();
+		expect( typeof wp.blockEditor ).toBe( 'object' );
+		expect( wp.blockEditor ).hasOwnProperty( 'isOldEditor' );
+		expect( wp.blockEditor[ 'isOldEditor' ] ).toBeTruthy();
+		wp.blockEditor = blockEditor;
 	} );
 } );
