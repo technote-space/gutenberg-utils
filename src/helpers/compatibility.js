@@ -7,6 +7,11 @@
  * @example wp.data.select( getEditorStoreKey() ).getSelectedBlock()
  */
 
+if ( ! wp.blockEditor ) {
+	wp.blockEditor = wp.editor;
+	wp.blockEditor[ 'isOldEditor' ] = true;
+}
+
 /**
  * @returns {boolean} is old editor?
  */
