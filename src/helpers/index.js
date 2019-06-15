@@ -3,4 +3,4 @@ export * from './editor';
 export * from './misc';
 export * from './params';
 export * from './translate';
-export * from './compatibility';
+export { isOldEditor, getEditorStoreKey, getEditor } from './compatibility';

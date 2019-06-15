@@ -8,6 +8,18 @@
  */
 
 /**
+ * setup compatibility
+ */
+export const setupCompatibility = () => {
+	if ( ! wp.blockEditor ) {
+		wp.blockEditor = wp.editor;
+		wp.blockEditor[ 'isOldEditor' ] = true;
+	}
+};
+
+setupCompatibility();
+
+/**
  * @returns {boolean} is old editor?
  */
 export const isOldEditor = () => 'isOldEditor' in wp.blockEditor && wp.blockEditor.isOldEditor;
