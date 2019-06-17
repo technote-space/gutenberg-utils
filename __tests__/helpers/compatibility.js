@@ -51,4 +51,15 @@ describe( 'setupCompatibility', () => {
 		expect( wp.blockEditor[ 'isOldEditor' ] ).toBeTruthy();
 		wp.blockEditor = blockEditor;
 	} );
+
+	it( 'should set editor', () => {
+		const blockEditor = wp.blockEditor;
+		wp.blockEditor = Object.assign( {}, wp.blockEditor );
+		delete wp.blockEditor.BlockEdit;
+		setupCompatibility();
+		expect( typeof wp.blockEditor ).toBe( 'object' );
+		expect( wp.blockEditor ).hasOwnProperty( 'isOldEditor' );
+		expect( wp.blockEditor[ 'isOldEditor' ] ).toBeTruthy();
+		wp.blockEditor = blockEditor;
+	} );
 } );
