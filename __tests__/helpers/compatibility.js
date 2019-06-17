@@ -42,24 +42,25 @@ describe( 'getEditor', () => {
 } );
 
 describe( 'setupCompatibility', () => {
-	it( 'should set editor', () => {
+	const test = ( prepare ) => {
 		const blockEditor = wp.blockEditor;
-		delete wp.blockEditor;
+		prepare();
 		setupCompatibility();
 		expect( typeof wp.blockEditor ).toBe( 'object' );
 		expect( wp.blockEditor ).hasOwnProperty( 'isOldEditor' );
 		expect( wp.blockEditor[ 'isOldEditor' ] ).toBeTruthy();
 		wp.blockEditor = blockEditor;
+	};
+	it( 'should set editor', () => {
+		test( () => {
+			delete wp.blockEditor;
+		} );
 	} );
 
 	it( 'should set editor', () => {
-		const blockEditor = wp.blockEditor;
-		wp.blockEditor = Object.assign( {}, wp.blockEditor );
-		delete wp.blockEditor.BlockEdit;
-		setupCompatibility();
-		expect( typeof wp.blockEditor ).toBe( 'object' );
-		expect( wp.blockEditor ).hasOwnProperty( 'isOldEditor' );
-		expect( wp.blockEditor[ 'isOldEditor' ] ).toBeTruthy();
-		wp.blockEditor = blockEditor;
+		test( () => {
+			wp.blockEditor = Object.assign( {}, wp.blockEditor );
+			delete wp.blockEditor.BlockEdit;
+		} );
 	} );
 } );
