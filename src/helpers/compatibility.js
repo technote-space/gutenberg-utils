@@ -11,7 +11,7 @@
  * setup compatibility
  */
 export const setupCompatibility = () => {
-	if ( ! wp.blockEditor ) {
+	if ( ! wp.blockEditor || ! wp.blockEditor.BlockEdit ) {
 		wp.blockEditor = wp.editor;
 		wp.blockEditor[ 'isOldEditor' ] = true;
 	}
