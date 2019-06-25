@@ -30,9 +30,25 @@ jobs:
   fast_finish: true
   include:
     - stage: check
+      language: node_js
+      node_js: '10'
+      dist: trusty
+      script: npm run lint
+    - stage: check
+      language: node_js
+      node_js: '11'
+      dist: trusty
       script: npm run lint
 
     - stage: test
+      language: node_js
+      node_js: '10'
+      dist: trusty
+      script: npm run jest
+    - stage: test
+      language: node_js
+      node_js: '11'
+      dist: trusty
       script: npm run jest
       after_success:
         - npm i coveralls
