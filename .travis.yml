@@ -31,11 +31,6 @@ jobs:
   include:
     - stage: check
       language: node_js
-      node_js: '10'
-      dist: trusty
-      script: npm run lint
-    - stage: check
-      language: node_js
       node_js: '11'
       dist: trusty
       script: npm run lint
