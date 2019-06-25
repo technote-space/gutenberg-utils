@@ -72,8 +72,10 @@ jobs:
       node_js: '11'
       dist: trusty
       script: skip
+      before_deploy: npm run jest
       deploy:
         provider: npm
+        skip_cleanup: true
         email: technote.space@gmail.com
         api_key:
           secure: OI1x8qGyoa8NdkPNVHJRhoXJyZ8iKQZ4PbUDqk3SvwV1KOFSzqoGR7HWPBFzc9rIDeKDVMuGhLZxrxgJLb+/ZSJa+LUq/hFm4JP8RmsniP2akfZ3logNSef8r4x5/stxLPltCLpCAEOZsCGjDl0W5eiIh6FUQZz2rCzYsjNPeQ3uweqtKEZe68sDNlTHCx4sLq5C06rQWo8mT9fO1hUpFFz5xhrYKC2mlNWsmOF4xRMydFpchjCB4sKw2AX6OkvX4iLaV4CfD1iZ1AAj+5QujAezkFXNvSU6VHpS6PCct/HHgbO02b9QR349Ps1jRbbTL6xrn3aNYGVcU18LNYMobcUW+BNLN49wxQrKkwRerHQ+TrG0w4V5EaxFhSGgHMV+xpFbN+n8Cbo0zBXpdpEcvu7vUQfnqg0RmOqpJbVGsYLg7pofQKh0nwmRfLEB/cU2hTUkxBif32JRA1ojmAKEJKmvXh3vREZEI8X4gqZ1Z27/zPU37VFxtnlEN8d3361edNLlZg8vtbbhWficpI5hpyh59Wty60B62XQ9kMLEIaYnmW+jbfvdLyHe4ghCFLcFoK4M2mrCW1/mlQ6cP4Ksy5HpsbkpXHmgCkPXW4Yp0F0S5DKVx0BprPZIyS+08rqy8RnED5dyE4gz9CE4jjmU1mPvhY+R4D7LpCYqgBZvYcs=
