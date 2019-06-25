@@ -12,15 +12,57 @@ cache: npm
 branches:
   only:
     - master
-    - develop
+    - "/^v[0-9\\.]+/"
+
+stages:
+  - name: check
+    if: branch = master and tag IS blank and type IN (pull_request, api)
+  - name: test
+    if: branch = master and tag IS blank and type IN (pull_request, api)
+  - name: deploy
+    if: tag IS present
 
 jobs:
+  fast_finish: true
   include:
-    - stage: lint
+    - stage: check
       script: npm run lint
+
     - stage: test
       script: npm run jest
+      after_success:
+        - npm i coveralls
+        - cat ./coverage/lcov.info | $(npm bin)/coveralls
 
-after_success:
-  - npm i coveralls
-  - cat ./coverage/lcov.info | $(npm bin)/coveralls
+    - stage: deploy
+      language: node_js
+      node_js: '11'
+      dist: trusty
+      script: skip
+      deploy:
+        provider: releases
+        skip_cleanup: true
+        name: ${TRAVIS_TAG}
+        tag_name: ${TRAVIS_TAG}
+        draft: true
+        deploy:
+          provider: releases
+          api_key:
+            secure: T/rkup+rs9FMAMyt0Z+jlMuvdOgPT7s2Fgux+UlMSCUv/5CLHJ5F/tWm+eA7wi+sIJ32z1sR6HNUpQ1zdJaWrGtWri2KIeHWfL7KOJHaasb4MK7HJYdXdZtS/pLO8Of2z27eoCKgz3TziloG4EuEnoXl9CO7+MlIQIYzAyg0bcegXzvR1bYcjYaeXO1Dk/MUOhgHjo6ebm7BpZY9jotpFvJIPDPFh8uH2oSSdlmyReLMKTZkdRBzf+L1vk7VLpGOizTT9otCLSqlNYEWaW9IIjenGjU9luzVIjPAUq++kOH59+0hvGJ7Q4Xw2XMHVxN0GcXFoLvMJUDMFJNM+YpBNF1Sgytp2E1o1Om9L2PLFEcmAshxxpCz/TX9RidZolZb8ARTBjFTDRJIqIqTjus0o83nJzOuheebI27zvHOK21/pUAoKAxx0xzNrKSCnTLWD2u9udMXQmUmMsG2B/biZ03qwmftS4FYFep3ShKtqa9Emb2XLzS01eNVRX+4HRrpQEMyisvg7SY73mMiSVzPYQR0Uw/a7MsczkqfdNqM9GW5V8GzpsLyjyCErTHGwXIlsYyvf3CcDHxPvgKWgyoM4ptCmo77g0TlDb2R6s62NO19WrflPV/IpDe3N4Aj5FXpq9aVcuaB0em+PJ3B22138SY/EkHbQ4c4OA7+5k9Jv/ko=
+          file: build/index.js
+          overwrite: true
+          on:
+            tags: true
+
+    - stage: deploy
+      language: node_js
+      node_js: '11'
+      dist: trusty
+      script: skip
+      deploy:
+        provider: npm
+        email: technote.space@gmail.com
+        api_key:
+          secure: OI1x8qGyoa8NdkPNVHJRhoXJyZ8iKQZ4PbUDqk3SvwV1KOFSzqoGR7HWPBFzc9rIDeKDVMuGhLZxrxgJLb+/ZSJa+LUq/hFm4JP8RmsniP2akfZ3logNSef8r4x5/stxLPltCLpCAEOZsCGjDl0W5eiIh6FUQZz2rCzYsjNPeQ3uweqtKEZe68sDNlTHCx4sLq5C06rQWo8mT9fO1hUpFFz5xhrYKC2mlNWsmOF4xRMydFpchjCB4sKw2AX6OkvX4iLaV4CfD1iZ1AAj+5QujAezkFXNvSU6VHpS6PCct/HHgbO02b9QR349Ps1jRbbTL6xrn3aNYGVcU18LNYMobcUW+BNLN49wxQrKkwRerHQ+TrG0w4V5EaxFhSGgHMV+xpFbN+n8Cbo0zBXpdpEcvu7vUQfnqg0RmOqpJbVGsYLg7pofQKh0nwmRfLEB/cU2hTUkxBif32JRA1ojmAKEJKmvXh3vREZEI8X4gqZ1Z27/zPU37VFxtnlEN8d3361edNLlZg8vtbbhWficpI5hpyh59Wty60B62XQ9kMLEIaYnmW+jbfvdLyHe4ghCFLcFoK4M2mrCW1/mlQ6cP4Ksy5HpsbkpXHmgCkPXW4Yp0F0S5DKVx0BprPZIyS+08rqy8RnED5dyE4gz9CE4jjmU1mPvhY+R4D7LpCYqgBZvYcs=
+        on:
+          tags: true
