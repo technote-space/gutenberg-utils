@@ -47,7 +47,7 @@ describe( 'setupCompatibility', () => {
 		prepare();
 		setupCompatibility();
 		expect( typeof wp.blockEditor ).toBe( 'object' );
-		expect( wp.blockEditor ).hasOwnProperty( 'isOldEditor' );
+		expect( wp.blockEditor ).toHaveProperty( 'isOldEditor' );
 		expect( wp.blockEditor[ 'isOldEditor' ] ).toBeTruthy();
 		wp.blockEditor = blockEditor;
 	};
