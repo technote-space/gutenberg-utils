@@ -16,6 +16,7 @@ import Dropdown from './dropdown';
  * @param {boolean} isActive is active?
  * @param {boolean} isDisabled is disabled?
  * @param {boolean} isDropdownDisabled is dropdown disabled?
+ * @param {boolean} isHiddenIndicator is hidden indicator?
  * @returns {*} dropdown button
  * @constructor
  */
@@ -30,6 +31,7 @@ const DropdownButton = ( {
 	isActive = false,
 	isDisabled = false,
 	isDropdownDisabled = false,
+	isHiddenIndicator = false,
 } ) => {
 	return <Dropdown
 		className={ classnames( 'components-dropdown-button', className ) }
@@ -52,7 +54,7 @@ const DropdownButton = ( {
 				tooltip={ tooltip }
 				disabled={ isDisabled }
 			>
-				<span className="components-dropdown-button__indicator"/>
+				{ ! isHiddenIndicator && <span className="components-dropdown-button__indicator"/> }
 			</IconButton>;
 		} }
 		renderContent={ renderContent }
