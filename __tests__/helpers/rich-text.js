@@ -262,6 +262,7 @@ describe( 'getToolbarButtonProps', () => {
 		expect( props ).toHaveProperty( 'test1-option2' );
 		expect( props.name ).toBe( 'test1-name' );
 		expect( props.group ).toBe( 'test1-group' );
+		expect( typeof props.create ).toBe( 'function' );
 		expect( props[ 'test1-option1' ] ).toBe( 1 );
 		expect( props[ 'test1-option2' ] ).toBe( 'test2' );
 
@@ -291,7 +292,16 @@ describe( 'getToolbarButtonProps', () => {
 		expect( button.props.extraProps.label ).toBe( 'test1-name' );
 		button.props.onClick();
 
-		expect( getToolbarButtonProps( 'test2-group', 'test2-name', 'test2-icon' ) ).not.toHaveProperty( 'test1-option1' );
+		const props2 = getToolbarButtonProps( 'test2-group', 'test2-name', 'test2-icon', {
+			createDisabled: true,
+		} );
+		expect( props2 ).not.toHaveProperty( 'test1-option1' );
+		expect( props2 ).toHaveProperty( 'create' );
+		expect( props2.create ).toBeNull();
+
+		const props3 = getToolbarButtonProps( 'test3-group', 'test3-name', 'test3-icon' );
+		expect( props3 ).toHaveProperty( 'create' );
+		expect( typeof props3.create ).toBe( 'function' );
 	} );
 } );
 
