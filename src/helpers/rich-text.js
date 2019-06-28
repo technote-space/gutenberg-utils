@@ -85,16 +85,20 @@ export const onChangeStyle = ( args, formatName, styleName, suffix = '' ) => val
  * @param {string} group group
  * @param {string} name name
  * @param {*} icon icon
- * @param {{title, className, tooltipClass}} optional optional
+ * @param {object} optional optional
+ * @param {string?} optional.title title
+ * @param {string?} optional.className class name
+ * @param {string?} optional.tooltipClass tooltip class
+ * @param {boolean?} optional.createDisabled create disabled?
  * @returns {object} props
  */
-export const getToolbarButtonProps = ( group, name, icon, optional = { tooltipClass: undefined } ) => {
+export const getToolbarButtonProps = ( group, name, icon, optional = {} ) => {
 	const title = 'title' in optional ? optional.title : name;
 	const className = 'className' in optional ? optional.className : name;
 	return {
 		name,
 		group,
-		create: ( { args, formatName } ) => <ToolbarButton
+		create: optional.createDisabled ? null : ( { args, formatName } ) => <ToolbarButton
 			icon={ icon }
 			title={ <div className={ className }>{ title }</div> }
 			onClick={ () => args.onChange( toggleFormat( args.value, { type: formatName } ) ) }
