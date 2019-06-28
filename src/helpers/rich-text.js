@@ -7,7 +7,7 @@ import { DEFAULT_FONT_SIZE } from '../constant';
 const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
 const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker, ColorIndicator } = wp.components;
 const { getColorObjectByColorValue, ContrastChecker } = getEditor();
-const { Fragment } = wp.element;
+const { Fragment, createElement } = wp.element;
 const { sprintf, __ } = wp.i18n;
 
 /**
@@ -86,27 +86,32 @@ export const onChangeStyle = ( args, formatName, styleName, suffix = '' ) => val
  * @param {string} name name
  * @param {*} icon icon
  * @param {object} optional optional
- * @param {string?} optional.title title
+ * @param {*?} optional.preview preview
  * @param {string?} optional.className class name
+ * @param {string?} optional.tagName tag name
+ * @param {string?} optional.title title
  * @param {string?} optional.tooltipClass tooltip class
  * @param {boolean?} optional.createDisabled create disabled?
  * @returns {object} props
  */
 export const getToolbarButtonProps = ( group, name, icon, optional = {} ) => {
-	const title = 'title' in optional ? optional.title : name;
 	const className = 'className' in optional ? optional.className : name;
+	const title = 'title' in optional ? optional.title : name;
+	const preview = 'preview' in optional ? optional.preview : ( 'tagName' in optional ? createElement( optional.tagName, {
+		className,
+	}, title ) : name );
 	return {
 		name,
 		group,
 		create: optional.createDisabled ? null : ( { args, formatName } ) => <ToolbarButton
 			icon={ icon }
-			title={ <div className={ className }>{ title }</div> }
+			title={ <div className={ className }>{ preview }</div> }
 			onClick={ () => args.onChange( toggleFormat( args.value, { type: formatName } ) ) }
 			isActive={ args.isActive }
 			extraProps={ {
 				label: name,
 				tooltip: <div className={ classnames( 'components-popover__content__dropdown-tooltip', optional.tooltipClass ) }>
-					<div className={ name }>{ title }</div>
+					<div className={ name }>{ preview }</div>
 				</div>,
 			} }
 		/>,
