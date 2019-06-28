@@ -21,12 +21,14 @@ describe( 'DropdownButton', () => {
 				renderContent: () => <div className={ 'popover1' }>test1</div>,
 				isActive: true,
 				isDisabled: false,
+				isHiddenIndicator: true,
 			},
 			callback: ( wrapper, index ) => {
 				expect( wrapper.find( '.test1-class' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.test1-class button' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.test1-class button' ).hostNodes().prop( 'disabled' ) ).toBeFalsy();
 				expect( wrapper.find( '.test1-class button.is-active' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.test1-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 0 );
 				expect( wrapper.find( '.popover1' ).hostNodes() ).toHaveLength( 0 );
 
 				wrapper.find( '.test1-class button' ).hostNodes().simulate( 'click' );
@@ -62,6 +64,7 @@ describe( 'DropdownButton', () => {
 				expect( wrapper.find( '.test2-class button' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.test2-class button' ).hostNodes().prop( 'disabled' ) ).toBeFalsy();
 				expect( wrapper.find( '.test2-class button.is-active' ).hostNodes() ).toHaveLength( 0 );
+				expect( wrapper.find( '.test2-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
 
 				{
@@ -127,6 +130,7 @@ describe( 'DropdownButton', () => {
 				expect( wrapper.find( '.test3-class button' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.test3-class button' ).hostNodes().prop( 'disabled' ) ).toBeTruthy();
 				expect( wrapper.find( '.test3-class button.is-active' ).hostNodes() ).toHaveLength( 0 );
+				expect( wrapper.find( '.test3-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.popover3' ).hostNodes() ).toHaveLength( 0 );
 			},
 		},

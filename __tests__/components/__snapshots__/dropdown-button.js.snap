@@ -20,7 +20,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
       aria-haspopup="true"
       aria-label="test1-label"
       aria-pressed={true}
-      className="components-icon-button components-dropdown-button__toggle is-active has-text"
+      className="components-icon-button components-dropdown-button__toggle is-active"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -33,7 +33,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
         aria-haspopup="true"
         aria-label="test1-label"
         aria-pressed={true}
-        className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
+        className="components-button components-icon-button components-dropdown-button__toggle is-active"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -41,12 +41,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         type="button"
-      >
-        <span
-          className="components-dropdown-button__indicator"
-          key="0,1"
-        />
-      </button>
+      />
     </ForwardRef(Button)>
   </ForwardRef(IconButton)>
   <span>
@@ -113,7 +108,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
       aria-haspopup="true"
       aria-label="test1-label"
       aria-pressed={true}
-      className="components-icon-button components-dropdown-button__toggle is-active has-text"
+      className="components-icon-button components-dropdown-button__toggle is-active"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -126,7 +121,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
         aria-haspopup="true"
         aria-label="test1-label"
         aria-pressed={true}
-        className="components-button components-icon-button components-dropdown-button__toggle is-active has-text"
+        className="components-button components-icon-button components-dropdown-button__toggle is-active"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -134,12 +129,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         type="button"
-      >
-        <span
-          className="components-dropdown-button__indicator"
-          key="0,1"
-        />
-      </button>
+      />
     </ForwardRef(Button)>
   </ForwardRef(IconButton)>
 </div>
