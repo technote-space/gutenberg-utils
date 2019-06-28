@@ -284,6 +284,9 @@ describe( 'getToolbarButtonProps', () => {
 		expect( button.props ).toHaveProperty( 'extraProps' );
 		expect( button.props.icon ).toBe( 'test1-icon' );
 		expect( typeof button.props.title ).toBe( 'object' );
+		expect( button.props.title.props ).toHaveProperty( 'children' );
+		expect( button.props.title.props.className ).toBe( 'test1-class' );
+		expect( button.props.title.props.children ).toBe( 'test1-name' );
 		expect( typeof button.props.onClick ).toBe( 'function' );
 		expect( button.props.isActive ).toBe( true );
 		expect( button.props.extraProps ).toHaveProperty( 'label' );
@@ -302,6 +305,32 @@ describe( 'getToolbarButtonProps', () => {
 		const props3 = getToolbarButtonProps( 'test3-group', 'test3-name', 'test3-icon' );
 		expect( props3 ).toHaveProperty( 'create' );
 		expect( typeof props3.create ).toBe( 'function' );
+
+		const props4 = getToolbarButtonProps( 'test4-group', 'test4-name', 'test4-icon', {
+			preview: 'test4-preview',
+		} );
+		const button2 = props4.create( getArgs( () => {
+		}, 'test2/test5' ) );
+		expect( typeof button2.props.title ).toBe( 'object' );
+		expect( button2.props.title.props ).toHaveProperty( 'children' );
+		expect( button2.props.title.props.className ).toBe( 'test4-name' );
+		expect( button2.props.title.props.children ).toBe( 'test4-preview' );
+
+		const props5 = getToolbarButtonProps( 'test5-group', 'test5-name', 'test5-icon', {
+			tagName: 'test5-tag',
+			className: 'test5-class',
+		} );
+		const button3 = props5.create( getArgs( () => {
+		}, 'test2/test5' ) );
+		expect( typeof button3.props.title ).toBe( 'object' );
+		expect( button3.props.title.props ).toHaveProperty( 'children' );
+		expect( button3.props.title.props.className ).toBe( 'test5-class' );
+		expect( typeof button3.props.title.props.children ).toBe( 'object' );
+		expect( button3.props.title.props.children.type ).toBe( 'test5-tag' );
+		expect( button3.props.title.props.children.props ).toHaveProperty( 'className' );
+		expect( button3.props.title.props.children.props ).toHaveProperty( 'children' );
+		expect( button3.props.title.props.children.props.className ).toBe( 'test5-class' );
+		expect( button3.props.title.props.children.props.children ).toBe( 'test5-name' );
 	} );
 } );
 
