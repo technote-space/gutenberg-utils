@@ -120,7 +120,11 @@ export const getToolbarButtonProps = ( group, name, icon, optional = {} ) => {
  * @param {string} title title
  * @param {*} icon icon
  * @param {string} property property
- * @param {{createDisabled, createInspectorDisabled, dropdownClassName}} optional optional
+ * @param {object} optional optional
+ * @param {boolean?} optional.createDisabled is disabled create?
+ * @param {boolean?} optional.createInspectorDisabled is disabled create inspector?
+ * @param {boolean?} optional.isHiddenIndicator is hidden inspector?
+ * @param {string?} optional.dropdownClassName dropdown class name
  * @param {function} createControl create control function
  * @returns {object} props
  */
@@ -140,6 +144,7 @@ export const getDropdownButtonProps = ( group, name, title, icon, property, opti
 			label={ title }
 			className={ classnames( `components-dropdown-button__has-property-${ property }`, optional.dropdownClassName ) }
 			renderContent={ () => createControl( args, formatName, false ) }
+			isHiddenIndicator={ false !== optional.isHiddenIndicator }
 		/>;
 	}
 	if ( ! optional.createInspectorDisabled ) {
