@@ -56,7 +56,7 @@ Compile and enqueue script.
 ) );
 ```
 
-Download [Release version](https://raw.githubusercontent.com/technote-space/gutenberg-utils/master/build/index.js) and enqueue scripts.
+Download [Release version](https://github.com/technote-space/gutenberg-utils/releases/latest/download/index.js) and enqueue scripts.
 ```
 <script type="text/javascript" src="/assets/gutenberg-utils/index.js"></script>
 <script type="text/javascript" src="/assets/gutenberg.js"></script>
