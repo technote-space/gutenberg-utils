@@ -13,12 +13,12 @@ This is a gutenberg's utils.
 ### Use from npm
 [https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
 
-```
+```bash
 npm install --save @technote-space/gutenberg-utils
 ```
 
 `gutenberg.js`
-```
+```js
 import { Components, Helpers } from '@technote-space/gutenberg-utils';
 
 const { Icon, DropdownButton } = Components;
@@ -28,14 +28,14 @@ const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } =
 
 Compile and enqueue script.
 
-```
+```html
 <script type="text/javascript" src="/assets/gutenberg.js"></script>
 ```
 
 ### Use from download
 
 `gutenberg.js`
-```
+```js
 ( function(
 	Icon, DropdownButton,
 	getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle,
@@ -57,7 +57,7 @@ Compile and enqueue script.
 ```
 
 Download [Release version](https://github.com/technote-space/gutenberg-utils/releases/latest/download/index.js) and enqueue scripts.
-```
+```html
 <script type="text/javascript" src="/assets/gutenberg-utils/index.js"></script>
 <script type="text/javascript" src="/assets/gutenberg.js"></script>
 ```
