@@ -1,7 +1,7 @@
 {
   "name": "@technote-space/gutenberg-utils",
   "version": "1.0.21",
-  "description": "gutenberg's utils",
+  "description": "gutenberg utils",
   "main": "build/index.js",
   "scripts": {
     "start": "yarn build",
