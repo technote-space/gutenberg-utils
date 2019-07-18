@@ -1,15 +1,15 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "1.0.21",
-  "description": "gutenberg's utils",
+  "version": "1.0.22",
+  "description": "gutenberg utils",
   "main": "build/index.js",
   "scripts": {
     "start": "yarn build",
-    "test": "yarn lint && yarn jest",
-    "test:update": "yarn lint && yarn jest:update",
+    "test": "yarn lint && yarn cover",
+    "test:update": "yarn lint && yarn cover:update",
     "lint": "eslint src/**/**/*.js && eslint __tests__/**/**/*.js",
-    "jest": "jest --coverage",
-    "jest:update": "jest --coverage --updateSnapshot",
+    "cover": "jest --coverage",
+    "cover:update": "jest --coverage --updateSnapshot",
     "develop": "webpack --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -31,12 +31,12 @@
     "classnames": "^2.2.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/preset-env": "^7.5.4",
-    "@babel/register": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "@wordpress/block-editor": "^2.2.0",
     "@wordpress/components": "^8.0.0",
     "@wordpress/core-data": "^2.4.0",
@@ -66,7 +66,7 @@
     "speed-measure-webpack-plugin": "^1.3.1",
     "style-loader": "^0.23.1",
     "traverse": "^0.6.6",
-    "webpack": "^4.35.3",
-    "webpack-cli": "~3.3.5"
+    "webpack": "^4.36.1",
+    "webpack-cli": "~3.3.6"
   }
 }
