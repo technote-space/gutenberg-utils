@@ -9,3 +9,4 @@ jest.config.js
 jest.setup.js
 yarn.lock
 /travis-ci
+composer.json
