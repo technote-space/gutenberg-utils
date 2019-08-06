@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import { DropdownButton } from '../../src/components';
 import Dropdown from '../../src/components/dropdown-button/dropdown';
 
-const { FontSizePicker } = wp.components;
+const { FontSizePicker, ColorPalette } = wp.components;
 
 describe( 'DropdownButton', () => {
 	const getSnapshotName = ( name, index ) => `${ name }--${ index }`;
@@ -65,54 +65,19 @@ describe( 'DropdownButton', () => {
 				expect( wrapper.find( '.test2-class button' ).hostNodes().prop( 'disabled' ) ).toBeFalsy();
 				expect( wrapper.find( '.test2-class button.is-active' ).hostNodes() ).toHaveLength( 0 );
 				expect( wrapper.find( '.test2-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 1 );
-				expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
+				expect( wrapper.find( '.components-select-control__input' ).hostNodes() ).toHaveLength( 0 );
 
 				{
 					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
 					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-select-control__input' ).hostNodes() ).toHaveLength( 1 );
 
 					const outerNode = document.createElement( 'div' );
 					document.body.appendChild( outerNode );
 					outerNode.dispatchEvent( new Event( 'click' ) );
 					wrapper.update();
 
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
-				}
-
-				{
-					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
-					expect( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes() ).toHaveLength( 0 );
-
-					wrapper.find( '.components-font-size-picker__buttons .components-font-size-picker__selector' ).hostNodes().simulate( 'click' );
-					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open-font-size-picker', index ) );
-					expect( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes() ).toHaveLength( 1 );
-					expect( wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes() ).toHaveLength( 3 );
-
-					document.body.appendChild( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes().instance() );
-					const dropdown = wrapper.find( Dropdown ).instance();
-					dropdown.closeIfClickOutside( { target: wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes().at( 1 ).instance() } );
-					wrapper.update();
-
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
-
-					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
-				}
-
-				{
-					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
-
-					wrapper.find( '.components-font-size-picker__buttons .components-font-size-picker__selector' ).hostNodes().simulate( 'click' );
-					expect( wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes() ).toHaveLength( 3 );
-
-					const dropdown = wrapper.find( Dropdown ).instance();
-					dropdown.closeIfClickOutside( { target: wrapper.find( '.test2-content-class' ).hostNodes().instance() } );
-					wrapper.update();
-
-					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-select-control__input' ).hostNodes() ).toHaveLength( 0 );
 				}
 			},
 		},
@@ -132,6 +97,79 @@ describe( 'DropdownButton', () => {
 				expect( wrapper.find( '.test3-class button.is-active' ).hostNodes() ).toHaveLength( 0 );
 				expect( wrapper.find( '.test3-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 1 );
 				expect( wrapper.find( '.popover3' ).hostNodes() ).toHaveLength( 0 );
+			},
+		},
+		{
+			props: {
+				label: 'test4-label',
+				className: 'test4-class',
+				contentClassName: 'test4-content-class',
+				renderContent: () => <ColorPalette
+					colors={ [
+						{ name: 'test1', color: 'red', slug: 'test1' },
+						{ name: 'test2', color: 'green', slug: 'test2' },
+						{ name: 'test3', color: 'blue', slug: 'test3' },
+					] }
+					value={ 'green' }
+					disableCustomColors={ false }
+					onChange={ () => null }
+				/>,
+			},
+			callback: ( wrapper, index ) => {
+				expect( wrapper.find( '.test4-class' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.test4-class button' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.test4-class button' ).hostNodes().prop( 'disabled' ) ).toBeFalsy();
+				expect( wrapper.find( '.test4-class button.is-active' ).hostNodes() ).toHaveLength( 0 );
+				expect( wrapper.find( '.test4-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.components-color-palette' ).hostNodes() ).toHaveLength( 0 );
+
+				{
+					wrapper.find( '.test4-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
+					expect( wrapper.find( '.components-color-palette' ).hostNodes() ).toHaveLength( 1 );
+
+					const outerNode = document.createElement( 'div' );
+					document.body.appendChild( outerNode );
+					outerNode.dispatchEvent( new Event( 'click' ) );
+					wrapper.update();
+
+					expect( wrapper.find( '.components-color-palette' ).hostNodes() ).toHaveLength( 0 );
+				}
+
+				{
+					wrapper.find( '.test4-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-color-picker' ).hostNodes() ).toHaveLength( 0 );
+
+					wrapper.find( '.components-color-palette__custom-color .components-button' ).hostNodes().simulate( 'click' );
+					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open-color-picker', index ) );
+					expect( wrapper.find( '.components-color-picker' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-color-picker .components-button' ).hostNodes() ).toHaveLength( 1 );
+
+					document.body.appendChild( wrapper.find( '.components-color-picker' ).hostNodes().instance() );
+					const dropdown = wrapper.find( Dropdown ).instance();
+					dropdown.closeIfClickOutside( { target: wrapper.find( '.components-color-picker .components-button' ).hostNodes().instance() } );
+					wrapper.update();
+
+					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
+
+					wrapper.find( '.test4-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 0 );
+				}
+
+				{
+					wrapper.find( '.test4-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
+
+					wrapper.find( '.components-color-palette__custom-color .components-button' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-color-picker .components-button' ).hostNodes() ).toHaveLength( 1 );
+
+					const dropdown = wrapper.find( Dropdown ).instance();
+					dropdown.closeIfClickOutside( { target: wrapper.find( '.test4-content-class' ).hostNodes().instance() } );
+					wrapper.update();
+
+					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
+				}
 			},
 		},
 	].forEach( ( { props, callback }, index ) => {
