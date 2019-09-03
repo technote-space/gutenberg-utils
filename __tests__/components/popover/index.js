@@ -16,9 +16,6 @@ const { SlotFillProvider, IsolatedEventContainer } = wp.components;
 
 jest.useFakeTimers();
 
-/**
- * popover wrapper
- */
 class PopoverWrapper extends Component {
 	/**
 	 * @returns {Component} render
