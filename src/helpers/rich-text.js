@@ -1,11 +1,11 @@
 import classnames from 'classnames';
-import { DropdownButton } from '../components';
+import { DropdownButton, ColorPalette, FontSizePicker } from '../components';
 import { getColors, getFontSizes, isValidCustomColors } from './editor';
 import { getEditor } from './compatibility';
 import { DEFAULT_FONT_SIZE } from '../constant';
 
 const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
-const { ToolbarButton, BaseControl, ColorPalette, FontSizePicker, ColorIndicator } = wp.components;
+const { ToolbarButton, BaseControl, ColorIndicator } = wp.components;
 const { getColorObjectByColorValue, ContrastChecker } = getEditor();
 const { Fragment, createElement } = wp.element;
 const { sprintf, __ } = wp.i18n;
@@ -184,7 +184,10 @@ export const getColorButtonProps = ( name, title, icon, property, optional = {} 
 			value={ value }
 			onChange={ onChangeStyle( args, formatName, property ) }
 		/>;
-		return isInspector ? <BaseControl label={ getInspectorLabel( value, title, colors ) }>
+		return isInspector ? <BaseControl
+			label={ getInspectorLabel( value, title, colors ) }
+			className="block-editor-panel-color-palette"
+		>
 			{ createColorPalette( args, formatName ) }
 		</BaseControl> : createColorPalette( args, formatName );
 	} );

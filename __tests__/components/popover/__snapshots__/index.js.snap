@@ -1,0 +1,843 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover should render content 1`] = `
+<SlotFillProvider>
+  <PopoverWrapper
+    onKeyDown={[MockFunction]}
+  >
+    <Popover
+      onKeyDown={[MockFunction]}
+    >
+      <span>
+        <Fill
+          name="Popover"
+        >
+          <FillComponent
+            name="Popover"
+            registerFill={[Function]}
+            unregisterFill={[Function]}
+          >
+            <Portal
+              containerInfo={
+                <div>
+                  <div
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="components-popover is-bottom is-center components-animate__appear is-from-top"
+                      >
+                        <div
+                          class="components-popover__content"
+                          tabindex="-1"
+                        >
+                          Hello
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            >
+              <WithConstrainedTabbing(WithFocusReturn(Component))>
+                <div
+                  onKeyDown={[Function]}
+                  tabIndex="-1"
+                >
+                  <WithFocusReturn(Component)>
+                    <FocusReturn
+                      focusHistory={Array []}
+                    >
+                      <div
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                      >
+                        <Component
+                          focusHistory={Array []}
+                        >
+                          <clickOutside(PopoverDetectOutside)>
+                            <PopoverDetectOutside>
+                              <Animate
+                                options={
+                                  Object {
+                                    "origin": "top center",
+                                  }
+                                }
+                                type="appear"
+                              >
+                                <IsolatedEventContainer
+                                  className="components-popover is-bottom is-center components-animate__appear is-from-top"
+                                  onKeyDown={[Function]}
+                                  style={
+                                    Object {
+                                      "left": undefined,
+                                      "top": undefined,
+                                      "visibility": undefined,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="components-popover is-bottom is-center components-animate__appear is-from-top"
+                                    onKeyDown={[Function]}
+                                    onMouseDown={[Function]}
+                                    style={
+                                      Object {
+                                        "left": undefined,
+                                        "top": undefined,
+                                        "visibility": undefined,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="components-popover__content"
+                                      style={
+                                        Object {
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                        }
+                                      }
+                                      tabIndex="-1"
+                                    >
+                                      Hello
+                                    </div>
+                                  </div>
+                                </IsolatedEventContainer>
+                              </Animate>
+                            </PopoverDetectOutside>
+                          </clickOutside(PopoverDetectOutside)>
+                        </Component>
+                      </div>
+                    </FocusReturn>
+                  </WithFocusReturn(Component)>
+                </div>
+              </WithConstrainedTabbing(WithFocusReturn(Component))>
+            </Portal>
+          </FillComponent>
+        </Fill>
+      </span>
+    </Popover>
+  </PopoverWrapper>
+  <Component>
+    <Slot
+      bubblesVirtually={true}
+      name="Popover"
+    >
+      <SlotComponent
+        bubblesVirtually={true}
+        getFills={[Function]}
+        name="Popover"
+        registerSlot={[Function]}
+        unregisterSlot={[Function]}
+      >
+        <div />
+      </SlotComponent>
+    </Slot>
+  </Component>
+</SlotFillProvider>
+`;
+
+exports[`Popover should render content 2`] = `
+<SlotFillProvider>
+  <PopoverWrapper
+    onClose={[MockFunction]}
+  >
+    <Popover
+      onClose={[MockFunction]}
+    >
+      <span>
+        <Fill
+          name="Popover"
+        >
+          <FillComponent
+            name="Popover"
+            registerFill={[Function]}
+            unregisterFill={[Function]}
+          >
+            <Portal
+              containerInfo={
+                <div>
+                  <div
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="components-popover is-bottom is-center components-animate__appear is-from-top"
+                      >
+                        <div
+                          class="components-popover__content"
+                          tabindex="-1"
+                        >
+                          Hello
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            >
+              <WithConstrainedTabbing(WithFocusReturn(Component))>
+                <div
+                  onKeyDown={[Function]}
+                  tabIndex="-1"
+                >
+                  <WithFocusReturn(Component)>
+                    <FocusReturn
+                      focusHistory={Array []}
+                    >
+                      <div
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                      >
+                        <Component
+                          focusHistory={Array []}
+                        >
+                          <clickOutside(PopoverDetectOutside)
+                            onClickOutside={[MockFunction]}
+                          >
+                            <PopoverDetectOutside
+                              onClickOutside={[MockFunction]}
+                            >
+                              <Animate
+                                options={
+                                  Object {
+                                    "origin": "top center",
+                                  }
+                                }
+                                type="appear"
+                              >
+                                <IsolatedEventContainer
+                                  className="components-popover is-bottom is-center components-animate__appear is-from-top"
+                                  onKeyDown={[Function]}
+                                  style={
+                                    Object {
+                                      "left": undefined,
+                                      "top": undefined,
+                                      "visibility": undefined,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="components-popover is-bottom is-center components-animate__appear is-from-top"
+                                    onKeyDown={[Function]}
+                                    onMouseDown={[Function]}
+                                    style={
+                                      Object {
+                                        "left": undefined,
+                                        "top": undefined,
+                                        "visibility": undefined,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="components-popover__content"
+                                      style={
+                                        Object {
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                        }
+                                      }
+                                      tabIndex="-1"
+                                    >
+                                      Hello
+                                    </div>
+                                  </div>
+                                </IsolatedEventContainer>
+                              </Animate>
+                            </PopoverDetectOutside>
+                          </clickOutside(PopoverDetectOutside)>
+                        </Component>
+                      </div>
+                    </FocusReturn>
+                  </WithFocusReturn(Component)>
+                </div>
+              </WithConstrainedTabbing(WithFocusReturn(Component))>
+            </Portal>
+          </FillComponent>
+        </Fill>
+      </span>
+    </Popover>
+  </PopoverWrapper>
+  <Component>
+    <Slot
+      bubblesVirtually={true}
+      name="Popover"
+    >
+      <SlotComponent
+        bubblesVirtually={true}
+        getFills={[Function]}
+        name="Popover"
+        registerSlot={[Function]}
+        unregisterSlot={[Function]}
+      >
+        <div />
+      </SlotComponent>
+    </Slot>
+  </Component>
+</SlotFillProvider>
+`;
+
+exports[`Popover should render mobile content 1`] = `
+<SlotFillProvider>
+  <PopoverWrapper
+    expandOnMobile={true}
+    position="middle"
+  >
+    <Popover
+      expandOnMobile={true}
+      position="middle"
+    >
+      <span>
+        <Fill
+          name="Popover"
+        >
+          <FillComponent
+            name="Popover"
+            registerFill={[Function]}
+            unregisterFill={[Function]}
+          >
+            <Portal
+              containerInfo={
+                <div>
+                  <div
+                    tabindex="-1"
+                  >
+                    <div>
+                      <div
+                        class="components-popover is-bottom is-center is-mobile components-animate__appear is-from-top"
+                      >
+                        <div
+                          class="components-popover__header"
+                        >
+                          <span
+                            class="components-popover__header-title"
+                          />
+                          <button
+                            class="components-button components-icon-button components-popover__close"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="dashicon dashicons-no-alt"
+                              focusable="false"
+                              height="20"
+                              role="img"
+                              viewBox="0 0 20 20"
+                              width="20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M14.95 6.46L11.41 10l3.54 3.54-1.41 1.41L10 11.42l-3.53 3.53-1.42-1.42L8.58 10 5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div
+                          class="components-popover__content"
+                          tabindex="-1"
+                        >
+                          Hello
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            >
+              <WithConstrainedTabbing(WithFocusReturn(Component))>
+                <div
+                  onKeyDown={[Function]}
+                  tabIndex="-1"
+                >
+                  <WithFocusReturn(Component)>
+                    <FocusReturn
+                      focusHistory={Array []}
+                    >
+                      <div
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                      >
+                        <Component
+                          focusHistory={Array []}
+                        >
+                          <clickOutside(PopoverDetectOutside)>
+                            <PopoverDetectOutside>
+                              <Animate
+                                options={
+                                  Object {
+                                    "origin": "top center",
+                                  }
+                                }
+                                type="appear"
+                              >
+                                <IsolatedEventContainer
+                                  className="components-popover is-bottom is-center is-mobile components-animate__appear is-from-top"
+                                  onKeyDown={[Function]}
+                                  style={
+                                    Object {
+                                      "left": undefined,
+                                      "top": undefined,
+                                      "visibility": undefined,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="components-popover is-bottom is-center is-mobile components-animate__appear is-from-top"
+                                    onKeyDown={[Function]}
+                                    onMouseDown={[Function]}
+                                    style={
+                                      Object {
+                                        "left": undefined,
+                                        "top": undefined,
+                                        "visibility": undefined,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="components-popover__header"
+                                    >
+                                      <span
+                                        className="components-popover__header-title"
+                                      />
+                                      <ForwardRef(IconButton)
+                                        className="components-popover__close"
+                                        icon="no-alt"
+                                      >
+                                        <ForwardRef(Button)
+                                          className="components-icon-button components-popover__close"
+                                        >
+                                          <button
+                                            className="components-button components-icon-button components-popover__close"
+                                            type="button"
+                                          >
+                                            <Dashicon
+                                              icon="no-alt"
+                                            >
+                                              <SVG
+                                                aria-hidden={true}
+                                                className="dashicon dashicons-no-alt"
+                                                focusable="false"
+                                                height={20}
+                                                role="img"
+                                                viewBox="0 0 20 20"
+                                                width={20}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  className="dashicon dashicons-no-alt"
+                                                  focusable="false"
+                                                  height={20}
+                                                  role="img"
+                                                  viewBox="0 0 20 20"
+                                                  width={20}
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <Path
+                                                    d="M14.95 6.46L11.41 10l3.54 3.54-1.41 1.41L10 11.42l-3.53 3.53-1.42-1.42L8.58 10 5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z"
+                                                  >
+                                                    <path
+                                                      d="M14.95 6.46L11.41 10l3.54 3.54-1.41 1.41L10 11.42l-3.53 3.53-1.42-1.42L8.58 10 5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z"
+                                                    />
+                                                  </Path>
+                                                </svg>
+                                              </SVG>
+                                            </Dashicon>
+                                          </button>
+                                        </ForwardRef(Button)>
+                                      </ForwardRef(IconButton)>
+                                    </div>
+                                    <div
+                                      className="components-popover__content"
+                                      style={
+                                        Object {
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                        }
+                                      }
+                                      tabIndex="-1"
+                                    >
+                                      Hello
+                                    </div>
+                                  </div>
+                                </IsolatedEventContainer>
+                              </Animate>
+                            </PopoverDetectOutside>
+                          </clickOutside(PopoverDetectOutside)>
+                        </Component>
+                      </div>
+                    </FocusReturn>
+                  </WithFocusReturn(Component)>
+                </div>
+              </WithConstrainedTabbing(WithFocusReturn(Component))>
+            </Portal>
+          </FillComponent>
+        </Fill>
+        <ScrollLock />
+      </span>
+    </Popover>
+  </PopoverWrapper>
+  <Component>
+    <Slot
+      bubblesVirtually={true}
+      name="Popover"
+    >
+      <SlotComponent
+        bubblesVirtually={true}
+        getFills={[Function]}
+        name="Popover"
+        registerSlot={[Function]}
+        unregisterSlot={[Function]}
+      >
+        <div />
+      </SlotComponent>
+    </Slot>
+  </Component>
+</SlotFillProvider>
+`;
+
+exports[`renderPopover should render mobile popover 1`] = `
+<SlotFillProvider>
+  <WrapperComponent>
+    <span>
+      <Fill
+        name="Popover"
+      >
+        <FillComponent
+          name="Popover"
+          registerFill={[Function]}
+          unregisterFill={[Function]}
+        >
+          <Portal
+            containerInfo={
+              <div>
+                <div
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="components-popover is-middle is-center is-mobile is-without-arrow"
+                      style="visibility: hidden;"
+                    >
+                      <div
+                        class="components-popover__header"
+                      >
+                        <span
+                          class="components-popover__header-title"
+                        />
+                        <button
+                          class="components-button components-icon-button components-popover__close"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="dashicon dashicons-no-alt"
+                            focusable="false"
+                            height="20"
+                            role="img"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.95 6.46L11.41 10l3.54 3.54-1.41 1.41L10 11.42l-3.53 3.53-1.42-1.42L8.58 10 5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        class="components-popover__content"
+                        tabindex="-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          >
+            <WithConstrainedTabbing(WithFocusReturn(Component))>
+              <div
+                onKeyDown={[Function]}
+                tabIndex="-1"
+              >
+                <WithFocusReturn(Component)>
+                  <FocusReturn
+                    focusHistory={Array []}
+                  >
+                    <div
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                    >
+                      <Component
+                        focusHistory={Array []}
+                      >
+                        <clickOutside(PopoverDetectOutside)
+                          onClickOutside={[MockFunction]}
+                        >
+                          <PopoverDetectOutside
+                            onClickOutside={[MockFunction]}
+                          >
+                            <Animate
+                              options={
+                                Object {
+                                  "origin": "middle center",
+                                }
+                              }
+                              type={null}
+                            >
+                              <IsolatedEventContainer
+                                className="components-popover is-middle is-center is-mobile is-without-arrow"
+                                onKeyDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": undefined,
+                                    "top": undefined,
+                                    "visibility": "hidden",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="components-popover is-middle is-center is-mobile is-without-arrow"
+                                  onKeyDown={[Function]}
+                                  onMouseDown={[Function]}
+                                  style={
+                                    Object {
+                                      "left": undefined,
+                                      "top": undefined,
+                                      "visibility": "hidden",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="components-popover__header"
+                                  >
+                                    <span
+                                      className="components-popover__header-title"
+                                    />
+                                    <ForwardRef(IconButton)
+                                      className="components-popover__close"
+                                      icon="no-alt"
+                                      onClick={[MockFunction]}
+                                    >
+                                      <ForwardRef(Button)
+                                        className="components-icon-button components-popover__close"
+                                        onClick={[MockFunction]}
+                                      >
+                                        <button
+                                          className="components-button components-icon-button components-popover__close"
+                                          onClick={[MockFunction]}
+                                          type="button"
+                                        >
+                                          <Dashicon
+                                            icon="no-alt"
+                                          >
+                                            <SVG
+                                              aria-hidden={true}
+                                              className="dashicon dashicons-no-alt"
+                                              focusable="false"
+                                              height={20}
+                                              role="img"
+                                              viewBox="0 0 20 20"
+                                              width={20}
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                className="dashicon dashicons-no-alt"
+                                                focusable="false"
+                                                height={20}
+                                                role="img"
+                                                viewBox="0 0 20 20"
+                                                width={20}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <Path
+                                                  d="M14.95 6.46L11.41 10l3.54 3.54-1.41 1.41L10 11.42l-3.53 3.53-1.42-1.42L8.58 10 5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z"
+                                                >
+                                                  <path
+                                                    d="M14.95 6.46L11.41 10l3.54 3.54-1.41 1.41L10 11.42l-3.53 3.53-1.42-1.42L8.58 10 5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z"
+                                                  />
+                                                </Path>
+                                              </svg>
+                                            </SVG>
+                                          </Dashicon>
+                                        </button>
+                                      </ForwardRef(Button)>
+                                    </ForwardRef(IconButton)>
+                                  </div>
+                                  <div
+                                    className="components-popover__content"
+                                    style={
+                                      Object {
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                      }
+                                    }
+                                    tabIndex="-1"
+                                  />
+                                </div>
+                              </IsolatedEventContainer>
+                            </Animate>
+                          </PopoverDetectOutside>
+                        </clickOutside(PopoverDetectOutside)>
+                      </Component>
+                    </div>
+                  </FocusReturn>
+                </WithFocusReturn(Component)>
+              </div>
+            </WithConstrainedTabbing(WithFocusReturn(Component))>
+          </Portal>
+        </FillComponent>
+      </Fill>
+      <ScrollLock />
+    </span>
+  </WrapperComponent>
+  <Component>
+    <Slot
+      bubblesVirtually={true}
+      name="Popover"
+    >
+      <SlotComponent
+        bubblesVirtually={true}
+        getFills={[Function]}
+        name="Popover"
+        registerSlot={[Function]}
+        unregisterSlot={[Function]}
+      >
+        <div />
+      </SlotComponent>
+    </Slot>
+  </Component>
+</SlotFillProvider>
+`;
+
+exports[`renderPopover should render popover 1`] = `
+<SlotFillProvider>
+  <WrapperComponent>
+    <span>
+      <Fill
+        name="Popover"
+      >
+        <FillComponent
+          name="Popover"
+          registerFill={[Function]}
+          unregisterFill={[Function]}
+        >
+          <Portal
+            containerInfo={
+              <div>
+                <div
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="components-popover is-middle is-center is-without-arrow"
+                      style="top: 20px; left: 10px; visibility: hidden;"
+                    >
+                      <div
+                        class="components-popover__content"
+                        style="max-height: 30px; max-width: 40px;"
+                        tabindex="-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          >
+            <WithConstrainedTabbing(WithFocusReturn(Component))>
+              <div
+                onKeyDown={[Function]}
+                tabIndex="-1"
+              >
+                <WithFocusReturn(Component)>
+                  <FocusReturn
+                    focusHistory={Array []}
+                  >
+                    <div
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                    >
+                      <Component
+                        focusHistory={Array []}
+                      >
+                        <clickOutside(PopoverDetectOutside)
+                          onClickOutside={[MockFunction]}
+                        >
+                          <PopoverDetectOutside
+                            onClickOutside={[MockFunction]}
+                          >
+                            <Animate
+                              options={
+                                Object {
+                                  "origin": "middle center",
+                                }
+                              }
+                              type={null}
+                            >
+                              <IsolatedEventContainer
+                                className="components-popover is-middle is-center is-without-arrow"
+                                onKeyDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "10px",
+                                    "top": "20px",
+                                    "visibility": "hidden",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="components-popover is-middle is-center is-without-arrow"
+                                  onKeyDown={[Function]}
+                                  onMouseDown={[Function]}
+                                  style={
+                                    Object {
+                                      "left": "10px",
+                                      "top": "20px",
+                                      "visibility": "hidden",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="components-popover__content"
+                                    style={
+                                      Object {
+                                        "maxHeight": "30px",
+                                        "maxWidth": "40px",
+                                      }
+                                    }
+                                    tabIndex="-1"
+                                  />
+                                </div>
+                              </IsolatedEventContainer>
+                            </Animate>
+                          </PopoverDetectOutside>
+                        </clickOutside(PopoverDetectOutside)>
+                      </Component>
+                    </div>
+                  </FocusReturn>
+                </WithFocusReturn(Component)>
+              </div>
+            </WithConstrainedTabbing(WithFocusReturn(Component))>
+          </Portal>
+        </FillComponent>
+      </Fill>
+    </span>
+  </WrapperComponent>
+  <Component>
+    <Slot
+      bubblesVirtually={true}
+      name="Popover"
+    >
+      <SlotComponent
+        bubblesVirtually={true}
+        getFills={[Function]}
+        name="Popover"
+        registerSlot={[Function]}
+        unregisterSlot={[Function]}
+      >
+        <div />
+      </SlotComponent>
+    </Slot>
+  </Component>
+</SlotFillProvider>
+`;

@@ -2,9 +2,11 @@
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { DropdownButton } from '../../src/components';
-import Dropdown from '../../src/components/dropdown-button/dropdown';
+import Dropdown from '../../src/components/dropdown';
+import Popover from '../../src/components/popover';
+import { FontSizePicker, ColorPalette } from '../../src/components';
 
-const { FontSizePicker, ColorPalette } = wp.components;
+const { SlotFillProvider } = wp.components;
 
 describe( 'DropdownButton', () => {
 	const getSnapshotName = ( name, index ) => `${ name }--${ index }`;
@@ -36,11 +38,6 @@ describe( 'DropdownButton', () => {
 				expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
 
 				expect( wrapper.find( '.popover1' ).hostNodes() ).toHaveLength( 1 );
-
-				wrapper.setProps( { isDropdownDisabled: true } );
-				wrapper.update();
-
-				expect( wrapper.find( '.popover1' ).hostNodes() ).toHaveLength( 0 );
 			},
 		},
 		{
@@ -65,19 +62,54 @@ describe( 'DropdownButton', () => {
 				expect( wrapper.find( '.test2-class button' ).hostNodes().prop( 'disabled' ) ).toBeFalsy();
 				expect( wrapper.find( '.test2-class button.is-active' ).hostNodes() ).toHaveLength( 0 );
 				expect( wrapper.find( '.test2-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 1 );
-				expect( wrapper.find( '.components-select-control__input' ).hostNodes() ).toHaveLength( 0 );
+				expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
 
 				{
 					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
 					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open', index ) );
-					expect( wrapper.find( '.components-select-control__input' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
 
 					const outerNode = document.createElement( 'div' );
 					document.body.appendChild( outerNode );
 					outerNode.dispatchEvent( new Event( 'click' ) );
 					wrapper.update();
 
-					expect( wrapper.find( '.components-select-control__input' ).hostNodes() ).toHaveLength( 0 );
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
+				}
+
+				{
+					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes() ).toHaveLength( 0 );
+
+					wrapper.find( '.components-font-size-picker__buttons .components-font-size-picker__selector' ).hostNodes().simulate( 'click' );
+					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open-font-size-picker', index ) );
+					expect( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes() ).toHaveLength( 3 );
+
+					document.body.appendChild( wrapper.find( '.components-font-size-picker__dropdown-content' ).hostNodes().instance() );
+					const dropdown = wrapper.find( Dropdown ).at( 1 ).instance();
+					dropdown.closeIfClickOutside( { target: wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes().at( 1 ).instance() } );
+					wrapper.update();
+
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
+
+					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 0 );
+				}
+
+				{
+					wrapper.find( '.test2-class .components-dropdown-button__toggle' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
+
+					wrapper.find( '.components-font-size-picker__buttons .components-font-size-picker__selector' ).hostNodes().simulate( 'click' );
+					expect( wrapper.find( '.components-font-size-picker__dropdown-content .components-button' ).hostNodes() ).toHaveLength( 3 );
+
+					const dropdown = wrapper.find( Dropdown ).at( 0 ).instance();
+					dropdown.closeIfClickOutside( { target: wrapper.find( '.test2-class' ).hostNodes().instance() } );
+					wrapper.update();
+
+					expect( wrapper.find( '.components-font-size-picker__buttons' ).hostNodes() ).toHaveLength( 1 );
 				}
 			},
 		},
@@ -147,7 +179,7 @@ describe( 'DropdownButton', () => {
 					expect( wrapper.find( '.components-color-picker .components-button' ).hostNodes() ).toHaveLength( 1 );
 
 					document.body.appendChild( wrapper.find( '.components-color-picker' ).hostNodes().instance() );
-					const dropdown = wrapper.find( Dropdown ).instance();
+					const dropdown = wrapper.find( Dropdown ).at( 1 ).instance();
 					dropdown.closeIfClickOutside( { target: wrapper.find( '.components-color-picker .components-button' ).hostNodes().instance() } );
 					wrapper.update();
 
@@ -164,18 +196,51 @@ describe( 'DropdownButton', () => {
 					wrapper.find( '.components-color-palette__custom-color .components-button' ).hostNodes().simulate( 'click' );
 					expect( wrapper.find( '.components-color-picker .components-button' ).hostNodes() ).toHaveLength( 1 );
 
-					const dropdown = wrapper.find( Dropdown ).instance();
-					dropdown.closeIfClickOutside( { target: wrapper.find( '.test4-content-class' ).hostNodes().instance() } );
+					const dropdown = wrapper.find( Dropdown ).at( 0 ).instance();
+					dropdown.closeIfClickOutside( { target: wrapper.find( '.test4-class' ).hostNodes().instance() } );
 					wrapper.update();
 
 					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
+
+					window.dispatchEvent( new Event( 'resize' ) );
 				}
+			},
+		},
+		{
+			props: {
+				icon: 'dashicons-admin-site',
+				label: 'test5-label',
+				tooltip: 'test5-tooltip',
+				className: 'test5-class',
+				position: 'bottom left',
+				contentClassName: 'test5-content-class',
+				renderContent: () => <div className={ 'popover5' }>test5</div>,
+				isActive: true,
+				isDisabled: false,
+				isHiddenIndicator: true,
+				isDropdownDisabled: true,
+			},
+			callback: ( wrapper ) => {
+				expect( wrapper.find( '.test5-class' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.test5-class button' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.test5-class button' ).hostNodes().prop( 'disabled' ) ).toBeFalsy();
+				expect( wrapper.find( '.test5-class button.is-active' ).hostNodes() ).toHaveLength( 1 );
+				expect( wrapper.find( '.test5-class button .components-dropdown-button__indicator' ).hostNodes() ).toHaveLength( 0 );
+				expect( wrapper.find( '.popover5' ).hostNodes() ).toHaveLength( 0 );
+
+				wrapper.find( '.test5-class button' ).hostNodes().simulate( 'click' );
+				wrapper.update();
+
+				expect( wrapper.find( '.popover5' ).hostNodes() ).toHaveLength( 0 );
 			},
 		},
 	].forEach( ( { props, callback }, index ) => {
 		it( `should render DropdownButton ${ index }`, () => {
 			const wrapper = mount(
-				<DropdownButton { ...props }/>,
+				<SlotFillProvider>
+					<DropdownButton { ...props }/>
+					<Popover.Slot/>
+				</SlotFillProvider>,
 			);
 
 			expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'test', index ) );
