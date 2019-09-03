@@ -37,9 +37,10 @@ const DropdownButton = ( {
 		className={ classnames( 'components-dropdown-button', className ) }
 		contentClassName={ classnames( 'components-dropdown-button__popover', contentClassName ) }
 		position={ position }
-		renderToggle={ ( { isOpen, onToggle } ) => {
+		renderToggle={ ( { isOpen, onToggle, onClose } ) => {
 			if ( isOpen && isDropdownDisabled ) {
-				onToggle();
+				// eslint-disable-next-line no-magic-numbers
+				setTimeout( onClose, 0 );
 			}
 			return <IconButton
 				className={ classnames( 'components-dropdown-button__toggle', {

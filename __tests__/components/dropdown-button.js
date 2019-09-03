@@ -8,6 +8,8 @@ import { FontSizePicker, ColorPalette } from '../../src/components';
 
 const { SlotFillProvider } = wp.components;
 
+jest.useFakeTimers();
+
 describe( 'DropdownButton', () => {
 	const getSnapshotName = ( name, index ) => `${ name }--${ index }`;
 
@@ -229,6 +231,8 @@ describe( 'DropdownButton', () => {
 				expect( wrapper.find( '.popover5' ).hostNodes() ).toHaveLength( 0 );
 
 				wrapper.find( '.test5-class button' ).hostNodes().simulate( 'click' );
+
+				jest.advanceTimersByTime( 1 );
 				wrapper.update();
 
 				expect( wrapper.find( '.popover5' ).hostNodes() ).toHaveLength( 0 );
