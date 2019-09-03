@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import './style.scss';
 
 const { IconButton } = wp.components;
-import Dropdown from './dropdown';
+import Dropdown from '../dropdown';
 
 /**
  * @param {*} icon icon

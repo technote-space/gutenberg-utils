@@ -1,6 +1,7 @@
 # Gutenberg Utils
 
 [![npm version](https://badge.fury.io/js/%40technote-space%2Fgutenberg-utils.svg)](https://badge.fury.io/js/%40technote-space%2Fgutenberg-utils)
+[![Build Status](https://github.com/technote-space/gutenberg-utils/workflows/Build/badge.svg)](https://github.com/technote-space/gutenberg-utils/actions)
 [![Build Status](https://travis-ci.com/technote-space/gutenberg-utils.svg?branch=master)](https://travis-ci.com/technote-space/gutenberg-utils)
 [![Coverage Status](https://coveralls.io/repos/github/technote-space/gutenberg-utils/badge.svg?branch=master)](https://coveralls.io/github/technote-space/gutenberg-utils?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/gutenberg-utils/badge)](https://www.codefactor.io/repository/github/technote-space/gutenberg-utils)
@@ -8,6 +9,18 @@
 [![WordPress: >=5.0](https://img.shields.io/badge/WordPress-%3E%3D5.0-brightgreen.svg)](https://wordpress.org/)
 
 This is a gutenberg's utils.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [How to use](#how-to-use)
+  - [Use from npm](#use-from-npm)
+  - [Use from download](#use-from-download)
+- [dependencies](#dependencies)
+- [Author](#author)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## How to use
 ### Use from npm
