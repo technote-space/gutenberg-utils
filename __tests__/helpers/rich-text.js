@@ -3,7 +3,7 @@ const { registerFormatType } = wp.richText;
 
 import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
 import { getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, getContrastChecker } from '../../src/helpers';
-import { getRemoveFormatFunction } from '../../src/helpers';
+import { getRemoveFormatFunction, isValidRemoveFormatButton } from '../../src/helpers';
 
 describe( 'getActiveStyle', () => {
 	it( 'should undefined', () => {
@@ -598,6 +598,43 @@ describe( 'getContrastChecker', () => {
 		expect( checker.props.children.props.textColor ).toBe( 'red' );
 		expect( checker.props.children.props.backgroundColor ).toBe( 'blue' );
 		expect( checker.props.children.props.fontSize ).toBe( 16 );
+	} );
+} );
+
+describe( 'isValidRemoveFormatButton', () => {
+	const formats = [
+		{
+			attributes: { style: 'color: red' },
+			type: 'test/font-color',
+			unregisteredAttributes: {},
+		},
+		{
+			attributes: { style: 'background-color: blue' },
+			type: 'test/background-color',
+			unregisteredAttributes: {},
+		},
+	];
+
+	it( 'should return false', () => {
+		expect( isValidRemoveFormatButton( {
+			value: {
+				start: 0,
+				end: 1,
+				text: 'test',
+				formats: [],
+			},
+		} ) ).toBeFalsy();
+	} );
+
+	it( 'should return true', () => {
+		expect( isValidRemoveFormatButton( {
+			value: {
+				start: 0,
+				end: 1,
+				text: 'test',
+				formats: [ formats, formats ],
+			},
+		} ) ).toBeTruthy();
 	} );
 } );
 
