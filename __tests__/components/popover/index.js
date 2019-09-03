@@ -16,7 +16,13 @@ const { SlotFillProvider, IsolatedEventContainer } = wp.components;
 
 jest.useFakeTimers();
 
+/**
+ * popover wrapper
+ */
 class PopoverWrapper extends Component {
+	/**
+	 * @returns {Component} render
+	 */
 	render() {
 		return <Popover { ...this.props } />;
 	}
@@ -316,7 +322,13 @@ describe( 'renderPopover', () => {
 			isMobile: false,
 		};
 
+		/**
+		 * wrapper component
+		 */
 		class WrapperComponent extends Component {
+			/**
+			 * @returns {Component} render
+			 */
 			render() {
 				return renderPopover( {
 					anchorRef,
@@ -356,7 +368,13 @@ describe( 'renderPopover', () => {
 			isMobile: true,
 		};
 
+		/**
+		 * wrapper component
+		 */
 		class WrapperComponent extends Component {
+			/**
+			 * @returns {Component} render
+			 */
 			render() {
 				return renderPopover( {
 					anchorRef,

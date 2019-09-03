@@ -7,6 +7,16 @@ const { Dashicon, BaseControl, Button, RangeControl, NavigableMenu } = wp.compon
 import Dropdown from '../dropdown';
 import './style.scss';
 
+
+/**
+ * @param {*} fallbackFontSize fallback font size
+ * @param {Array} fontSizes font sizes
+ * @param {boolean} disableCustomFontSizes disable custom font sizes
+ * @param {function} onChange on change
+ * @param {*} value value
+ * @param {boolean} withSlider with slider
+ * @return {null|Component} font size picker
+ */
 function FontSizePicker( {
 	fallbackFontSize,
 	fontSizes = [],
@@ -36,7 +46,7 @@ function FontSizePicker( {
 				{ __( 'Font Size' ) }
 			</BaseControl.VisualLabel>
 			<div className="components-font-size-picker__buttons">
-				{ ( fontSizes.length > 0 ) &&
+				{ fontSizes.length &&
 				<Dropdown
 					className="components-font-size-picker__dropdown"
 					contentClassName="components-font-size-picker__dropdown-content"
@@ -70,8 +80,8 @@ function FontSizePicker( {
 									>
 										{ isSelected && <Dashicon icon="saved"/> }
 										<span className="components-font-size-picker__dropdown-text-size" style={ { fontSize: size } }>
-												{ name }
-											</span>
+											{ name }
+										</span>
 									</Button>
 								);
 							} ) }

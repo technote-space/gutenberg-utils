@@ -11,8 +11,7 @@
     "cover": "jest --coverage",
     "cover:update": "jest --coverage --updateSnapshot",
     "develop": "webpack --mode development --config webpack.config.js",
-    "build": "webpack --mode production --config webpack.config.js",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "build": "webpack --mode production --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -37,7 +36,6 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
-    "coveralls": "^3.0.6",
     "css-loader": "^3.2.0",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "node-sass": "^4.12.0",
