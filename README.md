@@ -80,9 +80,12 @@ Download [Release version](https://github.com/technote-space/gutenberg-utils/rel
 - wp-components
 - wp-core-data
 - wp-data
+- wp-dom
 - wp-editor
 - wp-element
 - wp-i18n
+- wp-is-shallow-equal
+- wp-keycodes
 - wp-rich-text
 - wp-url
 - lodash
