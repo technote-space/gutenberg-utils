@@ -9,6 +9,18 @@
 
 This is a gutenberg's utils.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [How to use](#how-to-use)
+  - [Use from npm](#use-from-npm)
+  - [Use from download](#use-from-download)
+- [dependencies](#dependencies)
+- [Author](#author)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## How to use
 ### Use from npm
 [https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
