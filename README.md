@@ -9,6 +9,9 @@
 
 This is a gutenberg's utils.
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## How to use
 ### Use from npm
 [https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
