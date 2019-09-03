@@ -280,6 +280,12 @@ export const getContrastChecker = ( fills, args ) => {
 
 /**
  * @param {object} args args
+ * @returns {boolean} result
+ */
+export const isValidRemoveFormatButton = args => !! args.value.formats.filter( format => format ).length;
+
+/**
+ * @param {object} args args
  * @returns {function} remove format function
  */
 export const getRemoveFormatFunction = ( args ) => () => args.onChange( { ...args.value, formats: Array( args.value.formats.length ) } );
