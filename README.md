@@ -1,6 +1,7 @@
 # Gutenberg Utils
 
 [![npm version](https://badge.fury.io/js/%40technote-space%2Fgutenberg-utils.svg)](https://badge.fury.io/js/%40technote-space%2Fgutenberg-utils)
+[![Build Status](https://github.com/technote-space/gutenberg-utils/workflows/Build/badge.svg)](https://github.com/technote-space/gutenberg-utils/actions)
 [![Build Status](https://travis-ci.com/technote-space/gutenberg-utils.svg?branch=master)](https://travis-ci.com/technote-space/gutenberg-utils)
 [![Coverage Status](https://coveralls.io/repos/github/technote-space/gutenberg-utils/badge.svg?branch=master)](https://coveralls.io/github/technote-space/gutenberg-utils?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/gutenberg-utils/badge)](https://www.codefactor.io/repository/github/technote-space/gutenberg-utils)
