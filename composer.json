@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "setup": [
-      "yarn install"
+      "yarn install",
+      "yarn build"
     ],
     "bin:js-lint": "TRAVIS_BUILD_DIR=$(cd $(dirname $0); pwd) ./travis-ci/bin/js/js-lint.sh",
     "bin:js-test": "TRAVIS_BUILD_DIR=$(cd $(dirname $0); pwd) ./travis-ci/bin/js/js-test.sh",
@@ -26,5 +27,8 @@
     "bin:update": [
       "TRAVIS_BUILD_DIR=$(cd $(dirname $0); pwd) bash ./travis-ci/bin/update/package.sh"
     ]
+  },
+  "config": {
+    "process-timeout": 1200
   }
 }
