@@ -3,8 +3,9 @@
  **/
 const { map } = window.lodash;
 const { __, _x, sprintf } = wp.i18n;
-const { Dashicon, BaseControl, Button, RangeControl, NavigableMenu } = wp.components;
+const { Dashicon, Button, RangeControl, NavigableMenu } = wp.components;
 import Dropdown from '../dropdown';
+import BaseControl from '../base-control';
 import './style.scss';
 
 
