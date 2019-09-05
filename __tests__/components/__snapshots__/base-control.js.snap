@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseControl should render VisualLabel 1`] = `
+<span
+  className="components-base-control__label test-label"
+>
+  test label
+</span>
+`;
