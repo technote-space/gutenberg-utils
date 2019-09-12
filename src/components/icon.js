@@ -16,7 +16,7 @@ const createSVG = ( icon, className ) => <SVG
 	width={ `${ ICON_SIZE }px` }
 	height={ `${ ICON_SIZE }px` }
 	viewBox={ `0 0 ${ ICON_SIZE } ${ ICON_SIZE }` }
-	enable-background={ `new 0 0 ${ ICON_SIZE } ${ ICON_SIZE }` }
+	enableBackground={ `new 0 0 ${ ICON_SIZE } ${ ICON_SIZE }` }
 	className={ className }
 >
 	<image
