@@ -46,15 +46,33 @@ exports[`Popover should render content 1`] = `
                 >
                   <WithFocusReturn(Component)>
                     <FocusReturn
-                      focusHistory={Array []}
+                      childProps={
+                        Object {
+                          "children": <clickOutside(PopoverDetectOutside)>
+                            <Animate
+                              options={
+                                Object {
+                                  "origin": "top center",
+                                }
+                              }
+                              type="appear"
+                            >
+                              [Function]
+                            </Animate>
+                          </clickOutside(PopoverDetectOutside)>,
+                        }
+                      }
+                      focus={
+                        Object {
+                          "focusHistory": Array [],
+                        }
+                      }
                     >
                       <div
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
-                        <Component
-                          focusHistory={Array []}
-                        >
+                        <Component>
                           <clickOutside(PopoverDetectOutside)>
                             <PopoverDetectOutside>
                               <Animate
@@ -182,15 +200,35 @@ exports[`Popover should render content 2`] = `
                 >
                   <WithFocusReturn(Component)>
                     <FocusReturn
-                      focusHistory={Array []}
+                      childProps={
+                        Object {
+                          "children": <clickOutside(PopoverDetectOutside)
+                            onClickOutside={[MockFunction]}
+                          >
+                            <Animate
+                              options={
+                                Object {
+                                  "origin": "top center",
+                                }
+                              }
+                              type="appear"
+                            >
+                              [Function]
+                            </Animate>
+                          </clickOutside(PopoverDetectOutside)>,
+                        }
+                      }
+                      focus={
+                        Object {
+                          "focusHistory": Array [],
+                        }
+                      }
                     >
                       <div
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
-                        <Component
-                          focusHistory={Array []}
-                        >
+                        <Component>
                           <clickOutside(PopoverDetectOutside)
                             onClickOutside={[MockFunction]}
                           >
@@ -350,15 +388,33 @@ exports[`Popover should render mobile content 1`] = `
                 >
                   <WithFocusReturn(Component)>
                     <FocusReturn
-                      focusHistory={Array []}
+                      childProps={
+                        Object {
+                          "children": <clickOutside(PopoverDetectOutside)>
+                            <Animate
+                              options={
+                                Object {
+                                  "origin": "top center",
+                                }
+                              }
+                              type="appear"
+                            >
+                              [Function]
+                            </Animate>
+                          </clickOutside(PopoverDetectOutside)>,
+                        }
+                      }
+                      focus={
+                        Object {
+                          "focusHistory": Array [],
+                        }
+                      }
                     >
                       <div
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
-                        <Component
-                          focusHistory={Array []}
-                        >
+                        <Component>
                           <clickOutside(PopoverDetectOutside)>
                             <PopoverDetectOutside>
                               <Animate
@@ -561,15 +617,35 @@ exports[`renderPopover should render mobile popover 1`] = `
               >
                 <WithFocusReturn(Component)>
                   <FocusReturn
-                    focusHistory={Array []}
+                    childProps={
+                      Object {
+                        "children": <clickOutside(PopoverDetectOutside)
+                          onClickOutside={[MockFunction]}
+                        >
+                          <Animate
+                            options={
+                              Object {
+                                "origin": "middle center",
+                              }
+                            }
+                            type={null}
+                          >
+                            [Function]
+                          </Animate>
+                        </clickOutside(PopoverDetectOutside)>,
+                      }
+                    }
+                    focus={
+                      Object {
+                        "focusHistory": Array [],
+                      }
+                    }
                   >
                     <div
                       onBlur={[Function]}
                       onFocus={[Function]}
                     >
-                      <Component
-                        focusHistory={Array []}
-                      >
+                      <Component>
                         <clickOutside(PopoverDetectOutside)
                           onClickOutside={[MockFunction]}
                         >
@@ -751,15 +827,35 @@ exports[`renderPopover should render popover 1`] = `
               >
                 <WithFocusReturn(Component)>
                   <FocusReturn
-                    focusHistory={Array []}
+                    childProps={
+                      Object {
+                        "children": <clickOutside(PopoverDetectOutside)
+                          onClickOutside={[MockFunction]}
+                        >
+                          <Animate
+                            options={
+                              Object {
+                                "origin": "middle center",
+                              }
+                            }
+                            type={null}
+                          >
+                            [Function]
+                          </Animate>
+                        </clickOutside(PopoverDetectOutside)>,
+                      }
+                    }
+                    focus={
+                      Object {
+                        "focusHistory": Array [],
+                      }
+                    }
                   >
                     <div
                       onBlur={[Function]}
                       onFocus={[Function]}
                     >
-                      <Component
-                        focusHistory={Array []}
-                      >
+                      <Component>
                         <clickOutside(PopoverDetectOutside)
                           onClickOutside={[MockFunction]}
                         >

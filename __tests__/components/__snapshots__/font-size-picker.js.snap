@@ -171,15 +171,35 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                             >
                               <WithFocusReturn(Component)>
                                 <FocusReturn
-                                  focusHistory={Array []}
+                                  childProps={
+                                    Object {
+                                      "children": <clickOutside(PopoverDetectOutside)
+                                        onClickOutside={[Function]}
+                                      >
+                                        <Animate
+                                          options={
+                                            Object {
+                                              "origin": "top center",
+                                            }
+                                          }
+                                          type="appear"
+                                        >
+                                          [Function]
+                                        </Animate>
+                                      </clickOutside(PopoverDetectOutside)>,
+                                    }
+                                  }
+                                  focus={
+                                    Object {
+                                      "focusHistory": Array [],
+                                    }
+                                  }
                                 >
                                   <div
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
-                                    <Component
-                                      focusHistory={Array []}
-                                    >
+                                    <Component>
                                       <clickOutside(PopoverDetectOutside)
                                         onClickOutside={[Function]}
                                       >
@@ -1203,15 +1223,35 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                             >
                               <WithFocusReturn(Component)>
                                 <FocusReturn
-                                  focusHistory={Array []}
+                                  childProps={
+                                    Object {
+                                      "children": <clickOutside(PopoverDetectOutside)
+                                        onClickOutside={[Function]}
+                                      >
+                                        <Animate
+                                          options={
+                                            Object {
+                                              "origin": "top center",
+                                            }
+                                          }
+                                          type="appear"
+                                        >
+                                          [Function]
+                                        </Animate>
+                                      </clickOutside(PopoverDetectOutside)>,
+                                    }
+                                  }
+                                  focus={
+                                    Object {
+                                      "focusHistory": Array [],
+                                    }
+                                  }
                                 >
                                   <div
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
-                                    <Component
-                                      focusHistory={Array []}
-                                    >
+                                    <Component>
                                       <clickOutside(PopoverDetectOutside)
                                         onClickOutside={[Function]}
                                       >
