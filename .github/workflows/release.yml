@@ -87,7 +87,7 @@ jobs:
 
   slack:
     name: Slack
-    needs: [release, pages, releases]
+    needs: [release, releases]
     runs-on: ubuntu-latest
     steps:
       - uses: 8398a7/action-slack@v1
