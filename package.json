@@ -3,6 +3,9 @@
   "version": "1.2.3",
   "description": "gutenberg utils",
   "main": "build/index.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "start": "yarn build",
     "test": "yarn lint && yarn cover",
