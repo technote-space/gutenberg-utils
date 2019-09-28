@@ -23,7 +23,7 @@ This is a gutenberg's utils.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## How to use
-### Use from npm
+### npm
 [https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
 
 ```bash
@@ -45,8 +45,7 @@ Compile and enqueue script.
 <script type="text/javascript" src="/assets/gutenberg.js"></script>
 ```
 
-### Use from download
-
+### Browser
 `gutenberg.js`
 ```js
 ( function(
