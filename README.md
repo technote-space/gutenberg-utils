@@ -15,8 +15,8 @@ This is a gutenberg's utils.
 **Table of Contents**
 
 - [How to use](#how-to-use)
-  - [Use from npm](#use-from-npm)
-  - [Use from download](#use-from-download)
+  - [npm](#npm)
+  - [Browser](#browser)
 - [dependencies](#dependencies)
 - [Author](#author)
 
