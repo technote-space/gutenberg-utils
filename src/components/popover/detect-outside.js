@@ -1,6 +1,6 @@
 import clickOutside from 'react-click-outside';
 
-const { Component, createRef } = wp.element;
+const { Component } = wp.element;
 
 /**
  * PopoverDetectOutside
@@ -12,7 +12,6 @@ class PopoverDetectOutside extends Component {
 	 */
 	constructor( props ) {
 		super( props );
-		this.containerRef = createRef();
 	}
 
 	/**
