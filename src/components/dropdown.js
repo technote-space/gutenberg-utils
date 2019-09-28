@@ -5,7 +5,11 @@ import Popover from './popover';
 
 const { Component, createRef } = wp.element;
 
+/**
+ * Dropdown
+ */
 class Dropdown extends Component {
+
 	constructor() {
 		super( ...arguments );
 
