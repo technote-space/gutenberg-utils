@@ -8,10 +8,10 @@ const { Component } = wp.element;
 class PopoverDetectOutside extends Component {
 
 	/**
-	 * constructor
+	 * @param {object} props props
 	 */
-	constructor() {
-		super( ...arguments );
+	constructor( props ) {
+		super( props );
 	}
 
 	/**

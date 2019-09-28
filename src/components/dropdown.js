@@ -10,8 +10,8 @@ const { Component, createRef } = wp.element;
  */
 class Dropdown extends Component {
 
-	constructor() {
-		super( ...arguments );
+	constructor( props ) {
+		super( props );
 
 		this.toggle = this.toggle.bind( this );
 		this.close = this.close.bind( this );
