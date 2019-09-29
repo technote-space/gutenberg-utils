@@ -60,7 +60,7 @@ const webpackConfig = {
 					},
 					mangle: true,
 					output: {
-						comments: /license/i,
+						comments: /^\**!|@preserve|license|@cc_on/i,
 					},
 				},
 				extractComments: false,
