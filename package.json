@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "gutenberg utils",
   "main": "build/index.js",
   "files": [
