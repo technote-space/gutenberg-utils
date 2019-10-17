@@ -1,5 +1,4 @@
 import classnames from 'classnames';
-
 import './style.scss';
 
 const { IconButton } = wp.components;
