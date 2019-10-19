@@ -9,7 +9,7 @@ import Popover, {
 	intervalRefreshAnchorRectFunc,
 	useFocusContentOnMountFunc,
 	renderPopover,
-} from '../../../src/components/popover';
+} from '../../../src/components/popover/implement';
 
 const { Component } = wp.element;
 const { SlotFillProvider, IsolatedEventContainer } = wp.components;
