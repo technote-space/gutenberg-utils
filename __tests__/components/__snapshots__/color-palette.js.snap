@@ -39,7 +39,7 @@ exports[`ColorPalette Dropdown .renderContent should render dropdown content 1`]
           }
         />
         <div
-          className="screen-reader-text"
+          className="components-visually-hidden"
           id="color-picker-saturation-0"
         >
           Use your arrow keys to change the base color. Move up to lighten the color, down to darken, left to decrease saturation, and right to increase saturation.
@@ -99,7 +99,7 @@ exports[`ColorPalette Dropdown .renderContent should render dropdown content 1`]
                 tabIndex="0"
               />
               <p
-                className="components-color-picker__hue-description screen-reader-text"
+                className="components-visually-hidden"
                 id="components-color-picker__hue-description-0"
               >
                 Move the arrow left or right to change hue.
