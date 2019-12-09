@@ -40,7 +40,7 @@
     "@babel/register": "^7.7.4",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
-    "css-loader": "^3.2.1",
+    "css-loader": "^3.3.0",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "node-sass": "^4.13.0",
     "react-click-outside": "^3.0.1",
