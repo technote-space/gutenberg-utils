@@ -40,7 +40,7 @@
     "@babel/register": "^7.7.7",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
-    "css-loader": "^3.4.0",
+    "css-loader": "^3.4.1",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "node-sass": "^4.13.0",
     "react-click-outside": "^3.0.1",
@@ -50,7 +50,7 @@
     "style-loader": "^1.1.2",
     "terser-webpack-plugin": "^2.3.1",
     "traverse": "^0.6.6",
-    "webpack": "^4.41.4",
+    "webpack": "^4.41.5",
     "webpack-cli": "~3.3.10"
   },
   "devDependencies": {
