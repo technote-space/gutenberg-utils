@@ -1,6 +1,9 @@
+import { isValidUseRef } from '../../helpers/misc';
+import './style.scss';
+
 let popover;
 /* istanbul ignore next */
-if ( wp.element.useRef ) {
+if ( isValidUseRef() ) {
 	popover = require( './implement' ).default;
 } else {
 	/* istanbul ignore next */
