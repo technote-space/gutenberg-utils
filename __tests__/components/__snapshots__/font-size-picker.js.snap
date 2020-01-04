@@ -214,7 +214,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                                             }
                                             type="appear"
                                           >
-                                            <IsolatedEventContainer
+                                            <ForwardRef
                                               className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
                                               onKeyDown={[Function]}
                                               style={
@@ -380,7 +380,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                                                   </ForwardRef(NavigableMenu)>
                                                 </div>
                                               </div>
-                                            </IsolatedEventContainer>
+                                            </ForwardRef>
                                           </Animate>
                                         </PopoverDetectOutside>
                                       </clickOutside(PopoverDetectOutside)>
@@ -1266,7 +1266,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                                             }
                                             type="appear"
                                           >
-                                            <IsolatedEventContainer
+                                            <ForwardRef
                                               className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
                                               onKeyDown={[Function]}
                                               style={
@@ -1432,7 +1432,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                                                   </ForwardRef(NavigableMenu)>
                                                 </div>
                                               </div>
-                                            </IsolatedEventContainer>
+                                            </ForwardRef>
                                           </Animate>
                                         </PopoverDetectOutside>
                                       </clickOutside(PopoverDetectOutside)>

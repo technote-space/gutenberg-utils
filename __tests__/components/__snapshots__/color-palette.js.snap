@@ -26,7 +26,7 @@ exports[`ColorPalette Dropdown .renderContent should render dropdown content 1`]
         <div
           className="components-color-picker__saturation-black"
         />
-        <button
+        <ForwardRef(Button)
           aria-describedby="color-picker-saturation-0"
           aria-label="Choose a shade"
           className="components-color-picker__saturation-pointer"
@@ -37,7 +37,21 @@ exports[`ColorPalette Dropdown .renderContent should render dropdown content 1`]
               "top": "0%",
             }
           }
-        />
+        >
+          <button
+            aria-describedby="color-picker-saturation-0"
+            aria-label="Choose a shade"
+            className="components-button components-color-picker__saturation-pointer"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "left": "100%",
+                "top": "0%",
+              }
+            }
+            type="button"
+          />
+        </ForwardRef(Button)>
         <div
           className="components-visually-hidden"
           id="color-picker-saturation-0"

@@ -178,11 +178,11 @@ describe( 'DropdownButton', () => {
 					wrapper.find( '.components-color-palette__custom-color .components-button' ).hostNodes().simulate( 'click' );
 					expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot( getSnapshotName( 'open-color-picker', index ) );
 					expect( wrapper.find( '.components-color-picker' ).hostNodes() ).toHaveLength( 1 );
-					expect( wrapper.find( '.components-color-picker .components-button' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-color-picker .components-color-picker__saturation .components-button' ).hostNodes() ).toHaveLength( 1 );
 
 					document.body.appendChild( wrapper.find( '.components-color-picker' ).hostNodes().instance() );
 					const dropdown = wrapper.find( Dropdown ).at( 1 ).instance();
-					dropdown.closeIfClickOutside( { target: wrapper.find( '.components-color-picker .components-button' ).hostNodes().instance() } );
+					dropdown.closeIfClickOutside( { target: wrapper.find( '.components-color-picker .components-color-picker__saturation .components-button' ).hostNodes().instance() } );
 					wrapper.update();
 
 					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
@@ -196,7 +196,7 @@ describe( 'DropdownButton', () => {
 					expect( wrapper.find( '.components-color-palette__custom-color' ).hostNodes() ).toHaveLength( 1 );
 
 					wrapper.find( '.components-color-palette__custom-color .components-button' ).hostNodes().simulate( 'click' );
-					expect( wrapper.find( '.components-color-picker .components-button' ).hostNodes() ).toHaveLength( 1 );
+					expect( wrapper.find( '.components-color-picker .components-color-picker__saturation .components-button' ).hostNodes() ).toHaveLength( 1 );
 
 					const dropdown = wrapper.find( Dropdown ).at( 0 ).instance();
 					dropdown.closeIfClickOutside( { target: wrapper.find( '.test4-class' ).hostNodes().instance() } );

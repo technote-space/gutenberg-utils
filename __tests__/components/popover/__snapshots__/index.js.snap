@@ -83,7 +83,7 @@ exports[`Popover should render content 1`] = `
                                 }
                                 type="appear"
                               >
-                                <IsolatedEventContainer
+                                <ForwardRef
                                   className="components-popover is-bottom is-center components-animate__appear is-from-top"
                                   onKeyDown={[Function]}
                                   style={
@@ -119,7 +119,7 @@ exports[`Popover should render content 1`] = `
                                       Hello
                                     </div>
                                   </div>
-                                </IsolatedEventContainer>
+                                </ForwardRef>
                               </Animate>
                             </PopoverDetectOutside>
                           </clickOutside(PopoverDetectOutside)>
@@ -243,7 +243,7 @@ exports[`Popover should render content 2`] = `
                                 }
                                 type="appear"
                               >
-                                <IsolatedEventContainer
+                                <ForwardRef
                                   className="components-popover is-bottom is-center components-animate__appear is-from-top"
                                   onKeyDown={[Function]}
                                   style={
@@ -279,7 +279,7 @@ exports[`Popover should render content 2`] = `
                                       Hello
                                     </div>
                                   </div>
-                                </IsolatedEventContainer>
+                                </ForwardRef>
                               </Animate>
                             </PopoverDetectOutside>
                           </clickOutside(PopoverDetectOutside)>
@@ -425,7 +425,7 @@ exports[`Popover should render mobile content 1`] = `
                                 }
                                 type="appear"
                               >
-                                <IsolatedEventContainer
+                                <ForwardRef
                                   className="components-popover is-bottom is-center is-mobile components-animate__appear is-from-top"
                                   onKeyDown={[Function]}
                                   style={
@@ -520,7 +520,7 @@ exports[`Popover should render mobile content 1`] = `
                                       Hello
                                     </div>
                                   </div>
-                                </IsolatedEventContainer>
+                                </ForwardRef>
                               </Animate>
                             </PopoverDetectOutside>
                           </clickOutside(PopoverDetectOutside)>
@@ -665,7 +665,7 @@ exports[`renderPopover should render mobile popover 1`] = `
                               }
                               type={null}
                             >
-                              <IsolatedEventContainer
+                              <ForwardRef
                                 className="components-popover is-middle is-center is-mobile is-without-arrow"
                                 onKeyDown={[Function]}
                                 style={
@@ -761,7 +761,7 @@ exports[`renderPopover should render mobile popover 1`] = `
                                     tabIndex="-1"
                                   />
                                 </div>
-                              </IsolatedEventContainer>
+                              </ForwardRef>
                             </Animate>
                           </PopoverDetectOutside>
                         </clickOutside(PopoverDetectOutside)>
@@ -880,7 +880,7 @@ exports[`renderPopover should render popover 1`] = `
                               }
                               type={null}
                             >
-                              <IsolatedEventContainer
+                              <ForwardRef
                                 className="components-popover is-middle is-center is-without-arrow"
                                 onKeyDown={[Function]}
                                 style={
@@ -914,7 +914,7 @@ exports[`renderPopover should render popover 1`] = `
                                     tabIndex="-1"
                                   />
                                 </div>
-                              </IsolatedEventContainer>
+                              </ForwardRef>
                             </Animate>
                           </PopoverDetectOutside>
                         </clickOutside(PopoverDetectOutside)>
