@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import { getProperty, setProperty } from '../../src/helpers';
+import { getProperty, setProperty, getAnimationUseClass } from '../../src/helpers';
 
 describe( 'getProperty', () => {
 	it( 'should return default', () => {
@@ -39,5 +39,23 @@ describe( 'setProperty', () => {
 		setProperty( object, 'test', 123 );
 		expect( object ).toHaveProperty( 'test' );
 		expect( object.test ).toBe( 123 );
+	} );
+} );
+
+describe( 'getAnimationUseClass', () => {
+	it( 'should return class', () => {
+		expect( getAnimationUseClass( undefined ) ).toBe( 'no-animation' );
+	} );
+
+	it( 'should return null', () => {
+		expect( getAnimationUseClass( {} ) ).toBeNull();
+	} );
+
+	it( 'should return proper value', () => {
+		if ( wp.components.Animate ) {
+			expect( getAnimationUseClass() ).toBeNull();
+		} else {
+			expect( getAnimationUseClass() ).toBe( 'no-animation' );
+		}
 	} );
 } );

@@ -56,7 +56,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-dropdown-button__popover test1-content-class is-bottom is-left components-animate__appear is-from-right is-from-top"
+                  class="components-popover components-dropdown-button__popover test1-content-class gutenberg-utils-dropdown is-bottom is-left components-animate__appear is-from-right is-from-top"
                   style=""
                 >
                   <div
@@ -84,7 +84,7 @@ Array [
             onFocus={[Function]}
           >
             <ForwardRef
-              className="components-popover components-dropdown-button__popover test1-content-class is-bottom is-left components-animate__appear is-from-right is-from-top"
+              className="components-popover components-dropdown-button__popover test1-content-class gutenberg-utils-dropdown is-bottom is-left components-animate__appear is-from-right is-from-top"
               onKeyDown={[Function]}
               style={
                 Object {
@@ -95,7 +95,7 @@ Array [
               }
             >
               <div
-                className="components-popover components-dropdown-button__popover test1-content-class is-bottom is-left components-animate__appear is-from-right is-from-top"
+                className="components-popover components-dropdown-button__popover test1-content-class gutenberg-utils-dropdown is-bottom is-left components-animate__appear is-from-right is-from-top"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 style={
@@ -260,7 +260,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                  class="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                   style=""
                 >
                   <div
@@ -324,7 +324,7 @@ Array [
             onFocus={[Function]}
           >
             <ForwardRef
-              className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+              className="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
               onKeyDown={[Function]}
               style={
                 Object {
@@ -335,7 +335,7 @@ Array [
               }
             >
               <div
-                className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                className="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 style={
@@ -505,7 +505,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                  class="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                   style=""
                 >
                   <div
@@ -563,7 +563,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                  class="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                   style=""
                 >
                   <div
@@ -630,7 +630,7 @@ Array [
             onFocus={[Function]}
           >
             <ForwardRef
-              className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+              className="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
               onKeyDown={[Function]}
               style={
                 Object {
@@ -641,7 +641,7 @@ Array [
               }
             >
               <div
-                className="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                className="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 style={
@@ -705,7 +705,7 @@ Array [
                                   >
                                     <div>
                                       <div
-                                        class="components-popover components-dropdown-button__popover test2-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                                        class="components-popover components-dropdown-button__popover test2-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                                         style=""
                                       >
                                         <div
@@ -763,7 +763,7 @@ Array [
                                   >
                                     <div>
                                       <div
-                                        class="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                        class="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                         style=""
                                       >
                                         <div
@@ -830,7 +830,7 @@ Array [
                                   onFocus={[Function]}
                                 >
                                   <ForwardRef
-                                    className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                    className="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                     onKeyDown={[Function]}
                                     style={
                                       Object {
@@ -841,7 +841,7 @@ Array [
                                     }
                                   >
                                     <div
-                                      className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                      className="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                       onKeyDown={[Function]}
                                       onMouseDown={[Function]}
                                       style={
@@ -1208,7 +1208,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                  class="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                   style=""
                 >
                   <div
@@ -1304,7 +1304,7 @@ Array [
             onFocus={[Function]}
           >
             <ForwardRef
-              className="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+              className="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
               onKeyDown={[Function]}
               style={
                 Object {
@@ -1315,7 +1315,7 @@ Array [
               }
             >
               <div
-                className="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                className="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 style={
@@ -1546,7 +1546,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                  class="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                   style=""
                 >
                   <div
@@ -1636,7 +1636,7 @@ Array [
             >
               <div>
                 <div
-                  class="components-popover components-color-palette__picker is-bottom is-center components-animate__appear is-from-top"
+                  class="components-popover components-color-palette__picker gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                   style=""
                 >
                   <div
@@ -1797,7 +1797,7 @@ Array [
             onFocus={[Function]}
           >
             <ForwardRef
-              className="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+              className="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
               onKeyDown={[Function]}
               style={
                 Object {
@@ -1808,7 +1808,7 @@ Array [
               }
             >
               <div
-                className="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                className="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 style={
@@ -1943,7 +1943,7 @@ Array [
                                 >
                                   <div>
                                     <div
-                                      class="components-popover components-dropdown-button__popover test4-content-class is-bottom is-right components-animate__appear is-from-left is-from-top"
+                                      class="components-popover components-dropdown-button__popover test4-content-class gutenberg-utils-dropdown is-bottom is-right components-animate__appear is-from-left is-from-top"
                                       style=""
                                     >
                                       <div
@@ -2033,7 +2033,7 @@ Array [
                                 >
                                   <div>
                                     <div
-                                      class="components-popover components-color-palette__picker is-bottom is-center components-animate__appear is-from-top"
+                                      class="components-popover components-color-palette__picker gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                       style=""
                                     >
                                       <div
@@ -2194,7 +2194,7 @@ Array [
                                 onFocus={[Function]}
                               >
                                 <ForwardRef
-                                  className="components-popover components-color-palette__picker is-bottom is-center components-animate__appear is-from-top"
+                                  className="components-popover components-color-palette__picker gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                   onKeyDown={[Function]}
                                   style={
                                     Object {
@@ -2205,7 +2205,7 @@ Array [
                                   }
                                 >
                                   <div
-                                    className="components-popover components-color-palette__picker is-bottom is-center components-animate__appear is-from-top"
+                                    className="components-popover components-color-palette__picker gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                     onKeyDown={[Function]}
                                     onMouseDown={[Function]}
                                     style={

@@ -9,6 +9,7 @@ exports[`Dropdown should open popup 1`] = `
     onClick={[Function]}
   />
   <Popover
+    className="gutenberg-utils-dropdown"
     onClickOutside={[Function]}
     onClose={[Function]}
     position="bottom"
