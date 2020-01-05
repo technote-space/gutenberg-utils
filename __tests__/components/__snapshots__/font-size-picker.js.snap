@@ -74,7 +74,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                   </button>
                 </ForwardRef(Button)>
                 <Popover
-                  className="components-font-size-picker__dropdown-content"
+                  className="components-font-size-picker__dropdown-content gutenberg-utils-dropdown"
                   onClickOutside={[Function]}
                   onClose={[Function]}
                   position="bottom"
@@ -96,7 +96,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                               >
                                 <div>
                                   <div
-                                    class="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                    class="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                     style=""
                                   >
                                     <div
@@ -214,8 +214,8 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                                             }
                                             type="appear"
                                           >
-                                            <IsolatedEventContainer
-                                              className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                            <ForwardRef
+                                              className="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                               onKeyDown={[Function]}
                                               style={
                                                 Object {
@@ -226,7 +226,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                                               }
                                             >
                                               <div
-                                                className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                                className="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                                 onKeyDown={[Function]}
                                                 onMouseDown={[Function]}
                                                 style={
@@ -380,7 +380,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                                                   </ForwardRef(NavigableMenu)>
                                                 </div>
                                               </div>
-                                            </IsolatedEventContainer>
+                                            </ForwardRef>
                                           </Animate>
                                         </PopoverDetectOutside>
                                       </clickOutside(PopoverDetectOutside)>
@@ -1126,7 +1126,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                   </button>
                 </ForwardRef(Button)>
                 <Popover
-                  className="components-font-size-picker__dropdown-content"
+                  className="components-font-size-picker__dropdown-content gutenberg-utils-dropdown"
                   onClickOutside={[Function]}
                   onClose={[Function]}
                   position="bottom"
@@ -1148,7 +1148,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                               >
                                 <div>
                                   <div
-                                    class="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                    class="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                     style=""
                                   >
                                     <div
@@ -1266,8 +1266,8 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                                             }
                                             type="appear"
                                           >
-                                            <IsolatedEventContainer
-                                              className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                            <ForwardRef
+                                              className="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                               onKeyDown={[Function]}
                                               style={
                                                 Object {
@@ -1278,7 +1278,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                                               }
                                             >
                                               <div
-                                                className="components-popover components-font-size-picker__dropdown-content is-bottom is-center components-animate__appear is-from-top"
+                                                className="components-popover components-font-size-picker__dropdown-content gutenberg-utils-dropdown is-bottom is-center components-animate__appear is-from-top"
                                                 onKeyDown={[Function]}
                                                 onMouseDown={[Function]}
                                                 style={
@@ -1432,7 +1432,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                                                   </ForwardRef(NavigableMenu)>
                                                 </div>
                                               </div>
-                                            </IsolatedEventContainer>
+                                            </ForwardRef>
                                           </Animate>
                                         </PopoverDetectOutside>
                                       </clickOutside(PopoverDetectOutside)>

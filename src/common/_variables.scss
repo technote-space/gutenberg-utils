@@ -1,7 +1,13 @@
+@import "./colors";
+
 // Grid size
 $grid-size-small: 4px;
 $grid-size: 8px;
 $grid-size-large: 16px;
+
+// Widths, heights & dimensions
+$panel-padding: 16px;
+$panel-header-height: 50px;
 
 // Block UI
 $border-width: 1px;
@@ -15,3 +21,6 @@ $resize-handler-container-size: $resize-handler-size + ($grid-size-small * 2); /
 
 // Buttons & UI Widgets
 $radius-round: 50%;
+
+// Visuals
+$shadow-popover: 0 3px 30px rgba($dark-gray-900, 0.1);

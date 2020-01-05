@@ -1,7 +1,9 @@
 /**
  * Gutenberg v6.2
  */
+import classnames from 'classnames';
 import Popover from './popover';
+import { getAnimationUseClass } from '../helpers/misc';
 
 const { Component, createRef } = wp.element;
 
@@ -83,7 +85,7 @@ class Dropdown extends Component {
 				{ renderToggle( args ) }
 				{ isOpen && (
 					<Popover
-						className={ contentClassName }
+						className={ classnames( contentClassName, 'gutenberg-utils-dropdown', getAnimationUseClass() ) }
 						position={ position }
 						onClose={ this.close }
 						onClickOutside={ this.closeIfClickOutside }
