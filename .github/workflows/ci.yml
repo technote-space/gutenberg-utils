@@ -66,7 +66,9 @@ jobs:
           PREFIX_FILTER: |
             src/
             __tests__/
-          SUFFIX_FILTER: .ts
+          SUFFIX_FILTER: |
+            .ts
+            .snap
       - name: Setup node
         uses: actions/setup-node@v1
         with:
