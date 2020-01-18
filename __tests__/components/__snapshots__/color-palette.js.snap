@@ -156,49 +156,38 @@ exports[`ColorPalette Dropdown .renderContent should render dropdown content 1`]
       <div
         className="components-color-picker__inputs-toggle"
       >
-        <ForwardRef(IconButton)
+        <ForwardRef(Button)
           icon="arrow-down-alt2"
           label="Change color format"
           onClick={[Function]}
         >
-          <ForwardRef(Button)
+          <button
             aria-label="Change color format"
-            className="components-icon-button"
+            className="components-button has-icon"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
+            type="button"
           >
-            <button
-              aria-label="Change color format"
-              className="components-button components-icon-button"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              type="button"
+            <svg
+              aria-hidden="true"
+              className="dashicon dashicons-arrow-down-alt2"
+              focusable="false"
+              height={20}
+              role="img"
+              viewBox="0 0 20 20"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                className="dashicon dashicons-arrow-down-alt2"
-                focusable="false"
-                height={20}
-                role="img"
-                viewBox="0 0 20 20"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 6l5 5 5-5 2 1-7 7-7-7z"
-                />
-              </svg>
-            </button>
-          </ForwardRef(Button)>
-        </ForwardRef(IconButton)>
+              <path
+                d="M5 6l5 5 5-5 2 1-7 7-7-7z"
+              />
+            </svg>
+          </button>
+        </ForwardRef(Button)>
       </div>
     </div>
   </div>

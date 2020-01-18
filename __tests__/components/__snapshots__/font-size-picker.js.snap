@@ -66,7 +66,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
                   <button
                     aria-expanded={true}
                     aria-label="Font size: Custom"
-                    className="components-button components-font-size-picker__selector is-button is-default is-large"
+                    className="components-button components-font-size-picker__selector is-large"
                     onClick={[Function]}
                     type="button"
                   >
@@ -413,7 +413,7 @@ exports[`FontSizePicker with current value should open font select 1`] = `
               type="button"
             >
               <button
-                className="components-button components-color-palette__clear is-button is-default is-small"
+                className="components-button components-color-palette__clear is-secondary is-small"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -505,7 +505,7 @@ exports[`FontSizePicker with current value should render font size picker 1`] = 
                   <button
                     aria-expanded={false}
                     aria-label="Font size: Custom"
-                    className="components-button components-font-size-picker__selector is-button is-default is-large"
+                    className="components-button components-font-size-picker__selector is-large"
                     onClick={[Function]}
                     type="button"
                   >
@@ -530,7 +530,7 @@ exports[`FontSizePicker with current value should render font size picker 1`] = 
               type="button"
             >
               <button
-                className="components-button components-color-palette__clear is-button is-default is-small"
+                className="components-button components-color-palette__clear is-secondary is-small"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -622,7 +622,7 @@ exports[`FontSizePicker with slider should render font size picker 1`] = `
                   <button
                     aria-expanded={false}
                     aria-label="Font size: Custom"
-                    className="components-button components-font-size-picker__selector is-button is-default is-large"
+                    className="components-button components-font-size-picker__selector is-large"
                     onClick={[Function]}
                     type="button"
                   >
@@ -640,7 +640,7 @@ exports[`FontSizePicker with slider should render font size picker 1`] = `
               type="button"
             >
               <button
-                className="components-button components-color-palette__clear is-button is-default is-small"
+                className="components-button components-color-palette__clear is-secondary is-small"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -870,7 +870,7 @@ exports[`FontSizePicker with slider without current value should render font siz
                   <button
                     aria-expanded={false}
                     aria-label="Font size: Normal"
-                    className="components-button components-font-size-picker__selector is-button is-default is-large"
+                    className="components-button components-font-size-picker__selector is-large"
                     onClick={[Function]}
                     type="button"
                   >
@@ -888,7 +888,7 @@ exports[`FontSizePicker with slider without current value should render font siz
               type="button"
             >
               <button
-                className="components-button components-color-palette__clear is-button is-default is-small"
+                className="components-button components-color-palette__clear is-secondary is-small"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -1118,7 +1118,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
                   <button
                     aria-expanded={true}
                     aria-label="Font size: Normal"
-                    className="components-button components-font-size-picker__selector is-button is-default is-large"
+                    className="components-button components-font-size-picker__selector is-large"
                     onClick={[Function]}
                     type="button"
                   >
@@ -1465,7 +1465,7 @@ exports[`FontSizePicker without current value should open font select 1`] = `
               type="button"
             >
               <button
-                className="components-button components-color-palette__clear is-button is-default is-small"
+                className="components-button components-color-palette__clear is-secondary is-small"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -1556,7 +1556,7 @@ exports[`FontSizePicker without current value should render font size picker 1`]
                   <button
                     aria-expanded={false}
                     aria-label="Font size: Normal"
-                    className="components-button components-font-size-picker__selector is-button is-default is-large"
+                    className="components-button components-font-size-picker__selector is-large"
                     onClick={[Function]}
                     type="button"
                   >
@@ -1581,7 +1581,7 @@ exports[`FontSizePicker without current value should render font size picker 1`]
               type="button"
             >
               <button
-                className="components-button components-color-palette__clear is-button is-default is-small"
+                className="components-button components-color-palette__clear is-secondary is-small"
                 disabled={true}
                 onClick={[Function]}
                 type="button"

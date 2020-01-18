@@ -350,7 +350,7 @@ exports[`Popover should render mobile content 1`] = `
                             class="components-popover__header-title"
                           />
                           <button
-                            class="components-button components-icon-button components-popover__close"
+                            class="components-button components-popover__close has-icon"
                             type="button"
                           >
                             <svg
@@ -459,10 +459,11 @@ exports[`Popover should render mobile content 1`] = `
                                         icon="no-alt"
                                       >
                                         <ForwardRef(Button)
-                                          className="components-icon-button components-popover__close"
+                                          className="components-popover__close"
+                                          icon="no-alt"
                                         >
                                           <button
-                                            className="components-button components-icon-button components-popover__close"
+                                            className="components-button components-popover__close has-icon"
                                             type="button"
                                           >
                                             <Icon
@@ -586,7 +587,7 @@ exports[`renderPopover should render mobile popover 1`] = `
                           class="components-popover__header-title"
                         />
                         <button
-                          class="components-button components-icon-button components-popover__close"
+                          class="components-button components-popover__close has-icon"
                           type="button"
                         >
                           <svg
@@ -700,11 +701,12 @@ exports[`renderPopover should render mobile popover 1`] = `
                                       onClick={[MockFunction]}
                                     >
                                       <ForwardRef(Button)
-                                        className="components-icon-button components-popover__close"
+                                        className="components-popover__close"
+                                        icon="no-alt"
                                         onClick={[MockFunction]}
                                       >
                                         <button
-                                          className="components-button components-icon-button components-popover__close"
+                                          className="components-button components-popover__close has-icon"
                                           onClick={[MockFunction]}
                                           type="button"
                                         >
