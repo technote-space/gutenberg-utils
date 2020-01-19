@@ -8,14 +8,14 @@ const { IconButton } = wp.components;
 describe( 'Dropdown', () => {
 	const onToggle = jest.fn();
 	const wrapper = shallow( <Dropdown
-			onToggle={ onToggle }
-			renderContent={ () => <div className='render-content'>render content</div> }
-			renderToggle={ ( { isOpen, onToggle } ) => <IconButton
-				className='render-toggle'
-				onClick={ onToggle }
-			/> }
-			className='test-dropdown'
-		/>,
+		onToggle={ onToggle }
+		renderContent={ () => <div className='render-content'>render content</div> }
+		renderToggle={ ( { onToggle } ) => <IconButton
+			className='render-toggle'
+			onClick={ onToggle }
+		/> }
+		className='test-dropdown'
+	/>,
 	);
 	const button = wrapper.find( IconButton );
 

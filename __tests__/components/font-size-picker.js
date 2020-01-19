@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import FontSizePicker from '../../src/components/font-size-picker';

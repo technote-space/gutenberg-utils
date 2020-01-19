@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ColorPalette from '../../src/components/color-palette';

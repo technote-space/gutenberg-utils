@@ -12,6 +12,9 @@ const { Component, createRef } = wp.element;
  */
 class Dropdown extends Component {
 
+	/**
+	 * @param {object} props props
+	 */
 	constructor( props ) {
 		super( props );
 
@@ -25,6 +28,9 @@ class Dropdown extends Component {
 		};
 	}
 
+	/**
+	 * component will unmount
+	 */
 	componentWillUnmount() {
 		const { isOpen } = this.state;
 		const { onToggle } = this.props;
@@ -33,6 +39,10 @@ class Dropdown extends Component {
 		}
 	}
 
+	/**
+	 * @param {object} prevProps prev props
+	 * @param {object} prevState prev state
+	 */
 	componentDidUpdate( prevProps, prevState ) {
 		const { isOpen } = this.state;
 		const { onToggle } = this.props;
@@ -41,6 +51,9 @@ class Dropdown extends Component {
 		}
 	}
 
+	/**
+	 * toggle
+	 */
 	toggle() {
 		this.setState( state => ( {
 			isOpen: ! state.isOpen,
@@ -60,10 +73,17 @@ class Dropdown extends Component {
 		}
 	}
 
+	/**
+	 * close
+	 */
 	close() {
 		this.setState( { isOpen: false } );
 	}
 
+	/**
+	 * render
+	 * @returns {*} render
+	 */
 	render() {
 		const { isOpen } = this.state;
 		const {
