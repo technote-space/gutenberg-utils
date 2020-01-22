@@ -1634,7 +1634,7 @@ Array [
                           <div
                             class="components-color-picker__saturation-color"
                             role="application"
-                            style="background: hsl(120, 100%, 50%);"
+                            style="background: rgb(0, 0, 0);"
                           >
                             <div
                               class="components-color-picker__saturation-white"
@@ -2031,7 +2031,7 @@ Array [
                                               <div
                                                 class="components-color-picker__saturation-color"
                                                 role="application"
-                                                style="background: hsl(120, 100%, 50%);"
+                                                style="background: rgb(0, 0, 0);"
                                               >
                                                 <div
                                                   class="components-color-picker__saturation-white"
