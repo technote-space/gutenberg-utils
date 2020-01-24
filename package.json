@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "gutenberg utils",
   "main": "build/index.js",
   "files": [
@@ -75,7 +75,7 @@
     "eslint-plugin-react": "^7.18.0",
     "jest": "^25.1.0",
     "lodash": "^4.17.15",
-    "mousetrap": "^1.6.3",
+    "mousetrap": "^1.6.5",
     "react-autosize-textarea": "^7.0.0"
   }
 }
