@@ -75,7 +75,7 @@
     "eslint-plugin-react": "^7.18.0",
     "jest": "^25.1.0",
     "lodash": "^4.17.15",
-    "mousetrap": "^1.6.3",
+    "mousetrap": "^1.6.5",
     "react-autosize-textarea": "^7.0.0"
   }
 }
