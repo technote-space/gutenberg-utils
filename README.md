@@ -10,9 +10,12 @@
 
 This is a gutenberg's utils.
 
+## Table of Contents
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+<details>
+<summary>Details</summary>
 
 - [How to use](#how-to-use)
   - [npm](#npm)
@@ -20,6 +23,7 @@ This is a gutenberg's utils.
 - [dependencies](#dependencies)
 - [Author](#author)
 
+</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## How to use
