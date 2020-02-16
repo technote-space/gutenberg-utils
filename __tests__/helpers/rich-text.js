@@ -1,4 +1,6 @@
 /* eslint-disable no-magic-numbers */
+import { getFormatArgs } from '@technote-space/gutenberg-test-helper';
+
 const { registerFormatType } = wp.richText;
 
 import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
@@ -232,18 +234,12 @@ describe('onChangeStyle', () => {
 	});
 });
 
-const getArgs = (onChange, formatName, format = []) => ({
-	args: {
-		isActive: true,
-		value: {
-			start: 0,
-			end: 1,
-			text: 'test5',
-			formats: [format, format, format, format, format],
-		},
-		onChange: onChange(formatName),
-	},
-	formatName: formatName,
+const getArgs = (onChange, formatName, format = []) => getFormatArgs({
+	format,
+	formatLength: 5,
+	text: 'test5',
+	onChange,
+	formatName,
 });
 
 describe('getToolbarButtonProps', () => {
