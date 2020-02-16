@@ -10,15 +10,15 @@ class PopoverDetectOutside extends Component {
 	/**
 	 * @param {object} props props
 	 */
-	constructor( props ) {
-		super( props );
+	constructor(props) {
+		super(props);
 	}
 
 	/**
 	 * @param {Event} event event
 	 */
-	handleClickOutside( event ) {
-		this.props.onClickOutside( event );
+	handleClickOutside(event) {
+		this.props.onClickOutside(event);
 	}
 
 	/**
@@ -29,4 +29,4 @@ class PopoverDetectOutside extends Component {
 	}
 }
 
-export default clickOutside( PopoverDetectOutside );
+export default clickOutside(PopoverDetectOutside);

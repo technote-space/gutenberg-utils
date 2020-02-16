@@ -19,7 +19,7 @@ import Dropdown from '../dropdown';
  * @returns {*} dropdown button
  * @constructor
  */
-const DropdownButton = ( {
+const DropdownButton = ({
 	icon = 'menu',
 	label,
 	tooltip = label,
@@ -31,33 +31,33 @@ const DropdownButton = ( {
 	isDisabled = false,
 	isDropdownDisabled = false,
 	isHiddenIndicator = false,
-} ) => {
+}) => {
 	return <Dropdown
-		className={ classnames( 'components-dropdown-button', className ) }
-		contentClassName={ classnames( 'components-dropdown-button__popover', contentClassName ) }
-		position={ position }
-		renderToggle={ ( { isOpen, onToggle, onClose } ) => {
-			if ( isOpen && isDropdownDisabled ) {
+		className={classnames('components-dropdown-button', className)}
+		contentClassName={classnames('components-dropdown-button__popover', contentClassName)}
+		position={position}
+		renderToggle={({ isOpen, onToggle, onClose }) => {
+			if (isOpen && isDropdownDisabled) {
 				// eslint-disable-next-line no-magic-numbers
-				setTimeout( onClose, 0 );
+				setTimeout(onClose, 0);
 			}
 			return <IconButton
-				className={ classnames( 'components-dropdown-button__toggle', {
+				className={classnames('components-dropdown-button__toggle', {
 					'is-active': isActive,
-				} ) }
-				icon={ icon }
-				onClick={ onToggle }
+				})}
+				icon={icon}
+				onClick={onToggle}
 				aria-haspopup="true"
-				aria-expanded={ isOpen }
-				aria-pressed={ isActive }
-				label={ label }
-				tooltip={ tooltip }
-				disabled={ isDisabled }
+				aria-expanded={isOpen}
+				aria-pressed={isActive}
+				label={label}
+				tooltip={tooltip}
+				disabled={isDisabled}
 			>
-				{ ! isHiddenIndicator && <span className="components-dropdown-button__indicator"/> }
+				{!isHiddenIndicator && <span className="components-dropdown-button__indicator" />}
 			</IconButton>;
-		} }
-		renderContent={ renderContent }
+		}}
+		renderContent={renderContent}
 	/>;
 };
 

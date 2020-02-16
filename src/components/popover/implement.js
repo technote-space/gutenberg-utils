@@ -10,7 +10,7 @@ const { focus } = wp.dom;
 const { ESCAPE } = wp.keycodes;
 const isShallowEqual = wp.isShallowEqual;
 const { IconButton, ScrollLock, Animate, withFocusReturn, withConstrainedTabbing, IsolatedEventContainer, Slot, Fill } = wp.components;
-const FocusManaged = withConstrainedTabbing( withFocusReturn( ( { children } ) => children ) );
+const FocusManaged = withConstrainedTabbing(withFocusReturn(({ children }) => children));
 
 /**
  * Name of slot in which popover should fill.
@@ -19,22 +19,22 @@ const FocusManaged = withConstrainedTabbing( withFocusReturn( ( { children } ) =
  */
 const SLOT_NAME = 'Popover';
 
-export const useThrottledWindowScrollOrResizeFunc = ( handler, ignoredScrollalbeRef ) => {
+export const useThrottledWindowScrollOrResizeFunc = (handler, ignoredScrollalbeRef) => {
 	let refreshHandle;
-	const throttledRefresh = ( event ) => {
-		window.cancelAnimationFrame( refreshHandle );
-		if ( ignoredScrollalbeRef && event && event.type === 'scroll' && ignoredScrollalbeRef.current.contains( event.target ) ) {
+	const throttledRefresh = (event) => {
+		window.cancelAnimationFrame(refreshHandle);
+		if (ignoredScrollalbeRef && event && event.type === 'scroll' && ignoredScrollalbeRef.current.contains(event.target)) {
 			return;
 		}
-		refreshHandle = window.requestAnimationFrame( handler );
+		refreshHandle = window.requestAnimationFrame(handler);
 	};
 
-	window.addEventListener( 'resize', throttledRefresh );
-	window.addEventListener( 'scroll', throttledRefresh );
+	window.addEventListener('resize', throttledRefresh);
+	window.addEventListener('scroll', throttledRefresh);
 
 	return () => {
-		window.removeEventListener( 'resize', throttledRefresh );
-		window.removeEventListener( 'scroll', throttledRefresh );
+		window.removeEventListener('resize', throttledRefresh);
+		window.removeEventListener('scroll', throttledRefresh);
 	};
 };
 
@@ -44,11 +44,11 @@ export const useThrottledWindowScrollOrResizeFunc = ( handler, ignoredScrollalbe
  * @param {function} handler              Event handler.
  * @param {object}   ignoredScrollalbeRef scroll events inside this element are ignored.
  */
-function useThrottledWindowScrollOrResize( handler, ignoredScrollalbeRef ) {
+function useThrottledWindowScrollOrResize(handler, ignoredScrollalbeRef) {
 	// Refresh anchor rect on resize
-	useEffect( () => {
-		useThrottledWindowScrollOrResizeFunc( handler, ignoredScrollalbeRef );
-	}, [] );
+	useEffect(() => {
+		useThrottledWindowScrollOrResizeFunc(handler, ignoredScrollalbeRef);
+	}, []);
 }
 
 /**
@@ -59,22 +59,22 @@ function useThrottledWindowScrollOrResize( handler, ignoredScrollalbeRef ) {
  * @param {function} setAnchor set anchor
  * @returns {boolean} result
  */
-export const refreshAnchorRectFunc = ( anchorRef, anchorRect, getAnchorRect, anchor, setAnchor ) => {
-	if ( ! anchorRef.current ) {
+export const refreshAnchorRectFunc = (anchorRef, anchorRect, getAnchorRect, anchor, setAnchor) => {
+	if (!anchorRef.current) {
 		return false;
 	}
 
 	let newAnchor;
-	if ( anchorRect ) {
+	if (anchorRect) {
 		newAnchor = anchorRect;
-	} else if ( getAnchorRect ) {
-		newAnchor = getAnchorRect( anchorRef.current );
+	} else if (getAnchorRect) {
+		newAnchor = getAnchorRect(anchorRef.current);
 	} else {
 		const rect = anchorRef.current.parentNode.getBoundingClientRect();
 		// subtract padding
-		const { paddingTop, paddingBottom } = window.getComputedStyle( anchorRef.current.parentNode );
-		const topPad = parseInt( paddingTop, 10 );
-		const bottomPad = parseInt( paddingBottom, 10 );
+		const { paddingTop, paddingBottom } = window.getComputedStyle(anchorRef.current.parentNode);
+		const topPad = parseInt(paddingTop, 10);
+		const bottomPad = parseInt(paddingBottom, 10);
 		newAnchor = {
 			x: rect.left,
 			y: rect.top + topPad,
@@ -87,9 +87,9 @@ export const refreshAnchorRectFunc = ( anchorRef, anchorRect, getAnchorRect, anc
 		};
 	}
 
-	const didAnchorRectChange = ! isShallowEqual( newAnchor, anchor );
-	if ( didAnchorRectChange ) {
-		setAnchor( newAnchor );
+	const didAnchorRectChange = !isShallowEqual(newAnchor, anchor);
+	if (didAnchorRectChange) {
+		setAnchor(newAnchor);
 		return true;
 	}
 	return false;
@@ -100,8 +100,8 @@ export const refreshAnchorRectFunc = ( anchorRef, anchorRect, getAnchorRect, anc
  * @param {function} refreshAnchorRect refresh anchor rect
  * @returns {function(): void} func
  */
-export const intervalRefreshAnchorRectFunc = ( anchorRect, refreshAnchorRect ) => {
-	if ( ! anchorRect ) {
+export const intervalRefreshAnchorRectFunc = (anchorRect, refreshAnchorRect) => {
+	if (!anchorRect) {
 		/*
 		* There are sometimes we need to reposition or resize the popover that are not
 		* handled by the resize/scroll window events (i.e. CSS changes in the layout
@@ -110,9 +110,9 @@ export const intervalRefreshAnchorRectFunc = ( anchorRect, refreshAnchorRect ) =
 		* For these situations, we refresh the popover every 0.5s
 		*/
 		// eslint-disable-next-line no-magic-numbers
-		const intervalHandle = setInterval( refreshAnchorRect, 500 );
+		const intervalHandle = setInterval(refreshAnchorRect, 500);
 
-		return () => clearInterval( intervalHandle );
+		return () => clearInterval(intervalHandle);
 	}
 };
 
@@ -126,17 +126,17 @@ export const intervalRefreshAnchorRectFunc = ( anchorRect, refreshAnchorRect ) =
  *
  * @return {object} Anchor position.
  */
-function useAnchor( anchorRef, contentRef, anchorRect, getAnchorRect ) {
-	const [ anchor, setAnchor ] = useState( null );
+function useAnchor(anchorRef, contentRef, anchorRect, getAnchorRect) {
+	const [anchor, setAnchor] = useState(null);
 	const refreshAnchorRect = () => {
-		refreshAnchorRectFunc( anchorRef, anchorRect, getAnchorRect, anchor, setAnchor );
+		refreshAnchorRectFunc(anchorRef, anchorRect, getAnchorRect, anchor, setAnchor);
 	};
-	useEffect( refreshAnchorRect, [ anchorRect, getAnchorRect ] );
-	useEffect( () => {
-		intervalRefreshAnchorRectFunc( anchorRect, refreshAnchorRect );
-	}, [ anchorRect ] );
+	useEffect(refreshAnchorRect, [anchorRect, getAnchorRect]);
+	useEffect(() => {
+		intervalRefreshAnchorRectFunc(anchorRect, refreshAnchorRect);
+	}, [anchorRect]);
 
-	useThrottledWindowScrollOrResize( refreshAnchorRect, contentRef );
+	useThrottledWindowScrollOrResize(refreshAnchorRect, contentRef);
 
 	return anchor;
 }
@@ -150,15 +150,15 @@ function useAnchor( anchorRef, contentRef, anchorRect, getAnchorRect ) {
  *
  * @return {object} Content size.
  */
-function useInitialContentSize( ref ) {
-	const [ contentSize, setContentSize ] = useState( null );
-	useEffect( () => {
+function useInitialContentSize(ref) {
+	const [contentSize, setContentSize] = useState(null);
+	useEffect(() => {
 		const contentRect = ref.current.getBoundingClientRect();
-		setContentSize( {
+		setContentSize({
 			width: contentRect.width,
 			height: contentRect.height,
-		} );
-	}, [] );
+		});
+	}, []);
 
 	return contentSize;
 }
@@ -175,8 +175,8 @@ function useInitialContentSize( ref ) {
  *
  * @return {object} Popover position.
  */
-function usePopoverPosition( anchor, contentSize, position, expandOnMobile, contentRef ) {
-	const [ popoverPosition, setPopoverPosition ] = useState( {
+function usePopoverPosition(anchor, contentSize, position, expandOnMobile, contentRef) {
+	const [popoverPosition, setPopoverPosition] = useState({
 		popoverLeft: null,
 		popoverTop: null,
 		yAxis: 'top',
@@ -184,9 +184,9 @@ function usePopoverPosition( anchor, contentSize, position, expandOnMobile, cont
 		contentHeight: null,
 		contentWidth: null,
 		isMobile: false,
-	} );
+	});
 	const refreshPopoverPosition = () => {
-		if ( ! anchor || ! contentSize ) {
+		if (!anchor || !contentSize) {
 			return;
 		}
 
@@ -207,11 +207,11 @@ function usePopoverPosition( anchor, contentSize, position, expandOnMobile, cont
 			popoverPosition.contentWidth !== newPopoverPosition.contentWidth ||
 			popoverPosition.isMobile !== newPopoverPosition.isMobile
 		) {
-			setPopoverPosition( newPopoverPosition );
+			setPopoverPosition(newPopoverPosition);
 		}
 	};
-	useEffect( refreshPopoverPosition, [ anchor, contentSize ] );
-	useThrottledWindowScrollOrResize( refreshPopoverPosition, contentRef );
+	useEffect(refreshPopoverPosition, [anchor, contentSize]);
+	useThrottledWindowScrollOrResize(refreshPopoverPosition, contentRef);
 
 	return popoverPosition;
 }
@@ -222,16 +222,16 @@ function usePopoverPosition( anchor, contentSize, position, expandOnMobile, cont
  * @param {object} focus focus
  * @returns {boolean} func
  */
-export const useFocusContentOnMountFunc = ( focusOnMount, contentRef, focus ) => {
-	if ( ! focusOnMount || ! contentRef.current ) {
+export const useFocusContentOnMountFunc = (focusOnMount, contentRef, focus) => {
+	if (!focusOnMount || !contentRef.current) {
 		return false;
 	}
 
-	if ( focusOnMount === 'firstElement' ) {
+	if (focusOnMount === 'firstElement') {
 		// Find first tabbable node within content and shift focus, falling
 		// back to the popover panel itself.
-		const firstTabbable = focus.tabbable.find( contentRef.current )[ 0 ];
-		if ( firstTabbable ) {
+		const firstTabbable = focus.tabbable.find(contentRef.current)[ 0 ];
+		if (firstTabbable) {
 			firstTabbable.focus();
 		} else {
 			contentRef.current.focus();
@@ -240,7 +240,7 @@ export const useFocusContentOnMountFunc = ( focusOnMount, contentRef, focus ) =>
 		return true;
 	}
 
-	if ( focusOnMount === 'container' ) {
+	if (focusOnMount === 'container') {
 		// Focus the popover panel itself so items in the popover are easily
 		// accessed via keyboard navigation.
 		contentRef.current.focus();
@@ -256,16 +256,16 @@ export const useFocusContentOnMountFunc = ( focusOnMount, contentRef, focus ) =>
  * @param {boolean|string} focusOnMount Focus on mount mode.
  * @param {object} contentRef           Reference to the popover content element.
  */
-function useFocusContentOnMount( focusOnMount, contentRef ) {
+function useFocusContentOnMount(focusOnMount, contentRef) {
 	// Focus handling
-	useEffect( () => {
-		const focusTimeout = setTimeout( () => {
-			useFocusContentOnMountFunc( focusOnMount, contentRef, focus );
+	useEffect(() => {
+		const focusTimeout = setTimeout(() => {
+			useFocusContentOnMountFunc(focusOnMount, contentRef, focus);
 			// eslint-disable-next-line no-magic-numbers
-		}, 0 );
+		}, 0);
 
-		return () => clearTimeout( focusTimeout );
-	}, [] );
+		return () => clearTimeout(focusTimeout);
+	}, []);
 }
 
 /**
@@ -286,7 +286,7 @@ function useFocusContentOnMount( focusOnMount, contentRef ) {
  * @param {function} onClickOutside on click outside
  * @returns {Component} popover
  */
-export const renderPopover = ( {
+export const renderPopover = ({
 	anchorRef,
 	contentRef,
 	contentSize,
@@ -302,7 +302,7 @@ export const renderPopover = ( {
 	onClose,
 	onKeyDown,
 	onClickOutside,
-} ) => {
+}) => {
 	const classes = classnames(
 		'components-popover',
 		className,
@@ -330,64 +330,64 @@ export const renderPopover = ( {
 	const animateXAxis = xAxisMapping[ popoverPosition.xAxis ] || 'center';
 
 	// Event handlers
-	const maybeClose = ( event ) => {
+	const maybeClose = (event) => {
 		// Close on escape
-		if ( event.keyCode === ESCAPE && onClose ) {
+		if (event.keyCode === ESCAPE && onClose) {
 			event.stopPropagation();
 			onClose();
 		}
 
 		// Preserve original content prop behavior
-		if ( onKeyDown ) {
-			onKeyDown( event );
+		if (onKeyDown) {
+			onKeyDown(event);
 		}
 	};
 
-	return <span ref={ anchorRef }>
-		{ <Fill name={ SLOT_NAME }>
+	return <span ref={anchorRef}>
+		{<Fill name={SLOT_NAME}>
 			<FocusManaged>
-				<PopoverDetectOutside onClickOutside={ onClickOutside }>
+				<PopoverDetectOutside onClickOutside={onClickOutside}>
 					<Animate
-						type={ animate && isReadyToAnimate ? 'appear' : null }
-						options={ { origin: animateYAxis + ' ' + animateXAxis } }
+						type={animate && isReadyToAnimate ? 'appear' : null}
+						options={{ origin: animateYAxis + ' ' + animateXAxis }}
 					>
-						{ ( { className: animateClassName } ) => (
+						{({ className: animateClassName }) => (
 							<IsolatedEventContainer
-								className={ classnames( classes, animateClassName ) }
-								style={ {
-									top: ! popoverPosition.isMobile && popoverPosition.popoverTop ? popoverPosition.popoverTop + 'px' : undefined,
-									left: ! popoverPosition.isMobile && popoverPosition.popoverLeft ? popoverPosition.popoverLeft + 'px' : undefined,
+								className={classnames(classes, animateClassName)}
+								style={{
+									top: !popoverPosition.isMobile && popoverPosition.popoverTop ? popoverPosition.popoverTop + 'px' : undefined,
+									left: !popoverPosition.isMobile && popoverPosition.popoverLeft ? popoverPosition.popoverLeft + 'px' : undefined,
 									visibility: contentSize ? undefined : 'hidden',
-								} }
-								{ ...contentProps }
-								onKeyDown={ maybeClose }
+								}}
+								{...contentProps}
+								onKeyDown={maybeClose}
 							>
-								{ popoverPosition.isMobile && (
+								{popoverPosition.isMobile && (
 									<div className="components-popover__header">
 										<span className="components-popover__header-title">
-											{ headerTitle }
+											{headerTitle}
 										</span>
-										<IconButton className="components-popover__close" icon="no-alt" onClick={ onClose }/>
+										<IconButton className="components-popover__close" icon="no-alt" onClick={onClose} />
 									</div>
-								) }
+								)}
 								<div
-									ref={ contentRef }
+									ref={contentRef}
 									className="components-popover__content"
-									style={ {
-										maxHeight: ! popoverPosition.isMobile && popoverPosition.contentHeight ? popoverPosition.contentHeight + 'px' : undefined,
-										maxWidth: ! popoverPosition.isMobile && popoverPosition.contentWidth ? popoverPosition.contentWidth + 'px' : undefined,
-									} }
+									style={{
+										maxHeight: !popoverPosition.isMobile && popoverPosition.contentHeight ? popoverPosition.contentHeight + 'px' : undefined,
+										maxWidth: !popoverPosition.isMobile && popoverPosition.contentWidth ? popoverPosition.contentWidth + 'px' : undefined,
+									}}
 									tabIndex="-1"
 								>
-									{ children }
+									{children}
 								</div>
 							</IsolatedEventContainer>
-						) }
+						)}
 					</Animate>
 				</PopoverDetectOutside>
 			</FocusManaged>
-		</Fill> }
-		{ popoverPosition.isMobile && expandOnMobile && <ScrollLock/> }
+		</Fill>}
+		{popoverPosition.isMobile && expandOnMobile && <ScrollLock />}
 	</span>;
 };
 
@@ -409,7 +409,7 @@ export const renderPopover = ( {
  * @returns {Component} popover
  * @constructor
  */
-const Popover = ( {
+const Popover = ({
 	headerTitle,
 	onClose,
 	onKeyDown,
@@ -424,23 +424,23 @@ const Popover = ( {
 	expandOnMobile,
 	animate = true,
 	...contentProps
-} ) => {
-	const anchorRef = useRef( null );
-	const contentRef = useRef( null );
+}) => {
+	const anchorRef = useRef(null);
+	const contentRef = useRef(null);
 
 	// Animation
-	const [ isReadyToAnimate, setIsReadyToAnimate ] = useState( false );
+	const [isReadyToAnimate, setIsReadyToAnimate] = useState(false);
 
 	// Anchor position
-	const anchor = useAnchor( anchorRef, contentRef, anchorRect, getAnchorRect );
+	const anchor = useAnchor(anchorRef, contentRef, anchorRect, getAnchorRect);
 
 	// Content size
-	const contentSize = useInitialContentSize( contentRef );
-	useEffect( () => {
-		if ( contentSize ) {
-			setIsReadyToAnimate( true );
+	const contentSize = useInitialContentSize(contentRef);
+	useEffect(() => {
+		if (contentSize) {
+			setIsReadyToAnimate(true);
 		}
-	}, [ contentSize ] );
+	}, [contentSize]);
 
 	// Compute the position
 	const popoverPosition = usePopoverPosition(
@@ -451,9 +451,9 @@ const Popover = ( {
 		contentRef,
 	);
 
-	useFocusContentOnMount( focusOnMount, contentRef );
+	useFocusContentOnMount(focusOnMount, contentRef);
 
-	return renderPopover( {
+	return renderPopover({
 		anchorRef,
 		contentRef,
 		contentSize,
@@ -469,11 +469,11 @@ const Popover = ( {
 		onClose,
 		onKeyDown,
 		onClickOutside,
-	} );
+	});
 };
 
 const PopoverContainer = Popover;
 
-PopoverContainer.Slot = () => <Slot bubblesVirtually name={ SLOT_NAME }/>;
+PopoverContainer.Slot = () => <Slot bubblesVirtually name={SLOT_NAME} />;
 
 export default PopoverContainer;

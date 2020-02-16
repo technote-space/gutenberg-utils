@@ -12,16 +12,16 @@ const isRTL = () => document.documentElement.dir === 'rtl';
  * @param {string} chosenYAxis      yAxis to be used.
  * @returns {object} choices
  */
-const getXAxisAlignmentChoices = ( anchorRect, width, chosenYAxis ) => {
+const getXAxisAlignmentChoices = (anchorRect, width, chosenYAxis) => {
 	// eslint-disable-next-line no-magic-numbers
-	const anchorMidPoint = Math.round( anchorRect.left + ( anchorRect.width / 2 ) );
+	const anchorMidPoint = Math.round(anchorRect.left + (anchorRect.width / 2));
 	const centerAlignment = {
 		popoverLeft: anchorMidPoint,
 		contentWidth: (
 			// eslint-disable-next-line no-magic-numbers
-			( anchorMidPoint - ( width / 2 ) > 0 ? ( width / 2 ) : anchorMidPoint ) +
+			(anchorMidPoint - (width / 2) > 0 ? (width / 2) : anchorMidPoint) +
 			// eslint-disable-next-line no-magic-numbers
-			( anchorMidPoint + ( width / 2 ) > window.innerWidth ? window.innerWidth - anchorMidPoint : ( width / 2 ) )
+			(anchorMidPoint + (width / 2) > window.innerWidth ? window.innerWidth - anchorMidPoint : (width / 2))
 		),
 	};
 	const leftAlignmentX = chosenYAxis === 'middle' ? anchorRect.left : anchorMidPoint;
@@ -46,14 +46,14 @@ const getXAxisAlignmentChoices = ( anchorRect, width, chosenYAxis ) => {
  * @param {object} rightAlignment  right alignment
  * @returns {object} x axis
  */
-const chooseXAxis = ( xAxis, width, centerAlignment, leftAlignment, rightAlignment ) => {
+const chooseXAxis = (xAxis, width, centerAlignment, leftAlignment, rightAlignment) => {
 	let chosenXAxis;
 	let contentWidth = null;
-	if ( xAxis === 'center' && centerAlignment.contentWidth === width ) {
+	if (xAxis === 'center' && centerAlignment.contentWidth === width) {
 		chosenXAxis = 'center';
-	} else if ( xAxis === 'left' && leftAlignment.contentWidth === width ) {
+	} else if (xAxis === 'left' && leftAlignment.contentWidth === width) {
 		chosenXAxis = 'left';
-	} else if ( xAxis === 'right' && rightAlignment.contentWidth === width ) {
+	} else if (xAxis === 'right' && rightAlignment.contentWidth === width) {
 		chosenXAxis = 'right';
 	} else {
 		chosenXAxis = leftAlignment.contentWidth > rightAlignment.contentWidth ? 'left' : 'right';
@@ -62,9 +62,9 @@ const chooseXAxis = ( xAxis, width, centerAlignment, leftAlignment, rightAlignme
 	}
 
 	let popoverLeft;
-	if ( chosenXAxis === 'center' ) {
+	if (chosenXAxis === 'center') {
 		popoverLeft = centerAlignment.popoverLeft;
-	} else if ( chosenXAxis === 'left' ) {
+	} else if (chosenXAxis === 'left') {
 		popoverLeft = leftAlignment.popoverLeft;
 	} else {
 		popoverLeft = rightAlignment.popoverLeft;
@@ -83,20 +83,20 @@ const chooseXAxis = ( xAxis, width, centerAlignment, leftAlignment, rightAlignme
  *
  * @return {object} Popover xAxis position and constraints.
  */
-export function computePopoverXAxisPosition( anchorRect, contentSize, xAxis, chosenYAxis ) {
+export function computePopoverXAxisPosition(anchorRect, contentSize, xAxis, chosenYAxis) {
 	const { width } = contentSize;
 	// Correct xAxis for RTL support
-	if ( xAxis === 'left' && isRTL() ) {
+	if (xAxis === 'left' && isRTL()) {
 		xAxis = 'right';
-	} else if ( xAxis === 'right' && isRTL() ) {
+	} else if (xAxis === 'right' && isRTL()) {
 		xAxis = 'left';
 	}
 
 	// x axis alignment choices
-	const { centerAlignment, leftAlignment, rightAlignment } = getXAxisAlignmentChoices( anchorRect, width, chosenYAxis );
+	const { centerAlignment, leftAlignment, rightAlignment } = getXAxisAlignmentChoices(anchorRect, width, chosenYAxis);
 
 	// Choosing the x axis
-	const { chosenXAxis, contentWidth, popoverLeft } = chooseXAxis( xAxis, width, centerAlignment, leftAlignment, rightAlignment );
+	const { chosenXAxis, contentWidth, popoverLeft } = chooseXAxis(xAxis, width, centerAlignment, leftAlignment, rightAlignment);
 
 	return {
 		xAxis: chosenXAxis,
@@ -110,16 +110,16 @@ export function computePopoverXAxisPosition( anchorRect, contentSize, xAxis, cho
  * @param {number} height height
  * @returns {object} choices
  */
-const getYAxisAlignmentChoices = ( anchorRect, height ) => {
+const getYAxisAlignmentChoices = (anchorRect, height) => {
 	// eslint-disable-next-line no-magic-numbers
-	const anchorMidPoint = anchorRect.top + ( anchorRect.height / 2 );
+	const anchorMidPoint = anchorRect.top + (anchorRect.height / 2);
 	const middleAlignment = {
 		popoverTop: anchorMidPoint,
 		contentHeight: (
 			// eslint-disable-next-line no-magic-numbers
-			( anchorMidPoint - ( height / 2 ) > 0 ? ( height / 2 ) : anchorMidPoint ) +
+			(anchorMidPoint - (height / 2) > 0 ? (height / 2) : anchorMidPoint) +
 			// eslint-disable-next-line no-magic-numbers
-			( anchorMidPoint + ( height / 2 ) > window.innerHeight ? window.innerHeight - anchorMidPoint : ( height / 2 ) )
+			(anchorMidPoint + (height / 2) > window.innerHeight ? window.innerHeight - anchorMidPoint : (height / 2))
 		),
 	};
 	const topAlignment = {
@@ -143,14 +143,14 @@ const getYAxisAlignmentChoices = ( anchorRect, height ) => {
  * @param {object} bottomAlignment bottom alignment
  * @returns {object} y axis
  */
-const chooseYAxis = ( yAxis, height, middleAlignment, topAlignment, bottomAlignment ) => {
+const chooseYAxis = (yAxis, height, middleAlignment, topAlignment, bottomAlignment) => {
 	let chosenYAxis;
 	let contentHeight = null;
-	if ( yAxis === 'middle' && middleAlignment.contentHeight === height ) {
+	if (yAxis === 'middle' && middleAlignment.contentHeight === height) {
 		chosenYAxis = 'middle';
-	} else if ( yAxis === 'top' && topAlignment.contentHeight === height ) {
+	} else if (yAxis === 'top' && topAlignment.contentHeight === height) {
 		chosenYAxis = 'top';
-	} else if ( yAxis === 'bottom' && bottomAlignment.contentHeight === height ) {
+	} else if (yAxis === 'bottom' && bottomAlignment.contentHeight === height) {
 		chosenYAxis = 'bottom';
 	} else {
 		chosenYAxis = topAlignment.contentHeight > bottomAlignment.contentHeight ? 'top' : 'bottom';
@@ -159,9 +159,9 @@ const chooseYAxis = ( yAxis, height, middleAlignment, topAlignment, bottomAlignm
 	}
 
 	let popoverTop;
-	if ( chosenYAxis === 'middle' ) {
+	if (chosenYAxis === 'middle') {
 		popoverTop = middleAlignment.popoverTop;
-	} else if ( chosenYAxis === 'top' ) {
+	} else if (chosenYAxis === 'top') {
 		popoverTop = topAlignment.popoverTop;
 	} else {
 		popoverTop = bottomAlignment.popoverTop;
@@ -179,14 +179,14 @@ const chooseYAxis = ( yAxis, height, middleAlignment, topAlignment, bottomAlignm
  *
  * @return {object} Popover xAxis position and constraints.
  */
-export function computePopoverYAxisPosition( anchorRect, contentSize, yAxis ) {
+export function computePopoverYAxisPosition(anchorRect, contentSize, yAxis) {
 	const { height } = contentSize;
 
 	// y axis alignment choices
-	const { middleAlignment, topAlignment, bottomAlignment } = getYAxisAlignmentChoices( anchorRect, height );
+	const { middleAlignment, topAlignment, bottomAlignment } = getYAxisAlignmentChoices(anchorRect, height);
 
 	// Choosing the y axis
-	const { chosenYAxis, contentHeight, popoverTop } = chooseYAxis( yAxis, height, middleAlignment, topAlignment, bottomAlignment );
+	const { chosenYAxis, contentHeight, popoverTop } = chooseYAxis(yAxis, height, middleAlignment, topAlignment, bottomAlignment);
 
 	return {
 		yAxis: chosenYAxis,
@@ -206,11 +206,11 @@ export function computePopoverYAxisPosition( anchorRect, contentSize, yAxis ) {
  *
  * @return {object} Popover position and constraints.
  */
-export function computePopoverPosition( anchorRect, contentSize, position, expandOnMobile ) {
-	const [ yAxis, xAxis = 'center' ] = position.split( ' ' );
+export function computePopoverPosition(anchorRect, contentSize, position, expandOnMobile) {
+	const [yAxis, xAxis = 'center'] = position.split(' ');
 
-	const yAxisPosition = computePopoverYAxisPosition( anchorRect, contentSize, yAxis );
-	const xAxisPosition = computePopoverXAxisPosition( anchorRect, contentSize, xAxis, yAxisPosition.yAxis );
+	const yAxisPosition = computePopoverYAxisPosition(anchorRect, contentSize, yAxis);
+	const xAxisPosition = computePopoverXAxisPosition(anchorRect, contentSize, xAxis, yAxisPosition.yAxis);
 
 	return {
 		isMobile: isMobileViewport() && expandOnMobile,
