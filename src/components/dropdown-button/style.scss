@@ -1,8 +1,12 @@
 @import "../../common/style";
 
 .components-dropdown-button {
-	padding: 0 3px;
+	padding: 3px;
 	display: flex;
+
+	.components-button {
+		height: 30px;
+	}
 
 	&__popover {
 		.components-popover__content {
