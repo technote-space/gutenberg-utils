@@ -7,6 +7,55 @@
  * @example wp.data.select( getEditorStoreKey() ).getSelectedBlock()
  */
 
+import { compare } from 'compare-versions';
+
+const { select } = wp.data;
+const { get, has } = window.lodash;
+
+/**
+ * @returns {object} settings
+ */
+export const getEditorSettings = () => select('core/editor').getEditorSettings();
+
+/**
+ * @returns {object} package versions
+ */
+export const getPackageVersions = () => {
+	const settings = getEditorSettings();
+	console.log(settings);
+	if (Object.prototype.hasOwnProperty.call(settings, 'package-versions')) {
+		return settings[ 'package-versions' ];
+	}
+
+	return {};
+};
+
+/**
+ * @returns {boolean} is valid?
+ */
+export const isValidPackageVersions = () => !!Object.keys(getPackageVersions()).length;
+
+/**
+ * @param {string} name name
+ * @returns {boolean} is available?
+ */
+export const isPackageAvailable = name => isValidPackageVersions() && has(getPackageVersions(), name);
+
+/**
+ * @param {string} name name
+ * @returns {string|false} version
+ */
+export const getPackageVersion = name => get(getPackageVersions(), name, false);
+
+/**
+ * @param {string} name name
+ * @param {string} version version
+ * @param {string} operation operation [>, <, =, >=, <=]
+ * @param {boolean} fallback fallback
+ * @returns {boolean} result
+ */
+export const comparePackageVersion = (name, version, operation, fallback = false) => isPackageAvailable(name) ? compare(getPackageVersion(name), version, operation) : fallback;
+
 /**
  * setup compatibility
  */
