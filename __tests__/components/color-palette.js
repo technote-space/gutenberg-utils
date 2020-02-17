@@ -16,15 +16,15 @@ describe('ColorPalette', () => {
 		onChange.mockClear();
 	});
 
-	test('should render a dynamic toolbar of colors', () => {
+	it('should render a dynamic toolbar of colors', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	test('should render three color button options', () => {
+	it('should render three color button options', () => {
 		expect(buttons).toHaveLength(3);
 	});
 
-	test('should call onClick on an active button with undefined', () => {
+	it('should call onClick on an active button with undefined', () => {
 		const activeButton = buttons.findWhere((button) => button.hasClass('is-active'));
 		activeButton.simulate('click');
 
@@ -32,14 +32,14 @@ describe('ColorPalette', () => {
 		expect(onChange).toHaveBeenCalledWith(undefined);
 	});
 
-	test('should call onClick on an inactive button', () => {
+	it('should call onClick on an inactive button', () => {
 		const inactiveButton = buttons.findWhere((button) => !button.hasClass('is-active')).first();
 		inactiveButton.simulate('click');
 
 		expect(onChange).toHaveBeenCalledTimes(1);
 	});
 
-	test('should call onClick with undefined, when the clearButton onClick is triggered', () => {
+	it('should call onClick with undefined, when the clearButton onClick is triggered', () => {
 		const clearButton = wrapper.find('.components-color-palette__clear');
 
 		expect(clearButton).toHaveLength(1);
@@ -50,14 +50,14 @@ describe('ColorPalette', () => {
 		expect(onChange).toHaveBeenCalledWith(undefined);
 	});
 
-	test('should allow disabling custom color picker', () => {
+	it('should allow disabling custom color picker', () => {
 		expect(toJson(shallow(<ColorPalette colors={colors} disableCustomColors={true} value={currentColor} onChange={onChange} />))).toMatchSnapshot();
 	});
 
 	describe('Dropdown', () => {
 		const dropdown = wrapper.find('Dropdown');
 
-		test('should render it correctly', () => {
+		it('should render it correctly', () => {
 			expect(toJson(dropdown)).toMatchSnapshot();
 		});
 
@@ -67,11 +67,11 @@ describe('ColorPalette', () => {
 
 			const renderedToggleButton = shallow(dropdown.props().renderToggle({ isOpen, onToggle }));
 
-			test('should render dropdown content', () => {
+			it('should render dropdown content', () => {
 				expect(toJson(wrapper)).toMatchSnapshot();
 			});
 
-			test('should call onToggle on click.', () => {
+			it('should call onToggle on click.', () => {
 				renderedToggleButton.simulate('click');
 
 				expect(onToggle).toHaveBeenCalledTimes(1);
@@ -81,11 +81,11 @@ describe('ColorPalette', () => {
 		describe('.renderContent', () => {
 			const renderedContent = mount(dropdown.props().renderContent());
 
-			test('should render dropdown content', () => {
+			it('should render dropdown content', () => {
 				expect(toJson(renderedContent, { mode: 'deep' })).toMatchSnapshot();
 			});
 
-			test('should call onChange with color', () => {
+			it('should call onChange with color', () => {
 				const pointer = renderedContent.find('.components-color-picker__saturation').find(KeyboardShortcuts);
 
 				expect(pointer).toHaveLength(1);
