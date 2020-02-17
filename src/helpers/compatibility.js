@@ -22,7 +22,6 @@ export const getEditorSettings = () => select('core/editor').getEditorSettings()
  */
 export const getPackageVersions = () => {
 	const settings = getEditorSettings();
-	console.log(settings);
 	if (Object.prototype.hasOwnProperty.call(settings, 'package-versions')) {
 		return settings[ 'package-versions' ];
 	}
