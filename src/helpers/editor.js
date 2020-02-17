@@ -1,16 +1,14 @@
-const { select } = wp.data;
-
-const getEditorSettings = () => select( 'core/editor' ).getEditorSettings();
+import { getEditorSettings } from './compatibility';
 
 /**
  * @returns {boolean} is valid custom colors
  */
-export const isValidCustomColors = () => ! getEditorSettings().disableCustomColors;
+export const isValidCustomColors = () => !getEditorSettings().disableCustomColors;
 
 /**
  * @returns {boolean} is valid custom font sizes
  */
-export const isValidCustomFontSizes = () => ! getEditorSettings().disableCustomFontSizes;
+export const isValidCustomFontSizes = () => !getEditorSettings().disableCustomFontSizes;
 
 /**
  * @returns {{name:string, color: *}[]} get colors

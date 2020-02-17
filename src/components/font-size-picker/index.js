@@ -18,107 +18,107 @@ import './style.scss';
  * @param {boolean} withSlider with slider
  * @return {null|Component} font size picker
  */
-function FontSizePicker( {
+function FontSizePicker({
 	fallbackFontSize,
 	fontSizes = [],
 	disableCustomFontSizes = false,
 	onChange,
 	value,
 	withSlider = false,
-} ) {
-	if ( disableCustomFontSizes && ! fontSizes.length ) {
+}) {
+	if (disableCustomFontSizes && !fontSizes.length) {
 		return null;
 	}
-	const onChangeValue = ( event ) => {
+	const onChangeValue = (event) => {
 		const newValue = event.target.value;
-		if ( newValue === '' ) {
-			onChange( undefined );
+		if (newValue === '') {
+			onChange(undefined);
 			return;
 		}
-		onChange( Number( newValue ) );
+		onChange(Number(newValue));
 	};
 
-	const currentFont = fontSizes.find( ( font ) => font.size === value );
-	const currentFontSizeName = ( currentFont && currentFont.name ) || ( ! value && _x( 'Normal', 'font size name' ) ) || _x( 'Custom', 'font size name' );
+	const currentFont = fontSizes.find((font) => font.size === value);
+	const currentFontSizeName = (currentFont && currentFont.name) || (!value && _x('Normal', 'font size name')) || _x('Custom', 'font size name');
 
 	return (
 		<BaseControl>
 			<BaseControl.VisualLabel>
-				{ __( 'Font Size' ) }
+				{__('Font Size')}
 			</BaseControl.VisualLabel>
 			<div className="components-font-size-picker__buttons">
-				{ fontSizes.length &&
+				{fontSizes.length &&
 				<Dropdown
 					className="components-font-size-picker__dropdown"
 					contentClassName="components-font-size-picker__dropdown-content"
 					position="bottom"
-					renderToggle={ ( { isOpen, onToggle } ) => (
+					renderToggle={({ isOpen, onToggle }) => (
 						<Button
 							className="components-font-size-picker__selector"
 							isLarge
-							onClick={ onToggle }
-							aria-expanded={ isOpen }
-							aria-label={ sprintf(
+							onClick={onToggle}
+							aria-expanded={isOpen}
+							aria-label={sprintf(
 								/* translators: %s: font size name */
-								__( 'Font size: %s' ), currentFontSizeName,
-							) }
+								__('Font size: %s'), currentFontSizeName,
+							)}
 						>
-							{ currentFontSizeName }
+							{currentFontSizeName}
 						</Button>
-					) }
-					renderContent={ () => (
+					)}
+					renderContent={() => (
 						<NavigableMenu>
-							{ map( fontSizes, ( { name, size, slug } ) => {
-								const isSelected = ( value === size || ( ! value && slug === 'normal' ) );
+							{map(fontSizes, ({ name, size, slug }) => {
+								const isSelected = (value === size || (!value && slug === 'normal'));
 
 								return (
 									<Button
-										key={ slug }
-										onClick={ () => onChange( slug === 'normal' ? undefined : size ) }
-										className={ `is-font-${ slug }` }
+										key={slug}
+										onClick={() => onChange(slug === 'normal' ? undefined : size)}
+										className={`is-font-${slug}`}
 										role="menuitemradio"
-										aria-checked={ isSelected }
+										aria-checked={isSelected}
 									>
-										{ isSelected && <Dashicon icon="saved"/> }
-										<span className="components-font-size-picker__dropdown-text-size" style={ { fontSize: size } }>
-											{ name }
+										{isSelected && <Dashicon icon="saved" />}
+										<span className="components-font-size-picker__dropdown-text-size" style={{ fontSize: size }}>
+											{name}
 										</span>
 									</Button>
 								);
-							} ) }
+							})}
 						</NavigableMenu>
-					) }
+					)}
 				/>
 				}
-				{ ( ! withSlider && ! disableCustomFontSizes ) &&
+				{(!withSlider && !disableCustomFontSizes) &&
 				<input
 					className="components-range-control__number"
 					type="number"
-					onChange={ onChangeValue }
-					aria-label={ __( 'Custom font size' ) }
-					value={ value || '' }
+					onChange={onChangeValue}
+					aria-label={__('Custom font size')}
+					value={value || ''}
 				/>
 				}
 				<Button
 					className="components-color-palette__clear"
 					type="button"
-					disabled={ value === undefined }
-					onClick={ () => onChange( undefined ) }
+					disabled={value === undefined}
+					onClick={() => onChange(undefined)}
 					isSmall
 					isDefault
 				>
-					{ __( 'Reset' ) }
+					{__('Reset')}
 				</Button>
 			</div>
-			{ withSlider &&
+			{withSlider &&
 			<RangeControl
 				className="components-font-size-picker__custom-input"
-				label={ __( 'Custom Size' ) }
-				value={ value || '' }
-				initialPosition={ fallbackFontSize }
-				onChange={ onChange }
-				min={ 12 }
-				max={ 100 }
+				label={__('Custom Size')}
+				value={value || ''}
+				initialPosition={fallbackFontSize}
+				onChange={onChange}
+				min={12}
+				max={100}
 				beforeIcon="editor-textcolor"
 				afterIcon="editor-textcolor"
 			/>

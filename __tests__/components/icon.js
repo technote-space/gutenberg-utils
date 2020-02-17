@@ -5,49 +5,49 @@ import { Icon } from '../../src/components';
 
 const OriginalIcon = wp.components.Icon;
 
-describe( 'Icon', () => {
-	it( 'should render Icon', () => {
+describe('Icon', () => {
+	it('should render Icon', () => {
 		const wrapper = render(
 			<div>
 				<Icon
-					icon={ 'http://example.com' }
-					className={ 'test1' }
+					icon={'http://example.com'}
+					className={'test1'}
 				/>
 				<Icon
-					icon={ 'data:image/png;base64,1234567890' }
-					className={ 'test2' }
+					icon={'data:image/png;base64,1234567890'}
+					className={'test2'}
 				/>
 				<Icon
-					icon={ 'dashicons-menu' }
-					className={ 'test3' }
+					icon={'dashicons-menu'}
+					className={'test3'}
 				/>
 				<Icon
-					icon={ undefined }
-					defaultIcon={ 'dashicons-admin-site' }
-					className={ 'test4' }
+					icon={undefined}
+					defaultIcon={'dashicons-admin-site'}
+					className={'test4'}
 				/>
 				<Icon
-					icon={ undefined }
-					className={ 'test5' }
+					icon={undefined}
+					className={'test5'}
 				/>
 				<Icon
-					icon={ <OriginalIcon
-						icon={ 'admin-post' }
-					/> }
-					className={ 'test6' }
+					icon={<OriginalIcon
+						icon={'admin-post'}
+					/>}
+					className={'test6'}
 				/>
 			</div>,
 		);
 
-		expect( toJson( wrapper, { mode: 'deep' } ) ).toMatchSnapshot();
+		expect(toJson(wrapper, { mode: 'deep' })).toMatchSnapshot();
 
-		expect( wrapper.find( 'svg' ) ).toHaveLength( 5 );
-		expect( wrapper.find( '.test1' ) ).toHaveLength( 1 );
-		expect( wrapper.find( '.test2' ) ).toHaveLength( 1 );
-		expect( wrapper.find( '.test3' ) ).toHaveLength( 1 );
-		expect( wrapper.find( '.test4' ) ).toHaveLength( 1 );
-		expect( wrapper.find( '.test5' ) ).toHaveLength( 0 );
-		expect( wrapper.find( '.test6' ) ).toHaveLength( 0 );
-		expect( wrapper.find( '.dashicons-admin-post' ) ).toHaveLength( 1 );
-	} );
-} );
+		expect(wrapper.find('svg')).toHaveLength(5);
+		expect(wrapper.find('.test1')).toHaveLength(1);
+		expect(wrapper.find('.test2')).toHaveLength(1);
+		expect(wrapper.find('.test3')).toHaveLength(1);
+		expect(wrapper.find('.test4')).toHaveLength(1);
+		expect(wrapper.find('.test5')).toHaveLength(0);
+		expect(wrapper.find('.test6')).toHaveLength(0);
+		expect(wrapper.find('.dashicons-admin-post')).toHaveLength(1);
+	});
+});
