@@ -1,6 +1,4 @@
-const { select } = wp.data;
-
-const getEditorSettings = () => select('core/editor').getEditorSettings();
+import { getEditorSettings } from './compatibility';
 
 /**
  * @returns {boolean} is valid custom colors
