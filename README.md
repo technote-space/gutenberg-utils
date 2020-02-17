@@ -41,6 +41,7 @@ import { Components, Helpers } from '@technote-space/gutenberg-utils';
 const { Icon, DropdownButton } = Components;
 const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
 const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
+const { getEditor, isPackageAvailable, getPackageVersion, comparePackageVersion } = Helpers;
 ```
 
 Compile and enqueue script.
@@ -69,6 +70,10 @@ Compile and enqueue script.
 	Technote.Gutenberg.Common.Helpers.isValidCustomFontSizes,
 	Technote.Gutenberg.Common.Helpers.getColors,
 	Technote.Gutenberg.Common.Helpers.getFontSizes,
+	Technote.Gutenberg.Common.Helpers.getEditor,
+	Technote.Gutenberg.Common.Helpers.isPackageAvailable,
+	Technote.Gutenberg.Common.Helpers.getPackageVersion,
+	Technote.Gutenberg.Common.Helpers.comparePackageVersion,
 ) );
 ```
 
