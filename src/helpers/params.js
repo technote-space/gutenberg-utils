@@ -1,16 +1,16 @@
-import { getProperty, setProperty } from './misc';
+import lodash from 'lodash';
 
 /**
  * @param {object} params params
  * @returns {function(*=, *=): *} value
  */
-const get = params => (key, defaultValue = key) => getProperty(params, key, defaultValue);
+const get = params => (key, defaultValue = key) => lodash.has(params, key) ? lodash.get(params, key) : (typeof defaultValue === 'function' ? defaultValue() : defaultValue);
 
 /**
  * @param {object} params params
  * @returns {function(*=, *=)} result
  */
-const set = params => (key, value) => setProperty(params, key, value);
+const set = params => (key, value) => lodash.set(params, key, value);
 
 /**
  * @param {object} params params
