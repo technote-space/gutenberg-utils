@@ -1,5 +1,4 @@
 import lodash from 'lodash';
-import { getProperty, setProperty } from './misc';
 
 /**
  * @param {object} params params
