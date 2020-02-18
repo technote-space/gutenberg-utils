@@ -1107,10 +1107,10 @@
   resolved "https://registry.yarnpkg.com/@tannin/postfix/-/postfix-1.0.3.tgz#f8388e8f5add62dbec3d503127eeef19fedc1fcc"
   integrity sha512-80uoGtphTH3vDZlJgE2xJh3qBWMAlCXq8wN8WLOxHJjms0A38vkbXOXiYMIabgnIJVc1vCcZVQa2pHt+X3AF5Q==
 
-"@technote-space/gutenberg-test-helper@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@technote-space/gutenberg-test-helper/-/gutenberg-test-helper-0.0.5.tgz#c81aa8aaf07f35622bd2dce6769e0d3d7f6eae31"
-  integrity sha512-8uodn3PFk1DaLHTorDQNaGii47yaMTellovvnYHOz3kr31cPy7J8mv5nb9M1Aieyx50f2qxBl7/0HyN3s/Dduw==
+"@technote-space/gutenberg-test-helper@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@technote-space/gutenberg-test-helper/-/gutenberg-test-helper-0.0.7.tgz#f75466ea620c90d0df65798569a63e5355a9c446"
+  integrity sha512-+y66uzKslmkPFXhjeVnJ5p9JhQPJCfBHlWAA0NlCWD2OYm2lmaC6q/gmogbeUCMawBwPpV2oK9XEZZyflANLbg==
   dependencies:
     "@wordpress/api-fetch" "^3.11.0"
     "@wordpress/block-editor" "^3.7.1"
@@ -2671,9 +2671,9 @@ camelize@^1.0.0:
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
 caniuse-lite@^1.0.30001027:
-  version "1.0.30001027"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001027.tgz#283e2ef17d94889cc216a22c6f85303d78ca852d"
-  integrity sha512-7xvKeErvXZFtUItTHgNtLgS9RJpVnwBlWX8jSo/BO8VsF6deszemZSkJJJA1KOKrXuzZH4WALpAJdq5EyfgMLg==
+  version "1.0.30001028"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001028.tgz#f2241242ac70e0fa9cda55c2776d32a0867971c2"
+  integrity sha512-Vnrq+XMSHpT7E+LWoIYhs3Sne8h9lx9YJV3acH3THNCwU/9zV93/ta4xVfzTtnqd3rvnuVpVjE3DFqf56tr3aQ==
 
 capture-exit@^2.0.0:
   version "2.0.0"
