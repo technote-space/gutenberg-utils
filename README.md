@@ -18,8 +18,6 @@ This is a gutenberg's utils.
 <summary>Details</summary>
 
 - [How to use](#how-to-use)
-  - [npm](#npm)
-  - [Browser](#browser)
 - [dependencies](#dependencies)
 - [Author](#author)
 
