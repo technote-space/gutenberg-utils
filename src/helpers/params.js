@@ -1,16 +1,14 @@
-import lodash from 'lodash';
-
 /**
  * @param {object} params params
  * @returns {function(*=, *=): *} value
  */
-const get = params => (key, defaultValue = key) => lodash.has(params, key) ? lodash.get(params, key) : (typeof defaultValue === 'function' ? defaultValue() : defaultValue);
+const get = params => (key, defaultValue = key) => window.lodash.has(params, key) ? window.lodash.get(params, key) : (typeof defaultValue === 'function' ? defaultValue() : defaultValue);
 
 /**
  * @param {object} params params
  * @returns {function(*=, *=)} result
  */
-const set = params => (key, value) => lodash.set(params, key, value);
+const set = params => (key, value) => window.lodash.set(params, key, value);
 
 /**
  * @param {object} params params
