@@ -27,11 +27,10 @@ This is a gutenberg's utils.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## How to use
-### npm
 [https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
 
 ```bash
-npm install --save @technote-space/gutenberg-utils
+yarn add --dev @technote-space/gutenberg-utils
 ```
 
 `gutenberg.js`
@@ -48,33 +47,6 @@ Compile and enqueue script.
 
 ```html
 <script type="text/javascript" src="/assets/gutenberg.js"></script>
-```
-
-### Browser
-`gutenberg.js`
-```js
-( function(
-	Icon, DropdownButton,
-	getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle,
-	isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes,
-) {
-
-}(
-	Technote.Gutenberg.Common.Components.Icon,
-	Technote.Gutenberg.Common.Components.DropdownButton,
-	Technote.Gutenberg.Common.Helpers.getActiveStyle,
-	Technote.Gutenberg.Common.Helpers.addActiveAttributes,
-	Technote.Gutenberg.Common.Helpers.setActiveStyle,
-	Technote.Gutenberg.Common.Helpers.onChangeStyle,
-	Technote.Gutenberg.Common.Helpers.isValidCustomColors,
-	Technote.Gutenberg.Common.Helpers.isValidCustomFontSizes,
-	Technote.Gutenberg.Common.Helpers.getColors,
-	Technote.Gutenberg.Common.Helpers.getFontSizes,
-	Technote.Gutenberg.Common.Helpers.getEditor,
-	Technote.Gutenberg.Common.Helpers.isPackageAvailable,
-	Technote.Gutenberg.Common.Helpers.getPackageVersion,
-	Technote.Gutenberg.Common.Helpers.comparePackageVersion,
-) );
 ```
 
 Download [Release version](https://github.com/technote-space/gutenberg-utils/releases/latest/download/index.js) and enqueue scripts.
