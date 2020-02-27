@@ -17,71 +17,33 @@ This is a gutenberg's utils.
 <details>
 <summary>Details</summary>
 
-- [How to use](#how-to-use)
-  - [npm](#npm)
-  - [Browser](#browser)
+- [Usage](#usage)
 - [dependencies](#dependencies)
 - [Author](#author)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## How to use
-### npm
-[https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
+## Usage
+1. Install
+   ```bash
+   yarn add --dev @technote-space/gutenberg-utils
+   ```
+1. Use  
+   e.g. `assets/gutenberg.js`
+   ```js
+   import { Components, Helpers } from '@technote-space/gutenberg-utils';
+   
+   const { Icon, DropdownButton } = Components;
+   const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
+   const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
+   const { getEditor, isPackageAvailable, getPackageVersion, comparePackageVersion } = Helpers;
+   ```
+1. Compile and enqueue script
 
-```bash
-npm install --save @technote-space/gutenberg-utils
-```
-
-`gutenberg.js`
-```js
-import { Components, Helpers } from '@technote-space/gutenberg-utils';
-
-const { Icon, DropdownButton } = Components;
-const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
-const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
-const { getEditor, isPackageAvailable, getPackageVersion, comparePackageVersion } = Helpers;
-```
-
-Compile and enqueue script.
-
-```html
-<script type="text/javascript" src="/assets/gutenberg.js"></script>
-```
-
-### Browser
-`gutenberg.js`
-```js
-( function(
-	Icon, DropdownButton,
-	getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle,
-	isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes,
-) {
-
-}(
-	Technote.Gutenberg.Common.Components.Icon,
-	Technote.Gutenberg.Common.Components.DropdownButton,
-	Technote.Gutenberg.Common.Helpers.getActiveStyle,
-	Technote.Gutenberg.Common.Helpers.addActiveAttributes,
-	Technote.Gutenberg.Common.Helpers.setActiveStyle,
-	Technote.Gutenberg.Common.Helpers.onChangeStyle,
-	Technote.Gutenberg.Common.Helpers.isValidCustomColors,
-	Technote.Gutenberg.Common.Helpers.isValidCustomFontSizes,
-	Technote.Gutenberg.Common.Helpers.getColors,
-	Technote.Gutenberg.Common.Helpers.getFontSizes,
-	Technote.Gutenberg.Common.Helpers.getEditor,
-	Technote.Gutenberg.Common.Helpers.isPackageAvailable,
-	Technote.Gutenberg.Common.Helpers.getPackageVersion,
-	Technote.Gutenberg.Common.Helpers.comparePackageVersion,
-) );
-```
-
-Download [Release version](https://github.com/technote-space/gutenberg-utils/releases/latest/download/index.js) and enqueue scripts.
-```html
-<script type="text/javascript" src="/assets/gutenberg-utils/index.js"></script>
-<script type="text/javascript" src="/assets/gutenberg.js"></script>
-```
+   ```html
+   <script type="text/javascript" src="/assets/gutenberg.js"></script>
+   ```
 
 ## dependencies
 - wp-block-editor
