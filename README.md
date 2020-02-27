@@ -17,7 +17,7 @@ This is a gutenberg's utils.
 <details>
 <summary>Details</summary>
 
-- [How to use](#how-to-use)
+- [Usage](#usage)
 - [dependencies](#dependencies)
 - [Author](#author)
 
