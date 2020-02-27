@@ -24,34 +24,26 @@ This is a gutenberg's utils.
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## How to use
-[https://www.npmjs.com/package/@technote-space/gutenberg-utils](https://www.npmjs.com/package/@technote-space/gutenberg-utils)
+## Usage
+1. Install
+   ```bash
+   yarn add --dev @technote-space/gutenberg-utils
+   ```
+1. Use  
+   e.g. `assets/gutenberg.js`
+   ```js
+   import { Components, Helpers } from '@technote-space/gutenberg-utils';
+   
+   const { Icon, DropdownButton } = Components;
+   const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
+   const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
+   const { getEditor, isPackageAvailable, getPackageVersion, comparePackageVersion } = Helpers;
+   ```
+1. Compile and enqueue script
 
-```bash
-yarn add --dev @technote-space/gutenberg-utils
-```
-
-`gutenberg.js`
-```js
-import { Components, Helpers } from '@technote-space/gutenberg-utils';
-
-const { Icon, DropdownButton } = Components;
-const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
-const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
-const { getEditor, isPackageAvailable, getPackageVersion, comparePackageVersion } = Helpers;
-```
-
-Compile and enqueue script.
-
-```html
-<script type="text/javascript" src="/assets/gutenberg.js"></script>
-```
-
-Download [Release version](https://github.com/technote-space/gutenberg-utils/releases/latest/download/index.js) and enqueue scripts.
-```html
-<script type="text/javascript" src="/assets/gutenberg-utils/index.js"></script>
-<script type="text/javascript" src="/assets/gutenberg.js"></script>
-```
+   ```html
+   <script type="text/javascript" src="/assets/gutenberg.js"></script>
+   ```
 
 ## dependencies
 - wp-block-editor
