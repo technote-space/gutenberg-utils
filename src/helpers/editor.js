@@ -1,4 +1,5 @@
 import { select } from '@wordpress/data';
+import { create } from 'nano-css';
 
 /**
  * @returns {object} settings
@@ -24,3 +25,14 @@ export const getColors = () => getEditorSettings().colors;
  * @returns {{name:string, size:*, slug:string}[]} get font sizes
  */
 export const getFontSizes = () => getEditorSettings().fontSizes;
+
+/**
+ * @param {string} selector selector
+ * @param {object} css css
+ */
+export const applyStyles = (selector, css) => {
+	const nano    = create();
+	const { put } = nano;
+
+	put(selector, css);
+};
