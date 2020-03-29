@@ -1,8 +1,6 @@
 /* eslint-disable no-magic-numbers */
+import { registerFormatType } from '@wordpress/rich-text';
 import { getFormatArgs } from '@technote-space/gutenberg-test-helper';
-
-const { registerFormatType } = wp.richText;
-
 import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
 import { getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, getContrastChecker } from '../../src/helpers';
 import { getRemoveFormatFunction, isValidRemoveFormatButton } from '../../src/helpers';
@@ -157,7 +155,7 @@ describe('onChangeStyle', () => {
 
 	it('should on change', () => {
 		{
-			const format = {
+			const format   = {
 				attributes: { style: 'color: red' },
 				type: 'test2/test5',
 				unregisteredAttributes: {},
@@ -195,7 +193,7 @@ describe('onChangeStyle', () => {
 		}
 
 		{
-			const format = {
+			const format   = {
 				attributes: { style: 'font-size: 16px' },
 				type: 'test2/test7',
 				unregisteredAttributes: {},
@@ -302,7 +300,7 @@ describe('getToolbarButtonProps', () => {
 		expect(props3).toHaveProperty('create');
 		expect(typeof props3.create).toBe('function');
 
-		const props4 = getToolbarButtonProps('test4-group', 'test4-name', 'test4-icon', {
+		const props4  = getToolbarButtonProps('test4-group', 'test4-name', 'test4-icon', {
 			preview: 'test4-preview',
 		});
 		const button2 = props4.create(getArgs(() => {
@@ -312,7 +310,7 @@ describe('getToolbarButtonProps', () => {
 		expect(button2.props.title.props.className).toBe('test4-name');
 		expect(button2.props.title.props.children).toBe('test4-preview');
 
-		const props5 = getToolbarButtonProps('test5-group', 'test5-name', 'test5-icon', {
+		const props5  = getToolbarButtonProps('test5-group', 'test5-name', 'test5-icon', {
 			tagName: 'test5-tag',
 			className: 'test5-class',
 		});
@@ -371,7 +369,7 @@ describe('getColorButtonProps', () => {
 		expect(inspector1.props.label).toBe('test1-title');
 
 		wpMock.blockEditor.getColorObjectByColorValue = () => false;
-		const inspector2 = props.createInspector(getArgs(() => () => null, 'test2/test5', [
+		const inspector2                              = props.createInspector(getArgs(() => () => null, 'test2/test5', [
 			{
 				attributes: { style: 'color: red' },
 				type: 'test2/test5',
@@ -386,7 +384,7 @@ describe('getColorButtonProps', () => {
 		expect(inspector2.props.label.props.children[ 1 ].props[ 'aria-label' ]).toBe('(test1-title: color: red)');
 
 		wpMock.blockEditor.getColorObjectByColorValue = () => ({ name: false });
-		const inspector3 = props.createInspector(getArgs(() => () => null, 'test2/test5', [
+		const inspector3                              = props.createInspector(getArgs(() => () => null, 'test2/test5', [
 			{
 				attributes: { style: 'color: blue' },
 				type: 'test2/test5',
@@ -397,7 +395,7 @@ describe('getColorButtonProps', () => {
 		expect(inspector3.props.label.props.children[ 1 ].props[ 'aria-label' ]).toBe('(test1-title: color: blue)');
 
 		wpMock.blockEditor.getColorObjectByColorValue = () => ({ name: 'test-name' });
-		const inspector4 = props.createInspector(getArgs(() => () => null, 'test2/test5', [
+		const inspector4                              = props.createInspector(getArgs(() => () => null, 'test2/test5', [
 			{
 				attributes: { style: 'color: red' },
 				type: 'test2/test5',
@@ -647,7 +645,7 @@ describe('getRemoveFormatFunction', () => {
 			expect(value.end).toBe(args.value.end);
 			expect(value.formats).toHaveLength(args.value.formats.length);
 		});
-		const formats = [
+		const formats  = [
 			{
 				attributes: { style: 'color: red' },
 				type: 'test/font-color',
@@ -659,7 +657,7 @@ describe('getRemoveFormatFunction', () => {
 				unregisteredAttributes: {},
 			},
 		];
-		const args = {
+		const args     = {
 			isActive: true,
 			value: {
 				start: 0,

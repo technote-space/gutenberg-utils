@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/technote-space/gutenberg-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/gutenberg-utils)
 [![CodeFactor](https://www.codefactor.io/repository/github/technote-space/gutenberg-utils/badge)](https://www.codefactor.io/repository/github/technote-space/gutenberg-utils)
 [![License: GPL v2+](https://img.shields.io/badge/License-GPL%20v2%2B-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![WordPress: >=5.0](https://img.shields.io/badge/WordPress-%3E%3D5.0-brightgreen.svg)](https://wordpress.org/)
+[![WordPress: >=5.4](https://img.shields.io/badge/WordPress-%3E%3D5.4-brightgreen.svg)](https://wordpress.org/)
 
 This is a gutenberg's utils.
 
@@ -37,7 +37,6 @@ This is a gutenberg's utils.
    const { Icon, DropdownButton } = Components;
    const { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } = Helpers;
    const { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } = Helpers;
-   const { getEditor, isPackageAvailable, getPackageVersion, comparePackageVersion } = Helpers;
    ```
 1. Compile and enqueue script
 
@@ -48,14 +47,9 @@ This is a gutenberg's utils.
 ## dependencies
 - wp-block-editor
 - wp-components
-- wp-core-data
 - wp-data
-- wp-dom
-- wp-editor
 - wp-element
 - wp-i18n
-- wp-is-shallow-equal
-- wp-keycodes
 - wp-rich-text
 - wp-url
 - lodash

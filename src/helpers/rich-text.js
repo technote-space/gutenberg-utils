@@ -1,14 +1,13 @@
+import React from 'react';
 import classnames from 'classnames';
-import { DropdownButton, ColorPalette, FontSizePicker } from '../components';
+import { getActiveFormat, toggleFormat, applyFormat, removeFormat } from '@wordpress/rich-text';
+import { ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette } from '@wordpress/components';
+import { Fragment, createElement } from '@wordpress/element';
+import { sprintf, __ } from '@wordpress/i18n';
+import { getColorObjectByColorValue, ContrastChecker } from '@wordpress/block-editor';
+import { DropdownButton } from '../components';
 import { getColors, getFontSizes, isValidCustomColors } from './editor';
-import { getEditor } from './compatibility';
 import { DEFAULT_FONT_SIZE } from '../constant';
-
-const { getActiveFormat, toggleFormat, applyFormat, removeFormat } = wp.richText;
-const { ToolbarButton, BaseControl, ColorIndicator } = wp.components;
-const { getColorObjectByColorValue, ContrastChecker } = getEditor();
-const { Fragment, createElement } = wp.element;
-const { sprintf, __ } = wp.i18n;
 
 /**
  * @param {object} args args
@@ -37,7 +36,7 @@ export const getActiveStyle = (args, formatType, styleName, options = {}) => {
 	}
 
 	const extracted = style.replace(new RegExp(`^${styleName}:\\s*`), '');
-	const filtered = value => typeof options.filter === 'function' ? options.filter(value) : value;
+	const filtered  = value => typeof options.filter === 'function' ? options.filter(value) : value;
 	if (options.suffix) {
 		return filtered(extracted.replace(new RegExp(`${options.suffix}$`), ''));
 	}
@@ -52,7 +51,7 @@ export const getActiveStyle = (args, formatType, styleName, options = {}) => {
  * @returns {{}} active attributes
  */
 export const addActiveAttributes = (args, key, value) => {
-	const attributes = args.activeAttributes || {};
+	const attributes  = args.activeAttributes || {};
 	attributes[ key ] = value;
 	return attributes;
 };
@@ -96,8 +95,8 @@ export const onChangeStyle = (args, formatName, styleName, suffix = '') => value
  */
 export const getToolbarButtonProps = (group, name, icon, optional = {}) => {
 	const className = 'className' in optional ? optional.className : name;
-	const title = 'title' in optional ? optional.title : name;
-	const preview = 'preview' in optional ? optional.preview : ('tagName' in optional ? createElement(optional.tagName, {
+	const title     = 'title' in optional ? optional.title : name;
+	const preview   = 'preview' in optional ? optional.preview : ('tagName' in optional ? createElement(optional.tagName, {
 		className,
 	}, title) : name);
 	return {
@@ -176,8 +175,8 @@ export const getColorButtonProps = (name, title, icon, property, optional = {}) 
 	const group = optional.group || 'inspector';
 	delete optional.group;
 	return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName, isInspector) => {
-		const value = getActiveStyle(args, formatName, property);
-		const colors = getColors();
+		const value              = getActiveStyle(args, formatName, property);
+		const colors             = getColors();
 		const createColorPalette = (args, formatName) => <ColorPalette
 			colors={colors}
 			disableCustomColors={!isValidCustomColors()}
@@ -199,7 +198,7 @@ const getInspectorLabel = (value, label, colors) => {
 	}
 
 	const colorObject = getColorObjectByColorValue(colors, value);
-	const colorName = colorObject && colorObject.name;
+	const colorName   = colorObject && colorObject.name;
 
 	return <Fragment>
 		{label}
@@ -223,7 +222,7 @@ const getInspectorLabel = (value, label, colors) => {
  */
 export const getFontSizesButtonProps = (name, title, icon, optional = {}) => {
 	const property = 'font-size';
-	const group = optional.group || 'inspector';
+	const group    = optional.group || 'inspector';
 	delete optional.group;
 	return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName) => {
 		const value = getActiveStyle(args, formatName, property, { suffix: 'px', filter: Number });
@@ -256,7 +255,7 @@ export const getContrastChecker = (fills, args) => {
 		return null;
 	}
 
-	const textColor = getActiveStyle(args, mapped[ 'color' ].formatName, 'color', { ignoreActive: true });
+	const textColor       = getActiveStyle(args, mapped[ 'color' ].formatName, 'color', { ignoreActive: true });
 	const backgroundColor = getActiveStyle(args, mapped[ 'background-color' ].formatName, 'background-color', { ignoreActive: true });
 	if (!textColor || !backgroundColor) {
 		return null;

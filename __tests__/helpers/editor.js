@@ -1,6 +1,5 @@
 /* eslint-disable no-magic-numbers */
-const { dispatch } = wp.data;
-
+import { dispatch } from '@wordpress/data';
 import { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } from '../../src/helpers';
 
 describe('isValidCustomColors', () => {
