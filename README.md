@@ -27,7 +27,7 @@ This is a gutenberg's utils.
 ## Usage
 1. Install
    ```bash
-   yarn add --dev @technote-space/gutenberg-utils
+   yarn add @technote-space/gutenberg-utils
    ```
 1. Use  
    e.g. `assets/gutenberg.js`

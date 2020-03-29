@@ -1,8 +1,8 @@
 /* eslint-disable no-magic-numbers */
 import { dispatch } from '@wordpress/data';
-import { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes } from '../../src/helpers';
+import { isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes, applyStyles } from '../../src/helpers';
 
-describe('isValidCustomColors', () => {
+describe('isValidCustomColors, isValidCustomFontSizes', () => {
 	it('should false', () => {
 		dispatch('core/editor').updateEditorSettings({ disableCustomColors: true, disableCustomFontSizes: true });
 
@@ -16,7 +16,9 @@ describe('isValidCustomColors', () => {
 		expect(isValidCustomColors()).toBe(true);
 		expect(isValidCustomFontSizes()).toBe(true);
 	});
+});
 
+describe('getColors', () => {
 	it('should get colors', () => {
 		dispatch('core/editor').updateEditorSettings({
 			colors: [
@@ -35,7 +37,9 @@ describe('isValidCustomColors', () => {
 		expect(colors[ 2 ].name).toBe('test3');
 		expect(colors[ 2 ].color).toBe('#333');
 	});
+});
 
+describe('getFontSizes', () => {
 	it('should get font sizes', () => {
 		dispatch('core/editor').updateEditorSettings({
 			fontSizes: [
@@ -56,5 +60,20 @@ describe('isValidCustomColors', () => {
 		expect(fontSizes[ 2 ].name).toBe('test3');
 		expect(fontSizes[ 2 ].size).toBe('30px');
 		expect(fontSizes[ 2 ].slug).toBe('test3');
+	});
+});
+
+describe('applyStyles', () => {
+	it('should call put', () => {
+		const fn = jest.fn();
+		jest.spyOn(require('nano-css'), 'create').mockImplementation(() => ({
+			put: fn,
+		}));
+
+		applyStyles('.test', {
+			width: '30px',
+		});
+
+		expect(fn).toBeCalledWith('.test', { width: '30px' });
 	});
 });
