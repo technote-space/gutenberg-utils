@@ -1,9 +1,9 @@
 /* eslint-disable no-magic-numbers */
+import React from 'react';
 import { render } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import { Icon as OriginalIcon } from '@wordpress/components';
 import { Icon } from '../../src/components';
-
-const OriginalIcon = wp.components.Icon;
 
 describe('Icon', () => {
 	it('should render Icon', () => {

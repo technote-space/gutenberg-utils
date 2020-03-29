@@ -1,4 +1,9 @@
-import { getEditorSettings } from './compatibility';
+import { select } from '@wordpress/data';
+
+/**
+ * @returns {object} settings
+ */
+export const getEditorSettings = () => select('core/editor').getEditorSettings();
 
 /**
  * @returns {boolean} is valid custom colors

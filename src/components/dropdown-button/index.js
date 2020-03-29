@@ -1,8 +1,6 @@
+import React from 'react';
 import classnames from 'classnames';
-import './style.scss';
-
-const { IconButton } = wp.components;
-import Dropdown from '../dropdown';
+import { Dropdown, IconButton } from '@wordpress/components';
 
 /**
  * @param {*} icon icon
@@ -41,9 +39,10 @@ const DropdownButton = ({
 				// eslint-disable-next-line no-magic-numbers
 				setTimeout(onClose, 0);
 			}
+
 			return <IconButton
 				className={classnames('components-dropdown-button__toggle', {
-					'is-active': isActive,
+					'is-active is-pressed': isActive,
 				})}
 				icon={icon}
 				onClick={onToggle}
@@ -54,7 +53,7 @@ const DropdownButton = ({
 				tooltip={tooltip}
 				disabled={isDisabled}
 			>
-				{!isHiddenIndicator && <span className="components-dropdown-button__indicator" />}
+				{!isHiddenIndicator && <span className="components-dropdown-button__indicator"/>}
 			</IconButton>;
 		}}
 		renderContent={renderContent}
