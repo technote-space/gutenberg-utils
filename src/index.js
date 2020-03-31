@@ -8,5 +8,11 @@ Helpers.applyStyles('.components-dropdown-button__popover .components-font-size-
 Helpers.applyStyles('.components-dropdown-button__popover .components-popover__content', {
 	padding: '12px',
 });
+Helpers.applyStyles('.components-dropdown-button__has-property-color .dashicon', {
+	color: '#d94f4f',
+});
+Helpers.applyStyles('.components-dropdown-button__has-property-background-color .dashicon', {
+	backgroundColor: '#f0b849',
+});
 
 export { Components, Helpers };
