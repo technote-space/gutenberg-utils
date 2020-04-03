@@ -79,7 +79,7 @@ describe('DropdownButton', () => {
 				expect(wrapper.find('.test3-class button').hostNodes()).toHaveLength(1);
 				expect(wrapper.find('.test3-class button').hostNodes().prop('disabled')).toBe(true);
 				expect(wrapper.find('.test3-class button.is-active').hostNodes()).toHaveLength(0);
-				expect(wrapper.find('.test3-class button .components-dropdown-button__indicator').hostNodes()).toHaveLength(1);
+				expect(wrapper.find('.test3-class button .components-dropdown-menu__indicator').hostNodes()).toHaveLength(1);
 				expect(wrapper.find('.popover3').hostNodes()).toHaveLength(0);
 
 				wrapper.find('.test3-class button').hostNodes().simulate('click');

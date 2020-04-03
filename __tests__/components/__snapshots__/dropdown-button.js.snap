@@ -61,11 +61,11 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
           onTouchStart={[Function]}
         >
           <ForwardRef
-            className="components-popover components-dropdown-button__popover test1-content-class"
+            className="components-popover components-dropdown__content components-dropdown-button__popover test1-content-class is-without-arrow"
             onKeyDown={[Function]}
           >
             <div
-              className="components-popover components-dropdown-button__popover test1-content-class"
+              className="components-popover components-dropdown__content components-dropdown-button__popover test1-content-class is-without-arrow"
               onKeyDown={[Function]}
               onMouseDown={[Function]}
             >
@@ -246,7 +246,7 @@ exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
           />
         </svg>
         <span
-          className="components-dropdown-button__indicator"
+          className="components-dropdown-menu__indicator"
         />
       </button>
     </ForwardRef(Button)>
