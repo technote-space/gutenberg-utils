@@ -53,7 +53,7 @@ const DropdownButton = ({
 				tooltip={tooltip}
 				disabled={isDisabled}
 			>
-				{!isHiddenIndicator && <span className="components-dropdown-button__indicator"/>}
+				{!isHiddenIndicator && <span className="components-dropdown-menu__indicator"/>}
 			</IconButton>;
 		}}
 		renderContent={renderContent}
