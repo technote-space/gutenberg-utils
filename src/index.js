@@ -14,10 +14,10 @@ Helpers.applyStyles('.components-dropdown-button__has-property-color .dashicon',
 Helpers.applyStyles('.components-dropdown-button__has-property-background-color .dashicon', {
 	backgroundColor: '#f0b849',
 });
-Helpers.applyStyles('.components-dropdown-toggle>button', {
+Helpers.applyStyles('.components-dropdown-toggle>.components-toolbar__control.components-button', {
 	width: 'auto',
 });
-Helpers.applyStyles('.components-dropdown-toggle>button>svg', {
+Helpers.applyStyles('.components-dropdown-toggle>.components-toolbar__control.components-button.has-icon.has-text>svg', {
 	margin: 0,
 });
 
