@@ -14,5 +14,11 @@ Helpers.applyStyles('.components-dropdown-button__has-property-color .dashicon',
 Helpers.applyStyles('.components-dropdown-button__has-property-background-color .dashicon', {
 	backgroundColor: '#f0b849',
 });
+Helpers.applyStyles('.components-dropdown-toggle>button', {
+	width: 'auto',
+});
+Helpers.applyStyles('.components-dropdown-toggle>button>svg', {
+	margin: 0,
+});
 
 export { Components, Helpers };

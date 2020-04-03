@@ -31,7 +31,7 @@ const DropdownButton = ({
 	isHiddenIndicator = false,
 }) => {
 	return <Dropdown
-		className={classnames('components-dropdown-button', className)}
+		className={classnames('components-dropdown-toggle', className)}
 		contentClassName={classnames('components-dropdown-button__popover', contentClassName)}
 		position={position}
 		renderToggle={({ isOpen, onToggle, onClose }) => {
@@ -41,7 +41,7 @@ const DropdownButton = ({
 			}
 
 			return <IconButton
-				className={classnames('components-dropdown-button__toggle', {
+				className={classnames('components-dropdown-button__toggle', 'components-toolbar__control', {
 					'is-active is-pressed': isActive,
 				})}
 				icon={icon}
