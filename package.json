@@ -32,7 +32,7 @@
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.9.0",
-    "@technote-space/gutenberg-test-helper": "^0.0.10",
+    "@technote-space/gutenberg-test-helper": "^0.0.12",
     "@wordpress/block-editor": "^3.8.0",
     "@wordpress/components": "^9.3.0",
     "@wordpress/data": "^4.15.0",
