@@ -1,9 +1,9 @@
 /* eslint-disable no-magic-numbers */
 import React from 'react';
-import { render } from 'enzyme';
+import {render} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Icon as OriginalIcon } from '@wordpress/components';
-import { Icon } from '../../src/components';
+import {Icon as OriginalIcon} from '@wordpress/components';
+import {Icon} from '../../src/components';
 
 describe('Icon', () => {
   it('should render Icon', () => {
@@ -39,7 +39,7 @@ describe('Icon', () => {
       </div>,
     );
 
-    expect(toJson(wrapper, { mode: 'deep' })).toMatchSnapshot();
+    expect(toJson(wrapper, {mode: 'deep'})).toMatchSnapshot();
 
     expect(wrapper.find('svg')).toHaveLength(5);
     expect(wrapper.find('.test1')).toHaveLength(1);

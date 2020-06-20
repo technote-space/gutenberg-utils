@@ -1,13 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
-import { getActiveFormat, toggleFormat, applyFormat, removeFormat } from '@wordpress/rich-text';
-import { ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette } from '@wordpress/components';
-import { Fragment, createElement } from '@wordpress/element';
-import { sprintf, __ } from '@wordpress/i18n';
-import { getColorObjectByColorValue, ContrastChecker } from '@wordpress/block-editor';
-import { DropdownButton } from '../components';
-import { getColors, getFontSizes, isValidCustomColors } from './editor';
-import { DEFAULT_FONT_SIZE } from '../constant';
+import {getActiveFormat, toggleFormat, applyFormat, removeFormat} from '@wordpress/rich-text';
+import {ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette} from '@wordpress/components';
+import {Fragment, createElement} from '@wordpress/element';
+import {sprintf, __} from '@wordpress/i18n';
+import {getColorObjectByColorValue, ContrastChecker} from '@wordpress/block-editor';
+import {DropdownButton} from '../components';
+import {getColors, getFontSizes, isValidCustomColors} from './editor';
+import {DEFAULT_FONT_SIZE} from '../constant';
 
 /**
  * @param {object} args args
@@ -51,8 +51,8 @@ export const getActiveStyle = (args, formatType, styleName, options = {}) => {
  * @returns {{}} active attributes
  */
 export const addActiveAttributes = (args, key, value) => {
-  const attributes  = args.activeAttributes || {};
-  attributes[ key ] = value;
+  const attributes = args.activeAttributes || {};
+  attributes[key]  = value;
   return attributes;
 };
 
@@ -102,10 +102,10 @@ export const getToolbarButtonProps = (group, name, icon, optional = {}) => {
   return {
     name,
     group,
-    create: optional.createDisabled ? null : ({ args, formatName }) => <ToolbarButton
+    create: optional.createDisabled ? null : ({args, formatName}) => <ToolbarButton
       icon={icon}
       title={<div className={className}>{preview}</div>}
-      onClick={() => args.onChange(toggleFormat(args.value, { type: formatName }))}
+      onClick={() => args.onChange(toggleFormat(args.value, {type: formatName}))}
       isActive={args.isActive}
       extraProps={{
         label: name,
@@ -143,7 +143,7 @@ export const getDropdownButtonProps = (group, name, title, icon, property, optio
     useInspectorSetting: true,
   };
   if (!optional.createDisabled) {
-    props.create = ({ args, formatName }) => <DropdownButton
+    props.create = ({args, formatName}) => <DropdownButton
       icon={icon}
       label={title}
       className={classnames(`components-dropdown-button__has-property-${property}`, optional.dropdownClassName)}
@@ -152,7 +152,7 @@ export const getDropdownButtonProps = (group, name, title, icon, property, optio
     />;
   }
   if (!optional.createInspectorDisabled) {
-    props.createInspector = ({ args, formatName }) => createControl(args, formatName, true);
+    props.createInspector = ({args, formatName}) => createControl(args, formatName, true);
   }
   delete optional.createDisabled;
   delete optional.createInspectorDisabled;
@@ -225,13 +225,16 @@ export const getFontSizesButtonProps = (name, title, icon, optional = {}) => {
   const group    = optional.group || 'inspector';
   delete optional.group;
   return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName) => {
-    const value = getActiveStyle(args, formatName, property, { suffix: 'px', filter: Number });
-    return <FontSizePicker
-      fontSizes={getFontSizes()}
-      value={value}
-      fallbackFontSize={value}
-      onChange={onChangeStyle(args, formatName, property, 'px')}
-    />;
+    const value = getActiveStyle(args, formatName, property, {suffix: 'px', filter: Number});
+    return <div className="utils--components-font-size-picker-wrapper">
+      <FontSizePicker
+        fontSizes={getFontSizes()}
+        value={value}
+        fallbackFontSize={value}
+        onChange={onChangeStyle(args, formatName, property, 'px')}
+        withSlider={true}
+      />
+    </div>;
   });
 };
 
@@ -245,23 +248,23 @@ export const getContrastChecker = (fills, args) => {
     return null;
   }
 
-  const filtered = fills.filter(([{ props }]) => 'propertyName' in props && 'formatName' in props);
+  const filtered = fills.filter(([{props}]) => 'propertyName' in props && 'formatName' in props);
   if (!filtered.length) {
     return null;
   }
 
-  const mapped = Object.assign(...filtered.map(([{ props }]) => ({ [ props.propertyName ]: props })));
+  const mapped = Object.assign(...filtered.map(([{props}]) => ({[props.propertyName]: props})));
   if (!('color' in mapped && 'background-color' in mapped)) {
     return null;
   }
 
-  const textColor       = getActiveStyle(args, mapped[ 'color' ].formatName, 'color', { ignoreActive: true });
-  const backgroundColor = getActiveStyle(args, mapped[ 'background-color' ].formatName, 'background-color', { ignoreActive: true });
+  const textColor       = getActiveStyle(args, mapped['color'].formatName, 'color', {ignoreActive: true});
+  const backgroundColor = getActiveStyle(args, mapped['background-color'].formatName, 'background-color', {ignoreActive: true});
   if (!textColor || !backgroundColor) {
     return null;
   }
 
-  const fontSize = 'font-size' in mapped ? getActiveStyle(args, mapped[ 'font-size' ].formatName, 'font-size', {
+  const fontSize = 'font-size' in mapped ? getActiveStyle(args, mapped['font-size'].formatName, 'font-size', {
     suffix: 'px',
     filter: Number,
     defaultStyle: DEFAULT_FONT_SIZE,

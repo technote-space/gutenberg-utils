@@ -1,9 +1,9 @@
 /* eslint-disable no-magic-numbers */
-import { registerFormatType } from '@wordpress/rich-text';
-import { getFormatArgs } from '@technote-space/gutenberg-test-helper';
-import { getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle } from '../../src/helpers';
-import { getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, getContrastChecker } from '../../src/helpers';
-import { getRemoveFormatFunction, isValidRemoveFormatButton } from '../../src/helpers';
+import {registerFormatType} from '@wordpress/rich-text';
+import {getFormatArgs} from '@technote-space/gutenberg-test-helper';
+import {getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle} from '../../src/helpers';
+import {getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, getContrastChecker} from '../../src/helpers';
+import {getRemoveFormatFunction, isValidRemoveFormatButton} from '../../src/helpers';
 
 describe('getActiveStyle', () => {
   it('should undefined', () => {
@@ -21,9 +21,9 @@ describe('getActiveStyle', () => {
         ],
       ],
     };
-    expect(getActiveStyle({ value }, '', '')).toBeUndefined();
-    expect(getActiveStyle({ isActive: false, value }, '', '')).toBeUndefined();
-    expect(getActiveStyle({ isActive: true, value }, 'test1/test3', '')).toBeUndefined();
+    expect(getActiveStyle({value}, '', '')).toBeUndefined();
+    expect(getActiveStyle({isActive: false, value}, '', '')).toBeUndefined();
+    expect(getActiveStyle({isActive: true, value}, 'test1/test3', '')).toBeUndefined();
 
     registerFormatType('test1/test4', {
       title: 'test4',
@@ -31,7 +31,7 @@ describe('getActiveStyle', () => {
       className: 'test4',
       edit: () => null,
     });
-    expect(getActiveStyle({ isActive: true, value }, 'test1/test4', '')).toBeUndefined();
+    expect(getActiveStyle({isActive: true, value}, 'test1/test4', '')).toBeUndefined();
   });
 
   it('should return style', () => {
@@ -43,7 +43,7 @@ describe('getActiveStyle', () => {
         edit: () => null,
       });
       const format = {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test2/test5',
         unregisteredAttributes: {},
       };
@@ -72,7 +72,7 @@ describe('getActiveStyle', () => {
         edit: () => null,
       });
       const format = {
-        attributes: { style: 'font-size: 16px' },
+        attributes: {style: 'font-size: 16px'},
         type: 'test2/test6',
         unregisteredAttributes: {},
       };
@@ -90,7 +90,7 @@ describe('getActiveStyle', () => {
             [format],
           ],
         },
-      }, 'test2/test6', 'font-size', { suffix: 'px', ignoreActive: true })).toBe('16');
+      }, 'test2/test6', 'font-size', {suffix: 'px', ignoreActive: true})).toBe('16');
     }
 
     {
@@ -101,7 +101,7 @@ describe('getActiveStyle', () => {
         edit: () => null,
       });
       const format = {
-        attributes: { style: 'font-size: 16px' },
+        attributes: {style: 'font-size: 16px'},
         type: 'test2/test7',
         unregisteredAttributes: {},
       };
@@ -119,26 +119,26 @@ describe('getActiveStyle', () => {
             [format],
           ],
         },
-      }, 'test2/test7', 'font-size', { suffix: 'px', filter: Number })).toBe(16);
+      }, 'test2/test7', 'font-size', {suffix: 'px', filter: Number})).toBe(16);
     }
   });
 });
 
 describe('addActiveAttributes', () => {
   it('should add attributes', () => {
-    const attributes = addActiveAttributes({ activeAttributes: { test1: 'test1', test2: 'test2' } }, 'test-add-key', 'test-add-value');
+    const attributes = addActiveAttributes({activeAttributes: {test1: 'test1', test2: 'test2'}}, 'test-add-key', 'test-add-value');
     expect(attributes).toHaveProperty('test1');
     expect(attributes).toHaveProperty('test2');
     expect(attributes).toHaveProperty('test-add-key');
     expect(attributes.test1).toBe('test1');
     expect(attributes.test2).toBe('test2');
-    expect(attributes[ 'test-add-key' ]).toBe('test-add-value');
+    expect(attributes['test-add-key']).toBe('test-add-value');
   });
 });
 
 describe('setActiveStyle', () => {
   it('should add style', () => {
-    const attributes = setActiveStyle({ activeAttributes: { test1: 'test1', test2: 'test2' } }, 'color', 'red');
+    const attributes = setActiveStyle({activeAttributes: {test1: 'test1', test2: 'test2'}}, 'color', 'red');
     expect(attributes).toHaveProperty('test1');
     expect(attributes).toHaveProperty('test2');
     expect(attributes).toHaveProperty('style');
@@ -156,7 +156,7 @@ describe('onChangeStyle', () => {
   it('should on change', () => {
     {
       const format   = {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test2/test5',
         unregisteredAttributes: {},
       };
@@ -183,18 +183,18 @@ describe('onChangeStyle', () => {
       onChange(value => {
         expect(value).toHaveProperty('activeFormats');
         expect(value.activeFormats).toHaveLength(1);
-        expect(value.activeFormats[ 0 ]).toHaveProperty('type');
-        expect(value.activeFormats[ 0 ]).toHaveProperty('attributes');
-        expect(value.activeFormats[ 0 ].type).toBe('test2/test5');
-        expect(value.activeFormats[ 0 ].attributes).toHaveProperty('style');
-        expect(value.activeFormats[ 0 ].attributes.style).toBe('color: blue');
+        expect(value.activeFormats[0]).toHaveProperty('type');
+        expect(value.activeFormats[0]).toHaveProperty('attributes');
+        expect(value.activeFormats[0].type).toBe('test2/test5');
+        expect(value.activeFormats[0].attributes).toHaveProperty('style');
+        expect(value.activeFormats[0].attributes.style).toBe('color: blue');
       })('blue');
       expect(onChange()('')).toBeNull();
     }
 
     {
       const format   = {
-        attributes: { style: 'font-size: 16px' },
+        attributes: {style: 'font-size: 16px'},
         type: 'test2/test7',
         unregisteredAttributes: {},
       };
@@ -221,11 +221,11 @@ describe('onChangeStyle', () => {
       onChange(value => {
         expect(value).toHaveProperty('activeFormats');
         expect(value.activeFormats).toHaveLength(1);
-        expect(value.activeFormats[ 0 ]).toHaveProperty('type');
-        expect(value.activeFormats[ 0 ]).toHaveProperty('attributes');
-        expect(value.activeFormats[ 0 ].type).toBe('test2/test7');
-        expect(value.activeFormats[ 0 ].attributes).toHaveProperty('style');
-        expect(value.activeFormats[ 0 ].attributes.style).toBe('font-size: 32px');
+        expect(value.activeFormats[0]).toHaveProperty('type');
+        expect(value.activeFormats[0]).toHaveProperty('attributes');
+        expect(value.activeFormats[0].type).toBe('test2/test7');
+        expect(value.activeFormats[0].attributes).toHaveProperty('style');
+        expect(value.activeFormats[0].attributes.style).toBe('font-size: 32px');
       })('32');
       expect(onChange()('')).toBeNull();
     }
@@ -257,8 +257,8 @@ describe('getToolbarButtonProps', () => {
     expect(props.name).toBe('test1-name');
     expect(props.group).toBe('test1-group');
     expect(typeof props.create).toBe('function');
-    expect(props[ 'test1-option1' ]).toBe(1);
-    expect(props[ 'test1-option2' ]).toBe('test2');
+    expect(props['test1-option1']).toBe(1);
+    expect(props['test1-option2']).toBe('test2');
 
     const button = props.create(getArgs(formatName => value => {
       expect(value).toHaveProperty('start');
@@ -267,8 +267,8 @@ describe('getToolbarButtonProps', () => {
       expect(value).toHaveProperty('formats');
       expect(value).toHaveProperty('activeFormats');
       expect(value.text).toBe('test5');
-      expect(value.formats[ 0 ][ 0 ].type).toBe(formatName);
-      expect(value.activeFormats[ 0 ].type).toBe(formatName);
+      expect(value.formats[0][0].type).toBe(formatName);
+      expect(value.activeFormats[0].type).toBe(formatName);
     }, 'test2/test5'));
     expect(button).toHaveProperty('props');
     expect(button.props).toHaveProperty('icon');
@@ -330,7 +330,7 @@ describe('getToolbarButtonProps', () => {
 
 describe('getColorButtonProps', () => {
   it('should get props', () => {
-    const props = getColorButtonProps('test1-name', 'test1-title', 'test1-icon', 'test1-property', { group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2' });
+    const props = getColorButtonProps('test1-name', 'test1-title', 'test1-icon', 'test1-property', {group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2'});
     expect(props).toHaveProperty('name');
     expect(props).toHaveProperty('inspectorGroup');
     expect(props).toHaveProperty('create');
@@ -341,8 +341,8 @@ describe('getColorButtonProps', () => {
     expect(props.name).toBe('test1-name');
     expect(props.inspectorGroup).toBe('test1-group');
     expect(props.attributes).toHaveProperty('style');
-    expect(props[ 'test1-option1' ]).toBe(1);
-    expect(props[ 'test1-option2' ]).toBe('test2');
+    expect(props['test1-option1']).toBe(1);
+    expect(props['test1-option2']).toBe('test2');
 
     const button = props.create(getArgs(() => () => null, 'test2/test5'));
     expect(button).toHaveProperty('props');
@@ -371,7 +371,7 @@ describe('getColorButtonProps', () => {
     wpMock.blockEditor.getColorObjectByColorValue = () => false;
     const inspector2                              = props.createInspector(getArgs(() => () => null, 'test2/test5', [
       {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test2/test5',
         unregisteredAttributes: {},
       },
@@ -380,40 +380,40 @@ describe('getColorButtonProps', () => {
     expect(inspector2.props).toHaveProperty('label');
     expect(inspector2.props).toHaveProperty('children');
     expect(inspector2.props.label).toHaveProperty('props');
-    expect(inspector2.props.label.props.children[ 1 ].props).toHaveProperty('aria-label');
-    expect(inspector2.props.label.props.children[ 1 ].props[ 'aria-label' ]).toBe('(test1-title: color: red)');
+    expect(inspector2.props.label.props.children[1].props).toHaveProperty('aria-label');
+    expect(inspector2.props.label.props.children[1].props['aria-label']).toBe('(test1-title: color: red)');
 
-    wpMock.blockEditor.getColorObjectByColorValue = () => ({ name: false });
+    wpMock.blockEditor.getColorObjectByColorValue = () => ({name: false});
     const inspector3                              = props.createInspector(getArgs(() => () => null, 'test2/test5', [
       {
-        attributes: { style: 'color: blue' },
+        attributes: {style: 'color: blue'},
         type: 'test2/test5',
         unregisteredAttributes: {},
       },
     ]));
-    expect(inspector3.props.label.props.children[ 1 ].props).toHaveProperty('aria-label');
-    expect(inspector3.props.label.props.children[ 1 ].props[ 'aria-label' ]).toBe('(test1-title: color: blue)');
+    expect(inspector3.props.label.props.children[1].props).toHaveProperty('aria-label');
+    expect(inspector3.props.label.props.children[1].props['aria-label']).toBe('(test1-title: color: blue)');
 
-    wpMock.blockEditor.getColorObjectByColorValue = () => ({ name: 'test-name' });
+    wpMock.blockEditor.getColorObjectByColorValue = () => ({name: 'test-name'});
     const inspector4                              = props.createInspector(getArgs(() => () => null, 'test2/test5', [
       {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test2/test5',
         unregisteredAttributes: {},
       },
     ]));
-    expect(inspector4.props.label.props.children[ 1 ].props).toHaveProperty('aria-label');
-    expect(inspector4.props.label.props.children[ 1 ].props[ 'aria-label' ]).toBe('(test1-title: test-name)');
+    expect(inspector4.props.label.props.children[1].props).toHaveProperty('aria-label');
+    expect(inspector4.props.label.props.children[1].props['aria-label']).toBe('(test1-title: test-name)');
 
     expect(typeof getColorButtonProps('test2-name', 'test2-title', 'test2-icon', 'test1-property')).not.toHaveProperty('test1-option1');
-    expect(getColorButtonProps('test3-name', 'test3-title', 'test3-icon', 'test3-property', { createDisabled: true })).not.toHaveProperty('create');
-    expect(getColorButtonProps('test4-name', 'test4-title', 'test4-icon', 'test4-property', { createInspectorDisabled: true })).not.toHaveProperty('createInspector');
+    expect(getColorButtonProps('test3-name', 'test3-title', 'test3-icon', 'test3-property', {createDisabled: true})).not.toHaveProperty('create');
+    expect(getColorButtonProps('test4-name', 'test4-title', 'test4-icon', 'test4-property', {createInspectorDisabled: true})).not.toHaveProperty('createInspector');
   });
 });
 
 describe('getFontSizesButtonProps', () => {
   it('should get props', () => {
-    const props = getFontSizesButtonProps('test1-name', 'test1-title', 'test1-icon', { group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2' });
+    const props = getFontSizesButtonProps('test1-name', 'test1-title', 'test1-icon', {group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2'});
     expect(props).toHaveProperty('name');
     expect(props).toHaveProperty('inspectorGroup');
     expect(props).toHaveProperty('create');
@@ -424,8 +424,8 @@ describe('getFontSizesButtonProps', () => {
     expect(props.name).toBe('test1-name');
     expect(props.inspectorGroup).toBe('test1-group');
     expect(props.attributes).toHaveProperty('style');
-    expect(props[ 'test1-option1' ]).toBe(1);
-    expect(props[ 'test1-option2' ]).toBe('test2');
+    expect(props['test1-option1']).toBe(1);
+    expect(props['test1-option2']).toBe('test2');
 
     const button = props.create(getArgs(() => () => null, 'test2/test5'));
     expect(button).toHaveProperty('props');
@@ -438,7 +438,13 @@ describe('getFontSizesButtonProps', () => {
     expect(button.props.className).toBe('components-dropdown-button__has-property-font-size');
     expect(typeof button.props.renderContent).toBe('function');
 
-    const control = button.props.renderContent();
+    const wrapper = button.props.renderContent();
+    expect(wrapper).toHaveProperty('props');
+    expect(wrapper.props).toHaveProperty('className');
+    expect(wrapper.props).toHaveProperty('children');
+    expect(wrapper.props.className).toBe('utils--components-font-size-picker-wrapper');
+
+    const control = wrapper.props.children;
     expect(control).toHaveProperty('props');
     expect(control.props).toHaveProperty('fontSizes');
     expect(control.props).toHaveProperty('value');
@@ -453,19 +459,19 @@ describe('getFontSizesButtonProps', () => {
     expect(control.props).toHaveProperty('onChange');
 
     expect(getFontSizesButtonProps('test2-name', 'test2-title', 'test2-icon')).not.toHaveProperty('test1-option1');
-    expect(getFontSizesButtonProps('test3-name', 'test3-title', 'test3-icon', { createDisabled: true })).not.toHaveProperty('create');
-    expect(getFontSizesButtonProps('test4-name', 'test4-title', 'test4-icon', { createInspectorDisabled: true })).not.toHaveProperty('createInspector');
+    expect(getFontSizesButtonProps('test3-name', 'test3-title', 'test3-icon', {createDisabled: true})).not.toHaveProperty('create');
+    expect(getFontSizesButtonProps('test4-name', 'test4-title', 'test4-icon', {createInspectorDisabled: true})).not.toHaveProperty('createInspector');
   });
 });
 
 describe('getContrastChecker', () => {
-  const createFill = (propertyName, formatName) => ([{ props: { propertyName: propertyName, formatName: formatName } }]);
+  const createFill = (propertyName, formatName) => ([{props: {propertyName: propertyName, formatName: formatName}}]);
 
   it('should return null', () => {
     expect(getContrastChecker([], {})).toBeNull();
     expect(getContrastChecker([
-      [{ props: { propertyName: 'color' } }],
-      [{ props: { formatName: 'test/font-size' } }],
+      [{props: {propertyName: 'color'}}],
+      [{props: {formatName: 'test/font-size'}}],
     ], {})).toBeNull();
     expect(getContrastChecker([
       createFill('color', 'test/font-color'),
@@ -476,12 +482,12 @@ describe('getContrastChecker', () => {
   it('should return null', () => {
     const formats = [
       {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test/font-color',
         unregisteredAttributes: {},
       },
       {
-        attributes: { style: 'font-size: 16px' },
+        attributes: {style: 'font-size: 16px'},
         type: 'test/font-size',
         unregisteredAttributes: {},
       },
@@ -509,17 +515,17 @@ describe('getContrastChecker', () => {
   it('should return ContrastChecker', () => {
     const formats = [
       {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test/font-color',
         unregisteredAttributes: {},
       },
       {
-        attributes: { style: 'background-color: blue' },
+        attributes: {style: 'background-color: blue'},
         type: 'test/background-color',
         unregisteredAttributes: {},
       },
       {
-        attributes: { style: 'font-size: 20px' },
+        attributes: {style: 'font-size: 20px'},
         type: 'test/font-size',
         unregisteredAttributes: {},
       },
@@ -556,12 +562,12 @@ describe('getContrastChecker', () => {
   it('should return ContrastChecker', () => {
     const formats = [
       {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test/font-color',
         unregisteredAttributes: {},
       },
       {
-        attributes: { style: 'background-color: blue' },
+        attributes: {style: 'background-color: blue'},
         type: 'test/background-color',
         unregisteredAttributes: {},
       },
@@ -598,12 +604,12 @@ describe('getContrastChecker', () => {
 describe('isValidRemoveFormatButton', () => {
   const formats = [
     {
-      attributes: { style: 'color: red' },
+      attributes: {style: 'color: red'},
       type: 'test/font-color',
       unregisteredAttributes: {},
     },
     {
-      attributes: { style: 'background-color: blue' },
+      attributes: {style: 'background-color: blue'},
       type: 'test/background-color',
       unregisteredAttributes: {},
     },
@@ -647,12 +653,12 @@ describe('getRemoveFormatFunction', () => {
     });
     const formats  = [
       {
-        attributes: { style: 'color: red' },
+        attributes: {style: 'color: red'},
         type: 'test/font-color',
         unregisteredAttributes: {},
       },
       {
-        attributes: { style: 'background-color: blue' },
+        attributes: {style: 'background-color: blue'},
         type: 'test/background-color',
         unregisteredAttributes: {},
       },

@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import { parameterManager } from '../../src/helpers';
+import {parameterManager} from '../../src/helpers';
 
 describe('parameterManager', () => {
   it('should return default', () => {
@@ -10,7 +10,7 @@ describe('parameterManager', () => {
   });
 
   it('should get parameter', () => {
-    const manager = parameterManager({ test1: 1, test2: { test3: 3 } });
+    const manager = parameterManager({test1: 1, test2: {test3: 3}});
     expect(manager.get('test1')).toBe(1);
     expect(manager.get('test2')).toHaveProperty('test3');
     expect(manager.get('test2').test3).toBe(3);
@@ -18,7 +18,7 @@ describe('parameterManager', () => {
   });
 
   it('should set parameter', () => {
-    const manager = parameterManager({ test1: 1, test2: { test3: 3 } });
+    const manager = parameterManager({test1: 1, test2: {test3: 3}});
     manager.set('test1', 10);
     expect(manager.get('test1')).toBe(10);
 

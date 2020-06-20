@@ -20,5 +20,9 @@ Helpers.applyStyles('.components-dropdown-toggle>.components-toolbar__control.co
 Helpers.applyStyles('.components-dropdown-toggle>.components-toolbar__control.components-button.has-icon.has-text>svg', {
   margin: 0,
 });
+Helpers.applyStyles('.utils--components-font-size-picker-wrapper .components-range-control__number', {
+  pointerEvents: 'none',
+  backgroundColor: '#ececec',
+});
 
-export { Components, Helpers };
+export {Components, Helpers};
