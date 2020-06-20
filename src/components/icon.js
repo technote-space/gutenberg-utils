@@ -1,10 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
-import { SVG, Dashicon } from '@wordpress/components';
-import { isURL } from '@wordpress/url';
+import {SVG, Dashicon} from '@wordpress/components';
+import {isURL} from '@wordpress/url';
 
-const { isString } = window.lodash;
-import { ICON_SIZE } from '../constant';
+const {isString} = window.lodash;
+import {ICON_SIZE} from '../constant';
 
 const isSVG      = icon => isString(icon) && (isURL(icon) || /^data:image/.test(icon));
 const isDashicon = icon => isString(icon) && /^dashicons-/.test(icon);

@@ -1,9 +1,9 @@
 /* eslint-disable no-magic-numbers */
 import React from 'react';
-import { mount } from 'enzyme';
+import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { SlotFillProvider } from '@wordpress/components';
-import { DropdownButton } from '../../src/components';
+import {SlotFillProvider} from '@wordpress/components';
+import {DropdownButton} from '../../src/components';
 
 jest.useFakeTimers();
 
@@ -34,7 +34,7 @@ describe('DropdownButton', () => {
 
         wrapper.find('.test1-class button').hostNodes().simulate('click');
 
-        expect(toJson(wrapper, { mode: 'deep' })).toMatchSnapshot(getSnapshotName('open', index));
+        expect(toJson(wrapper, {mode: 'deep'})).toMatchSnapshot(getSnapshotName('open', index));
 
         expect(wrapper.find('.popover1').hostNodes()).toHaveLength(1);
       },
@@ -86,7 +86,7 @@ describe('DropdownButton', () => {
         expect(wrapper.find('.popover3').hostNodes()).toHaveLength(0);
       },
     },
-  ].forEach(({ props, callback }, index) => {
+  ].forEach(({props, callback}, index) => {
     it(`should render DropdownButton ${index}`, () => {
       const wrapper = mount(
         <SlotFillProvider>
@@ -94,7 +94,7 @@ describe('DropdownButton', () => {
         </SlotFillProvider>,
       );
 
-      expect(toJson(wrapper, { mode: 'deep' })).toMatchSnapshot(getSnapshotName('test', index));
+      expect(toJson(wrapper, {mode: 'deep'})).toMatchSnapshot(getSnapshotName('test', index));
 
       callback(wrapper, index);
     });

@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Dropdown, IconButton } from '@wordpress/components';
+import {Dropdown, IconButton} from '@wordpress/components';
 
 /**
  * @param {*} icon icon
@@ -34,7 +34,7 @@ const DropdownButton = ({
     className={classnames('components-dropdown-toggle', className)}
     contentClassName={classnames('components-dropdown-button__popover', contentClassName)}
     position={position}
-    renderToggle={({ isOpen, onToggle, onClose }) => {
+    renderToggle={({isOpen, onToggle, onClose}) => {
       if (isOpen && isDropdownDisabled) {
         // eslint-disable-next-line no-magic-numbers
         setTimeout(onClose, 0);

@@ -21,4 +21,4 @@ Helpers.applyStyles('.components-dropdown-toggle>.components-toolbar__control.co
   margin: 0,
 });
 
-export { Components, Helpers };
+export {Components, Helpers};
