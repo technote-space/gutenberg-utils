@@ -438,7 +438,13 @@ describe('getFontSizesButtonProps', () => {
     expect(button.props.className).toBe('components-dropdown-button__has-property-font-size');
     expect(typeof button.props.renderContent).toBe('function');
 
-    const control = button.props.renderContent();
+    const wrapper = button.props.renderContent();
+    expect(wrapper).toHaveProperty('props');
+    expect(wrapper.props).toHaveProperty('className');
+    expect(wrapper.props).toHaveProperty('children');
+    expect(wrapper.props.className).toBe('utils--components-font-size-picker-wrapper');
+
+    const control = wrapper.props.children;
     expect(control).toHaveProperty('props');
     expect(control.props).toHaveProperty('fontSizes');
     expect(control.props).toHaveProperty('value');

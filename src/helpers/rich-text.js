@@ -226,12 +226,15 @@ export const getFontSizesButtonProps = (name, title, icon, optional = {}) => {
   delete optional.group;
   return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName) => {
     const value = getActiveStyle(args, formatName, property, {suffix: 'px', filter: Number});
-    return <FontSizePicker
-      fontSizes={getFontSizes()}
-      value={value}
-      fallbackFontSize={value}
-      onChange={onChangeStyle(args, formatName, property, 'px')}
-    />;
+    return <div className="utils--components-font-size-picker-wrapper">
+      <FontSizePicker
+        fontSizes={getFontSizes()}
+        value={value}
+        fallbackFontSize={value}
+        onChange={onChangeStyle(args, formatName, property, 'px')}
+        withSlider={true}
+      />
+    </div>;
   });
 };
 
