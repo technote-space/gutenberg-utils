@@ -18,46 +18,46 @@ import { Dropdown, IconButton } from '@wordpress/components';
  * @constructor
  */
 const DropdownButton = ({
-	icon = 'menu',
-	label,
-	tooltip = label,
-	className,
-	position = 'top right',
-	contentClassName,
-	renderContent,
-	isActive = false,
-	isDisabled = false,
-	isDropdownDisabled = false,
-	isHiddenIndicator = false,
+  icon = 'menu',
+  label,
+  tooltip = label,
+  className,
+  position = 'top right',
+  contentClassName,
+  renderContent,
+  isActive = false,
+  isDisabled = false,
+  isDropdownDisabled = false,
+  isHiddenIndicator = false,
 }) => {
-	return <Dropdown
-		className={classnames('components-dropdown-toggle', className)}
-		contentClassName={classnames('components-dropdown-button__popover', contentClassName)}
-		position={position}
-		renderToggle={({ isOpen, onToggle, onClose }) => {
-			if (isOpen && isDropdownDisabled) {
-				// eslint-disable-next-line no-magic-numbers
-				setTimeout(onClose, 0);
-			}
+  return <Dropdown
+    className={classnames('components-dropdown-toggle', className)}
+    contentClassName={classnames('components-dropdown-button__popover', contentClassName)}
+    position={position}
+    renderToggle={({ isOpen, onToggle, onClose }) => {
+      if (isOpen && isDropdownDisabled) {
+        // eslint-disable-next-line no-magic-numbers
+        setTimeout(onClose, 0);
+      }
 
-			return <IconButton
-				className={classnames('components-dropdown-button__toggle', 'components-toolbar__control', {
-					'is-active is-pressed': isActive,
-				})}
-				icon={icon}
-				onClick={onToggle}
-				aria-haspopup="true"
-				aria-expanded={isOpen}
-				aria-pressed={isActive}
-				label={label}
-				tooltip={tooltip}
-				disabled={isDisabled}
-			>
-				{!isHiddenIndicator && <span className="components-dropdown-menu__indicator"/>}
-			</IconButton>;
-		}}
-		renderContent={renderContent}
-	/>;
+      return <IconButton
+        className={classnames('components-dropdown-button__toggle', 'components-toolbar__control', {
+          'is-active is-pressed': isActive,
+        })}
+        icon={icon}
+        onClick={onToggle}
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+        aria-pressed={isActive}
+        label={label}
+        tooltip={tooltip}
+        disabled={isDisabled}
+      >
+        {!isHiddenIndicator && <span className="components-dropdown-menu__indicator"/>}
+      </IconButton>;
+    }}
+    renderContent={renderContent}
+  />;
 };
 
 export default DropdownButton;

@@ -31,8 +31,8 @@ export const getFontSizes = () => getEditorSettings().fontSizes;
  * @param {object} css css
  */
 export const applyStyles = (selector, css) => {
-	const nano    = create();
-	const { put } = nano;
+  const nano    = create();
+  const { put } = nano;
 
-	put(selector, css);
+  put(selector, css);
 };
