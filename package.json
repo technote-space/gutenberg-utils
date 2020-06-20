@@ -28,11 +28,11 @@
     "nano-css": "^5.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
-    "@babel/plugin-transform-react-jsx": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@technote-space/gutenberg-test-helper": "^0.0.14",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-react-jsx": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@technote-space/gutenberg-test-helper": "^0.0.15",
     "@wordpress/block-editor": "^4.1.0",
     "@wordpress/components": "^9.8.0",
     "@wordpress/data": "^4.20.0",
@@ -43,7 +43,7 @@
     "babel-jest": "^26.0.1",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.5.0",
-    "eslint": "^7.2.0",
+    "eslint": "^7.3.0",
     "eslint-plugin-react": "^7.20.0",
     "jest": "^26.0.1",
     "react": "^16.13.1"
