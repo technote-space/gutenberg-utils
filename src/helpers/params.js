@@ -15,8 +15,8 @@ const set = params => (key, value) => window.lodash.set(params, key, value);
  * @returns {{set: (function(*=, *=)), get: (function(*=, *=): *)}} manager
  */
 export const parameterManager = (params = {}) => {
-	return {
-		get: get(params),
-		set: set(params),
-	};
+  return {
+    get: get(params),
+    set: set(params),
+  };
 };

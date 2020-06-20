@@ -4,45 +4,21 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
 <div
   className="components-dropdown components-dropdown-toggle test1-class"
 >
-  <ForwardRef(IconButton)
+  <button
     aria-expanded={true}
     aria-haspopup="true"
+    aria-label="test1-tooltip"
     aria-pressed={true}
-    className="components-dropdown-button__toggle components-toolbar__control is-active is-pressed"
+    className="components-button components-dropdown-button__toggle components-toolbar__control is-active is-pressed has-icon"
     disabled={false}
-    icon="dashicons-admin-site"
-    label="test1-label"
+    onBlur={[Function]}
     onClick={[Function]}
-    tooltip="test1-tooltip"
-  >
-    <ForwardRef(Button)
-      aria-expanded={true}
-      aria-haspopup="true"
-      aria-pressed={true}
-      className="components-dropdown-button__toggle components-toolbar__control is-active is-pressed"
-      disabled={false}
-      icon="dashicons-admin-site"
-      label="test1-tooltip"
-      onClick={[Function]}
-      showTooltip={true}
-    >
-      <button
-        aria-expanded={true}
-        aria-haspopup="true"
-        aria-label="test1-tooltip"
-        aria-pressed={true}
-        className="components-button components-dropdown-button__toggle components-toolbar__control is-active is-pressed has-icon"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        type="button"
-      />
-    </ForwardRef(Button)>
-  </ForwardRef(IconButton)>
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
+  />
   <span>
     <div
       onKeyDown={[Function]}
@@ -60,27 +36,22 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
           onTouchEnd={[Function]}
           onTouchStart={[Function]}
         >
-          <ForwardRef
+          <div
             className="components-popover components-dropdown__content components-dropdown-button__popover test1-content-class is-without-arrow"
             onKeyDown={[Function]}
+            onMouseDown={[Function]}
           >
             <div
-              className="components-popover components-dropdown__content components-dropdown-button__popover test1-content-class is-without-arrow"
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
+              className="components-popover__content"
+              tabIndex="-1"
             >
               <div
-                className="components-popover__content"
-                tabIndex="-1"
+                className="popover1"
               >
-                <div
-                  className="popover1"
-                >
-                  test1
-                </div>
+                test1
               </div>
             </div>
-          </ForwardRef>
+          </div>
         </div>
       </div>
     </div>
@@ -92,45 +63,21 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
 <div
   className="components-dropdown components-dropdown-toggle test1-class"
 >
-  <ForwardRef(IconButton)
+  <button
     aria-expanded={false}
     aria-haspopup="true"
+    aria-label="test1-tooltip"
     aria-pressed={true}
-    className="components-dropdown-button__toggle components-toolbar__control is-active is-pressed"
+    className="components-button components-dropdown-button__toggle components-toolbar__control is-active is-pressed has-icon"
     disabled={false}
-    icon="dashicons-admin-site"
-    label="test1-label"
+    onBlur={[Function]}
     onClick={[Function]}
-    tooltip="test1-tooltip"
-  >
-    <ForwardRef(Button)
-      aria-expanded={false}
-      aria-haspopup="true"
-      aria-pressed={true}
-      className="components-dropdown-button__toggle components-toolbar__control is-active is-pressed"
-      disabled={false}
-      icon="dashicons-admin-site"
-      label="test1-tooltip"
-      onClick={[Function]}
-      showTooltip={true}
-    >
-      <button
-        aria-expanded={false}
-        aria-haspopup="true"
-        aria-label="test1-tooltip"
-        aria-pressed={true}
-        className="components-button components-dropdown-button__toggle components-toolbar__control is-active is-pressed has-icon"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        type="button"
-      />
-    </ForwardRef(Button)>
-  </ForwardRef(IconButton)>
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
+  />
 </div>
 `;
 
@@ -138,60 +85,36 @@ exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
 <div
   className="components-dropdown components-dropdown-toggle test2-class"
 >
-  <ForwardRef(IconButton)
+  <button
     aria-expanded={false}
     aria-haspopup="true"
+    aria-label="test2-label"
     aria-pressed={true}
-    className="components-dropdown-button__toggle components-toolbar__control is-active is-pressed"
+    className="components-button components-dropdown-button__toggle components-toolbar__control is-active is-pressed has-icon"
     disabled={false}
-    icon="menu"
-    label="test2-label"
+    onBlur={[Function]}
     onClick={[Function]}
-    tooltip="test2-label"
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
   >
-    <ForwardRef(Button)
-      aria-expanded={false}
-      aria-haspopup="true"
-      aria-pressed={true}
-      className="components-dropdown-button__toggle components-toolbar__control is-active is-pressed"
-      disabled={false}
-      icon="menu"
-      label="test2-label"
-      onClick={[Function]}
-      showTooltip={true}
+    <svg
+      aria-hidden={true}
+      className="dashicon dashicons-menu"
+      focusable={false}
+      height={20}
+      role="img"
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="true"
-        aria-label="test2-label"
-        aria-pressed={true}
-        className="components-button components-dropdown-button__toggle components-toolbar__control is-active is-pressed has-icon"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        type="button"
-      >
-        <svg
-          aria-hidden={true}
-          className="dashicon dashicons-menu"
-          focusable={false}
-          height={20}
-          role="img"
-          viewBox="0 0 20 20"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-          />
-        </svg>
-      </button>
-    </ForwardRef(Button)>
-  </ForwardRef(IconButton)>
+      <path
+        d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
@@ -199,57 +122,33 @@ exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
 <div
   className="components-dropdown components-dropdown-toggle test3-class"
 >
-  <ForwardRef(IconButton)
+  <button
     aria-expanded={false}
     aria-haspopup="true"
+    aria-label="test3-label"
     aria-pressed={false}
-    className="components-dropdown-button__toggle components-toolbar__control"
+    className="components-button components-dropdown-button__toggle components-toolbar__control has-text has-icon"
     disabled={true}
-    icon="menu"
-    label="test3-label"
     onClick={[Function]}
-    tooltip="test3-label"
+    type="button"
   >
-    <ForwardRef(Button)
-      aria-expanded={false}
-      aria-haspopup="true"
-      aria-pressed={false}
-      className="components-dropdown-button__toggle components-toolbar__control"
-      disabled={true}
-      icon="menu"
-      label="test3-label"
-      onClick={[Function]}
-      showTooltip={true}
+    <svg
+      aria-hidden={true}
+      className="dashicon dashicons-menu"
+      focusable={false}
+      height={20}
+      role="img"
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="true"
-        aria-label="test3-label"
-        aria-pressed={false}
-        className="components-button components-dropdown-button__toggle components-toolbar__control has-text has-icon"
-        disabled={true}
-        onClick={[Function]}
-        type="button"
-      >
-        <svg
-          aria-hidden={true}
-          className="dashicon dashicons-menu"
-          focusable={false}
-          height={20}
-          role="img"
-          viewBox="0 0 20 20"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
-          />
-        </svg>
-        <span
-          className="components-dropdown-menu__indicator"
-        />
-      </button>
-    </ForwardRef(Button)>
-  </ForwardRef(IconButton)>
+      <path
+        d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z"
+      />
+    </svg>
+    <span
+      className="components-dropdown-menu__indicator"
+    />
+  </button>
 </div>
 `;
