@@ -24,5 +24,18 @@ Helpers.applyStyles('.utils--components-font-size-picker-wrapper .components-ran
   pointerEvents: 'none',
   backgroundColor: '#ececec',
 });
+Helpers.applyStyles('.utils--components-toolbar__control.components-toolbar__control.components-button', {
+  padding: '3px',
+  outline: 'none',
+});
+Helpers.applyStyles('.utils--components-toolbar__control.components-toolbar__control.components-button>svg', {
+  padding: '5px',
+  borderRadius: '4px',
+  height: '30px',
+  width: '30px',
+  boxSizing: 'border-box',
+  outline: 'none',
+  boxShadow: 'none',
+});
 
 export {Components, Helpers};
