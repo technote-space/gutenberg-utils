@@ -103,6 +103,7 @@ export const getToolbarButtonProps = (group, name, icon, optional = {}) => {
     name,
     group,
     create: optional.createDisabled ? null : ({args, formatName}) => <ToolbarButton
+      className="utils--components-toolbar__control"
       icon={icon}
       title={<div className={className}>{preview}</div>}
       onClick={() => args.onChange(toggleFormat(args.value, {type: formatName}))}
@@ -146,7 +147,7 @@ export const getDropdownButtonProps = (group, name, title, icon, property, optio
     props.create = ({args, formatName}) => <DropdownButton
       icon={icon}
       label={title}
-      className={classnames(`components-dropdown-button__has-property-${property}`, optional.dropdownClassName)}
+      className={classnames(`components-dropdown-button__has-property-${property}`, 'utils--components-dropdown-button', optional.dropdownClassName)}
       renderContent={() => createControl(args, formatName, false)}
       isHiddenIndicator={false !== optional.isHiddenIndicator}
     />;

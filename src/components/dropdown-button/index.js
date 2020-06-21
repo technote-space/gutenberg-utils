@@ -41,7 +41,7 @@ const DropdownButton = ({
       }
 
       return <IconButton
-        className={classnames('components-dropdown-button__toggle', 'components-toolbar__control', {
+        className={classnames('components-dropdown-button__toggle', 'components-toolbar__control', 'utils--components-toolbar__control', {
           'is-active is-pressed': isActive,
         })}
         icon={icon}
