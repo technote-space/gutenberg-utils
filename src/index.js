@@ -46,8 +46,8 @@ Helpers.applyStyles('.components-dropdown-menu__indicator::after', {
   borderLeft: '3px solid transparent',
   borderRight: '3px solid transparent',
   borderTop: '5px solid',
-  marginLeft: 4,
-  marginRight: 2,
+  marginLeft: '4px',
+  marginRight: '2px',
 });
 Helpers.applyStyles('.components-popover__content__dropdown-tooltip', {
   backgroundColor: 'white',
