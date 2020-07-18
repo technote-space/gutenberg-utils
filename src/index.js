@@ -49,5 +49,9 @@ Helpers.applyStyles('.components-dropdown-menu__indicator::after', {
   marginLeft: 4,
   marginRight: 2,
 });
+Helpers.applyStyles('.components-popover__content__dropdown-tooltip', {
+  backgroundColor: 'white',
+  color: 'black',
+});
 
 export {Components, Helpers};
