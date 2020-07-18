@@ -37,5 +37,21 @@ Helpers.applyStyles('.utils--components-toolbar__control.components-toolbar__con
   outline: 'none',
   boxShadow: 'none',
 });
+Helpers.applyStyles('.components-dropdown-menu__indicator::after', {
+  content: '""',
+  pointerEvents: 'none',
+  display: 'block',
+  width: 0,
+  height: 0,
+  borderLeft: '3px solid transparent',
+  borderRight: '3px solid transparent',
+  borderTop: '5px solid',
+  marginLeft: 4,
+  marginRight: 2,
+});
+Helpers.applyStyles('.components-popover__content__dropdown-tooltip', {
+  backgroundColor: 'white',
+  color: 'black',
+});
 
 export {Components, Helpers};
