@@ -98,7 +98,7 @@ export const getToolbarButtonProps = (group, name, icon, optional = {}) => {
   const title     = 'title' in optional ? optional.title : name;
   const preview   = 'preview' in optional ? optional.preview : ('tagName' in optional ? createElement(optional.tagName, {
     className,
-  }, title) : name);
+  }, title) : title);
   return {
     name,
     group,
@@ -109,8 +109,8 @@ export const getToolbarButtonProps = (group, name, icon, optional = {}) => {
       onClick={() => args.onChange(toggleFormat(args.value, {type: formatName}))}
       isActive={args.isActive}
       extraProps={{
-        label: name,
-        tooltip: <div className={classnames('components-popover__content__dropdown-tooltip', optional.tooltipClass)}>
+        showTooltip: true,
+        label: <div className={classnames('components-popover__content__dropdown-tooltip', optional.tooltipClass)}>
           <div className={name}>{preview}</div>
         </div>,
       }}
