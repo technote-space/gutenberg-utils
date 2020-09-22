@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import {Dropdown, IconButton} from '@wordpress/components';
+import {Dropdown, Button} from '@wordpress/components';
 
 /**
  * @param {*} icon icon
@@ -40,7 +40,7 @@ const DropdownButton = ({
         setTimeout(onClose, 0);
       }
 
-      return <IconButton
+      return <Button
         className={classnames('components-dropdown-button__toggle', 'components-toolbar__control', 'utils--components-toolbar__control', {
           'is-active is-pressed': isActive,
         })}
@@ -54,7 +54,7 @@ const DropdownButton = ({
         disabled={isDisabled}
       >
         {!isHiddenIndicator && <span className="components-dropdown-menu__indicator"/>}
-      </IconButton>;
+      </Button>;
     }}
     renderContent={renderContent}
   />;
