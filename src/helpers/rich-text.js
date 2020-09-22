@@ -3,11 +3,13 @@ import classnames from 'classnames';
 import {getActiveFormat, toggleFormat, applyFormat, removeFormat} from '@wordpress/rich-text';
 import {ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette} from '@wordpress/components';
 import {Fragment, createElement} from '@wordpress/element';
+import {select, dispatch} from '@wordpress/data';
 import {sprintf, __} from '@wordpress/i18n';
 import {getColorObjectByColorValue, ContrastChecker} from '@wordpress/block-editor';
 import {DropdownButton} from '../components';
 import {getColors, getFontSizes, isValidCustomColors} from './editor';
 import {DEFAULT_FONT_SIZE} from '../constant';
+import {STORE_NAME} from '../store';
 
 /**
  * @param {object} args args
@@ -71,7 +73,7 @@ export const setActiveStyle = (args, styleName, value) => addActiveAttributes(ar
  * @param {string} suffix suffix
  * @returns {function(*=): null} on change function
  */
-export const onChangeStyle = (args, formatName, styleName, suffix = '') => value => undefined === value ?
+export const onChangeStyle = (args, formatName, styleName, suffix = '') => value => undefined === value || Number.isNaN(value) ?
   args.onChange(removeFormat(args.value, formatName)) :
   (
     value ? args.onChange(applyFormat(args.value, {
@@ -227,12 +229,18 @@ export const getFontSizesButtonProps = (name, title, icon, optional = {}) => {
   delete optional.group;
   return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName) => {
     const value = getActiveStyle(args, formatName, property, {suffix: 'px', filter: Number});
+    dispatch(STORE_NAME).increment(name);
+    const index = select(STORE_NAME).getIndex(name);
     return <div className="utils--components-font-size-picker-wrapper">
       <FontSizePicker
         fontSizes={getFontSizes()}
         value={value}
         fallbackFontSize={value}
-        onChange={onChangeStyle(args, formatName, property, 'px')}
+        onChange={value => {
+          if (select(STORE_NAME).getIndex(name) === index) {
+            onChangeStyle(args, formatName, property, 'px')(value);
+          }
+        }}
         withSlider={true}
       />
     </div>;

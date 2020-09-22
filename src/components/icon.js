@@ -40,11 +40,13 @@ const createDashicon = (icon, className) => <Dashicon
  * @returns {null|*|null|*} icon
  * @constructor
  */
-const Icon = ({
-  icon,
-  className,
-  defaultIcon = false,
-}) => {
+const Icon = (
+  {
+    icon,
+    className,
+    defaultIcon = false,
+  },
+) => {
   if (isSVG(icon)) {
     return createSVG(icon, classnames('components-icon components-icon__svg', className));
   }
