@@ -467,6 +467,10 @@ describe('getFontSizesButtonProps', () => {
     expect(control.props).toHaveProperty('fallbackFontSize');
     expect(control.props).toHaveProperty('onChange');
 
+    control.props.onChange(undefined);
+    button.props.renderContent();
+    control.props.onChange(undefined);
+
     const inspector = props.createInspector(getArgs(() => () => null, 'test2/test5'));
     expect(inspector).toHaveProperty('props');
     expect(control.props).toHaveProperty('fontSizes');

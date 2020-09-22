@@ -7,7 +7,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
   <button
     aria-expanded={true}
     aria-haspopup="true"
-    aria-label="test1-tooltip"
+    aria-label="test1-label"
     aria-pressed={true}
     className="components-button components-dropdown-button__toggle components-toolbar__control utils--components-toolbar__control is-active is-pressed has-icon"
     disabled={false}
@@ -17,6 +17,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    tooltip="test1-tooltip"
     type="button"
   />
   <div
@@ -92,7 +93,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup="true"
-    aria-label="test1-tooltip"
+    aria-label="test1-label"
     aria-pressed={true}
     className="components-button components-dropdown-button__toggle components-toolbar__control utils--components-toolbar__control is-active is-pressed has-icon"
     disabled={false}
@@ -102,6 +103,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    tooltip="test1-tooltip"
     type="button"
   />
 </div>
@@ -124,6 +126,7 @@ exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    tooltip="test2-label"
     type="button"
   >
     <svg
@@ -156,6 +159,7 @@ exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
     className="components-button components-dropdown-button__toggle components-toolbar__control utils--components-toolbar__control has-text has-icon"
     disabled={true}
     onClick={[Function]}
+    tooltip="test3-label"
     type="button"
   >
     <svg
