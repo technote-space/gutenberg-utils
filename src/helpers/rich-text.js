@@ -73,7 +73,7 @@ export const setActiveStyle = (args, styleName, value) => addActiveAttributes(ar
  * @param {string} suffix suffix
  * @returns {function(*=): null} on change function
  */
-export const onChangeStyle = (args, formatName, styleName, suffix = '') => value => undefined === value || isNaN(value) ?
+export const onChangeStyle = (args, formatName, styleName, suffix = '') => value => undefined === value || Number.isNaN(value) ?
   args.onChange(removeFormat(args.value, formatName)) :
   (
     value ? args.onChange(applyFormat(args.value, {
