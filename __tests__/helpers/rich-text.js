@@ -2,7 +2,12 @@
 import {registerFormatType} from '@wordpress/rich-text';
 import {getFormatArgs} from '@technote-space/gutenberg-test-helper';
 import {getActiveStyle, addActiveAttributes, setActiveStyle, onChangeStyle} from '../../src/helpers';
-import {getToolbarButtonProps, getColorButtonProps, getFontSizesButtonProps, getContrastChecker} from '../../src/helpers';
+import {
+  getToolbarButtonProps,
+  getColorButtonProps,
+  getFontSizesButtonProps,
+  getContrastChecker,
+} from '../../src/helpers';
 import {getRemoveFormatFunction, isValidRemoveFormatButton} from '../../src/helpers';
 
 describe('getActiveStyle', () => {
@@ -126,7 +131,12 @@ describe('getActiveStyle', () => {
 
 describe('addActiveAttributes', () => {
   it('should add attributes', () => {
-    const attributes = addActiveAttributes({activeAttributes: {test1: 'test1', test2: 'test2'}}, 'test-add-key', 'test-add-value');
+    const attributes = addActiveAttributes({
+      activeAttributes: {
+        test1: 'test1',
+        test2: 'test2',
+      },
+    }, 'test-add-key', 'test-add-value');
     expect(attributes).toHaveProperty('test1');
     expect(attributes).toHaveProperty('test2');
     expect(attributes).toHaveProperty('test-add-key');
@@ -174,7 +184,7 @@ describe('onChangeStyle', () => {
             [format],
           ],
         },
-        onChange: onChange,
+        onChange,
       }, 'test2/test5', 'color');
       onChange(value => {
         expect(value).toHaveProperty('activeFormats');
@@ -212,7 +222,7 @@ describe('onChangeStyle', () => {
             [format],
           ],
         },
-        onChange: onChange,
+        onChange,
       }, 'test2/test7', 'font-size', 'px');
       onChange(value => {
         expect(value).toHaveProperty('activeFormats');
@@ -328,7 +338,11 @@ describe('getToolbarButtonProps', () => {
 
 describe('getColorButtonProps', () => {
   it('should get props', () => {
-    const props = getColorButtonProps('test1-name', 'test1-title', 'test1-icon', 'test1-property', {group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2'});
+    const props = getColorButtonProps('test1-name', 'test1-title', 'test1-icon', 'test1-property', {
+      group: 'test1-group',
+      'test1-option1': 1,
+      'test1-option2': 'test2',
+    });
     expect(props).toHaveProperty('name');
     expect(props).toHaveProperty('inspectorGroup');
     expect(props).toHaveProperty('create');
@@ -411,7 +425,11 @@ describe('getColorButtonProps', () => {
 
 describe('getFontSizesButtonProps', () => {
   it('should get props', () => {
-    const props = getFontSizesButtonProps('test1-name', 'test1-title', 'test1-icon', {group: 'test1-group', 'test1-option1': 1, 'test1-option2': 'test2'});
+    const props = getFontSizesButtonProps('test1-name', 'test1-title', 'test1-icon', {
+      group: 'test1-group',
+      'test1-option1': 1,
+      'test1-option2': 'test2',
+    });
     expect(props).toHaveProperty('name');
     expect(props).toHaveProperty('inspectorGroup');
     expect(props).toHaveProperty('create');
@@ -674,7 +692,7 @@ describe('getRemoveFormatFunction', () => {
           formats,
         ],
       },
-      onChange: onChange,
+      onChange,
     };
 
     const removeFormat = getRemoveFormatFunction(args);

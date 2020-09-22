@@ -17,19 +17,21 @@ import {Dropdown, Button} from '@wordpress/components';
  * @returns {*} dropdown button
  * @constructor
  */
-const DropdownButton = ({
-  icon = 'menu',
-  label,
-  tooltip = label,
-  className,
-  position = 'top right',
-  contentClassName,
-  renderContent,
-  isActive = false,
-  isDisabled = false,
-  isDropdownDisabled = false,
-  isHiddenIndicator = false,
-}) => {
+const DropdownButton = (
+  {
+    icon = 'menu',
+    label,
+    tooltip = label,
+    className,
+    position = 'top right',
+    contentClassName,
+    renderContent,
+    isActive = false,
+    isDisabled = false,
+    isDropdownDisabled = false,
+    isHiddenIndicator = false,
+  },
+) => {
   return <Dropdown
     className={classnames('components-dropdown-toggle', className)}
     contentClassName={classnames('components-dropdown-button__popover', contentClassName)}

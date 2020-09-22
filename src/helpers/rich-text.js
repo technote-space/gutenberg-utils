@@ -38,7 +38,7 @@ export const getActiveStyle = (args, formatType, styleName, options = {}) => {
   }
 
   const extracted = style.replace(new RegExp(`^${styleName}:\\s*`), '');
-  const filtered = value => typeof options.filter === 'function' ? options.filter(value) : value;
+  const filtered  = value => typeof options.filter === 'function' ? options.filter(value) : value;
   if (options.suffix) {
     return filtered(extracted.replace(new RegExp(`${options.suffix}$`), ''));
   }
@@ -54,7 +54,7 @@ export const getActiveStyle = (args, formatType, styleName, options = {}) => {
  */
 export const addActiveAttributes = (args, key, value) => {
   const attributes = args.activeAttributes || {};
-  attributes[key] = value;
+  attributes[key]  = value;
   return attributes;
 };
 
@@ -97,8 +97,8 @@ export const onChangeStyle = (args, formatName, styleName, suffix = '') => value
  */
 export const getToolbarButtonProps = (group, name, icon, optional = {}) => {
   const className = 'className' in optional ? optional.className : name;
-  const title = 'title' in optional ? optional.title : name;
-  const preview = 'preview' in optional ? optional.preview : ('tagName' in optional ? createElement(optional.tagName, {
+  const title     = 'title' in optional ? optional.title : name;
+  const preview   = 'preview' in optional ? optional.preview : ('tagName' in optional ? createElement(optional.tagName, {
     className,
   }, title) : title);
   return {
@@ -178,8 +178,8 @@ export const getColorButtonProps = (name, title, icon, property, optional = {}) 
   const group = optional.group || 'inspector';
   delete optional.group;
   return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName, isInspector) => {
-    const value = getActiveStyle(args, formatName, property);
-    const colors = getColors();
+    const value              = getActiveStyle(args, formatName, property);
+    const colors             = getColors();
     const createColorPalette = (args, formatName) => <ColorPalette
       colors={colors}
       disableCustomColors={!isValidCustomColors()}
@@ -201,7 +201,7 @@ const getInspectorLabel = (value, label, colors) => {
   }
 
   const colorObject = getColorObjectByColorValue(colors, value);
-  const colorName = colorObject && colorObject.name;
+  const colorName   = colorObject && colorObject.name;
 
   return <Fragment>
     {label}
@@ -225,7 +225,7 @@ const getInspectorLabel = (value, label, colors) => {
  */
 export const getFontSizesButtonProps = (name, title, icon, optional = {}) => {
   const property = 'font-size';
-  const group = optional.group || 'inspector';
+  const group    = optional.group || 'inspector';
   delete optional.group;
   return getDropdownButtonProps(group, name, title, icon, property, optional, (args, formatName) => {
     const value = getActiveStyle(args, formatName, property, {suffix: 'px', filter: Number});
@@ -267,7 +267,7 @@ export const getContrastChecker = (fills, args) => {
     return null;
   }
 
-  const textColor = getActiveStyle(args, mapped['color'].formatName, 'color', {ignoreActive: true});
+  const textColor       = getActiveStyle(args, mapped['color'].formatName, 'color', {ignoreActive: true});
   const backgroundColor = getActiveStyle(args, mapped['background-color'].formatName, 'background-color', {ignoreActive: true});
   if (!textColor || !backgroundColor) {
     return null;
