@@ -29,10 +29,10 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.1",
+    "@babel/core": "^7.12.3",
     "@babel/plugin-transform-react-jsx": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
-    "@technote-space/gutenberg-test-helper": "^0.0.21",
+    "@technote-space/gutenberg-test-helper": "^0.0.23",
     "@wordpress/block-editor": "^5.0.2",
     "@wordpress/components": "^11.0.1",
     "@wordpress/data": "^4.24.0",
