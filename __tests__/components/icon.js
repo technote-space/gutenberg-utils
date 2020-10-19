@@ -41,7 +41,8 @@ describe('Icon', () => {
 
     expect(toJson(wrapper, {mode: 'deep'})).toMatchSnapshot();
 
-    expect(wrapper.find('svg')).toHaveLength(5);
+    expect(wrapper.find('svg')).toHaveLength(2);
+    expect(wrapper.find('span')).toHaveLength(3);
     expect(wrapper.find('.test1')).toHaveLength(1);
     expect(wrapper.find('.test2')).toHaveLength(1);
     expect(wrapper.find('.test3')).toHaveLength(1);
