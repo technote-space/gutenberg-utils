@@ -48,18 +48,12 @@ exports[`Icon should render Icon 1`] = `
   </svg>
   <span
     class="dashicon dashicons dashicons-menu components-icon components-icon__dashicon test3"
-    height="20"
-    width="20"
   />
   <span
     class="dashicon dashicons dashicons-admin-site components-icon components-icon__dashicon test4"
-    height="20"
-    width="20"
   />
   <span
     class="dashicon dashicons dashicons-admin-post"
-    height="20"
-    width="20"
   />
 </div>
 `;
