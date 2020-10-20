@@ -6,6 +6,10 @@ Helpers.applyStyles('.components-dropdown-button__popover .components-font-size-
   position: 'fixed',
   minWidth: '150px',
 });
+Helpers.applyStyles('.components-dropdown-button__popover .components-font-size-picker__controls .components-custom-select-control__item', {
+  cursor: 'pointer',
+  width: '100%',
+});
 Helpers.applyStyles('.components-dropdown-button__popover .components-popover__content', {
   padding: '12px',
 });
