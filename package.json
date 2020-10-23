@@ -1,28 +1,40 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "2.2.14",
+  "version": "2.2.15",
   "description": "gutenberg utils",
+  "keywords": [
+    "gutenberg"
+  ],
+  "homepage": "https://github.com/technote-space/gutenberg-utils#readme",
+  "bugs": {
+    "url": "https://github.com/technote-space/gutenberg-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/technote-space/gutenberg-utils.git"
+  },
+  "license": "GPL-3.0",
   "author": {
     "name": "Technote",
     "email": "technote.space@gmail.com",
     "url": "https://technote.space"
   },
-  "license": "GPL-3.0",
-  "keywords": [
-    "gutenberg"
-  ],
-  "homepage": "https://github.com/technote-space/gutenberg-utils#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/technote-space/gutenberg-utils.git"
-  },
-  "bugs": {
-    "url": "https://github.com/technote-space/gutenberg-utils/issues"
-  },
   "main": "build/index.js",
   "files": [
     "build"
   ],
+  "scripts": {
+    "build": "rm -rdf build && babel --compact=true src --out-dir build",
+    "cover": "jest --coverage",
+    "cover:update": "jest --coverage --updateSnapshot",
+    "develop": "rm -rdf build && babel src --out-dir build",
+    "lint": "eslint 'src/**/*.js' '__tests__/**/*.js' --cache",
+    "lint:fix": "eslint --fix 'src/**/*.js' '__tests__/**/*.js'",
+    "start": "yarn build",
+    "test": "yarn lint && yarn cover",
+    "test:update": "yarn lint && yarn cover:update",
+    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
     "nano-css": "^5.3.0"
@@ -51,17 +63,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "start": "yarn build",
-    "test": "yarn lint && yarn cover",
-    "test:update": "yarn lint && yarn cover:update",
-    "lint": "eslint 'src/**/*.js' '__tests__/**/*.js' --cache",
-    "lint:fix": "eslint --fix 'src/**/*.js' '__tests__/**/*.js'",
-    "cover": "jest --coverage",
-    "cover:update": "jest --coverage --updateSnapshot",
-    "develop": "rm -rdf build && babel src --out-dir build",
-    "build": "rm -rdf build && babel --compact=true src --out-dir build",
-    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
   }
 }
