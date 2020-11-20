@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "2.2.15",
+  "version": "2.2.16",
   "description": "gutenberg utils",
   "keywords": [
     "gutenberg"
@@ -58,8 +58,7 @@
     "eslint": "^7.13.0",
     "eslint-plugin-react": "^7.21.5",
     "jest": "^26.6.3",
-    "lodash": "^4.17.20",
-    "react": "^16.14.0"
+    "lodash": "^4.17.20"
   },
   "publishConfig": {
     "access": "public"
