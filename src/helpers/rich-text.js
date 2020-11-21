@@ -1,4 +1,3 @@
-import React from 'react';
 import classnames from 'classnames';
 import {getActiveFormat, toggleFormat, applyFormat, removeFormat} from '@wordpress/rich-text';
 import {ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette} from '@wordpress/components';
