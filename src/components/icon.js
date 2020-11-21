@@ -1,4 +1,3 @@
-import React from 'react';
 import classnames from 'classnames';
 import {SVG, Dashicon} from '@wordpress/components';
 import {isURL} from '@wordpress/url';
