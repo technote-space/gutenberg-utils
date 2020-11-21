@@ -11,19 +11,9 @@
   ],
   "plugins": [
     [
-      "@wordpress/babel-plugin-import-jsx-pragma",
+      "@babel/plugin-transform-react-jsx",
       {
-        "scopeVariable": "createElement",
-        "scopeVariableFrag": "Fragment",
-        "source": "@wordpress/element",
-        "isDefault": false
-      }
-    ],
-    [
-      "@babel/transform-react-jsx",
-      {
-        "pragma": "createElement",
-        "pragmaFrag": "Fragment"
+        "pragma": "wp.element.createElement"
       }
     ]
   ],
