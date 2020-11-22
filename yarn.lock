@@ -5195,9 +5195,9 @@ natural-compare@^1.4.0:
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
 nearley@^2.7.10:
-  version "2.19.7"
-  resolved "https://registry.yarnpkg.com/nearley/-/nearley-2.19.7.tgz#eafbe3e2d8ccfe70adaa5c026ab1f9709c116218"
-  integrity sha512-Y+KNwhBPcSJKeyQCFjn8B/MIe+DDlhaaDgjVldhy5xtFewIbiQgcbZV8k2gCVwkI1ZsKCnjIYZbR+0Fim5QYgg==
+  version "2.19.8"
+  resolved "https://registry.yarnpkg.com/nearley/-/nearley-2.19.8.tgz#2c6e2f9e8c0daa145e78c9734b4ad7713e96fcca"
+  integrity sha512-te4JCrxbzLvVqUWfVOASgsbkWaFvJ6JlHTRQzfnU862bnyHGHEGX2s5OYvLAS4NDPmQvRtC2tBdV6THy6xHFyQ==
   dependencies:
     commander "^2.19.0"
     moo "^0.5.0"
@@ -6642,28 +6642,29 @@ string.prototype.matchall@^4.0.2:
     side-channel "^1.0.3"
 
 string.prototype.trim@^1.2.1:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/string.prototype.trim/-/string.prototype.trim-1.2.2.tgz#f538d0bacd98fc4297f0bef645226d5aaebf59f3"
-  integrity sha512-b5yrbl3BXIjHau9Prk7U0RRYcUYdN4wGSVaqoBQS50CCE3KBuYU0TYRNPFCP7aVoNMX87HKThdMRVIP3giclKg==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/string.prototype.trim/-/string.prototype.trim-1.2.3.tgz#d23a22fde01c1e6571a7fadcb9be11decd8061a7"
+  integrity sha512-16IL9pIBA5asNOSukPfxX2W68BaBvxyiRK16H3RA/lWW9BDosh+w7f+LhomPHpXJ82QEe7w7/rY/S1CV97raLg==
   dependencies:
+    call-bind "^1.0.0"
     define-properties "^1.1.3"
-    es-abstract "^1.18.0-next.0"
+    es-abstract "^1.18.0-next.1"
 
 string.prototype.trimend@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/string.prototype.trimend/-/string.prototype.trimend-1.0.2.tgz#6ddd9a8796bc714b489a3ae22246a208f37bfa46"
-  integrity sha512-8oAG/hi14Z4nOVP0z6mdiVZ/wqjDtWSLygMigTzAb+7aPEDTleeFf+WrF+alzecxIRkckkJVn+dTlwzJXORATw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string.prototype.trimend/-/string.prototype.trimend-1.0.3.tgz#a22bd53cca5c7cf44d7c9d5c732118873d6cd18b"
+  integrity sha512-ayH0pB+uf0U28CtjlLvL7NaohvR1amUvVZk+y3DYb0Ey2PUV5zPkkKy9+U1ndVEIXO8hNg18eIv9Jntbii+dKw==
   dependencies:
+    call-bind "^1.0.0"
     define-properties "^1.1.3"
-    es-abstract "^1.18.0-next.1"
 
 string.prototype.trimstart@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/string.prototype.trimstart/-/string.prototype.trimstart-1.0.2.tgz#22d45da81015309cd0cdd79787e8919fc5c613e7"
-  integrity sha512-7F6CdBTl5zyu30BJFdzSTlSlLPwODC23Od+iLoVH8X6+3fvDPPuBVVj9iaB1GOsSTSIgVfsfm27R2FGrAPznWg==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string.prototype.trimstart/-/string.prototype.trimstart-1.0.3.tgz#9b4cb590e123bb36564401d59824298de50fd5aa"
+  integrity sha512-oBIBUy5lea5tt0ovtOFiEQaBkoBBkyJhZXzJYrSmDo5IUUqbOPvVezuRs/agBIdZ2p2Eo1FD6bD9USyBLfl3xg==
   dependencies:
+    call-bind "^1.0.0"
     define-properties "^1.1.3"
-    es-abstract "^1.18.0-next.1"
 
 string_decoder@^1.1.1:
   version "1.3.0"
