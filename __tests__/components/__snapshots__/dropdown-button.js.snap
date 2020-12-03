@@ -2,7 +2,7 @@
 
 exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
 <div
-  className="components-dropdown components-dropdown-toggle test1-class"
+  className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test1-class"
 >
   <button
     aria-expanded={true}
@@ -41,7 +41,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
         onTouchStart={[Function]}
       >
         <div
-          className="components-popover components-dropdown__content components-dropdown-button__popover test1-content-class is-without-arrow"
+          className="components-popover components-dropdown__content components-dropdown-button__popover utils--components-dropdown-button__popover test1-content-class is-without-arrow"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
         >
@@ -92,7 +92,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
 
 exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
 <div
-  className="components-dropdown components-dropdown-toggle test1-class"
+  className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test1-class"
 >
   <button
     aria-expanded={false}
@@ -119,7 +119,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
 
 exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
 <div
-  className="components-dropdown components-dropdown-toggle test2-class"
+  className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test2-class"
 >
   <button
     aria-expanded={false}
@@ -146,7 +146,7 @@ exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
 
 exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
 <div
-  className="components-dropdown components-dropdown-toggle test3-class"
+  className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test3-class"
 >
   <button
     aria-expanded={false}
