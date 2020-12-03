@@ -58,5 +58,8 @@ Helpers.applyStyles('.components-popover__content__dropdown-tooltip', {
   backgroundColor: 'white',
   color: 'black',
 });
+Helpers.applyStyles('.utils--components-dropdown-button__popover .components-popover__content', {
+  minWidth: '260px',
+});
 
 export {Components, Helpers};

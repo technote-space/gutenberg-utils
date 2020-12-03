@@ -32,8 +32,8 @@ const DropdownButton = (
   },
 ) => {
   return <Dropdown
-    className={classnames('components-dropdown-toggle', className)}
-    contentClassName={classnames('components-dropdown-button__popover', contentClassName)}
+    className={classnames('components-dropdown-toggle', 'utils--components-dropdown-toggle', className)}
+    contentClassName={classnames('components-dropdown-button__popover', 'utils--components-dropdown-button__popover', contentClassName)}
     position={position}
     renderToggle={({isOpen, onToggle, onClose}) => {
       if (isOpen && isDropdownDisabled) {
