@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "2.2.22",
+  "version": "2.3.0",
   "description": "gutenberg utils",
   "keywords": [
     "gutenberg"
@@ -42,15 +42,10 @@
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/plugin-transform-react-jsx": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
     "@technote-space/gutenberg-test-helper": "^0.1.4",
-    "@wordpress/babel-preset-default": "^4.19.0",
-    "@wordpress/block-editor": "^5.1.5",
-    "@wordpress/components": "^11.1.3",
-    "@wordpress/data": "^4.25.0",
-    "@wordpress/element": "^2.18.0",
-    "@wordpress/i18n": "^3.16.0",
-    "@wordpress/rich-text": "^3.23.0",
-    "@wordpress/url": "^2.19.0",
     "babel-jest": "^26.6.3",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.1",
