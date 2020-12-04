@@ -1,14 +1,15 @@
 import classnames from 'classnames';
-import {getActiveFormat, toggleFormat, applyFormat, removeFormat} from '@wordpress/rich-text';
-import {ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette} from '@wordpress/components';
-import {Fragment, createElement} from '@wordpress/element';
-import {select, dispatch} from '@wordpress/data';
-import {sprintf, __} from '@wordpress/i18n';
-import {getColorObjectByColorValue, ContrastChecker} from '@wordpress/block-editor';
 import {DropdownButton} from '../components';
 import {getColors, getFontSizes, isValidCustomColors} from './editor';
 import {DEFAULT_FONT_SIZE} from '../constant';
 import {STORE_NAME} from '../store';
+
+const {getActiveFormat, toggleFormat, applyFormat, removeFormat}                 = wp.richText;
+const {ToolbarButton, BaseControl, ColorIndicator, FontSizePicker, ColorPalette} = wp.components;
+const {Fragment, createElement}                                                  = wp.element;
+const {select, dispatch}                                                         = wp.data;
+const {sprintf, __}                                                              = wp.i18n;
+const {getColorObjectByColorValue, ContrastChecker}                              = wp.blockEditor;
 
 /**
  * @param {object} args args

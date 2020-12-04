@@ -1,5 +1,6 @@
 import classnames from 'classnames';
-import {Dropdown, Button} from '@wordpress/components';
+
+const {Dropdown, Button} = wp.components;
 
 /**
  * @param {*} icon icon

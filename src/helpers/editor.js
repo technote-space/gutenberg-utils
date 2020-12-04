@@ -1,6 +1,7 @@
-import {select} from '@wordpress/data';
 import {create} from 'nano-css';
 import {get} from 'lodash';
+
+const {select} = wp.data;
 
 /**
  * @returns {object} settings

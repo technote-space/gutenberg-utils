@@ -1,6 +1,7 @@
 import classnames from 'classnames';
-import {SVG, Dashicon} from '@wordpress/components';
-import {isURL} from '@wordpress/url';
+
+const {SVG, Dashicon} = wp.components;
+const {isURL}         = wp.url;
 
 const {isString} = window.lodash;
 import {ICON_SIZE} from '../constant';
