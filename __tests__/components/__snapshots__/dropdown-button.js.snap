@@ -25,64 +25,50 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
     />
   </button>
   <div
+    className="components-popover components-dropdown__content components-dropdown-button__popover utils--components-dropdown-button__popover test1-content-class is-without-arrow"
+    onBlur={[Function]}
+    onFocus={[Function]}
     onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
     tabIndex="-1"
   >
     <div
-      onBlur={[Function]}
-      onFocus={[Function]}
+      className="components-popover__content"
     >
       <div
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
       >
+        <iframe
+          aria-hidden={true}
+          frameBorder={0}
+          src="about:blank"
+          style={
+            Object {
+              "display": "block",
+              "height": "100%",
+              "left": 0,
+              "opacity": 0,
+              "overflow": "hidden",
+              "pointerEvents": "none",
+              "position": "absolute",
+              "top": 0,
+              "width": "100%",
+              "zIndex": -1,
+            }
+          }
+          tabIndex={-1}
+        />
         <div
-          className="components-popover components-dropdown__content components-dropdown-button__popover utils--components-dropdown-button__popover test1-content-class is-without-arrow"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
+          className="popover1"
         >
-          <div
-            className="components-popover__content"
-            tabIndex="-1"
-          >
-            <div
-              style={
-                Object {
-                  "position": "relative",
-                }
-              }
-            >
-              <iframe
-                aria-hidden={true}
-                frameBorder={0}
-                src="about:blank"
-                style={
-                  Object {
-                    "display": "block",
-                    "height": "100%",
-                    "left": 0,
-                    "opacity": 0,
-                    "overflow": "hidden",
-                    "pointerEvents": "none",
-                    "position": "absolute",
-                    "top": 0,
-                    "width": "100%",
-                    "zIndex": -1,
-                  }
-                }
-                tabIndex={-1}
-              />
-              <div
-                className="popover1"
-              >
-                test1
-              </div>
-            </div>
-          </div>
+          test1
         </div>
       </div>
     </div>
