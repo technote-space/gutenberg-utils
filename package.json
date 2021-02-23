@@ -40,11 +40,11 @@
     "nano-css": "^5.3.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.17",
-    "@babel/core": "^7.12.17",
-    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.13.0",
     "@babel/plugin-transform-react-jsx": "^7.12.17",
-    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-env": "^7.13.0",
     "@technote-space/gutenberg-test-helper": "^0.1.10",
     "babel-jest": "^26.6.3",
     "enzyme": "^3.11.0",
@@ -52,7 +52,7 @@
     "eslint": "^7.20.0",
     "eslint-plugin-react": "^7.22.0",
     "jest": "^26.6.3",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "publishConfig": {
     "access": "public"
