@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gutenberg-utils",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "gutenberg utils",
   "keywords": [
     "gutenberg"
@@ -37,22 +37,22 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "nano-css": "^5.3.0"
+    "nano-css": "^5.3.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
-    "@babel/plugin-transform-react-jsx": "^7.12.12",
-    "@babel/preset-env": "^7.12.11",
-    "@technote-space/gutenberg-test-helper": "^0.1.9",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.13.0",
+    "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "@babel/preset-env": "^7.13.5",
+    "@technote-space/gutenberg-test-helper": "^0.1.11",
     "babel-jest": "^26.6.3",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.1",
-    "eslint": "^7.17.0",
+    "eslint": "^7.20.0",
     "eslint-plugin-react": "^7.22.0",
     "jest": "^26.6.3",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "publishConfig": {
     "access": "public"

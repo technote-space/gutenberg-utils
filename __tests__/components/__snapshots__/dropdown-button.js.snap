@@ -5,6 +5,7 @@ exports[`DropdownButton should render DropdownButton 0: open--0 1`] = `
   className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test1-class"
 >
   <button
+    aria-describedby={null}
     aria-expanded={true}
     aria-haspopup="true"
     aria-label="test1-label"
@@ -81,6 +82,7 @@ exports[`DropdownButton should render DropdownButton 0: test--0 1`] = `
   className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test1-class"
 >
   <button
+    aria-describedby={null}
     aria-expanded={false}
     aria-haspopup="true"
     aria-label="test1-label"
@@ -108,6 +110,7 @@ exports[`DropdownButton should render DropdownButton 1: test--1 1`] = `
   className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test2-class"
 >
   <button
+    aria-describedby={null}
     aria-expanded={false}
     aria-haspopup="true"
     aria-label="test2-label"
@@ -135,6 +138,7 @@ exports[`DropdownButton should render DropdownButton 2: test--2 1`] = `
   className="components-dropdown components-dropdown-toggle utils--components-dropdown-toggle test3-class"
 >
   <button
+    aria-describedby={null}
     aria-expanded={false}
     aria-haspopup="true"
     aria-label="test3-label"
