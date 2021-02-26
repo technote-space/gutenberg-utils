@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 import {dispatch} from '@wordpress/data';
-import {isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes, applyStyles} from '../../src/helpers';
+import {isValidCustomColors, isValidCustomFontSizes, getColors, getFontSizes, applyStyles, editorReady} from '../../src/helpers';
 
 describe('isValidCustomColors, isValidCustomFontSizes', () => {
   it('should false 1', () => {
@@ -166,5 +166,44 @@ describe('applyStyles', () => {
     });
 
     expect(fn).toBeCalledWith('.test', {width: '30px'});
+  });
+});
+
+describe('editorReady', () => {
+  it('should call callback function once', () => {
+    jest.useFakeTimers();
+    let length = 0;
+    jest.spyOn(window.document, 'getElementById').mockReturnValue({
+      getElementsByClassName: () => ({
+        length: length++,
+      }),
+    });
+    const callback = jest.fn();
+    editorReady(callback);
+    expect(callback).not.toBeCalled();
+
+    dispatch('core/block-editor').updateSettings({
+      disableCustomColors: false,
+      disableCustomFontSizes: false,
+      __experimentalFeatures: {},
+    });
+    jest.runAllTimers();
+    expect(callback).not.toBeCalled();
+
+    dispatch('core/block-editor').updateSettings({
+      disableCustomColors: false,
+      disableCustomFontSizes: false,
+      __experimentalFeatures: {},
+    });
+    jest.runAllTimers();
+    expect(callback).toBeCalledTimes(1);
+
+    dispatch('core/block-editor').updateSettings({
+      disableCustomColors: false,
+      disableCustomFontSizes: false,
+      __experimentalFeatures: {},
+    });
+    jest.runAllTimers();
+    expect(callback).toBeCalledTimes(1);
   });
 });
