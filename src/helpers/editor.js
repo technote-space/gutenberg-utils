@@ -1,5 +1,6 @@
 import {create} from 'nano-css';
 import {get} from 'lodash';
+import {addSubscribe} from './subscribe';
 
 const {select} = wp.data;
 
@@ -48,4 +49,19 @@ export const applyStyles = (selector, css) => {
   const {put} = nano;
 
   put(selector, css);
+};
+
+/**
+ * @param {function} callback callback
+ */
+export const editorReady = (callback) => {
+  wp.domReady(() => {
+    addSubscribe(
+      prev => prev || !!window.document.getElementById('editor').getElementsByClassName('block-editor-writing-flow').length,
+      () => {
+        setTimeout(callback, 0); // eslint-disable-line no-magic-numbers
+      },
+      false,
+    );
+  });
 };
