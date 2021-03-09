@@ -40,11 +40,11 @@
     "nano-css": "^5.3.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.8",
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
     "@babel/plugin-transform-modules-commonjs": "^7.13.8",
     "@babel/plugin-transform-react-jsx": "^7.12.17",
-    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-env": "^7.13.10",
     "@technote-space/gutenberg-test-helper": "^0.1.11",
     "babel-jest": "^26.6.3",
     "enzyme": "^3.11.0",
