@@ -36,7 +36,7 @@
     "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.0",
     "nano-css": "^5.3.1"
   },
   "devDependencies": {
