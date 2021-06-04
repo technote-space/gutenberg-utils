@@ -51,7 +51,7 @@
     "enzyme-to-json": "^3.6.2",
     "eslint": "^7.27.0",
     "eslint-plugin-react": "^7.24.0",
-    "jest": "^27.0.3",
+    "jest": "^27.0.4",
     "lodash": "^4.17.21"
   },
   "publishConfig": {
