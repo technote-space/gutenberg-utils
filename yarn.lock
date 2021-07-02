@@ -1405,9 +1405,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/node@*":
-  version "15.12.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.5.tgz#9a78318a45d75c9523d2396131bd3cca54b2d185"
-  integrity sha512-se3yX7UHv5Bscf8f1ERKvQOD6sTyycH3hdaoozvaLxgUiY5lIGEeH37AD0G0Qi9kPqihPn0HOfd2yaIEN9VwEg==
+  version "15.14.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.14.0.tgz#74dbf254fb375551a9d2a71faf6b9dbc2178dc53"
+  integrity sha512-um/+/ip3QZmwLfIkWZSNtQIJNVAqrJ92OkLMeuZrjZMTAJniI7fh8N8OICyDhAJ2mzgk/fmYFo72jRr5HyZ1EQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1415,9 +1415,9 @@
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
 "@types/prettier@^2.1.5":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.0.tgz#2e8332cc7363f887d32ec5496b207d26ba8052bb"
-  integrity sha512-hkc1DATxFLQo4VxPDpMH1gCkPpBbpOoJ/4nhuXw4n63/0R6bCpQECj4+K226UJ4JO/eJQz+1mC2I7JsWanAdQw==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.1.tgz#54dd88bdc7f49958329666af3779561e47d5dab3"
+  integrity sha512-NVkb4p4YjI8E3O6+1m8I+8JlMpFZwfSbPGdaw0wXuyPRTEz0SLKwBUWNSO7Maoi8tQMPC8JLZNWkrcKPI7/sLA==
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -1432,9 +1432,9 @@
     "@types/react" "^16"
 
 "@types/react@^16", "@types/react@^16.9.0":
-  version "16.14.8"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.8.tgz#4aee3ab004cb98451917c9b7ada3c7d7e52db3fe"
-  integrity sha512-QN0/Qhmx+l4moe7WJuTxNiTsjBwlBGHqKGvInSQCBdo7Qio0VtOqwsC0Wq7q3PbJlB0cR4Y4CVo1OOe6BOsOmA==
+  version "16.14.10"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.10.tgz#76bc1c42ed5ab0d2ab13e5c58faaccaad3449477"
+  integrity sha512-QadBsMyF6ldjEAXEhsmEW/L0uBDJT8yw7Qoe5sRnEKVrzMkiYoJwqoL5TKJOlArsn/wvIJM/XdVzkdL6+AS64Q==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1564,9 +1564,9 @@
     traverse "^0.6.6"
 
 "@wordpress/block-library@^3.2.10":
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/@wordpress/block-library/-/block-library-3.2.11.tgz#da7de4c82f49106897f45038388ffcd31251db19"
-  integrity sha512-CQrLns3OSTR6pV8nQ7t319GFkiUUnias/N2LVp4qCHQizJqzrAa4IYdHfBzUzIQQRvzohiVnsg/W6M/KGQAAmQ==
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/@wordpress/block-library/-/block-library-3.2.12.tgz#4a354fdbe854300e151ce60dc7e4a670e67766fb"
+  integrity sha512-WQn6mcNDlMfIdy/TSz9Ih1s2DStHRKvBrHyR8YAYHRyRF254HBGDvz4ehTG5PGu5qqcE7phdzAH0g/Ca7XSq6w==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@wordpress/a11y" "^3.1.1"
@@ -2812,9 +2812,9 @@ copy-descriptor@^0.1.0:
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
 core-js-compat@^3.14.0, core-js-compat@^3.15.0:
-  version "3.15.1"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.15.1.tgz#1afe233716d37ee021956ef097594071b2b585a7"
-  integrity sha512-xGhzYMX6y7oEGQGAJmP2TmtBLvR4nZmRGEcFa3ubHOq5YEp51gGN9AovVa0AoujGZIq+Wm6dISiYyGNfdflYww==
+  version "3.15.2"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.15.2.tgz#47272fbb479880de14b4e6081f71f3492f5bd3cb"
+  integrity sha512-Wp+BJVvwopjI+A1EFqm2dwUmWYXrvucmtIB2LgXn/Rb+gWPKYxtmb4GKHGKG/KGF1eK9jfjzT38DITbTOCX/SQ==
   dependencies:
     browserslist "^4.16.6"
     semver "7.0.0"
@@ -3114,9 +3114,9 @@ downshift@^6.0.15:
     react-is "^17.0.2"
 
 electron-to-chromium@^1.3.723:
-  version "1.3.760"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.760.tgz#cf19c9ae9ff23c0ac6bb289e3b71c09b7c3f8de1"
-  integrity sha512-XPKwjX6pHezJWB4FLVuSil9gGmU6XYl27ahUwEHODXF4KjCEB8RuIT05MkU1au2Tdye57o49yY0uCMK+bwUt+A==
+  version "1.3.765"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.765.tgz#36fa0ef7a81048bb487bfe3d297100967e2b8db2"
+  integrity sha512-4NhcsfZYlr1x4FehYkK+R9CNNTOZ8vLcIu8Y1uWehxYp5r/jlCGAfBqChIubEfdtX+rBQpXx4yJuX/dzILH/nw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3587,9 +3587,9 @@ flat-cache@^3.0.4:
     rimraf "^3.0.2"
 
 flatted@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
-  integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.0.tgz#da07fb8808050aba6fdeac2294542e5043583f05"
+  integrity sha512-XprP7lDrVT+kE2c2YlfiV+IfS9zxukiIOvNamPNsImNhXadSsQEbosItdL9bUQlCZXR13SvPk20BjWSWLA7m4A==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -5525,9 +5525,9 @@ react-dom@^16.13.1:
     scheduler "^0.19.1"
 
 react-easy-crop@^3.0.0:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/react-easy-crop/-/react-easy-crop-3.5.1.tgz#d32113de9c87f9009d4ae0b223922ad60433ea69"
-  integrity sha512-VWTYAwRcapguZcYHTSKOcaO2QoNPA57KlS6J0DUrl6dPMV/KrmnPl++LSe/fjN/5vak2PJFKFA4js6Lkwwuy2g==
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/react-easy-crop/-/react-easy-crop-3.5.2.tgz#1fc65249e82db407c8c875159589a8029a9b7a06"
+  integrity sha512-cwSGO/wk42XDpEyrdAcnQ6OJetVDZZO2ry1i19+kSGZQ750aN06RU9y9z95B5QI6sW3SnaWQRKv5r5GSqVV//g==
   dependencies:
     normalize-wheel "^1.0.1"
     tslib "2.0.1"
