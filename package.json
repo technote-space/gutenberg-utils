@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
-    "nano-css": "^5.3.1"
+    "nano-css": "^5.3.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
